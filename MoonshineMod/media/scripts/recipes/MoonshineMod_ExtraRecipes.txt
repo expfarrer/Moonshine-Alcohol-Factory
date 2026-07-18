@@ -32,7 +32,7 @@ module Moonshine
 
     recipe Make Moonshiners Molotov Cocktail
     {
-        destroy WinePetrol/WhiskeyPetrol/BeerPetrol,
+        destroy WinePetrolCan/WhiskeyPetrolCan/BeerPetrolCan,
         RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
         Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
         Result:MoonshineMolotovBig,
@@ -45,7 +45,7 @@ module Moonshine
 	
 	recipe Make Molotov Cocktail
     {
-        destroy WinePetrol/WhiskeyPetrol/BeerPetrol,
+        destroy WinePetrolCan/WhiskeyPetrolCan/BeerPetrolCan,
         RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
         
         Result:MoonshineMolotov,

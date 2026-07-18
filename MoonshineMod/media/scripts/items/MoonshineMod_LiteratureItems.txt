@@ -55,8 +55,8 @@ module Moonshine
         Icon = MagazineDistill3,
         TeachedRecipes = Create Distill Coal Filter;Refill Distill Pot(II) with 6 x Spirit;Upgrade Distill(I)to(II);Downgrade Distill(II)to(I),
 		ReplaceOnUse = MagazineDistill3,
-        WorldStaticModel = MagazineDistill4,
-        StaticModel = MagazineDistill4Ground,
+        WorldStaticModel = MagazineDistill3,
+        StaticModel = MagazineDistill3Ground,
 		
 		
     }

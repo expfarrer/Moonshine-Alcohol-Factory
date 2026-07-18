@@ -47,8 +47,9 @@ Tooltip_EN = {
 	
 	Tooltip_item_EmptyGasoholDrum = "Handcrafted steel drum, designed to store and dispense gasohol.",
 	Tooltip_item_GasoholDrum = "Filled steel drum for efficient use, replacing multiple gas canisters.",
-	
-	
-	
-	
+
+	Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
+
+
+
 }

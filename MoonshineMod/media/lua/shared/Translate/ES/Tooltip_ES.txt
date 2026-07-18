@@ -49,8 +49,9 @@ Tooltip_item_EmptyMotorOilCan = "Los envases vacíos de aceite para motor se pue
 Tooltip_item_EmptyGasoholDrum = "Bidón de acero artesanal, diseñado para almacenar y dispensar gasohol.",
 Tooltip_item_GasoholDrum = "Bidón de acero lleno para un uso eficiente, reemplazando múltiples bidones de gasolina.",
 
-	
-	
-	
-	
+-- TODO: translate
+Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
+
+
+
 }

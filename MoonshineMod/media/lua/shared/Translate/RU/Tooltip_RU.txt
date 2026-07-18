@@ -47,4 +47,7 @@ Tooltip_RU = {
     
     Tooltip_item_EmptyGasoholDrum = "Ручной стальной барабан, предназначенный для хранения и отпускания газохола.",
     Tooltip_item_GasoholDrum = "Наполненный стальной барабан для эффективного использования, заменяющий несколько газовых банок.",
+
+    -- TODO: translate
+    Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
 }

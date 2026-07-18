@@ -47,4 +47,7 @@ Tooltip_DE = {
     
     Tooltip_item_EmptyGasoholDrum = "Handgefertigter Stahlfass, entworfen zum Lagern und Abgeben von Gasohol.",
     Tooltip_item_GasoholDrum = "Gefülltes Stahlfass für effiziente Nutzung, ersetzt mehrere Benzinflaschen.",
+
+    -- TODO: translate
+    Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
 }

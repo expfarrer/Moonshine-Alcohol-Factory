@@ -594,7 +594,7 @@ item Alc_DistillPotLargeRefillSpirit
 		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
-        ReplaceOnUse = DistillPotMedium,
+        ReplaceOnUse = DistillPotLarge,
 		/*ReplaceOnDeplete = DistillPotSmall,*/
 		
 		HungerChange = -8.5,
@@ -612,10 +612,10 @@ item Alc_DistillPotLargeRefillSpirit
         CustomContextMenu = Drink,
 		
 		CustomEatSound = DrinkingFromBottleGlasss,
-		StaticModel = distill_medium_Ground,
-		WorldStaticModel = distill_medium_Ground, 
+		StaticModel = distill_large_Ground,
+		WorldStaticModel = distill_large_Ground,
 		/*Tags = Liquor,*/
-		
+
 		MinutesToCook = 550,
 		MinutesToBurn = 3000,
 		

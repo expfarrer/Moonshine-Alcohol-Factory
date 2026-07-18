@@ -71,8 +71,8 @@ module Moonshine
         Icon = MagazineDistill4,
         TeachedRecipes = Create Controllable Distill Column;Create Gasohol Drum;Refill Distill Pot(III) with 8 x Spirit;Upgrade Distill(II)to(III);Downgrade Distill(III)to(II),
         ReplaceOnUse = MagazineDistill4,
-        WorldStaticModel = MagazineDistill5,
-        StaticModel = MagazineDistill5Ground,
+        WorldStaticModel = MagazineDistill4,
+        StaticModel = MagazineDistill4Ground,
     }
 
   

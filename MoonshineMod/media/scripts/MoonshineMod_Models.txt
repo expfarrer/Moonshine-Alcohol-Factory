@@ -150,14 +150,14 @@ module Moonshine
     model MotorOilCanister_Ground3
     {
         mesh = model_MotorOilCanister_Ground,
-        texture = WorldItems/texture_MotorOilCan3,
+        texture = WorldItems/texture_MotorOilCan1,
         scale = 0.02,
     }
-    
+
     model MotorOilCanister_Ground4
     {
         mesh = model_MotorOilCanister_Ground,
-        texture = WorldItems/texture_MotorOilCan4,
+        texture = WorldItems/texture_MotorOilCan1,
         scale = 0.02,
     }
     

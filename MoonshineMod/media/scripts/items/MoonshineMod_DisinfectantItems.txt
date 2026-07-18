@@ -111,6 +111,6 @@ module Moonshine
         EatType = BleachBottle,
         WorldStaticModel = BleachBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = WaterBottleEmpty,
+        ReplaceOnUse = BleachEmpty,
     }
 }

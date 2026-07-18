@@ -350,7 +350,7 @@ imports
 		CookingSound = BoilingFood,
 		FoodType = Liquor,
 		EatType = Kettle,
-	    AlcoholPower = 14,
+	    AlcoholPower = 4,
 		Alcoholic = TRUE,
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,

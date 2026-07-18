@@ -454,7 +454,7 @@ item MugSpiffoWaterRefill
 	Type			= Drainable,
 	UseWhileEquipped	= FALSE,
 	UseDelta		= 0.16,
-	DisplayName		= Water Bottle filled with Water,
+	DisplayName		= Wine Bottle filled with Water,
 	ReplaceOnUse	= WineEmpty,
 	ReplaceOnUseOn		= WaterSource-WineWaterFull,
 	Icon			= WineEmpty,

@@ -56,7 +56,7 @@ module Moonshine
         StaticModel = WhiteWineBottle,
         WorldStaticModel = WhiteWineBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = BeerEmpty,
+        ReplaceOnUse = WineEmpty,
     }
 
     item DisinfectantRefillSoda

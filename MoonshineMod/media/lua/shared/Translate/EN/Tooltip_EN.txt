@@ -49,7 +49,7 @@ Tooltip_EN = {
 	Tooltip_item_GasoholDrum = "Filled steel drum for efficient use, replacing multiple gas canisters.",
 
 	Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
-
+	Tooltip_item_OnlyPurifyMicrowave = "This container can only be purified using a microwave.",
 
 
 }

@@ -51,7 +51,8 @@ Tooltip_item_GasoholDrum = "Bidón de acero lleno para un uso eficiente, reempla
 
 -- TODO: translate
 Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
-
+-- TODO: translate
+Tooltip_item_OnlyPurifyMicrowave = "This container can only be purified using a microwave.",
 
 
 }

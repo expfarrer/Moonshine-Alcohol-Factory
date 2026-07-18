@@ -1,0 +1,21 @@
+version=1
+title=Alcohol Factory - Moonshine
+
+description=This Mod will allow you to craft a small distill pot from items available in the vanilla World.
+
+description=Collect the items and craft the DistillPot to have a tool to purify water and distill spirits.
+description=Create a Bucket of Mash from Corn, Sugar Yeast and add this base ingredient to the Distill pot.
+description=This Distill pot  needs to be place in a heatsource to create the spirits.
+tags=
+visibility=private
+
+
+
+
+
+
+
+
+Distill Pot Small 
+Bucket of Mash (Can o Corn)
+Bucket of Mash (Corn)

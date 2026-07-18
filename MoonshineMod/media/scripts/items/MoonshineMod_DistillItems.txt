@@ -1,0 +1,1014 @@
+
+
+module Moonshine
+{
+
+
+
+imports
+  {
+    Base
+  }
+ 
+ /* ---------- base distills EMPTY--------------*/
+	
+
+
+	 
+
+	
+		
+	/* ----------- distill water NEW----------------  */
+	
+	
+	item DistillPotSmall
+	{
+	
+	
+	    DisplayCategory = WaterContainer,
+		Weight	=	2,
+		CanStoreWater	=	TRUE,
+		Type	=	Normal,
+		DisplayName = Distill Pot(I)(Empty),
+		ReplaceOnUseOn	=	WaterSource-Water_DistillPotSmall,
+		Icon = DistillPotSmall,
+		MetalValue = 40,
+		RainFactor = 1,
+		/*Tooltip = Tooltip_item_RainFromGround,*/
+		Tooltip = Tooltip_item_DistillSmall,
+		
+		EatType = Pot,
+	    StaticModel = distill_small_Ground, 
+        WorldStaticModel = distill_small_Ground,
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,		
+	
+	
+	}
+	
+	 
+	 
+	 
+	 item Water_DistillPotSmall
+	{
+	
+		DisplayName = Distill Pot(I)(Filled with Water),
+		DisplayCategory = Water,
+		Type = Drainable,
+		Weight = 10,
+	    MetalValue = 40,
+		Icon = WaterDistillPotSmall,
+		CanStoreWater = TRUE,
+		EatType = Pot,
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		IsCookable = TRUE,
+		IsWaterSource = TRUE,
+		RainFactor = 1,
+		ReplaceOnDeplete = DistillPotSmall,
+		ReplaceOnUseOn	=	WaterSource-Water_DistillPotSmall,
+		
+		
+		UseWhileEquipped = FALSE,
+		StaticModel = distill_small_Ground, 
+        WorldStaticModel = distill_small_Ground, 
+		Tags = HasMetal,
+		UseDelta = 0.25,
+	}
+	 
+	 /*----------------------------------*/
+	 
+	 
+	 item DistillPotMedium
+	{
+	
+	
+	    DisplayCategory = WaterContainer,
+		Weight	=	2.5,
+		CanStoreWater	=	TRUE,
+		Type	=	Normal,
+		DisplayName = Distill Pot(II)(Empty),
+		ReplaceOnUseOn	=	WaterSource-Water_DistillPotMedium,
+		Icon = DistillPotMedium,
+		MetalValue = 60,
+		RainFactor = 1,
+		Tooltip = Tooltip_item_DistillMedium,
+		
+		EatType = Pot,
+	    StaticModel = distill_medium_Ground, 
+        WorldStaticModel = distill_medium_Ground, 
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+	
+	
+	}
+	
+	 
+	 
+	 
+	 item Water_DistillPotMedium
+	{
+		DisplayName = Distill Pot(II)(Filled with Water),
+		DisplayCategory = Water,
+		Type = Drainable,
+		Weight = 15,
+		MetalValue = 60,
+		Icon = WaterDistillPotMedium,
+		CanStoreWater = TRUE,
+		EatType = Pot,
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		IsCookable = TRUE,
+		IsWaterSource = TRUE,
+		RainFactor = 1,
+		ReplaceOnDeplete = DistillPotMedium,
+		ReplaceOnUseOn	=	WaterSource-Water_DistillPotMedium,
+		
+		
+		UseWhileEquipped = FALSE,
+		StaticModel = distill_medium_Ground, 
+        WorldStaticModel = distill_medium_Ground, 
+		Tags = HasMetal,
+		UseDelta = 0.16,
+	}
+	
+	
+	 /*------------------------------------*/
+	
+	 item DistillPotLarge
+	{
+	
+	
+	    DisplayCategory = WaterContainer,
+		Weight	=	5,
+		CanStoreWater	=	TRUE,
+		Type	=	Normal,
+		DisplayName = Distill Pot(III)(Empty),
+		ReplaceOnUseOn	=	WaterSource-Water_DistillPotLarge,
+		Icon = DistillPotLarge,
+		MetalValue = 120,
+		RainFactor = 1,
+		Tooltip = Tooltip_item_DistillLarge,
+		
+		EatType = Pot,
+	    StaticModel = distill_large_Ground, 
+        WorldStaticModel = distill_large_Ground,
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,		
+	
+	
+	}
+	
+	 
+	 
+	 
+	 item Water_DistillPotLarge
+	{
+		DisplayName = Distill Pot(III)(Filled with Water),
+		DisplayCategory = Water,
+		Type = Drainable,
+		Weight = 20,
+		
+		Icon = WaterDistillPotLarge,
+		CanStoreWater = TRUE,
+		EatType = Pot,
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		IsCookable = TRUE,
+		IsWaterSource = TRUE,
+		RainFactor = 1,
+		ReplaceOnDeplete = DistillPotLarge,
+		ReplaceOnUseOn	=	WaterSource-Water_DistillPotLarge,
+		
+		
+		UseWhileEquipped = FALSE,
+		StaticModel = distill_large_Ground, 
+        WorldStaticModel = distill_large_Ground, 
+		Tags = HasMetal,
+		MetalValue = 120,
+		UseDelta = 0.125,
+	}
+	 
+	 
+	
+	
+	/*------------------------------------------------------*/
+	
+	
+
+		
+		
+		
+		
+		/* ----------- distill Mash ----------------  */
+	
+	
+	
+	
+	
+	
+	item Mash_DistillPotSmall
+	{
+		DisplayName = Distill Pot(I)(Filled with Mash),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 10.0,
+	    UseDelta = 0.25,
+	
+		Icon = DistillPotSmallMash,
+		
+		Tags = HasMetal,
+		CookingSound = BoilingFood,
+		EatType = Pot,
+		IsCookable = true,
+		ReplaceOnUse = DistillPotSmall,
+      
+        ReplaceOnCooked = Moonshine.Alc_DistillPotSmall,	
+		
+		MinutesToCook = 950,
+		MinutesToBurn = 3000,
+		
+		DaysFresh = 30,
+		DaysTotallyRotten = 90,
+		
+		HungerChange = -20,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		
+		Calories = 500,
+		Carbohydrates = 300,
+	    Lipids = 20,
+		Proteins = 20,
+        StaticModel = distill_small_Ground,
+		WorldStaticModel = distill_small_Ground,
+		
+		MetalValue = 40,
+		
+		BadInMicrowave = true,
+		Tooltip = Tooltip_item_DistillSmallMash,
+	
+		}
+	
+	item Mash_DistillPotMedium
+	{
+		DisplayName = Distill Pot(II)(Filled with Mash),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 15.0,
+	    
+		
+		Icon = DistillPotMediumMash,
+		
+		Tags = HasMetal,
+		CookingSound = BoilingFood,
+		EatType = Pot,
+		IsCookable = true,
+		ReplaceOnUse = DistillPotMedium,
+      
+        ReplaceOnCooked = Moonshine.Alc_DistillPotMedium,	
+		
+		MinutesToCook = 750,
+		MinutesToBurn = 3000,
+		
+		DaysFresh = 30,
+		DaysTotallyRotten = 90,
+		
+		HungerChange = -20,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		
+		Calories = 500,
+		Carbohydrates = 300,
+	    Lipids = 20,
+		Proteins = 20,
+        StaticModel = distill_medium_Ground,
+		WorldStaticModel = distill_medium_Ground,
+		
+		MetalValue = 60,
+		UseDelta	=	0.16,
+		BadInMicrowave = true,
+		Tooltip = Tooltip_item_DistillMediumMash,
+	
+		}
+		
+		
+		item Mash_DistillPotLarge
+	{
+		DisplayName = Distill Pot(III)(Filled with Mash),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 20,
+	    
+		
+		Icon = DistillPotLargeMash,
+		
+		Tags = HasMetal,
+		CookingSound = BoilingFood,
+		EatType = Pot,
+		IsCookable = true,
+		ReplaceOnUse = DistillPotLarge,
+      
+        ReplaceOnCooked = Moonshine.Alc_DistillPotLarge,	
+		
+		MinutesToCook = 550,
+		MinutesToBurn = 3000,
+		
+		DaysFresh = 30,
+		DaysTotallyRotten = 90,
+		
+		HungerChange = -20,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		
+		Calories = 500,
+		Carbohydrates = 300,
+	    Lipids = 20,
+		Proteins = 20,
+        StaticModel = distill_large_Ground,
+		WorldStaticModel = distill_large_Ground,
+		
+		MetalValue = 120,
+		UseDelta	=	0.16,
+		BadInMicrowave = true,
+		Tooltip = Tooltip_item_DistillLargeMash,
+	
+		}
+	
+		/* ----------- distill Spirit ----------------  */
+	
+	item Alc_DistillPotSmall 
+{
+        
+        DisplayName = Distill Pot(I)(Filled with Spirit),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 10.0,
+		
+        Icon = WaterDistillPotSmall,
+		
+		
+		CookingSound = BoilingFood,
+		FoodType = Liquor,
+		EatType = Kettle,
+	    AlcoholPower = 14,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+	    Packaged = TRUE,
+		
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipeName = Moonshine,
+		ReplaceOnUse = DistillPotSmall,
+		/*ReplaceOnDeplete = DistillPotSmall,*/
+		HungerChange = -4.5,
+		ThirstChange = -4.5,
+		
+		UnhappyChange = -50,
+        Calories = 4500,
+		Carbohydrates = 1,
+		Lipids = 20,
+		Proteins = 20,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlasss,
+		StaticModel = distill_small_Ground,
+		WorldStaticModel = distill_small_Ground, 
+       
+		DaysFresh = 300,
+		DaysTotallyRotten = 9000,
+		
+		MetalValue = 40,
+		BadInMicrowave = true,
+		UseDelta	=	0.25,
+        Tooltip = Tooltip_item_DistillSmallAlc,
+}
+
+
+
+
+
+
+
+
+item Alc_DistillPotMedium
+{
+        
+        DisplayName = Distill Pot(II)(Filled with Spirit),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 15.0,
+		
+        Icon = WaterDistillPotMedium,
+		
+		
+		CookingSound = BoilingFood,
+		FoodType = Liquor,
+		EatType = Kettle,
+	    AlcoholPower = 4,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+	    Packaged = TRUE,
+		
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipeName = Moonshine,
+		ReplaceOnUse = DistillPotMedium,
+		HungerChange = -6.5,
+		ThirstChange = -6.5,
+		UnhappyChange = -50,
+        Calories = 6500,
+		Carbohydrates = 1,
+		Lipids = 0,
+		Proteins = 0,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+   
+		
+        CustomContextMenu = Drink,
+		
+		CustomEatSound = DrinkingFromBottleGlasss,
+		StaticModel = distill_medium_Ground,
+		
+		WorldStaticModel = distill_medium_Ground,
+		
+		DaysFresh = 3000,
+		DaysTotallyRotten = 9000,
+		
+		MetalValue = 60,
+		BadInMicrowave = true, 
+		UseDelta	=	0.16,
+        Tooltip = Tooltip_item_DistillMediumAlc,
+}
+
+
+
+
+item Alc_DistillPotLarge
+{
+        
+        DisplayName = Distill Pot(III)(Filled with Spirit),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 20.0,
+		
+        Icon = WaterDistillPotLarge,
+		
+		
+		CookingSound = BoilingFood,
+		FoodType = Liquor,
+		EatType = Kettle,
+	    AlcoholPower = 4,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+	    Packaged = TRUE,
+		
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipeName = Moonshine,
+		
+        ReplaceOnUse = DistillPotLarge,
+		
+		HungerChange = -8.5,
+		ThirstChange = -8.5,
+		UnhappyChange = -50,
+        Calories = 8500,
+		Carbohydrates = 1,
+		Lipids = 50,
+		Proteins = 50,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+   
+		
+        CustomContextMenu = Drink,
+		
+		CustomEatSound = DrinkingFromBottleGlasss,
+		StaticModel = distill_large_Ground,
+        WorldStaticModel = distill_large_Ground, 
+		
+		
+		DaysFresh = 300,
+		DaysTotallyRotten = 9000,
+	
+		
+		MetalValue = 120,
+		BadInMicrowave = true,
+		UseDelta	=	0.125,
+        
+		Tooltip = Tooltip_item_DistillLargeAlc,
+}
+
+
+
+
+
+/*--------------------------refill-----------------------*/
+
+
+
+
+
+
+item Alc_DistillPotMediumRefillSpirit
+{
+        
+        DisplayName = Distill Pot(II)(Refilled with Spirit),
+        DisplayCategory = Food,
+		Type = Food,
+		Weight = 15.0,
+		
+        Icon = WaterDistillPotMedium,
+		IsCookable = true,
+		
+		
+		CookingSound = BoilingFood,
+		FoodType = Liquor,
+		EatType = Kettle,
+	    AlcoholPower = 4,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+	    Packaged = TRUE,
+		
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipeName = Moonshine,
+		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
+        ReplaceOnUse = DistillPotMedium,
+		/*ReplaceOnDeplete = DistillPotSmall,*/
+		
+		ThirstChange = -6.5,
+		HungerChange = -6.5,
+		UnhappyChange = -50,
+        Calories = 6500,
+		Carbohydrates = 1,
+		Lipids = 0,
+		Proteins = 0,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+   
+		
+        CustomContextMenu = Drink,
+		
+		CustomEatSound = DrinkingFromBottleGlasss,
+		StaticModel = distill_medium_Ground,
+		WorldStaticModel = distill_medium_Ground, 
+		/*Tags = Liquor,*/
+	
+		MinutesToCook = 750,
+		MinutesToBurn = 3000,
+		
+		DaysFresh = 300,
+		DaysTotallyRotten = 9000,
+		
+		MetalValue = 60,
+		BadInMicrowave = true,
+		UseDelta	=	0.16,
+        Tooltip = Tooltip_item_DistillMediumRefill,
+}
+
+
+
+
+
+
+item Alc_DistillPotLargeRefillSpirit
+{
+        
+        DisplayName = Distill Pot(III)(Refilled with Spirit),
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 20.0,
+		
+        Icon = WaterDistillPotLarge,
+		IsCookable = true,
+		
+		
+		CookingSound = BoilingFood,
+		FoodType = Liquor,
+		EatType = Kettle,
+	    AlcoholPower = 4,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+	    Packaged = TRUE,
+		
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipeName = Moonshine,
+		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
+        ReplaceOnUse = DistillPotMedium,
+		/*ReplaceOnDeplete = DistillPotSmall,*/
+		
+		HungerChange = -8.5,
+		ThirstChange = -8.5,
+		UnhappyChange = -50,
+        Calories = 8500,
+		Carbohydrates = 1,
+		Lipids = 0,
+		Proteins = 0,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+   
+		
+        CustomContextMenu = Drink,
+		
+		CustomEatSound = DrinkingFromBottleGlasss,
+		StaticModel = distill_medium_Ground,
+		WorldStaticModel = distill_medium_Ground, 
+		/*Tags = Liquor,*/
+		
+		MinutesToCook = 550,
+		MinutesToBurn = 3000,
+		
+		DaysFresh = 300,
+		DaysTotallyRotten = 9000,
+		
+		MetalValue = 120,
+		BadInMicrowave = true,
+		UseDelta	=	0.125,
+         Tooltip = Tooltip_item_DistillLargeRefill,
+}
+
+
+
+
+
+
+
+
+
+
+
+	
+	/*-----------------OIL--------------*/
+	
+	item Oil_DistillPotLarge
+	{
+	    DisplayName = Distill Pot(III)(Filled with Motor Oil),
+		
+		DisplayCategory = VehicleMaintenance,
+		Type = Food,
+		
+		PoisonPower = 120,
+	    UseForPoison = 38,
+		Poison = true,
+		PoisonDetectionLevel = 7,
+		
+		IsCookable = true,
+		Weight = 20.0,
+	    Icon = DistillPotLargeOil,
+		
+		CookingSound = BoilingFood,
+		CantBeFrozen = TRUE,
+	   
+		ReplaceOnCooked = Moonshine.Petrol_DistillPotLarge,
+        ReplaceOnUse = DistillPotLarge,
+		
+		StaticModel = distill_large_Ground,
+        WorldStaticModel = distill_large_Ground,
+		
+		/*HungerChange = -8.5,
+		ThirstChange = -8.5,
+		Calories = 8500,
+		*/
+		
+		ThirstChange	=	-60,
+	    MinutesToCook = 950,
+		MinutesToBurn = 5000,
+        MetalValue = 120,
+		BadInMicrowave = true,
+		UseDelta	=	0.125,
+	    Tooltip = Tooltip_item_DistillLargeOil,
+	
+	}
+	
+	
+	item Petrol_DistillPotLarge
+	{
+	    DisplayName = Distill Pot(III)(Filled with Gasohol),
+		DisplayCategory = VehicleMaintenance,
+		Type	=	Drainable,
+		Weight = 20.0,
+		Icon = DistillPotLargePetrol,
+		CantBeFrozen = TRUE,
+	    Packaged = TRUE,
+		ReplaceOnDeplete = DistillPotLarge,
+        StaticModel = distill_large_Ground,
+        WorldStaticModel = distill_large_Ground,
+		Tags = Petrol,
+        MetalValue = 120,
+		BadInMicrowave = true,
+	    UseDelta	=	0.125,
+        Tooltip = Tooltip_item_DistillLargeGas,
+	
+	}
+	
+	
+
+/*-----------------------------------*/
+	
+	
+	item Alc_DistillPotMediumIso
+{
+
+        DisplayName = Distill Pot(II)(Filled with Isopropyl),
+		DisplayCategory = FirstAid,
+        Type = Drainable,
+		Weight = 15.0,
+		Icon = WaterDistillPotMedium,
+		CookingSound = BoilingFood,
+		/*FoodType = Liquor,*/
+		AlcoholPower = 8,
+		Alcoholic = TRUE,
+	    Packaged = TRUE,
+		UnhappyChange	=	99,
+        ThirstChange	=	-60,
+        Poison = true,
+        PoisonDetectionLevel = 7,
+	    PoisonPower = 120,
+	    UseForPoison = 40,
+        CantBeFrozen = TRUE,
+		EvolvedRecipeName = Rubbing Alcohol,
+        /*ReplaceOnUse = DistillPotMedium,*/
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		CustomEatSound = DrinkingFromBottleGlasss,
+		EatType =Kettle,
+		StaticModel = distill_medium_Ground,
+		WorldStaticModel = distill_medium_Ground,
+		ReplaceOnDeplete = DistillPotMedium,
+		MetalValue = 60,
+		BadInMicrowave = true,
+		Tooltip = Tooltip_item_DistillMediumIso,
+        Medical = TRUE,
+		UseDelta	=	0.16,
+
+}
+
+item Alc_DistillPotLargeIso
+{
+
+       
+		DisplayName = Distill Pot(III)(Filled with Isopropyl),
+		DisplayCategory = FirstAid,
+        Type = Drainable,
+		Weight = 20.0,
+		Icon = WaterDistillPotLarge,
+		CookingSound = BoilingFood,
+		AlcoholPower = 8,
+		Alcoholic = TRUE,
+	    Packaged = TRUE,
+		UnhappyChange	=	99,
+        ThirstChange	=	-60,
+        Poison = true,
+        PoisonDetectionLevel = 7,
+	    PoisonPower = 120,
+	    UseForPoison = 40,
+        CantBeFrozen = TRUE,
+		EvolvedRecipeName = Rubbing Alcohol,
+        /*ReplaceOnUse = DistillPotLarge,*/
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		CustomEatSound = DrinkingFromBottleGlasss,
+		EatType = Kettle,
+		StaticModel = distill_large_Ground,
+		WorldStaticModel = distill_large_Ground,
+		MetalValue = 120,
+		BadInMicrowave = true,
+		ReplaceOnDeplete = DistillPotLarge,
+		Medical = TRUE,
+		UseDelta	=	0.125,
+		Tooltip = Tooltip_item_DistillLargeIso,
+
+}
+
+
+/*-----wood items----------*/
+
+
+
+item DistillPotSmallWood
+{
+
+        DisplayName = Distill Pot(I)(Filled with Wood),
+		DisplayCategory = Material,
+		Type = Food,
+		IsCookable = true,
+		ReplaceOnCooked = Moonshine.DistillPotSmallCoal,
+		Weight = 10.0,
+		Icon = DistillPotSmallWood,
+		CookingSound = BoilingFood,
+        Packaged = TRUE,
+		/*EvolvedRecipeName = Coal,*/
+        ReplaceOnUse = DistillPotSmall,
+		StaticModel = distill_small_Ground,
+		WorldStaticModel = distill_small_Ground, 
+        MinutesToCook = 950,
+		MinutesToBurn = 3000,
+        MetalValue = 40,
+		BadInMicrowave = true,
+		UseDelta	=	0.25,
+		Tooltip = Tooltip_item_DistillSmallWood,
+
+}
+
+
+
+item DistillPotSmallCoal
+{
+
+        DisplayName = Distill Pot(I)(Filled with Coal),
+		DisplayCategory = Material,
+		Type = Drainable,
+		
+		Weight = 10.0,
+		
+        Icon = DistillPotSmallCoal,
+        CookingSound = BoilingFood,
+        Packaged = TRUE,
+		EvolvedRecipeName = Coal,
+        ReplaceOnUse = DistillPotSmall,
+			
+		StaticModel = distill_small_Ground,
+		WorldStaticModel = distill_small_Ground,
+		MetalValue = 40,
+		BadInMicrowave = true,
+		UseDelta	=	0.25,
+		Tooltip = Tooltip_item_DistillSmallCoal,
+
+}
+/*----------------------------------------------*/
+
+item DistillPotMediumWood
+{
+
+        DisplayName = Distill Pot(II)(Filled with Wood),
+		DisplayCategory = Material,
+		Type = Food,
+		IsCookable = true,
+		Weight = 15.0,
+		
+        Icon = DistillPotMediumWood,
+        CookingSound = BoilingFood,
+        Packaged = TRUE,
+		ReplaceOnCooked = Moonshine.DistillPotMediumCoal,
+        MinutesToCook = 750,
+		MinutesToBurn = 3000,
+		
+		EvolvedRecipeName = Coal,
+        ReplaceOnUse = DistillPotMedium,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+   
+		
+		StaticModel = distill_medium_Ground,
+		WorldStaticModel = distill_medium_Ground, 
+        
+        MetalValue = 60,
+		BadInMicrowave = true,
+		UseDelta	=	0.16,
+		Tooltip = Tooltip_item_DistillMediumWood,
+
+}
+
+item DistillPotMediumCoal
+{
+
+        DisplayName = Distill Pot(II)(Filled with Coal),
+		DisplayCategory = Material,
+		Type = Drainable,
+		Weight = 15.0,
+		
+        Icon = DistillPotMediumCoal,
+        CookingSound = BoilingFood,
+        Packaged = TRUE,
+		EvolvedRecipeName = Coal,
+        ReplaceOnUse = DistillPotMedium,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+   
+		
+		StaticModel = distill_medium_Ground,
+		WorldStaticModel = distill_medium_Ground, 
+       
+        MetalValue = 60,
+		BadInMicrowave = true,
+		UseDelta	=	0.16,
+		Tooltip = Tooltip_item_DistillMediumCoal,
+
+}
+
+/*--------*/
+
+item DistillPotLargeWood
+{
+
+        DisplayName = Distill Pot(III)(Filled with Wood),
+		DisplayCategory = Material,
+		Type = Food,
+		IsCookable = true,
+		Weight = 20.0,
+	
+        Icon = DistillPotLargeWood,
+        CookingSound = BoilingFood,
+		 MinutesToCook = 550,
+		MinutesToBurn = 3000,
+		
+        Packaged = TRUE,
+		ReplaceOnCooked = Moonshine.DistillPotLargeCoal,
+		EvolvedRecipeName = Coal,
+        ReplaceOnUse = DistillPotLarge,
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		StaticModel = distill_large_Ground,
+		WorldStaticModel = distill_large_Ground,
+		MetalValue = 120,
+		BadInMicrowave = true,
+		UseDelta	=	0.125,
+		Tooltip = Tooltip_item_DistillLargeWood,
+
+}
+
+item DistillPotLargeCoal
+{
+
+        DisplayName = Distill Pot(III)(Filled with Coal),
+		DisplayCategory = Material,
+		Type = Drainable,
+		Weight = 20.0,
+		
+        Icon = DistillPotLargeCoal,
+        CookingSound = BoilingFood,
+        Packaged = TRUE,
+		EvolvedRecipeName = Coal,
+        ReplaceOnUse = DistillPotLarge,
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+        StaticModel = distill_large_Ground,
+		WorldStaticModel = distill_large_Ground, 
+        
+        MetalValue =120,
+		BadInMicrowave = true,
+        UseDelta	=	0.125,
+		Tooltip = Tooltip_item_DistillLargeCoal,
+}
+
+	
+	
+		
+	/*-------------------end distill-------------------------*/
+
+
+ 
+ /*--------------DISTIL EXTRA MODS-------------------------*/
+
+
+
+
+	item DistillPotFilter
+	{
+	    DisplayName = Distill Addon(Charcoal Filter),
+	    DisplayCategory = WaterContainer,
+		Weight	=	1,
+	
+		Type	=	Normal,
+        Icon = DistillPotMediumFilter,
+        MetalValue = 20,
+        StaticModel = Distill_medium_new_filter_Ground, 
+        WorldStaticModel = Distill_medium_new_filter_Ground, 
+		
+		Tooltip = Tooltip_item_DistillPotFilter,
+	}
+	
+	
+	
+	
+		item DistillPotColumn
+	{
+	    DisplayName = Distill Addon(Controllable Column),
+	    DisplayCategory = WaterContainer,
+		Weight	=	5,
+		CanStoreWater	=	TRUE,
+		Type	=	Normal,
+		UseDelta	=	0.5,
+		Icon = DistillPotLargeColumn,
+        /*ReplaceOnUseOn = DistillPotColumn,*/
+        MetalValue = 20,
+
+        /*SurvivalGear = TRUE,*/
+		StaticModel = Distill_large_new_column_Ground, 
+        WorldStaticModel = Distill_large_new_column_Ground, 
+		Tooltip = Tooltip_item_DistillPotColumn,
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*--end---*/
+	}

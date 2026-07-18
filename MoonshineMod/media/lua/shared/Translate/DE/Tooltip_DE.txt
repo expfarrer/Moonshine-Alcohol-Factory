@@ -1,0 +1,50 @@
+Tooltip_DE = {
+    Tooltip_item_DistillSmall = "Kann verwendet werden, um Wasser zu reinigen, Holzkohle herzustellen oder Schnaps zu destillieren.",
+    Tooltip_item_DistillMedium = "Kann verwendet werden, um Wasser zu reinigen, Holzkohle herzustellen, Isopropyl oder Schnaps zu destillieren.",
+    Tooltip_item_DistillLarge = "Kann verwendet werden, um Wasser zu reinigen, Holzkohle herzustellen, Isopropyl, Gasohol oder Schnaps zu destillieren.",
+    
+    Tooltip_item_DistillSmallWood = "Platzieren Sie es in einer Wärmequelle, um es in Holzkohle zu destillieren.",
+    Tooltip_item_DistillMediumWood = "Platzieren Sie es in einer Wärmequelle, um es in Holzkohle zu destillieren.",
+    Tooltip_item_DistillLargeWood = "Platzieren Sie es in einer Wärmequelle, um es in Holzkohle zu destillieren.",
+    
+    Tooltip_item_DistillSmallCoal = "Verwenden Sie Kohle, um einen Destillationsfilter herzustellen oder als brennbares Material.",
+    Tooltip_item_DistillMediumCoal = "Verwenden Sie Kohle, um einen Destillationsfilter herzustellen oder als brennbares Material.",
+    Tooltip_item_DistillLargeCoal = "Verwenden Sie Kohle, um einen Destillationsfilter herzustellen oder als brennbares Material.",
+    
+    Tooltip_item_DistillSmallMash = "Platzieren Sie es in einer Wärmequelle, um es in Schnaps zu destillieren.",
+    Tooltip_item_DistillMediumMash = "Platzieren Sie es in einer Wärmequelle, um es in Schnaps zu destillieren.",
+    Tooltip_item_DistillLargeMash = "Platzieren Sie es in einer Wärmequelle, um es in Schnaps zu destillieren.",
+    
+    Tooltip_item_DistillSmallAlc = "Füllen Sie es in Flaschen nach und machen Sie abgefüllten Alkohol.",
+    Tooltip_item_DistillMediumAlc = "Füllen Sie es in Flaschen nach und machen Sie abgefüllten Alkohol.",
+    Tooltip_item_DistillLargeAlc = "Füllen Sie es in Flaschen nach und machen Sie abgefüllten Alkohol.",
+    
+    Tooltip_item_DistillMediumRefill = "Platzieren Sie es in einer Wärmequelle, um es in Isopropyl zu destillieren.",
+    Tooltip_item_DistillLargeRefill = "Platzieren Sie es in einer Wärmequelle, um es in Isopropyl zu destillieren.",
+    
+    Tooltip_item_DistillMediumIso = "Füllen Sie es in Flaschen nach und machen Sie Desinfektionsisopropyl.",
+    Tooltip_item_DistillLargeIso = "Füllen Sie es in Flaschen nach und machen Sie Desinfektionsisopropyl.",
+    
+    Tooltip_item_DistillLargeOil = "Platzieren Sie es in einer Wärmequelle, um es in Gasohol zu destillieren.",
+    Tooltip_item_DistillLargeGas = "Füllen Sie es in Flaschen nach und machen Sie Gasohol-Benzin.",
+    
+    Tooltip_item_RottenMash = "Diese Mash ist verfault und von keiner Verwendung.",
+    Tooltip_item_RottenMashFermented = "Diese Mash ist verfault und von keiner Verwendung.",
+    
+    Tooltip_item_CornMash = "Decken Sie die Mash mit einer Plane und Gummi ab.",
+    Tooltip_item_CornMashCovered = "Platzieren Sie es an einem warmen Ort und lassen Sie es 14 Tage gären.",
+    Tooltip_item_CornMashFermented = "Füllen Sie die fermentierte Mash in einen Destillierkolben.",
+    
+    Tooltip_item_PotatoMash = "Decken Sie die Mash mit einer Plane und Gummi ab.",
+    Tooltip_item_PotatoMashCovered = "Platzieren Sie es an einem warmen Ort und lassen Sie es 14 Tage gären.",
+    Tooltip_item_PotatoMashFermented = "Füllen Sie die fermentierte Mash in einen Destillierkolben.",
+    
+    Tooltip_item_DistillPotFilter = "Ein Holzkohle-Wasserdestillationsfilter, um unerwünschte Bakterien- oder Schimmelkolonien zu verhindern.",
+    Tooltip_item_DistillPotColumn = "Temperaturkontrolle des Prozesses in Ihrem Destillierkolben.",
+    
+    Tooltip_item_MotorOilCan = "Motoröl zur Schmierung von Maschinen, destillieren Sie es in Gasohol.",
+    Tooltip_item_EmptyMotorOilCan = "Leere Motorölbehälter können zu Benzindosen recycelt werden.",
+    
+    Tooltip_item_EmptyGasoholDrum = "Handgefertigter Stahlfass, entworfen zum Lagern und Abgeben von Gasohol.",
+    Tooltip_item_GasoholDrum = "Gefülltes Stahlfass für effiziente Nutzung, ersetzt mehrere Benzinflaschen.",
+}

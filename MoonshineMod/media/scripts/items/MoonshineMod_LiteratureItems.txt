@@ -1,0 +1,85 @@
+module Moonshine
+{
+
+
+    imports
+    {
+        Base
+    }
+	
+	
+	
+
+    item MagazineDistill1
+    {
+	    DisplayCategory = SkillBook,
+        Weight = 0.1,
+        Type = Literature,
+        DisplayName = Distilling Vol.1 Getting Started,
+        Icon = MagazineDistill1,
+        TeachedRecipes = Create Distill Pot(I),
+	    ReplaceOnUse = MagazineDistill1,
+        WorldStaticModel = MagazineDistill1,
+        StaticModel = MagazineDistill1Ground,
+		
+		
+    }
+
+    item MagazineDistill2
+    {
+        Weight = 0.1,
+        Type = Literature,
+        DisplayCategory = SkillBook,
+        DisplayName = Distilling Vol.2 Mash and Fermenting,
+        Icon = MagazineDistill2,
+		
+        TeachedRecipes = Make Potato Mash in Bucket;Make Corn Mash in Bucket;Make Canned Corn Mash in Bucket;Make Canned Potato Mash in Bucket,
+        ReplaceOnUse = MagazineDistill2,
+        WorldStaticModel = MagazineDistill2,
+        StaticModel = MagazineDistill2Ground,
+		
+		
+		
+		
+		
+		
+    }
+
+
+    item MagazineDistill3
+    {
+        Weight = 0.1,
+        Type = Literature,
+        DisplayCategory = SkillBook,
+        DisplayName = Distilling Vol.3 Isopropyl,
+        Icon = MagazineDistill3,
+        TeachedRecipes = Create Distill Coal Filter;Refill Distill Pot(II) with 6 x Spirit;Upgrade Distill(I)to(II);Downgrade Distill(II)to(I),
+		ReplaceOnUse = MagazineDistill3,
+        WorldStaticModel = MagazineDistill4,
+        StaticModel = MagazineDistill4Ground,
+		
+		
+    }
+	
+
+    item MagazineDistill4
+    {
+        Weight = 0.1,
+        Type = Literature,
+        DisplayCategory = SkillBook,
+        DisplayName = Distilling Vol.4 Refining - Gasohol,
+        Icon = MagazineDistill4,
+        TeachedRecipes = Create Controllable Distill Column;Create Gasohol Drum;Refill Distill Pot(III) with 8 x Spirit;Upgrade Distill(II)to(III);Downgrade Distill(III)to(II),
+        ReplaceOnUse = MagazineDistill4,
+        WorldStaticModel = MagazineDistill5,
+        StaticModel = MagazineDistill5Ground,
+    }
+
+  
+	
+	
+	
+	
+	
+	
+	}

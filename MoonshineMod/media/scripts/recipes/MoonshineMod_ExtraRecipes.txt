@@ -1,0 +1,64 @@
+/* ALCO ITEMS */
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    recipe Make Moonshiners Molotov Cocktail
+    {
+        destroy [Recipe.GetItemTypes.Liquor],
+        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
+        Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
+        Result:MoonshineMolotovBig,
+        Time:150.0,
+        OnTest:Recipe.OnTest.FullLiquor,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+    }
+
+    recipe Make Moonshiners Molotov Cocktail
+    {
+        WineEmpty/WineEmpty2/WhiskeyEmpty/BeerEmpty,
+        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
+        Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
+        [Recipe.GetItemTypes.Petrol]=1,
+        Result:MoonshineMolotovBig,
+        Time:150.0,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+    }
+
+    recipe Make Moonshiners Molotov Cocktail
+    {
+        destroy WinePetrol/WhiskeyPetrol/BeerPetrol,
+        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
+        Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
+        Result:MoonshineMolotovBig,
+        Time:150.0,
+        OnTest:Recipe.OnTest.FullPetrolBottle,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+    }
+	
+	
+	recipe Make Molotov Cocktail
+    {
+        destroy WinePetrol/WhiskeyPetrol/BeerPetrol,
+        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
+        
+        Result:MoonshineMolotov,
+        Time:150.0,
+        OnTest:Recipe.OnTest.FullPetrolBottle,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+    }
+	
+	
+	
+	
+	
+	
+	
+}

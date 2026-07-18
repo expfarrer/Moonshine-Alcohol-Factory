@@ -1,0 +1,722 @@
+
+
+module Moonshine
+{
+
+
+
+imports
+  {
+    Base
+  }
+ 
+ 	
+
+
+
+
+
+
+
+
+/* refills */
+	
+	
+		item WhiskeyRefill
+	{
+	    StressChange	=	-50,
+	    DisplayCategory = Food,
+		
+		Weight	=	0.7,
+		
+		Type	=	Food,
+		FoodType = Liquor,
+		
+		UnhappyChange	=	-50,
+		ThirstChange	=	-10,
+		HungerChange	=	-10,
+		
+		DisplayName	= Whiskey Bottle filled with Spirit,
+		ReplaceOnUse	= WhiskeyEmpty,
+		/*ReplaceOnDeplete = */
+		Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+		Icon	=	WhiskeyFull,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+		Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+		Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel = WhiskeyBottle,
+        WorldStaticModel = WhiskeyBottle,
+		UseDelta = 0.25,
+		Tags = Liquor,
+	}
+	
+	
+	
+
+	item BeerRefill
+	{
+	    StressChange	=	-50,
+	    DisplayCategory = Food,
+		HungerChange	=	-9,
+		Weight	=	0.7,
+		
+		Type	=	Food,
+		FoodType = Liquor,
+		
+		UnhappyChange	=	-30,
+		ThirstChange	=	-13,
+		DisplayName	=	Beer Bottle filled with Spirit,
+		
+		ReplaceOnUse = BeerEmpty,
+		Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+		Icon	=	BeerBottle,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+        
+		Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+		
+	
+        Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel = BeerBottle,
+        WorldStaticModel = BeerBottle,
+		UseDelta = 0.25,
+		Tags = Liquor,
+		
+	
+	}
+	
+	
+	
+	
+	
+	
+	item WineRefill
+    {
+	    StressChange	=	-50,
+        HungerChange	=	-10,
+        Weight	=	0.7,
+        Type	=	Food,
+		FoodType = Liquor,
+		 DisplayCategory = Food,
+		 
+        ThirstChange	=	-20,
+        UnhappyChange	=	-80,
+        DisplayName	=	Wine Bottle filled with Spirit,
+        Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+        
+		/* ReplaceOnUse	=	WineEmpty,*/
+		ReplaceOnUse =	WineEmpty,
+		
+        Icon	=	WineFull,
+        CustomContextMenu = Drink,
+        CustomEatSound = DrinkingFromBottle,
+   
+        Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+		 
+        Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel = WhiteWineBottle,
+		WorldStaticModel = WhiteWineBottle,
+        EatType = Bourbon,
+		UseDelta = 0.25,
+		
+        Tags = Liquor,
+	
+    }
+	
+	
+	item WhiteLightning
+    {
+	StressChange	=	-99,
+	HungerChange	=	-2,
+	Weight	=	0.7,
+	Type	=	Food,
+	FoodType = Liquor,
+	 DisplayCategory = Food,
+	DisplayName	=	Appalachian White Lightning,
+	ThirstChange	=	-10,
+	
+	Alcoholic	=	TRUE,
+	AlcoholPower = 2,
+	UnhappyChange	=	-99,
+	
+	ReplaceOnUse = 	Base.EmptyJar,
+	Icon	=	JarEmpty2,
+	CustomContextMenu = Drink,
+	CustomEatSound = DrinkingFromBottle,
+	
+
+    Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+	
+	Packaged = TRUE,
+	CantBeFrozen = TRUE,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
+	EatType = Bourbon,
+	Tags = Liquor,
+	UseDelta = 0.25,
+    }
+	
+ item EmptyJar
+	{
+	    DisplayCategory = Cooking,
+		Type				=		Normal,
+		DisplayName			=		Empty Jar,
+		Icon				=		JarEmpty2,
+		Weight				=		0.2,
+		Tooltip = Tooltip_Jar,
+		SurvivalGear = TRUE,
+		WorldStaticModel = EmptyJar,
+	}
+	
+		
+	item SodaBottleRefill
+	{
+	    StressChange	=	-50,
+	    DisplayCategory = Food,
+		HungerChange	=	-9,
+		Weight	=	0.4,
+		
+		Type	=	Food,
+		FoodType = Liquor,
+		
+		UnhappyChange	=	-26,
+		ThirstChange	=	-13,
+		DisplayName	= Soda Bottle filled with Spirit,
+		/* ReplaceOnUse	= PopBottleEmpty, */
+		ReplaceOnUse = PopBottleEmpty,
+		Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+		Icon	=	Pop_empty,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+        
+		Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+		
+	 
+        Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel 		= PopBottle,
+		WorldStaticModel 	= EmptyPopBottle,
+		UseDelta = 0.25,
+		Tags = Liquor,
+	}
+	
+	
+	item WaterBottleRefill
+	{
+	    StressChange	=	-50,
+	    DisplayCategory = Food,
+		HungerChange	=	-5,
+		Weight	=	0.4,
+		
+		Type	=	Food,
+		FoodType = Liquor,
+		UnhappyChange	=	-26,
+		ThirstChange	=	-13,
+		DisplayName	=	Water Bottle filled with Spirit,
+		/*ReplaceOnUse	= WaterBottleEmpty,*/
+		ReplaceOnUse = WaterBottleEmpty,
+		Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+		Icon	=	WaterBottle_Empty,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+        
+		Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+		
+		Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel 		= WaterBottle,
+		WorldStaticModel 	= WaterBottleRefill,
+		UseDelta = 0.25,
+		 Tags = Liquor,
+	}
+	
+	
+	
+	
+	
+	
+	
+	item BleachBottleRefill
+	{
+	    StressChange	=	-50,
+	    DisplayCategory = Food,
+		HungerChange	=	-5,
+		Weight	=	0.7,
+		
+		Type	=	Food,
+		FoodType = Liquor,
+		
+		UnhappyChange	=	-26,
+		ThirstChange	=	-13,
+		DisplayName	=	Bleach Bottle filled with Spirit,
+		/*ReplaceOnUse	=	BleachEmpty,*/
+		ReplaceOnUse = BleachEmpty,
+		
+		
+		Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+		Icon	=	Bleach,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+        
+		Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+		
+		Packaged = TRUE,
+        CantBeFrozen = TRUE,
+		
+        StaticModel = BleachBottle,
+		EatType = BleachBottle,
+		WorldStaticModel = BleachBottle,
+		
+		UseDelta = 0.25,
+		 Tags = Liquor,
+	}
+	
+	
+	/*---------water items----------*/
+	/*--Mugl,MugRed,MugWhite,MugSpiffo,WhiskeyEmpty/BeerEmpty/WineEmpty2/WineEmpty/EmptyJar/PopBottleEmpty/WaterBottleEmpty/BleachEmpty,--*/
+	
+	
+item MuglWaterRefill
+{
+    Weight = 0.2,
+    CanStoreWater = TRUE,
+   Type			= Drainable,
+   UseWhileEquipped	= FALSE,
+    DisplayName = Cyan Mug filled with Water,
+    ReplaceOnUseOn = WaterSource-WaterMug,
+	ReplaceOnDeplete	= Mugl,
+    Icon = Mugl,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+    StaticModel = Mug,
+    WorldStaticModel = Mug,
+    IsWaterSource = TRUE,
+    FillFromDispenserSound = GetWaterFromDispenserGlass,
+    FillFromTapSound = GetWaterFromTapGlass,
+    UseDelta = 1,
+    CustomEatSound = DrinkingFromBottleGlass,
+	IsCookable		= TRUE,
+	DisplayCategory 	= Water,
+}
+
+item MugRedWaterRefill
+{
+    IsWaterSource = TRUE,
+    Weight = 0.2,
+    CanStoreWater = TRUE,
+    Type = Drainable,
+    UseWhileEquipped = FALSE,
+    UseDelta = 1,
+    DisplayName = Red Mug filled with Water,
+    ReplaceOnDeplete	= MugRed,
+    ReplaceOnUseOn = WaterSource-WaterMugRed,
+    Icon = MugRed,
+    IsCookable = TRUE,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+    StaticModel = MugRed,
+    EatType = Mug,
+    WorldStaticModel = MugRed,
+	DisplayCategory 	= Water,
+}
+
+item MugWhiteWaterRefill
+{
+    Weight = 0.2,
+    CanStoreWater = TRUE,
+    Type			= Drainable,
+IsCookable		= TRUE,
+    DisplayName = White Mug filled with Water,
+    ReplaceOnUseOn = WaterSource-WaterMugWhite,
+	ReplaceOnDeplete	= MugWhite,
+    Icon = MugWhite,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+    StaticModel = MugWhite,
+    WorldStaticModel = MugWhite,
+    IsWaterSource = TRUE,
+    FillFromDispenserSound = GetWaterFromDispenserGlass,
+    FillFromTapSound = GetWaterFromTapGlass,
+    UseWhileEquipped = FALSE,
+    UseDelta = 1,
+    CustomEatSound = DrinkingFromBottleGlass,
+	DisplayCategory 	= Water,
+}
+
+item MugSpiffoWaterRefill
+{
+    Weight = 0.2,
+    CanStoreWater = TRUE,
+    Type			= Drainable,
+    IsCookable		= TRUE,
+    DisplayName = Spiffo Mug filled with Water,
+    ReplaceOnUseOn = WaterSource-WaterMugSpiffo,
+	ReplaceOnDeplete	= MugSpiffo,
+    Icon = MugSpiffo,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+    StaticModel = MugSpiffo,
+    WorldStaticModel = MugSpiffo,
+    IsWaterSource = TRUE,
+    FillFromDispenserSound = GetWaterFromDispenserGlass,
+    FillFromTapSound = GetWaterFromTapGlass,
+    UseWhileEquipped = FALSE,
+    UseDelta = 1,
+    CustomEatSound = DrinkingFromBottleGlass,
+	DisplayCategory 	= Water,
+}
+	
+	
+	
+	/*------------------------------------------------------------*/
+	
+	
+		
+	 item BeerWaterRefill
+	 
+    {
+	
+    IsCookable		= TRUE,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+	
+	DisplayCategory 	= Water,
+	IsWaterSource		= TRUE,
+	Weight			= 0.7,
+	CanStoreWater		= TRUE,
+	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
+	FillFromTapSound 	= GetWaterFromTapGlass,
+	Type			= Drainable,
+	UseWhileEquipped	= FALSE,
+	UseDelta		= 0.16,
+	DisplayName		= Beer Bottle filled with Water,
+	ReplaceOnUse	= BeerEmpty,
+	ReplaceOnUseOn		= WaterSource-BeerWaterFull,
+	Icon			= BeerBottle,
+	StaticModel 		= BeerBottle,
+	WorldStaticModel 	= BeerBottle,
+	CustomEatSound 		= DrinkingFromBottleGlass,
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 item WineWaterRefill
+	 
+    {
+
+    IsCookable		= TRUE,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+	
+	DisplayCategory 	= Water,
+	IsWaterSource		= TRUE,
+	Weight			= 0.7,
+	CanStoreWater		= TRUE,
+	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
+	FillFromTapSound 	= GetWaterFromTapGlass,
+	Type			= Drainable,
+	UseWhileEquipped	= FALSE,
+	UseDelta		= 0.16,
+	DisplayName		= Water Bottle filled with Water,
+	ReplaceOnUse	= WineEmpty,
+	ReplaceOnUseOn		= WaterSource-WineWaterFull,
+	Icon			= WineEmpty,
+	StaticModel = WhiteWineBottle,
+	WorldStaticModel 	= WhiteWineBottle,
+	CustomEatSound 		= DrinkingFromBottleGlass,
+    }
+	
+		
+		item WhiskeyWaterRefill
+		
+	{
+	Type			= Drainable,
+   
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+	
+		DisplayName		= Whiskey Bottle filled with Water,
+		DisplayCategory		= Water,
+		Type 			= Drainable,
+		Weight			= 0.7,
+		Icon			= Whiskey_Water_Full,
+		CanStoreWater		= TRUE,
+		EatType			= Bourbon,
+		FillFromDispenserSound	= GetWaterFromDispenserGlass,
+		FillFromTapSound	= GetWaterFromTapGlass,
+		IsCookable		= TRUE,
+		IsWaterSource		= TRUE,
+		ReplaceOnUse	= WhiskeyEmpty,
+		ReplaceOnUseOn		= WaterSource-WhiskeyWaterFull,
+		UseDelta		= 0.08,
+		UseWhileEquipped	= FALSE,
+		CustomEatSound		= DrinkingFromBottleGlass,
+		StaticModel		= WhiskeyBottle,
+		WorldStaticModel	= WhiskeyBottleGround,
+	}
+	
+	
+
+	
+	
+	
+	
+	  item BottleWaterRefill
+	
+        {
+		
+    IsCookable		= TRUE,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+	
+                DisplayName = Bottle filled with Water,
+                DisplayCategory = Water,
+                Type = Drainable,
+                Weight = 0.7,
+                Icon	=	WaterBottle_Empty,
+				
+                CanStoreWater = TRUE,
+                FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
+                FillFromTapSound = GetWaterFromTapPlasticMedium,
+                IsWaterSource = TRUE,
+                ReplaceOnUse = WaterBottleEmpty,
+                ReplaceOnUseOn = WaterSource-WaterBottleFull,
+                UseDelta = 0.1,
+                UseWhileEquipped = FALSE,
+                CustomEatSound = DrinkingFromBottlePlastic,
+                StaticModel = WaterBottle,
+                WorldStaticModel = WaterBottle_Full,
+                Tooltip = Tooltip_item_OnlyPurifyMicrowave,
+        }
+	
+	
+	item PopBottleWaterRefill
+
+	{
+	
+    IsCookable		= TRUE,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+	
+		DisplayCategory 	= Water,
+		IsWaterSource		= TRUE,
+		Weight			= 0.7,
+		CanStoreWater		= TRUE,
+		FillFromDispenserSound 	= GetWaterFromDispenserPlasticMedium,
+		FillFromTapSound 	= GetWaterFromTapPlasticMedium,
+		Type			= Drainable,
+		UseWhileEquipped	= FALSE,
+		UseDelta		= 0.1,
+		DisplayName		= Pop Bottle filled with Water,
+		ReplaceOnUse	= PopBottleEmpty,
+		ReplaceOnUseOn		= WaterSource-WaterPopBottle,
+		Icon			= Pop_water,
+		CustomContextMenu 	= Drink,
+		CustomEatSound 		= DrinkingFromBottlePlastic,
+		StaticModel 		= PopBottle,
+		WorldStaticModel 	= EmptyPopBottle,
+	}
+	
+	
+	
+	
+
+	item BleachWaterRefill
+	
+	
+	{
+	
+    IsCookable		= TRUE,
+    RainFactor = 0.2,
+    Tooltip = Tooltip_item_RainFromGround,
+	
+	    DisplayCategory = Water,
+		IsWaterSource	=	TRUE,
+		Icon	=	Bleach,
+		Weight	=	1.6,
+		CanStoreWater	=	TRUE,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.1,
+		DisplayName	=	Bleach Bottle filled with Water,
+		ReplaceOnUse	=	BleachEmpty,
+		ReplaceOnUseOn	=	WaterSource-WaterBleachBottle,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottle,
+		StaticModel = BleachBottle,
+		WorldStaticModel = BleachBottle,
+	}
+	
+	
+	
+	
+	item KettleWaterRefill
+
+	{
+
+	    DisplayCategory = Water,
+		IsWaterSource	=	TRUE,
+		Weight	=	2,
+		CanStoreWater	=	TRUE,
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.07,
+		DisplayName	=	Kettle filled with Water,
+		ReplaceOnUse	=	Kettle,
+		ReplaceOnUseOn	=	WaterSource-FullKettle,
+		Icon	=	Kettle,
+		IsCookable	=	TRUE,
+		StaticModel = Kettle,
+		EatType = Kettle,
+		WorldStaticModel = KettleGround,
+		Tags = CoffeeMaker,
+	}
+	
+	
+	
+item SaucepanWaterRefill
+
+{
+		DisplayName = Saucepan filled with Water,
+		DisplayCategory = Water,
+		Type = Drainable,
+		Weight = 2,
+		Icon = SaucepanEmpty,
+		CanStoreWater = TRUE,
+		ConditionMax = 5,
+		EatType = Kettle,
+		FillFromDispenserSound = GetWaterFromDispenserMetalMedium,
+		FillFromTapSound = GetWaterFromTapMetalMedium,
+		IsCookable = TRUE,
+		IsWaterSource = TRUE,
+		RainFactor = 0.8,
+		ReplaceOnUse = Saucepan,
+		ReplaceOnUseOn = WaterSource-WaterSaucepan,
+		Tooltip = Tooltip_item_RainFromGround,
+		UseDelta = 0.05,
+		UseWhileEquipped = FALSE,
+		StaticModel = SaucePan,
+		WorldStaticModel = WaterSaucepan,
+		Tags = HasMetal,
+}
+	
+	
+	item BucketWaterRefill
+
+	{
+	    DisplayCategory = Water,
+		IsWaterSource	=	TRUE,
+		Weight	=	4,
+		CanStoreWater	=	TRUE,
+		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+		Type	=	Drainable,
+		DisplayName	=	Bucket filled with Water,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.04,
+		ReplaceOnUse	=	BucketEmpty,
+		ReplaceOnUseOn	=	WaterSource-BucketWaterFull,
+		Icon	=	MetalBucket_Water,
+		RainFactor = 1,
+		Tooltip = Tooltip_item_RainFromGround,
+		StaticModel = Bucket,
+		EatType = Bucket,
+		WorldStaticModel = BucketFullWater_Ground,
+		IsCookable = TRUE,
+		Tags = HasMetal,
+	}
+	
+	
+	  item WateringcanWaterRefill
+
+	{
+	DisplayCategory 	= Water,
+	Type			= Drainable,
+	DisplayName		= Watering Can filled with Water,
+	Icon			= WateringCan,
+	Weight			= 4.0,
+    	UseDelta		= 0.025,
+	UseWhileEquipped	= false,
+    	ReplaceOnUseOn 		= WaterSource-WateredCanFull,
+    	ReplaceOnUse 	= WateredCan,
+    	IsWaterSource		= true,
+	CanStoreWater		= true,
+	FillFromDispenserSound 	= GetWaterFromDispenserPlasticBig,
+	FillFromTapSound 	= GetWaterFromTapPlasticBig,
+	IsCookable		= TRUE,
+        RainFactor 		= 0.2,
+        Tooltip 		= Tooltip_item_RainFromGround,
+        StaticModel 		= WateringCan,
+        WorldStaticModel 	= WateringCanGround,
+        EatType 		= WateringCan,
+		Tags = HasMetal,
+	}
+	
+	
+	
+	
+	 item JarWaterRefill
+	 
+    {
+	DisplayCategory 	= Water,
+	
+	IsWaterSource		= TRUE,
+	Weight			= 0.4,
+	CanStoreWater		= TRUE,
+	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
+	FillFromTapSound 	= GetWaterFromTapGlass,
+	Type			= Drainable,
+	UseWhileEquipped	= FALSE,
+	UseDelta		= 0.16,
+	DisplayName		= Jar with Water (Full),
+	ReplaceOnUse	= JarEmpty,
+	ReplaceOnUseOn		= WaterSource-JarWaterFull,
+	Icon			=     ApaJar,
+
+	CustomEatSound 		= DrinkingFromBottleGlass,
+    }
+	
+	
+	
+	
+	/*-----ENDs----*/
+}

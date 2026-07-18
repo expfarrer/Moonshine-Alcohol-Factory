@@ -1,0 +1,411 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+item OiledSheetsDirty
+    {
+        DisplayCategory = Household,
+        CanBandage	=	TRUE,
+        Weight	=	0.05,
+        
+        Type	=	Normal,
+        DisplayName	=	Oily Rag,
+        Icon	=	RagDirty,
+        BandagePower    =   0.5,
+        WorldStaticModel = RippedSheetsDirty,
+		StaticModel = RippedSheetsDirty,
+		
+		ReplaceInSecondHand = Bag_RippedSheetsDirty_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_RippedSheetsDirty_RHand holdingbagright,
+		
+    }
+
+
+
+
+
+
+
+    item MotorOilCan1
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight =2.5,
+        Type = Drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan1,
+		
+		
+        StaticModel = MotorOilCanister_Ground1,
+        WorldStaticModel = MotorOilCanister_Ground1,
+        Tags = Petrol,
+		Tooltip = Tooltip_item_MotorOilCan,
+    }
+	
+	
+	    item MotorOilCan2
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight =2.5,
+        Type = Drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan2,
+		
+        StaticModel = MotorOilCanister_Ground2,
+        WorldStaticModel = MotorOilCanister_Ground2,
+        Tags = Petrol,
+		Tooltip = Tooltip_item_MotorOilCan,
+    }
+	
+	
+	    item MotorOilCan3
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight =2.5,
+        Type = Drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan3,
+		
+        StaticModel = MotorOilCanister_Ground3,
+        WorldStaticModel = MotorOilCanister_Ground3,
+        Tags = Petrol,
+		Tooltip = Tooltip_item_MotorOilCan,
+    }
+	
+	
+	    item MotorOilCan4
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight =2.5,
+        Type = Drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan4,
+	
+        StaticModel = MotorOilCanister_Ground4,
+        WorldStaticModel = MotorOilCanister_Ground4,
+        Tags = Petrol,
+		Tooltip = Tooltip_item_MotorOilCan,
+    }
+
+/*----------------------------------------------------*/
+
+
+
+item EmptyMotorOilCan1
+{
+    DisplayCategory = VehicleMaintenance,
+    Weight = 0.8,
+    Type = Normal,
+    DisplayName = Empty Motor Oil Can,
+    Icon = MotorOilCan,
+    SurvivalGear = TRUE,
+    StaticModel = MotorOilCanister_Ground1,
+    WorldStaticModel = MotorOilCanister_Ground1,
+    Tags = EmptyPetrol,
+	ReplaceTypes = PetrolSource MotorOilPetrolCan,
+	/*ReplaceOnUseOn = PetrolSource-GasoholDrum,*/
+	Tooltip = Tooltip_item_EmptyMotorOilCan,
+	
+}
+
+
+
+item EmptyMotorOilCan2
+{
+    DisplayCategory = VehicleMaintenance,
+    Weight = 0.8,
+    Type = Normal,
+    DisplayName = Empty Motor Oil Can,
+    Icon = MotorOilCan,
+    SurvivalGear = TRUE,
+    StaticModel = MotorOilCanister_Ground2,
+    WorldStaticModel = MotorOilCanister_Ground2,
+    Tags = EmptyPetrol,
+	ReplaceTypes = PetrolSource MotorOilCan2,
+	Tooltip = Tooltip_item_EmptyMotorOilCan,
+}
+
+
+
+item EmptyMotorOilCan3
+{
+    DisplayCategory = VehicleMaintenance,
+    Weight = 0.8,
+    Type = Normal,
+    DisplayName = Empty Motor Oil Can,
+    Icon = MotorOilCan,
+    SurvivalGear = TRUE,
+    StaticModel = MotorOilCanister_Ground3,
+    WorldStaticModel = MotorOilCanister_Ground3,
+    Tags = EmptyPetrol,
+	ReplaceTypes = PetrolSource MotorOilCan3,
+	Tooltip = Tooltip_item_EmptyMotorOilCan,
+}
+
+
+
+item EmptyMotorOilCan4
+{
+    DisplayCategory = VehicleMaintenance,
+    Weight = 0.8,
+    Type = Normal,
+    DisplayName = Empty Motor Oil Can,
+    Icon = MotorOilCan,
+    SurvivalGear = TRUE,
+    StaticModel = MotorOilCanister_Ground4,
+    WorldStaticModel = MotorOilCanister_Ground4,
+    Tags = EmptyPetrol,
+	ReplaceTypes = PetrolSource MotorOilCan4,
+	Tooltip = Tooltip_item_EmptyMotorOilCan,
+}
+
+
+ 
+
+    item EmptyGasoholDrum
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 5.0,
+        Type = Normal,
+        DisplayName = Gasohol Drum (Empty),
+        Icon = DrumEmpty,
+        StaticModel = Drum_Ground,
+        WorldStaticModel = Drum_Ground,
+        Tags = EmptyPetrol,
+		Tooltip = Tooltip_item_EmptyGasoholDrum,
+		ReplaceTypes = PetrolSource GasoholDrum,
+		SurvivalGear = TRUE,
+		
+		
+    }
+	
+	
+	item HalfGasoholDrum
+    {
+        DisplayCategory = VehicleMaintenance,
+        DisplayName = Gasohol Drum (Half full),
+        Weight = 25,
+        Type = Drainable,
+        UseWhileEquipped = FALSE,
+        /*UseDelta = 0.0625,*/
+		UseDelta = 0.1,
+		SurvivalGear = TRUE,
+        
+        Icon = DrumFull,
+        StaticModel = Drum_Ground,
+        WorldStaticModel = Drum_Ground,
+        Tags = Petrol,
+		
+		Tooltip = Tooltip_item_GasoholDrum,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+
+		ReplaceOnDeplete = EmptyGasoholDrum,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+
+    item GasoholDrum
+    {
+        DisplayCategory = VehicleMaintenance,
+        DisplayName = Gasohol Drum (Full),
+        Weight = 50,
+        Type = Drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.0625,
+		/*UseDelta = 0.1,*/
+		SurvivalGear = TRUE,
+        
+        Icon = DrumFull,
+        StaticModel = Drum_Ground,
+        WorldStaticModel = Drum_Ground,
+        Tags = Petrol,
+		
+		Tooltip = Tooltip_item_GasoholDrum,
+		
+        FillFromDispenserSound = GetWaterFromDispenserMetalBig,
+		FillFromTapSound = GetWaterFromTapMetalBig,
+
+		ReplaceOnDeplete = EmptyGasoholDrum,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* ---refills---*/
+	
+	item WaterBottlePetrolCan
+	{
+	    DisplayName	=	Water Bottle Gas Can,
+		DisplayCategory = VehicleMaintenance,
+		Weight	=	1,
+		Type	=	Drainable,
+        UseWhileEquipped	=	FALSE,
+		UseDelta = 0.125,
+		ReplaceOnDeplete	= Base.WaterBottleEmpty,
+		
+		Icon = WaterBottle_Full,
+		StaticModel = WaterBottle,
+        WorldStaticModel = WaterBottle,
+		Tags = Petrol,
+		ReplaceInSecondHand = Bag_WaterBottle_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_WaterBottle_RHand holdingbagright,
+		
+	      
+	}
+	
+	item PopBottlePetrolCan
+	{
+	    DisplayName	=	Pop Bottle Gas Can,
+		DisplayCategory = VehicleMaintenance,
+		Weight	=	1,
+		Type	=	Drainable,
+        UseWhileEquipped	=	FALSE,
+		UseDelta = 0.125,
+		ReplaceOnDeplete	= Base.PopBottleEmpty,
+		
+		Icon = Pop_water,
+		StaticModel = PopBottle,
+        WorldStaticModel =PopBottle,
+		Tags = Petrol,
+		ReplaceInSecondHand = Bag_PopBottle_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_PopBottle_RHand holdingbagright,
+		
+	      
+	}
+	
+	
+	
+	item BleachPetrolCan
+	{
+	    DisplayName	=	Bleach Bottle Gas Can,
+		DisplayCategory = VehicleMaintenance,
+		Weight	=	5,
+		Type	=	Drainable,
+        UseWhileEquipped	=	FALSE,
+		UseDelta = 0.125,
+		ReplaceOnDeplete	=	BleachEmpty,
+		
+		Icon	=	Bleach,
+		StaticModel = BleachBottle,
+        WorldStaticModel = BleachBottle,
+		Tags = Petrol,
+		ReplaceInSecondHand = Bag_Bleach_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_Bleach_RHand holdingbagright,
+		
+	      
+	}
+	
+
+	
+	item MotorOilPetrolCan
+	{
+	    DisplayCategory = VehicleMaintenance,
+		Weight	=	4,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.125,
+		DisplayName	=	MotorOil Gas Can,
+		Icon = MotorOilCan,
+		ReplaceOnDeplete	=	EmptyMotorOilCan1,
+		StaticModel = MotorOilCanister_Ground1,
+        WorldStaticModel = MotorOilCanister_Ground1,
+		ReplaceInSecondHand = Bag_MotorOilCan1_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_MotorOilCan1_RHand holdingbagright,
+   
+		Tags = Petrol,
+	}
+	
+	
+	
+	
+	
+	item WhiskeyPetrolCan
+	{
+	    DisplayCategory = VehicleMaintenance,
+		Weight	=	3,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.125,
+		DisplayName	=	Whiskey Bottle Gas Can,
+		Icon	=	WhiskeyFull,
+		ReplaceOnDeplete	=	WhiskeyEmpty,
+		StaticModel = WhiskeyBottle,
+		ReplaceInSecondHand = Bag_WhiskeyBottle_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_WhiskeyBottle_RHand holdingbagright,
+        WorldStaticModel = WhiskeyBottle,
+		Tags = Petrol,
+	}
+	
+	
+	item BeerPetrolCan
+	{
+	    DisplayCategory = VehicleMaintenance,
+		Weight	=	2,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.125,
+		DisplayName	=	Beer Bottle Gas Can,
+		Icon	=	BeerBottle,
+		ReplaceOnDeplete	=	BeerEmpty,
+		StaticModel = BeerBottle,
+		/*ReplaceInSecondHand = Bag_BeerEmpty_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_BeerEmpty_RHand holdingbagright,*/
+        WorldStaticModel = BeerBottle,
+		Tags = Petrol,
+	}
+	
+	
+	
+	item WinePetrolCan
+	{
+	    DisplayCategory = VehicleMaintenance,
+		Weight	=	5,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.125,
+		DisplayName	=	Wine Bottle Gas Can,
+		Icon	=	WineFull,
+		ReplaceOnDeplete	=	WineEmpty,
+		StaticModel = WhiteWineBottle,
+        WorldStaticModel = WhiteWineBottle,
+		/*ReplaceInSecondHand = Bag_WineEmpty_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_WineEmpty_RHand holdingbagright,*/
+        
+		Tags = Petrol,
+	}
+	
+	
+	
+
+	
+}
+/*--------end--------*/

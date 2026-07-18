@@ -570,7 +570,7 @@ module Moonshine
 	   
         CanBeDoneFromFloor:true,
 		/*OnCreate:Moonshine.GiveColumn,*/
-		Moonshine.GiveDistillPartsColumn,
+		OnCreate:Moonshine.GiveDistillPartsColumn,
 		NeedToBeLearn:true,
 		SkillRequired:MetalWelding=4;Electricity=2,
 		

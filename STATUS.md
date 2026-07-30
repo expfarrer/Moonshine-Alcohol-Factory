@@ -37,12 +37,19 @@ magazines, and a Molotov cocktail variant. Real scale: ~69 items, ~140 recipe bl
 Build 42.20.0 was promoted to Steam's public/stable branch overnight 2026-07-28→29,
 after ~1 year in unstable/beta. This machine's PZ install was switched from a pinned
 beta branch (`"42.19"`) to `public` the same day and confirmed running real
-`version=42.20.0`. Patch notes plus this machine's own server boot log both point the
-same direction on the biggest open MP risk below: Timed Actions and inventory logic
-moved fully server-side in this release ("Clients now only run visuals... preventing
-desyncs"), which targets almost exactly the LighterZ MP failure mode — **a good sign,
-not a confirmed fix.** Full findings + assessment: this repo's Claude project memory,
+`version=42.20.0`. Full findings + assessment: this repo's Claude project memory,
 `project_b42_stable_release.md`.
+
+**LighterZ MP risk RESOLVED, same day, confirmed empirically (not just inferred from
+patch notes).** Ran the exact test the risk finding called for: a real dedicated
+server + a genuine remote client (`skoda`, over an actual network connection) crafted
+`SpikeFluidOnCreateTest` — a `craftRecipe` combining a `-fluid` input with an
+`OnCreate` callback, the precise mechanism LighterZ's author documented as broken in
+MP. Server log confirmed `OnCreate FIRED ... isServer=true`, and the crafted output
+item was correctly delivered to the client's inventory — full end-to-end success, not
+just the callback firing. **Phase 3 design can now proceed using
+`craftRecipe`+`-fluid`+`OnCreate` as originally planned**, no longer gated on this
+question. Full detail: `project_phase_minus1_spike.md`.
 
 ---
 
@@ -132,36 +139,24 @@ entries, read directly rather than relying on this summary for specifics):
   is a confirmed-working precedent, no further spiking planned for this specific
   question.
 
-**Dark spots — genuinely unresolved, block starting real Phase 3 content work:**
-- **MP validation itself hasn't actually been run yet** (deferred by user choice, now
-  unblocked since the server-config gotcha above is fixed) — planned as the gate
-  right before Phase 3's "Small tier full loop" checkpoint. Hard requirement, not
-  optional, given the real MP userbase. **In progress as of 2026-07-29** against the
-  now-stable Build 42.20.0 client/server, using the already-built
-  `SpikeFluidOnCreateTest` recipe (`craftRecipe` with a `-fluid` input + `OnCreate`
-  callback) — the exact combination the LighterZ risk below is about. Two more things
-  confirmed the same day, worth folding into Phase 0 when it starts: (1) the 42.20
-  Steam update rewrote `StartServer.command`/`StartServerSteam.command` to add
+**Dark spots — remaining before Phase 3 content work starts:**
+- ~~MP validation of `craftRecipe`+`-fluid`+`OnCreate` / the LighterZ risk~~ —
+  **RESOLVED 2026-07-29**, see above. Two more things confirmed the same MP-test
+  session, worth folding into Phase 0 when it starts: (1) the 42.20 Steam update
+  rewrote `StartServer.command`/`StartServerSteam.command` to add
   `--enable-native-access=ALL-UNNAMED` and
   `--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED` JVM flags; (2) the dedicated
   server's boot log now probes for an optional `<mod>/common/media/AnimSets` folder
   alongside the existing `42/media/` one — not yet confirmed whether anything this mod
-  actually needs lives there, or if it's unrelated optional infrastructure.
+  actually needs lives there, or if it's unrelated optional infrastructure. Broader MP
+  sync of the full entity/UI/`FluidContainer` stack (once the still is actually built)
+  is still untested — only the specific recipe mechanism above is confirmed so far.
 - **`MashingLogic` (native `Resources`+processing-`Logic` system) fluid-side
   viability is completely unconfirmed** — a possible better fit than plain
   `craftRecipe` for the mash→spirit transform, real vanilla precedent exists for the
   item-only case (`DryingCraftLogic`/Drying Rack), but ZERO vanilla entity anywhere
   uses `MashingLogic` or `Fluid@` resources — purely inferred from bytecode. Needs
   its own dedicated prototype before Phase 3 design relies on it.
-- **Real, not-yet-independently-verified MP risk:** a real shipped Workshop mod
-  ("LighterZ") documents three abandoned attempts at combining a `craftRecipe`'s
-  `-fluid` input with an `OnCreate` callback specifically in multiplayer, all
-  disabled with comments indicating unexplained MP breakage. Directly threatens the
-  plan's assumption that Phase 3's processing recipes can safely do this once
-  "MP-verified." Flagged as a dedicated high-priority spike question — test this
-  exact combination in an actual MP session before Phase 3 starts, not as a
-  post-hoc checkpoint. Fallback if broken: the confirmed-safe
-  `ContextMenuConfig`+Lua `TimedAction`+direct `FluidContainer` API pattern instead.
 - Whether the `fluid_separator`-adapted skin's fluid slot panel auto-populates
   natively or needs explicit Lua wiring — no vanilla entity uses this skin to check
   against.

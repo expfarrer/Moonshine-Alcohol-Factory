@@ -243,11 +243,22 @@ theorized** — mash→spirit cannot be a `craftRecipe`.
 distill flow, per the user's own description) found the original mash→spirit step is
 plain **vanilla item-cooking** (`IsCookable`/`ReplaceOnCooked`, real heat source
 required, ~950 in-game minutes for Small) — entities don't inherit this pipeline at
-all. **Redirected the earlier `MashingLogic` lead to `FurnaceLogic`+`Resources`**
-instead — its real fields (`fuelRecipeTagQuery`, `fuelInputsGroupName`,
-`fuelOutputsGroupName`) match "needs continuous fuel, processes over time" far
-better. Zero vanilla precedent for either, still needs its own prototype — **this is
-the next concrete spike task.** Full detail: `project_phase_minus1_spike.md`.
+all.
+
+**RESOLVED same day — real working mechanism found and confirmed live, not fluid at
+all.** Tried `FurnaceLogic`+`Resources`(`Fluid@` groups) first; confirmed dead end by
+extracting the recipe input parser (`InputScript.class`) directly from the compiled
+jar — its fluid handling is entirely item-`FluidContainer`-based, no syntax exists
+for a `craftRecipe` to address a named `Resources` `Fluid@` group at all. Pivoted to
+keeping mash/spirit as **items** (matching the original mod's own item-to-item design
+anyway) via `Resources`(`Item@` groups)+`DryingCraftLogic`+a plain tagged
+`craftRecipe`, copying real vanilla `DryCorn`'s exact syntax verbatim. **Built
+`SpikeDistiller` in the spike mod and confirmed live: built the entity, item-slot UI
+(not fluid), dropped an item in, the timed process ran and completed, output item
+appeared — full loop, zero errors.** This is now the confirmed mechanism for Phase 3's
+mash→spirit step (Small tier, and by extension Medium/Large). Full detail:
+`project_phase_minus1_spike.md`. **Next concrete step: apply this pattern to the real
+mod's `DistillStillSmall` entity.**
 
 ---
 

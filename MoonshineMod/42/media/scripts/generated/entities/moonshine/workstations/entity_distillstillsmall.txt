@@ -8,11 +8,6 @@ module Moonshine
             entityStyle = ES_DistillStillSmall,
             uiEnabled = true,
         }
-        component FluidContainer
-        {
-            ContainerName = DistillStillSmallTank,
-            Capacity = 40.0,
-        }
         component SpriteConfig
         {
             health = 150,
@@ -32,9 +27,24 @@ module Moonshine
                 }
             }
         }
-        component CraftBench
+        component Resources
         {
-            Recipes = MoonshineDistillSmallBench,
+            group mash_in
+            {
+                Item@Input@5,
+            }
+            group spirit_out
+            {
+                Item@Output@5@StackAny,
+            }
+        }
+        component DryingCraftLogic
+        {
+            Recipes = MoonshineDistillSmallDry,
+            StartMode = Manual,
+            inputGroup = mash_in,
+            outputGroup = spirit_out,
+            actionAnim = Untie_High,
         }
         component CraftRecipe
         {

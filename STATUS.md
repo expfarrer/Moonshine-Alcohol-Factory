@@ -256,9 +256,22 @@ anyway) via `Resources`(`Item@` groups)+`DryingCraftLogic`+a plain tagged
 `SpikeDistiller` in the spike mod and confirmed live: built the entity, item-slot UI
 (not fluid), dropped an item in, the timed process ran and completed, output item
 appeared — full loop, zero errors.** This is now the confirmed mechanism for Phase 3's
-mash→spirit step (Small tier, and by extension Medium/Large). Full detail:
-`project_phase_minus1_spike.md`. **Next concrete step: apply this pattern to the real
-mod's `DistillStillSmall` entity.**
+mash→spirit step (Small tier, and by extension Medium/Large).
+
+**APPLIED TO THE REAL MOD AND CONFIRMED LIVE, same day** (commits `da71c01`/
+`368c9a5`/`d9636e4` on `beta-migration`). `DistillStillSmall` now has real
+`Resources`+`DryingCraftLogic` producing a new `SpiritJarSmall` item from 10x
+fermented mash over 950 real in-game minutes, matching the original exactly. Removed
+the entity's unused `component FluidContainer` from commit 1 (not needed for this
+mechanism). **Two real bugs hit and fixed, both broader than this one feature:**
+(1) legacy `Type=` items crash the entity's item-slot UI on open, not just item
+creation — ported `CornMashFermented`/`PotatoMashFermented` to `ItemType=base:food`;
+(2) Build 42 doesn't fall back to legacy media for **any** file type, not just
+scripts — a broken icon led to duplicating the mod's entire `textures/`+`models_X/`
+wholesale into `42/media/` rather than hitting this per-asset later. Full detail:
+`project_phase_minus1_spike.md`. **Next concrete step: Phase 3 commit 3/3 — Lua trim
+in `MoonshineMod_recipecode.lua`, then the full SP+MP live checkpoint before
+Medium/Large.**
 
 ---
 

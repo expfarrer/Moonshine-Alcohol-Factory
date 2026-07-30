@@ -25,8 +25,8 @@ module Moonshine
         UnhappyChange = -20,
         Calories = 1500,
         Carbohydrates = 700,
-        StaticModel = BucketMash_GroundCorn_Fermented,
-        WorldStaticModel = BucketMash_GroundCorn_Fermented,
+        StaticModel = BucketFull,
+        WorldStaticModel = BucketFull,
     }
 
     item PotatoMashFermented
@@ -54,8 +54,8 @@ module Moonshine
         UnhappyChange = -20,
         Calories = 1500,
         Carbohydrates = 700,
-        StaticModel = BucketMash_GroundPotato_Fermented,
-        WorldStaticModel = BucketMash_GroundPotato_Fermented,
+        StaticModel = BucketFull,
+        WorldStaticModel = BucketFull,
         Tags = HasMetal,
         CustomContextMenu = Drink,
         Tooltip = Tooltip_item_PotatoMashFermented,

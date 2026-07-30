@@ -1,0 +1,23 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    item Coal
+    {
+        DisplayCategory = Material,
+        Weight = 1,
+        ItemType = base:normal,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.1,
+        DisplayName = Piece of Coal,
+        Icon = Coal,
+        WeightEmpty = 0.1,
+        StaticModel = Charcoal_Ground,
+        WorldStaticModel = Charcoal_Ground,
+        Tags = base:isfirefuel,
+        FireFuelRatio = 0.5,
+    }
+}

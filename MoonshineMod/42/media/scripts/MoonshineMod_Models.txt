@@ -1,0 +1,16 @@
+module Moonshine
+{
+    model BucketMash_GroundCorn_Fermented
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashFermented,
+        scale = 0.4,
+    }
+
+    model BucketMash_GroundPotato_Fermented
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashFermented,
+        scale = 0.4,
+    }
+}

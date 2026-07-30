@@ -273,6 +273,18 @@ wholesale into `42/media/` rather than hitting this per-asset later. Full detail
 in `MoonshineMod_recipecode.lua`, then the full SP+MP live checkpoint before
 Medium/Large.**
 
+**Found+stopgapped same day (commit `a64ebb1`):** the mash-bucket item family's
+ground models (8 states) reference `.fbx` files that don't exist anywhere, not even
+in the original mod — pre-existing gap, same class as the earlier
+`MotorOilCanister_Ground3/4` stopgap. Fixed the two already-ported items by
+repointing to `BucketFull.fbx` (`42/` track only, per user's choice — not backported
+to `develop`). **TODO, low priority, cosmetic:** real ground-model art for this
+family. Separately confirmed: **`.fbx` portable-item models are NOT being phased out
+in Build 42** — vanilla's own brand-new `FluidContainer` drink items still use
+`StaticModel`/`WorldStaticModel` extensively (223 references across just
+`drainable.txt`'s 150 items). That system is unrelated to and unaffected by the
+entity `SpriteConfig` tile-atlas requirement found earlier.
+
 ---
 
 ## Related shared docs

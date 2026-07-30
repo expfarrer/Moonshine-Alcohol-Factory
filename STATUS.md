@@ -66,6 +66,13 @@ real entity art (pipeline known, work not started). **Next concrete step: Phase 
 scaffold the real mod's `42/` mod.info + media subfolder on `beta-migration`** (the
 branch/worktree already exists, the folder structure inside it doesn't yet).
 
+**Steam Workshop publishing strategy, decided 2026-07-29: same Workshop item, not a
+new separate submission.** One `mod.info`/id, `42/` versioned-subfolder convention as
+designed. Steam auto-pushes updates to all existing subscribers; which content
+actually loads splits cleanly by the player's game build — B41 players' loader only
+reads the root `mod.info` (the `42/` subfolder is invisible to it), B42 players' loader
+prefers `42/`. No re-subscription or manual choice needed for anyone.
+
 ---
 
 ## Track 1: Stable-branch bugfix pass — Phases 1-5 done (2026-07-17/18)

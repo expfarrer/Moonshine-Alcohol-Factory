@@ -273,17 +273,55 @@ wholesale into `42/media/` rather than hitting this per-asset later. Full detail
 in `MoonshineMod_recipecode.lua`, then the full SP+MP live checkpoint before
 Medium/Large.**
 
-**Found+stopgapped same day (commit `a64ebb1`):** the mash-bucket item family's
-ground models (8 states) reference `.fbx` files that don't exist anywhere, not even
-in the original mod — pre-existing gap, same class as the earlier
-`MotorOilCanister_Ground3/4` stopgap. Fixed the two already-ported items by
-repointing to `BucketFull.fbx` (`42/` track only, per user's choice — not backported
-to `develop`). **TODO, low priority, cosmetic:** real ground-model art for this
-family. Separately confirmed: **`.fbx` portable-item models are NOT being phased out
-in Build 42** — vanilla's own brand-new `FluidContainer` drink items still use
-`StaticModel`/`WorldStaticModel` extensively (223 references across just
-`drainable.txt`'s 150 items). That system is unrelated to and unaffected by the
-entity `SpriteConfig` tile-atlas requirement found earlier.
+**Found same day, WRONGLY diagnosed, then corrected (commits `a64ebb1` →
+superseding fix):** the mash-bucket item family's ground models rendered as flat
+icons instead of 3D models in-world. First diagnosis (`a64ebb1`) claimed the
+referenced `.fbx` files "don't exist anywhere, a pre-existing gap, same class as the
+`MotorOilCanister_Ground3/4` stopgap" and repointed `StaticModel`/`WorldStaticModel`
+straight to `BucketFull` — **this was wrong and didn't fully fix it** (user reported
+"still shows icon not 3d" after retesting). Real root cause: Build 42's "no fallback
+to legacy media" rule applies to an indirection layer too — the ORIGINAL
+`StaticModel`/`WorldStaticModel` names (`BucketMash_GroundCorn_Fermented` etc.) were
+always correct, but they're not direct filenames, they're names resolved via
+`model X { mesh=..., texture=..., scale=... }` blocks in the legacy root
+`MoonshineMod_Models.txt`, which was simply never ported into `42/`. Fixed by
+reverting both items' `StaticModel`/`WorldStaticModel` back to the original names and
+adding `42/media/scripts/MoonshineMod_Models.txt` with the two needed `model` blocks
+(mesh=`BucketFull`, texture=`WorldItems/BucketFullMashFermented`, scale=`0.4`).
+**Confirmed live by the user: model now renders correctly.** `.fbx` portable-item
+models are confirmed NOT being phased out in Build 42 — vanilla's own brand-new
+`FluidContainer` drink items still use `StaticModel`/`WorldStaticModel` extensively
+(223 references across just `drainable.txt`'s 150 items). The other 6 un-ported
+mash-bucket states will need the same `model`-block treatment whenever they're added
+to `42/` in a later phase.
+
+**New bug found same day, root-caused, NOT yet fixed — intermittent Build 42
+script-load race on self-referencing mod recipes.** Opening the still's own crafting
+UI sometimes (not always) spams `IndexOutOfBoundsException` at `ISItemSlot.lua:157`
+every rendered frame (the right-corner error counter climbing rapidly), for the rest
+of that world session. Root cause confirmed directly from the client debug log: on
+some game-session loads (3 of 6 checked), `InputScript.OnPostWorldDictionaryInit`
+logs `item not found: Moonshine.CornMashFermented` / `...PotatoMashFermented` while
+validating the two `DistillCornMashIntoSpiritSmall`/`DistillPotatoMashIntoSpiritSmall`
+craftRecipes — even though those items are real, load fine, and work correctly in
+actual crafting/inventory during the very same session. This is a genuine
+**intermittent load-order race**, not a script mistake: our craftRecipe (in
+`generated/entities/moonshine/craftRecipes/`) and the items it references
+(`items/MoonshineMod_AlcoholOutputItems.txt`) are in the *same mod*, so — unlike
+vanilla's `DryCorn` referencing `Base.Corn`, where vanilla `Base.*` items are
+guaranteed pre-loaded before any mod content parses — there's no ordering guarantee
+between a mod's own items and its own entity-linked recipes, and B42's
+parallelized script loading sometimes parses the recipe before the item is
+registered. Once that race is lost for a session, the UI's item-slot preview
+(`ISWidgetCraftLogicInputControl` → `InputScript:getPossibleInputItems()`) is left
+with a permanently-empty resolved-items list, crashing every frame the empty slot
+renders, until the world is fully reloaded (not fixed by `/reloadlua` hot-reloads,
+which don't re-run `OnPostWorldDictionaryInit`). Immediate workaround: fully exit to
+the main menu and reload the world/save. **Not yet permanently fixed** — needs
+either a validated code-level mitigation (e.g. resolving the recipe input via
+`tags[]` instead of a direct `[Module.Item]` bracket reference, unconfirmed whether
+that avoids the race) or acceptance that this is a current B42 engine limitation to
+track and re-test on future B42 point releases.
 
 ---
 

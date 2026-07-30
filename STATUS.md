@@ -26,10 +26,23 @@ magazines, and a Molotov cocktail variant. Real scale: ~69 items, ~140 recipe bl
   directly.
 - `develop` — tracks `origin/develop`, stable-branch-targeted. All Phase 1-6 bugfix
   work happens here. Currently 12 commits ahead of `main` (`9ca31bc`..`cef1f08`).
-- `beta-migration` — **planned, not yet created.** Will branch off `develop` once the
-  Phase -1 spike (below) fully passes. Will intentionally break save/item-ID
-  compatibility with the stable-targeted `develop`/`main` — a separate future version
-  track, existing subscribers on stable stay unaffected.
+- `beta-migration` — **created 2026-07-29**, branched off `develop`, checked out as a
+  git worktree at `MoonshineModbf42/` (sibling of the repo root, same `.git`/remote),
+  pushed to `origin`. Zero content commits yet — mirrors `develop` exactly. Will
+  intentionally break save/item-ID compatibility with the stable-targeted
+  `develop`/`main` — a separate future version track, existing subscribers on stable
+  stay unaffected.
+
+## Build 42 went stable — 2026-07-29
+Build 42.20.0 was promoted to Steam's public/stable branch overnight 2026-07-28→29,
+after ~1 year in unstable/beta. This machine's PZ install was switched from a pinned
+beta branch (`"42.19"`) to `public` the same day and confirmed running real
+`version=42.20.0`. Patch notes plus this machine's own server boot log both point the
+same direction on the biggest open MP risk below: Timed Actions and inventory logic
+moved fully server-side in this release ("Clients now only run visuals... preventing
+desyncs"), which targets almost exactly the LighterZ MP failure mode — **a good sign,
+not a confirmed fix.** Full findings + assessment: this repo's Claude project memory,
+`project_b42_stable_release.md`.
 
 ---
 
@@ -123,7 +136,17 @@ entries, read directly rather than relying on this summary for specifics):
 - **MP validation itself hasn't actually been run yet** (deferred by user choice, now
   unblocked since the server-config gotcha above is fixed) — planned as the gate
   right before Phase 3's "Small tier full loop" checkpoint. Hard requirement, not
-  optional, given the real MP userbase.
+  optional, given the real MP userbase. **In progress as of 2026-07-29** against the
+  now-stable Build 42.20.0 client/server, using the already-built
+  `SpikeFluidOnCreateTest` recipe (`craftRecipe` with a `-fluid` input + `OnCreate`
+  callback) — the exact combination the LighterZ risk below is about. Two more things
+  confirmed the same day, worth folding into Phase 0 when it starts: (1) the 42.20
+  Steam update rewrote `StartServer.command`/`StartServerSteam.command` to add
+  `--enable-native-access=ALL-UNNAMED` and
+  `--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED` JVM flags; (2) the dedicated
+  server's boot log now probes for an optional `<mod>/common/media/AnimSets` folder
+  alongside the existing `42/media/` one — not yet confirmed whether anything this mod
+  actually needs lives there, or if it's unrelated optional infrastructure.
 - **`MashingLogic` (native `Resources`+processing-`Logic` system) fluid-side
   viability is completely unconfirmed** — a possible better fit than plain
   `craftRecipe` for the mash→spirit transform, real vanilla precedent exists for the

@@ -225,6 +225,30 @@ with user before touching, not part of the migration itself). ~20-22 commits tot
 Stable-vs-beta snapshot diffs already captured at `~/Documents/pz-backups/` for
 future re-diffing without needing to re-switch branches.
 
+## Phase 3 findings — 2026-07-30
+
+**Live-spike-confirmed: `craftRecipe`+`OnCreate` cannot reach a station entity's own
+`FluidContainer`.** Built a diagnostic probe recipe/callback on the spike's
+`SpikeStill` entity and tested it live (singleplayer) through several real failure
+cycles. Findings: (1) entity/`CraftBench` `craftRecipe` inputs need an **explicit
+`mode:` modifier** on every item or the action stalls at 0% forever (confirmed fix,
+matches real vanilla `ExtractIronFromIronOre`'s pattern) — new standing rule for all
+future entity recipes; (2) once firing, `OnCreate` only ever receives
+`(recipeData, character)` — reflection on `recipeData`'s real Java class
+(`CraftRecipeData`, extracted directly from the compiled jar) confirmed it has no
+method that returns the workstation entity. **This is empirically closed, not
+theorized** — mash→spirit cannot be a `craftRecipe`.
+
+**Separately, ground-truth research into the real legacy mod** (bucket→ferment→mash→
+distill flow, per the user's own description) found the original mash→spirit step is
+plain **vanilla item-cooking** (`IsCookable`/`ReplaceOnCooked`, real heat source
+required, ~950 in-game minutes for Small) — entities don't inherit this pipeline at
+all. **Redirected the earlier `MashingLogic` lead to `FurnaceLogic`+`Resources`**
+instead — its real fields (`fuelRecipeTagQuery`, `fuelInputsGroupName`,
+`fuelOutputsGroupName`) match "needs continuous fuel, processes over time" far
+better. Zero vanilla precedent for either, still needs its own prototype — **this is
+the next concrete spike task.** Full detail: `project_phase_minus1_spike.md`.
+
 ---
 
 ## Related shared docs

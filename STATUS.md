@@ -79,8 +79,19 @@ before that was verified) — plus `42/poster.png` and an empty `42/media/` tree
 checkpoint passed: symlinked the dev worktree into `~/Zomboid/mods/` on the dev Mac,
 confirmed "Moonshine Mod - Alcohol factory" now appears and is selectable in the
 Build 42 Mods menu. (PC client doesn't have this dev copy yet, only the spike mods —
-transfer needed if PC-side testing of the real mod is wanted later.) **Next concrete
-step: Phase 1 — camping fuel fix (`IsFireFuel` tag).**
+transfer needed if PC-side testing of the real mod is wanted later.)
+
+**Phase 1 ✅ DONE, same day, commit `d6b2da8` on `beta-migration`.** `Coal` item
+retagged in `42/media/`: `ItemType = base:normal`, `Tags = base:isfirefuel`,
+`FireFuelRatio = 0.5` (verified against real vanilla `Charcoal`'s own use of this
+mechanism; `0.5` chosen specifically to preserve the mod's original burn duration
+exactly, not just approximate it). `camping_fuel.lua` intentionally omitted from
+`42/media/` — the native tag replaces it. **Live checkpoint passed**: lit a fire with
+the mod's Coal in singleplayer on 42.20.0, confirmed it burns via the tag alone.
+**Gap flagged for a later phase:** `MoonshineMolotov`/`MoonshineMolotovBig` (same
+source file, legacy `Type = Weapon`) weren't migrated — not in Phase 1's scope and
+not assigned to any other phase in the plan either; needs a decision before Phase 5.
+**Next concrete step: Phase 2 — fluid declarations.**
 
 ---
 

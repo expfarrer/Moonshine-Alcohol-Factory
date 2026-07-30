@@ -62,9 +62,7 @@ The plan was re-derived accordingly in `~/.claude/plans/bubbly-doodling-diffie.m
 (new "Dark spots / uncertainties" section) — remaining before Phase 3 real content:
 `MashingLogic` (now optional), custom-atlas `SpriteConfig` syntax (unconfirmed but
 likely fine), `common/media/` folder necessity (unconfirmed), and actually producing
-real entity art (pipeline known, work not started). **Next concrete step: Phase 0 —
-scaffold the real mod's `42/` mod.info + media subfolder on `beta-migration`** (the
-branch/worktree already exists, the folder structure inside it doesn't yet).
+real entity art (pipeline known, work not started).
 
 **Steam Workshop publishing strategy, decided 2026-07-29: same Workshop item, not a
 new separate submission.** One `mod.info`/id, `42/` versioned-subfolder convention as
@@ -72,6 +70,17 @@ designed. Steam auto-pushes updates to all existing subscribers; which content
 actually loads splits cleanly by the player's game build — B41 players' loader only
 reads the root `mod.info` (the `42/` subfolder is invisible to it), B42 players' loader
 prefers `42/`. No re-subscription or manual choice needed for anyone.
+
+**Phase 0 ✅ DONE, same day, commit `afd6d9f` on `beta-migration`** (rollback point
+tagged beforehand: `beta-migration-pre-phase0`). Added `MoonshineMod/42/mod.info` —
+**same `id=MoonshineMod` as the root mod.info**, confirmed required via the spike
+mod's own actual files (the plan's earlier "distinct id=" note was wrong, written
+before that was verified) — plus `42/poster.png` and an empty `42/media/` tree. Live
+checkpoint passed: symlinked the dev worktree into `~/Zomboid/mods/` on the dev Mac,
+confirmed "Moonshine Mod - Alcohol factory" now appears and is selectable in the
+Build 42 Mods menu. (PC client doesn't have this dev copy yet, only the spike mods —
+transfer needed if PC-side testing of the real mod is wanted later.) **Next concrete
+step: Phase 1 — camping fuel fix (`IsFireFuel` tag).**
 
 ---
 

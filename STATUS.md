@@ -91,7 +91,17 @@ the mod's Coal in singleplayer on 42.20.0, confirmed it burns via the tag alone.
 **Gap flagged for a later phase:** `MoonshineMolotov`/`MoonshineMolotovBig` (same
 source file, legacy `Type = Weapon`) weren't migrated — not in Phase 1's scope and
 not assigned to any other phase in the plan either; needs a decision before Phase 5.
-**Next concrete step: Phase 2 — fluid declarations.**
+
+**Phase 2 ✅ DONE, same day, commit `8aafa12` on `beta-migration`.** Declared two
+custom fluids in `42/media/scripts/fluids/MoonshineMod_Fluids.txt`: `Moonshine`
+(drinkable spirit) and `MotorOil` (**no vanilla equivalent exists at all** — a gap
+the original plan's taxonomy guess missed). `Water`/`RubbingAlcohol`/`Petrol` reused
+as-is from vanilla. **Live checkpoint passed** — clean server boot, zero fluid-parse
+errors. **Dev gotcha found+fixed:** a symlinked `~/Zomboid/mods/MoonshineMod` caused
+two non-fatal `NullPointerException`s during server-boot checksumming; switched to a
+real directory copy and they disappeared. Re-`cp -R` from the worktree after future
+edits, don't re-symlink, until this gets root-caused further. **Next concrete step:
+Phase 3 — core still rebuild, Small tier first.**
 
 ---
 

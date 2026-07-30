@@ -1,0 +1,63 @@
+module Moonshine
+{
+    fluid Moonshine
+    {
+        ColorReference = Peru,
+        DisplayName = Fluid_Name_Moonshine,
+        Categories
+        {
+            Beverage,
+            Alcoholic,
+        }
+        Properties
+        {
+            fatigueChange = 0.0,
+            HungerChange = -20.0,
+            StressChange = 0.0,
+            ThirstChange = -20.0,
+            UnhappyChange = -10.0,
+            Calories = 2500.0,
+            Carbohydrates = 0.0,
+            Lipids = 0.0,
+            Proteins = 0.0,
+            alcohol = 0.5,
+            fluReduction = 0.0,
+            painReduction = 0.0,
+            enduranceChange = 0.0,
+            foodSicknessChange = 0,
+        }
+        BlendWhiteList
+        {
+            whitelist = true,
+            categories
+            {
+                Beverage,
+            }
+        }
+    }
+
+    fluid MotorOil
+    {
+        ColorReference = Black,
+        DisplayName = Fluid_Name_MotorOil,
+        Categories
+        {
+            Industrial,
+            Hazardous,
+        }
+        Poison
+        {
+            maxEffect = Deadly,
+            minAmount = 1.0,
+            diluteRatio = 0.0,
+        }
+        BlendWhiteList
+        {
+            whitelist = true,
+            categories
+            {
+                Industrial,
+            }
+        }
+    }
+}

@@ -51,6 +51,21 @@ just the callback firing. **Phase 3 design can now proceed using
 `craftRecipe`+`-fluid`+`OnCreate` as originally planned**, no longer gated on this
 question. Full detail: `project_phase_minus1_spike.md`.
 
+**Full entity-level MP sync RESOLVED too, same session, immediately after.** The
+recipe test above only proved the mechanism in isolation (a plain item, not a real
+station entity). Went further: placed and built the spike's `SpikeStill` entity as
+`skoda` (real remote client), opened its native `fluid_separator`-adapted UI
+(contents displayed correctly, zero custom Lua wiring needed), filled it, and
+transferred fluid into a bottle — all successful, zero errors in the server log.
+**This was the last major Phase -1 dark spot — Phase -1 is now functionally closed.**
+The plan was re-derived accordingly in `~/.claude/plans/bubbly-doodling-diffie.md`
+(new "Dark spots / uncertainties" section) — remaining before Phase 3 real content:
+`MashingLogic` (now optional), custom-atlas `SpriteConfig` syntax (unconfirmed but
+likely fine), `common/media/` folder necessity (unconfirmed), and actually producing
+real entity art (pipeline known, work not started). **Next concrete step: Phase 0 —
+scaffold the real mod's `42/` mod.info + media subfolder on `beta-migration`** (the
+branch/worktree already exists, the folder structure inside it doesn't yet).
+
 ---
 
 ## Track 1: Stable-branch bugfix pass — Phases 1-5 done (2026-07-17/18)

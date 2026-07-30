@@ -1,0 +1,62 @@
+module Moonshine
+{
+    entity DistillStillSmall
+    {
+        component UiConfig
+        {
+            xuiSkin = moonshine_still,
+            entityStyle = ES_DistillStillSmall,
+            uiEnabled = true,
+        }
+        component FluidContainer
+        {
+            ContainerName = DistillStillSmallTank,
+            Capacity = 40.0,
+        }
+        component SpriteConfig
+        {
+            health = 150,
+            skillBaseHealth = 50,
+            face S
+            {
+                layer
+                {
+                    row = crafted_01_45,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = crafted_01_46,
+                }
+            }
+        }
+        component CraftBench
+        {
+            Recipes = MoonshineDistillSmallBench,
+        }
+        component CraftRecipe
+        {
+            timedAction = Make_With_Brick_Low,
+            time = 900,
+            category = Metalworking,
+            SkillRequired = MetalWelding:1,
+            Tooltip = Tooltip_item_DistillSmall,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep,
+                item 1 tags[base:saw] mode:keep,
+                item 1 [Base.BucketEmpty],
+                item 2 [Base.MetalPipe],
+                item 1 [Base.ScrapMetal],
+                item 1 [Base.Wire],
+                item 1 [Base.Pot],
+                item 1 [Base.SmallSheetMetal],
+                item 1 [Base.DuctTape],
+                item 1 [Base.PropaneTank],
+                item 1 [Base.BeerCanEmpty],
+            }
+        }
+    }
+}

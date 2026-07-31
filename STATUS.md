@@ -269,8 +269,23 @@ creation — ported `CornMashFermented`/`PotatoMashFermented` to `ItemType=base:
 (2) Build 42 doesn't fall back to legacy media for **any** file type, not just
 scripts — a broken icon led to duplicating the mod's entire `textures/`+`models_X/`
 wholesale into `42/media/` rather than hitting this per-asset later. Full detail:
-`project_phase_minus1_spike.md`. **Next concrete step: Phase 3 commit 3/3 — Lua trim
-in `MoonshineMod_recipecode.lua`, then the full SP+MP live checkpoint before
+`project_phase_minus1_spike.md`.
+
+**Phase 3 commit 3/3 ✅ DONE, commit `ae00cc4` on `beta-migration`.** Ported
+`MoonshineMod_recipecode.lua` to `42/media/lua/server/`, dropping the four
+Small-tier-specific `OnCreate` callbacks now permanently dead in this track
+(`GiveDistillPartsSm`, `GiveWoodSmall`, `GiveCoalSmall` — all tied to the old
+portable `DistillPotSmall` item, replaced by the entity with no equivalent
+salvage/fuel-container mechanic; `DoubbleFilledReturn` — already dead/commented-out
+in the legacy mod itself). Everything else (Medium/Large/Filter/Column callbacks,
+Petro family, Molotov check, `CheckDrumXD`) kept verbatim for the not-yet-migrated
+tiers/families. Root/legacy file untouched. **Small tier's core mechanism (build,
+fill, cook, output) confirmed live end-to-end, zero errors, zero custom Lua needed.**
+Also confirmed: the earlier `ISItemSlot.lua:157` crash (empty-slot preview icon,
+intermittent B42 load race — see the finding above) only affects an *empty* input
+slot; once mash is inserted and cooking is active, it doesn't recur.
+
+**Next concrete step: full SP+MP live checkpoint gate for the Small tier, then
 Medium/Large.**
 
 **Found same day, WRONGLY diagnosed, then corrected (commits `a64ebb1` →

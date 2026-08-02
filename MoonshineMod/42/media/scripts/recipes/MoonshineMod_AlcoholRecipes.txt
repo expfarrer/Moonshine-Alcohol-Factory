@@ -1,0 +1,86 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    recipe Make Potato Mash in Bucket
+    {
+        CanBeDoneFromFloor: true,
+        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
+
+        destroy BucketEmpty,
+        Water=5,
+        [Recipe.GetItemTypes.Sugar];5,
+        Yeast,
+        Potato=10,
+        Result: PotatoMash,
+        Time: 200.0,
+        Category: Cooking,
+        Sound: MakePlaster,
+
+        Prop1: Spoon,
+        Prop2: Source=3,
+
+        AnimNode: Disassemble,
+        OnTest: Recipe.OnTest.NotTaintedWater,
+        NeedToBeLearn:true,
+        OnGiveXP:Recipe.OnGiveXP.Cooking10,
+        SkillRequired:Cooking=1,
+    }
+
+    recipe Make Corn Mash in Bucket
+    {
+        CanBeDoneFromFloor: true,
+        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
+
+        destroy BucketEmpty,
+        Water=5,
+        [Recipe.GetItemTypes.Sugar];5,
+        Yeast,
+        Corn=10,
+        Result: CornMash,
+        Time: 200.0,
+        Category: Cooking,
+        Sound: MakePlaster,
+        Prop1: Spoon,
+        Prop2: Source=3,
+        AnimNode: Disassemble,
+        OnTest: Recipe.OnTest.NotTaintedWater,
+        NeedToBeLearn:true,
+        OnGiveXP:Recipe.OnGiveXP.Cooking10,
+        SkillRequired:Cooking=1,
+    }
+
+    /*-----------COVER --------------*/
+
+    recipe Cover Corn Mash Bucket with Tarp
+    {
+        CanBeDoneFromFloor: true,
+        destroy CornMash,
+        destroy Tarp,
+        destroy RubberBand,
+        Result: CornMashCovered,
+        Time: 300.0,
+        Category: Cooking,
+        Sound: PutItemInBag,
+        Prop1: Tarp,
+        Prop2: Source=1,
+        AnimNode: Disassemble,
+    }
+    recipe Cover Potato Mash Bucket with Tarp
+    {
+        CanBeDoneFromFloor: true,
+        destroy PotatoMash,
+        destroy Tarp,
+        destroy RubberBand,
+        Result: PotatoMashCovered,
+        Time: 300.0,
+        Category: Cooking,
+        Sound: PutItemInBag,
+        Prop1: Tarp,
+        Prop2: Source=1,
+        AnimNode: Disassemble,
+    }
+}

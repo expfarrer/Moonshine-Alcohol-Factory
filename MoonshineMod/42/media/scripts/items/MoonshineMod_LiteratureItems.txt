@@ -1,0 +1,20 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    item MagazineDistill2
+    {
+        Weight = 0.1,
+        ItemType = base:literature,
+        DisplayCategory = SkillBook,
+        DisplayName = Distilling Vol.2 Mash and Fermenting,
+        Icon = MagazineDistill2,
+        TeachedRecipes = Make Potato Mash in Bucket;Make Corn Mash in Bucket,
+        ReplaceOnUse = MagazineDistill2,
+        WorldStaticModel = MagazineDistill2,
+        StaticModel = MagazineDistill2Ground,
+    }
+}

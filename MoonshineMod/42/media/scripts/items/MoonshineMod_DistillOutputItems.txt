@@ -25,4 +25,30 @@ module Moonshine
             }
         }
     }
+
+    item SpiritJarMedium
+    {
+        DisplayCategory = Food,
+        ItemType = base:normal,
+        Weight = 0.7,
+        DisplayName = Jar of Moonshine Spirit,
+        Icon = JarEmpty2,
+        StaticModel = EmptyJar,
+        WorldStaticModel = EmptyJar,
+        EatType = Bourbon,
+        CustomContextMenu = Drink,
+        CustomEatSound = DrinkingFromBottle,
+        Tags = Liquor,
+        component FluidContainer
+        {
+            ContainerName = SpiritJarMedium,
+            Capacity = 1.0,
+            InitialPercentMin = 1.0,
+            InitialPercentMax = 1.0,
+            Fluids
+            {
+                fluid = Moonshine:1.0,
+            }
+        }
+    }
 }

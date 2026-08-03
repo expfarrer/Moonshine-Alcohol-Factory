@@ -371,6 +371,49 @@ mod** — Molotov, Disinfectant, Drink, Petro, Medium/Large distill, and Charcoa
 recipes all use the same dead `recipe{}` syntax and will all need this same
 rewrite treatment, not a literal copy, when their turn comes.
 
+**Follow-up fix same feature, 2026-08-03: `-fluid` needs `mode:mixture` when its
+source container is `mode:destroy`.** User reported a filled water bucket still
+couldn't satisfy the mash recipe's water requirement. Root cause: `-fluid 5.0
+[Water],` alone only works when the preceding item is `mode:keep` (draining a
+kept container, e.g. `MakeMilkFromPowderBottle`); when the container is
+`mode:destroy` (our case — the bucket becomes the mash), the fluid line also
+needs `mode:mixture`, confirmed via real vanilla `recipes_buckets.txt` doing the
+exact same "destroy a bucket, drain its water" pattern. Fixed
+(`-fluid 5.0 categories[Water] mode:mixture,`), confirmed by the user after a
+full world reload.
+
+## Audit category A ported, Medium tier core started — 2026-08-03
+
+Per user direction ("copy all items over", then "concentrate on base moonshine
+items first, Molotov is a second tier item"), worked through the 2026-08-02
+audit's category A (self-contained, no entity dependency) items, then started
+Medium tier:
+- `Moonshine_Distributions.lua` (787 lines, loot-table spawning) — wholesale
+  ported, likely the actual reason no magazines were ever findable via normal
+  exploration.
+- Motor Oil family (9 items) — ported, `ItemType` renamed, model-indirection
+  blocks added. Their crafting recipe is Petro-family work, not done yet.
+- Molotov items (2) — ported, reuse vanilla's own `Molotov.png` icon directly.
+  **Recipes intentionally NOT ported** — found real complications: the legacy
+  `OnTest.FullLiquor`/`FullPetrolBottle` validators are undefined anywhere
+  (Lua or compiled engine), a pre-existing bug in the original mod; `WineEmpty`/
+  `WhiskeyEmpty` don't exist as separate items under B42's native fluid model;
+  2 of 4 recipe variants depend on unported Petro items. Tracked as its own
+  follow-up, not urgent per user (Molotov is "second tier").
+- Tooltip translation files (4 languages) — wholesale ported, cosmetic only.
+- **Medium tier core**: `DistillStillMedium` entity + mash→spirit, exact same
+  pattern as the confirmed-working Small tier (`Resources`+`DryingCraftLogic`+
+  two tagged `craftRecipe`s, new `SpiritJarMedium` output item, fresh unclaimed
+  sprite placeholder row). **Deliberate scope simplification, flagged for
+  follow-up:** given its own standalone build `CraftRecipe` rather than being
+  reachable only via an "Upgrade Distill(I)to(II)" entity-swap from a built
+  Small still, which is how the legacy design actually works (matching the
+  `WaterDispenser` entity-swap precedent, not yet prototyped in this
+  migration). Isopropyl (a second cook-again pass on an already-spirit-filled
+  pot in the original design, not just a different input), Filter/Column
+  attachment items, and Medium-tier charcoal recipes are real remaining scope,
+  not oversights — tracked in the plan.
+
 ---
 
 ## Related shared docs

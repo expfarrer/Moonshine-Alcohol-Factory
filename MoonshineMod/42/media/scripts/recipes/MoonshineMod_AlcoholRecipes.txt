@@ -1,86 +1,88 @@
 module Moonshine
 {
-    imports
+    craftRecipe MakePotatoMashInBucket
     {
-        Base
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+            item 1 tags[base:mixingutensil] mode:keep,
+            item 1 [Base.BucketEmpty] mode:destroy,
+            -fluid 5.0 [Water],
+            item 5 tags[base:sugar],
+            item 1 [Base.Yeast],
+            item 10 [Base.Potato],
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMash,
+        }
     }
 
-    recipe Make Potato Mash in Bucket
+    craftRecipe MakeCornMashInBucket
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-        Potato=10,
-        Result: PotatoMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-
-        Prop1: Spoon,
-        Prop2: Source=3,
-
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-        NeedToBeLearn:true,
-        OnGiveXP:Recipe.OnGiveXP.Cooking10,
-        SkillRequired:Cooking=1,
-    }
-
-    recipe Make Corn Mash in Bucket
-    {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-        Corn=10,
-        Result: CornMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=3,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-        NeedToBeLearn:true,
-        OnGiveXP:Recipe.OnGiveXP.Cooking10,
-        SkillRequired:Cooking=1,
+        timedAction = Making,
+        time = 200,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+            item 1 tags[base:mixingutensil] mode:keep,
+            item 1 [Base.BucketEmpty] mode:destroy,
+            -fluid 5.0 [Water],
+            item 5 tags[base:sugar],
+            item 1 [Base.Yeast],
+            item 10 [Base.Corn],
+        }
+        outputs
+        {
+            item 1 Moonshine.CornMash,
+        }
     }
 
     /*-----------COVER --------------*/
 
-    recipe Cover Corn Mash Bucket with Tarp
+    craftRecipe CoverCornMashBucketWithTarp
     {
-        CanBeDoneFromFloor: true,
-        destroy CornMash,
-        destroy Tarp,
-        destroy RubberBand,
-        Result: CornMashCovered,
-        Time: 300.0,
-        Category: Cooking,
-        Sound: PutItemInBag,
-        Prop1: Tarp,
-        Prop2: Source=1,
-        AnimNode: Disassemble,
+        timedAction = Making,
+        time = 300,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        inputs
+        {
+            item 1 [Moonshine.CornMash] mode:destroy,
+            item 1 [Base.Tarp] mode:destroy,
+            item 1 [Base.RubberBand] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.CornMashCovered,
+        }
     }
-    recipe Cover Potato Mash Bucket with Tarp
+
+    craftRecipe CoverPotatoMashBucketWithTarp
     {
-        CanBeDoneFromFloor: true,
-        destroy PotatoMash,
-        destroy Tarp,
-        destroy RubberBand,
-        Result: PotatoMashCovered,
-        Time: 300.0,
-        Category: Cooking,
-        Sound: PutItemInBag,
-        Prop1: Tarp,
-        Prop2: Source=1,
-        AnimNode: Disassemble,
+        timedAction = Making,
+        time = 300,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        inputs
+        {
+            item 1 [Moonshine.PotatoMash] mode:destroy,
+            item 1 [Base.Tarp] mode:destroy,
+            item 1 [Base.RubberBand] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMashCovered,
+        }
     }
 }

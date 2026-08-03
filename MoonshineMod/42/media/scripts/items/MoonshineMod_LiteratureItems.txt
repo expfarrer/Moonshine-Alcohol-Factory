@@ -12,7 +12,7 @@ module Moonshine
         DisplayCategory = SkillBook,
         DisplayName = Distilling Vol.2 Mash and Fermenting,
         Icon = MagazineDistill2,
-        TeachedRecipes = Make Potato Mash in Bucket;Make Corn Mash in Bucket,
+        TeachedRecipes = MakePotatoMashInBucket;MakeCornMashInBucket,
         ReplaceOnUse = MagazineDistill2,
         WorldStaticModel = MagazineDistill2,
         StaticModel = MagazineDistill2Ground,

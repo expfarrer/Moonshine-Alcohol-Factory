@@ -20,4 +20,58 @@ module Moonshine
         Tags = base:isfirefuel,
         FireFuelRatio = 0.5,
     }
+
+    item MoonshineMolotov
+    {
+        DisplayCategory = Explosives,
+        OtherHandUse = TRUE,
+        MaxRange = 8,
+        WeaponSprite = Molotov,
+        ItemType = base:weapon,
+        MinimumSwingTime = 1.5,
+        SwingAnim = Throw,
+        UseSelf = TRUE,
+        DisplayName = Moonshiners Molotov,
+        SwingTime = 1.5,
+        SwingAmountBeforeImpact = 0.1,
+        PhysicsObject = MolotovCocktail,
+        MinDamage = 0,
+        Weight = 1.5,
+        MaxDamage = 0,
+        OtherHandRequire = Lighter,
+        MaxHitCount = 0,
+        FirePower = 90,
+        FireRange = 4,
+        Icon = Molotov,
+        EquipSound = MolotovCocktailEquip,
+        ExplosionSound = MolotovCocktailExplode,
+        SwingSound = MolotovCocktailThrow,
+    }
+
+    item MoonshineMolotovBig
+    {
+        DisplayCategory = Explosives,
+        OtherHandUse = TRUE,
+        MaxRange = 8,
+        WeaponSprite = Molotov,
+        ItemType = base:weapon,
+        MinimumSwingTime = 1.5,
+        SwingAnim = Throw,
+        UseSelf = TRUE,
+        DisplayName = Moonshiners Molotov,
+        SwingTime = 1.1,
+        SwingAmountBeforeImpact = 0.1,
+        PhysicsObject = MolotovCocktail,
+        MinDamage = 0,
+        Weight = 1.5,
+        MaxDamage = 0,
+        OtherHandRequire = Lighter,
+        MaxHitCount = 0,
+        FirePower = 450,
+        FireRange = 3,
+        Icon = Molotov,
+        EquipSound = MolotovCocktailEquip,
+        ExplosionSound = MolotovCocktailExplode,
+        SwingSound = MolotovCocktailThrow,
+    }
 }

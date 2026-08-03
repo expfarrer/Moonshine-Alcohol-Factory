@@ -1,0 +1,140 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    item OiledSheetsDirty
+    {
+        DisplayCategory = Household,
+        CanBandage = TRUE,
+        Weight = 0.05,
+        ItemType = base:normal,
+        DisplayName = Oily Rag,
+        Icon = RagDirty,
+        BandagePower = 0.5,
+        WorldStaticModel = RippedSheetsDirty,
+        StaticModel = RippedSheetsDirty,
+        ReplaceInSecondHand = Bag_RippedSheetsDirty_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_RippedSheetsDirty_RHand holdingbagright,
+    }
+
+    item MotorOilCan1
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 2.5,
+        ItemType = base:drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan1,
+        StaticModel = MotorOilCanister_Ground1,
+        WorldStaticModel = MotorOilCanister_Ground1,
+        Tags = Petrol,
+    }
+
+    item MotorOilCan2
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 2.5,
+        ItemType = base:drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan2,
+        StaticModel = MotorOilCanister_Ground2,
+        WorldStaticModel = MotorOilCanister_Ground2,
+        Tags = Petrol,
+    }
+
+    item MotorOilCan3
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 2.5,
+        ItemType = base:drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan3,
+        StaticModel = MotorOilCanister_Ground3,
+        WorldStaticModel = MotorOilCanister_Ground3,
+        Tags = Petrol,
+    }
+
+    item MotorOilCan4
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 2.5,
+        ItemType = base:drainable,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.25,
+        DisplayName = Motor Oil Can,
+        Icon = MotorOilCan,
+        ReplaceOnDeplete = EmptyMotorOilCan4,
+        StaticModel = MotorOilCanister_Ground4,
+        WorldStaticModel = MotorOilCanister_Ground4,
+        Tags = Petrol,
+    }
+
+    /*----------------------------------------------------*/
+
+    item EmptyMotorOilCan1
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 0.8,
+        ItemType = base:normal,
+        DisplayName = Empty Motor Oil Can,
+        Icon = MotorOilCan,
+        SurvivalGear = TRUE,
+        StaticModel = MotorOilCanister_Ground1,
+        WorldStaticModel = MotorOilCanister_Ground1,
+        Tags = EmptyPetrol,
+        ReplaceTypes = PetrolSource MotorOilPetrolCan,
+    }
+
+    item EmptyMotorOilCan2
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 0.8,
+        ItemType = base:normal,
+        DisplayName = Empty Motor Oil Can,
+        Icon = MotorOilCan,
+        SurvivalGear = TRUE,
+        StaticModel = MotorOilCanister_Ground2,
+        WorldStaticModel = MotorOilCanister_Ground2,
+        Tags = EmptyPetrol,
+        ReplaceTypes = PetrolSource MotorOilCan2,
+    }
+
+    item EmptyMotorOilCan3
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 0.8,
+        ItemType = base:normal,
+        DisplayName = Empty Motor Oil Can,
+        Icon = MotorOilCan,
+        SurvivalGear = TRUE,
+        StaticModel = MotorOilCanister_Ground3,
+        WorldStaticModel = MotorOilCanister_Ground3,
+        Tags = EmptyPetrol,
+        ReplaceTypes = PetrolSource MotorOilCan3,
+    }
+
+    item EmptyMotorOilCan4
+    {
+        DisplayCategory = VehicleMaintenance,
+        Weight = 0.8,
+        ItemType = base:normal,
+        DisplayName = Empty Motor Oil Can,
+        Icon = MotorOilCan,
+        SurvivalGear = TRUE,
+        StaticModel = MotorOilCanister_Ground4,
+        WorldStaticModel = MotorOilCanister_Ground4,
+        Tags = EmptyPetrol,
+        ReplaceTypes = PetrolSource MotorOilCan4,
+    }
+}

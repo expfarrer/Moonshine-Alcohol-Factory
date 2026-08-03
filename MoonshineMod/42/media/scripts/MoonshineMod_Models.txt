@@ -62,4 +62,32 @@ module Moonshine
         texture = WorldItems/MagazineDistill2,
         scale = 0.4,
     }
+
+    model MotorOilCanister_Ground1
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan1,
+        scale = 0.02,
+    }
+
+    model MotorOilCanister_Ground2
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan2,
+        scale = 0.02,
+    }
+
+    model MotorOilCanister_Ground3
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan1,
+        scale = 0.02,
+    }
+
+    model MotorOilCanister_Ground4
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan1,
+        scale = 0.02,
+    }
 }

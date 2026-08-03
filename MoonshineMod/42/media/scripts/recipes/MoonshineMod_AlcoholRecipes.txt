@@ -13,7 +13,7 @@ module Moonshine
         {
             item 1 tags[base:mixingutensil] mode:keep,
             item 1 [Base.BucketEmpty] mode:destroy,
-            -fluid 5.0 [Water],
+            -fluid 5.0 categories[Water] mode:mixture,
             item 5 tags[base:sugar],
             item 1 [Base.Yeast],
             item 10 [Base.Potato],
@@ -37,7 +37,7 @@ module Moonshine
         {
             item 1 tags[base:mixingutensil] mode:keep,
             item 1 [Base.BucketEmpty] mode:destroy,
-            -fluid 5.0 [Water],
+            -fluid 5.0 categories[Water] mode:mixture,
             item 5 tags[base:sugar],
             item 1 [Base.Yeast],
             item 10 [Base.Corn],

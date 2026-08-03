@@ -338,6 +338,39 @@ either a validated code-level mitigation (e.g. resolving the recipe input via
 that avoids the race) or acceptance that this is a current B42 engine limitation to
 track and re-test on future B42 point releases.
 
+## Full mod audit + major finding — 2026-08-02
+
+Ran a full audit comparing everything in the legacy mod against what's ported to
+`42/` (user wanted the full remaining gap list in one pass instead of finding
+things one at a time). Full categorized punch list in `project_phase_minus1_spike.md`
+memory; headline items: `Moonshine_Distributions.lua` (loot-table spawning) was
+never ported — likely why no magazines were findable in-world at all even once
+items existed; Motor Oil + Molotov families are self-contained and portable;
+Drink/Disinfectant/Petro recipe files (1165/820/674+95 lines) are built entirely
+around the old portable-pot item-swap pattern the native `FluidContainer` system
+replaces, so they need a redesign pass, not a literal port; Medium/Large distill
+tiers are the single largest remaining piece of real work (two more entities,
+same effort as Small tier).
+
+**Then found something bigger while porting the mash-bucket upstream chain
+(mix → cover → ferment) to close the "no magazines" gap directly reported by the
+user: legacy lowercase `recipe {}` blocks are DEAD in Build 42.** Ported the 4
+mash-chain hand-craft recipes as a literal copy of the legacy syntax (same
+approach used successfully everywhere else so far) — every single field in every
+recipe failed to parse (`Recipe.Load > Could not assign [key]: ...`, confirmed via
+the live client log, not intermittent — 100% failure). Root cause: grepped all of
+vanilla B42's scripts for lowercase `recipe` blocks — **zero hits anywhere**,
+100% moved to `craftRecipe`. Fixed by rewriting all 4 as real `craftRecipe`s
+(commit `e417675` on `beta-migration`) — required removing spaces from recipe
+names (`craftRecipe` names must be single tokens), converting `Water=5,` to
+`-fluid 5.0 [Water],`, tool/ingredient alternates to real vanilla tags
+(`base:mixingutensil`, `base:sugar`), and `NeedToBeLearn`/`xpAward`/`SkillRequired`
+to their `craftRecipe`-syntax equivalents. **This invalidates the "simple port"
+classification from the same day's audit for almost everything left in the
+mod** — Molotov, Disinfectant, Drink, Petro, Medium/Large distill, and Charcoal
+recipes all use the same dead `recipe{}` syntax and will all need this same
+rewrite treatment, not a literal copy, when their turn comes.
+
 ---
 
 ## Related shared docs

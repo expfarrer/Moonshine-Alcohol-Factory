@@ -1,0 +1,55 @@
+Tooltip_EN = {
+    Tooltip_item_DistillSmall = "Can be used to clean water, make charcoal or distill spirits.",
+    Tooltip_item_DistillMedium = "Can be used to clean water, make charcoal, distill isopropyl or distill spirits.",
+    Tooltip_item_DistillLarge = "Can be used to clean water, make charcoal, distill isopropyl, gasohol or spirits.",
+    
+    Tooltip_item_DistillSmallWood = "Place in a heat source to distill into charcoal.",
+    Tooltip_item_DistillMediumWood = "Place in a heat source to distill into charcoal.",
+    Tooltip_item_DistillLargeWood = "Place in a heat source to distill into charcoal.",
+    
+    Tooltip_item_DistillSmallCoal = "Use coal to craft a distillation filter or as combustible material.",
+    Tooltip_item_DistillMediumCoal = "Use coal to craft a distillation filter or as combustible material.",
+    Tooltip_item_DistillLargeCoal = "Use coal to craft a distillation filter or as combustible material.",
+    
+    Tooltip_item_DistillSmallMash = "Place in a heat source to distill into spirit.",
+    Tooltip_item_DistillMediumMash = "Place in a heat source to distill into spirit.",
+    Tooltip_item_DistillLargeMash = "Place in a heat source to distill into spirit.",
+    
+    Tooltip_item_DistillSmallAlc = "Refill into bottles and make bottled alcohol.",
+    Tooltip_item_DistillMediumAlc = "Refill into bottles and make bottled alcohol.",
+    Tooltip_item_DistillLargeAlc = "Refill into bottles and make bottled alcohol.",
+    
+    Tooltip_item_DistillMediumRefill = "Place in a heat source to distill into isopropyl.",
+    Tooltip_item_DistillLargeRefill = "Place in a heat source to distill into isopropyl.",
+    
+    Tooltip_item_DistillMediumIso = "Refill into bottles and make disinfectant isopropyl.",
+    Tooltip_item_DistillLargeIso = "Refill into bottles and make disinfectant isopropyl.",
+    
+    Tooltip_item_DistillLargeOil = "Place in a heat source to distill into gasohol.",
+    Tooltip_item_DistillLargeGas = "Refill into bottles and make gasohol gasoline.",
+    
+    Tooltip_item_RottenMash = "This Mash is rotten and is of no use.",
+    Tooltip_item_RottenMashFermented = "This Mash is rotten and is of no use.",
+    
+    Tooltip_item_CornMash = "Cover Mash with a tarp and rubber.",
+    Tooltip_item_CornMashCovered = "Place in a warm space to ferment for 14 days.",
+    Tooltip_item_CornMashFermented = "Fill the fermented mash into a Distill.",
+    
+    Tooltip_item_PotatoMash = "Cover Mash with a tarp and rubber.",
+    Tooltip_item_PotatoMashCovered = "Place in a warm space to ferment for 14 days.",
+    Tooltip_item_PotatoMashFermented = "Fill the fermented mash into a Distill.",
+    
+    Tooltip_item_DistillPotFilter = "A charcoal water distiller filter to prevent unwanted colonies of bacteria or mold.",
+    Tooltip_item_DistillPotColumn = "Temperature Control the process in your Distill.",
+    
+    Tooltip_item_MotorOilCan = "Engine oil for lubricating machines, distill into gasohol.",
+    Tooltip_item_EmptyMotorOilCan = "Empty motor oil containers can be recycled into gascans.",
+	
+	Tooltip_item_EmptyGasoholDrum = "Handcrafted steel drum, designed to store and dispense gasohol.",
+	Tooltip_item_GasoholDrum = "Filled steel drum for efficient use, replacing multiple gas canisters.",
+
+	Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
+	Tooltip_item_OnlyPurifyMicrowave = "This container can only be purified using a microwave.",
+
+
+}

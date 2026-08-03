@@ -1,0 +1,32 @@
+module Moonshine
+{
+    craftRecipe DistillCornMashIntoSpiritLarge
+    {
+        time = 33000,
+        Tags = MoonshineDistillLargeDry,
+        category = Cooking,
+        inputs
+        {
+            item variable[1:5] [Moonshine.CornMashFermented] flags[ItemCount] mode:destroy,
+        }
+        outputs
+        {
+            item variable[1:5] Moonshine.SpiritJarLarge,
+        }
+    }
+
+    craftRecipe DistillPotatoMashIntoSpiritLarge
+    {
+        time = 33000,
+        Tags = MoonshineDistillLargeDry,
+        category = Cooking,
+        inputs
+        {
+            item variable[1:5] [Moonshine.PotatoMashFermented] flags[ItemCount] mode:destroy,
+        }
+        outputs
+        {
+            item variable[1:5] Moonshine.SpiritJarLarge,
+        }
+    }
+}

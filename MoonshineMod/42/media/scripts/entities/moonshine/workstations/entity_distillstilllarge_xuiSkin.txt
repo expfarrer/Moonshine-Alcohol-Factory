@@ -1,0 +1,12 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity ES_DistillStillLarge
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = Distill Still (III),
+            Icon = Build_PrimitiveFurnace,
+        }
+    }
+}

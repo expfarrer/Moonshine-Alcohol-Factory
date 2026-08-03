@@ -1,0 +1,55 @@
+module Moonshine
+{
+    entity DistillStillLarge
+    {
+        component UiConfig
+        {
+            xuiSkin = moonshine_still,
+            entityStyle = ES_DistillStillLarge,
+            uiEnabled = true,
+        }
+        component SpriteConfig
+        {
+            health = 250,
+            skillBaseHealth = 70,
+            face S { layer { row = crafted_01_49, } }
+            face E { layer { row = crafted_01_50, } }
+        }
+        component Resources
+        {
+            group mash_in { Item@Input@5, }
+            group spirit_out { Item@Output@5@StackAny, }
+        }
+        component DryingCraftLogic
+        {
+            Recipes = MoonshineDistillLargeDry,
+            StartMode = Manual,
+            inputGroup = mash_in,
+            outputGroup = spirit_out,
+            actionAnim = Untie_High,
+        }
+        component CraftRecipe
+        {
+            timedAction = Make_With_Brick_Low,
+            time = 900,
+            category = Metalworking,
+            SkillRequired = MetalWelding:4,
+            Tooltip = Tooltip_item_DistillLarge,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep,
+                item 1 tags[base:saw] mode:keep,
+                item 1 [Base.BucketEmpty] mode:destroy,
+                item 4 [Base.MetalPipe] mode:destroy,
+                item 2 [Base.ScrapMetal] mode:destroy,
+                item 3 [Base.Wire] mode:destroy,
+                item 1 [Base.Pot] mode:destroy,
+                item 2 [Base.SmallSheetMetal] mode:destroy,
+                item 2 [Base.DuctTape] mode:destroy,
+                item 1 [Base.PropaneTank] mode:destroy,
+                item 1 [Base.BeerCanEmpty] mode:destroy,
+                item 1 [Base.CarBattery1] mode:destroy,
+            }
+        }
+    }
+}

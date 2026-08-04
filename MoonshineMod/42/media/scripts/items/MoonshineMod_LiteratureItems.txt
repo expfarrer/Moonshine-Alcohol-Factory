@@ -9,12 +9,13 @@ module Moonshine
     {
         Weight = 0.1,
         ItemType = base:literature,
-        DisplayCategory = SkillBook,
+        DisplayCategory = RecipeResource,
         DisplayName = Distilling Vol.2 Mash and Fermenting,
         Icon = MagazineDistill2,
-        TeachedRecipes = MakePotatoMashInBucket;MakeCornMashInBucket,
-        ReplaceOnUse = MagazineDistill2,
+        LearnedRecipes = MakePotatoMashInBucket;MakeCornMashInBucket,
         WorldStaticModel = MagazineDistill2,
         StaticModel = MagazineDistill2Ground,
+        Tags = base:magazine,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
     }
 }

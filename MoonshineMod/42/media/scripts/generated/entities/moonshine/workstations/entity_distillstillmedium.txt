@@ -12,8 +12,8 @@ module Moonshine
         {
             health = 200,
             skillBaseHealth = 60,
-            face S { layer { row = crafted_01_47, } }
-            face E { layer { row = crafted_01_48, } }
+            face S { layer { row = crafted_01_51, } }
+            face E { layer { row = crafted_01_52, } }
         }
         component Resources
         {

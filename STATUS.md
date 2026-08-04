@@ -414,6 +414,36 @@ Medium tier:
   attachment items, and Medium-tier charcoal recipes are real remaining scope,
   not oversights — tracked in the plan.
 
+**Large tier core also built same day** (commit `aad04a4`) — identical pattern,
+`DistillStillLarge` entity + mash→spirit, `SpiritJarLarge` output, `time=33000s`
+(550 min matching the legacy `MinutesToCook` exactly). Same standalone-build
+simplification and same real-remaining-scope caveats (Petrol stage, Filter/
+Column attachments, Large-tier charcoal, upgrade-from-Medium) as Medium.
+
+**Hard bug hit + fixed same day: sprite-row collision with the still-enabled
+`MoonshineSpikeTest` mod, not just vanilla/this-mod's-own scripts.**
+`DistillStillMedium` picked `crafted_01_47/48`, already claimed by
+`MoonshineSpikeTest`'s own `SpikeDistiller` entity — caused a hard
+`WorldDictionaryException` at world load, **the save wouldn't load at all**.
+Fixed by moving to `crafted_01_51/52` (commit `8e8e4ba`) after re-grepping
+claimed rows across vanilla + this mod + `MoonshineSpikeTest` together. New
+standing rule, memory updated: any future sprite-row pick must check the spike
+mod too, not just vanilla + this repo's own scripts.
+
+**✅ Small tier live checkpoint gate PASSED, full loop, user-confirmed
+2026-08-03: "ran the e2e - make mash - fermented - added to still 1 - made
+moonshine."** Mix ingredients → cover with tarp → ferment (real `DaysFresh=4`/
+`DaysTotallyRotten=12`, confirmed working after fixing a bad test edit —
+`DaysFresh` requires an **integer**, a `0.01` test value threw
+`InvalidParameterException` and hard-crashed script loading, fixed by using
+integer test values instead) → distill in `DistillStillSmall` → drink real
+`Moonshine` fluid. Zero errors, zero shortcuts (no debug-spawned intermediate
+items) — this is the first fully player-reachable, no-cheats confirmation of
+the whole rebuilt chain. This satisfies the plan's Phase 3 "critical gate"
+requirement for Small tier's SP side; MP re-verification of the full chain
+(not just the distill-recipe/entity-sync pieces already confirmed earlier)
+is still open before calling Small tier fully done.
+
 ---
 
 ## Related shared docs

@@ -2,7 +2,8 @@ module Moonshine
 {
     craftRecipe DistillCornMashIntoSpiritMedium
     {
-        time = 45000,
+        /* TESTING - REAL VALUE (restore before release): time = 45000, */
+        time = 2,
         Tags = MoonshineDistillMediumDry,
         category = Cooking,
         inputs
@@ -17,7 +18,8 @@ module Moonshine
 
     craftRecipe DistillPotatoMashIntoSpiritMedium
     {
-        time = 45000,
+        /* TESTING - REAL VALUE (restore before release): time = 45000, */
+        time = 2,
         Tags = MoonshineDistillMediumDry,
         category = Cooking,
         inputs

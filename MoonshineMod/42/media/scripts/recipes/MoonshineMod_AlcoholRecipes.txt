@@ -3,7 +3,8 @@ module Moonshine
     craftRecipe MakePotatoMashInBucket
     {
         timedAction = Making,
-        time = 200,
+        /* TESTING - REAL VALUE (restore before release): time = 200, */
+        time = 2,
         Tags = InHandCraft;Cooking,
         category = Cooking,
         NeedToBeLearn = true,
@@ -12,7 +13,7 @@ module Moonshine
         inputs
         {
             item 1 tags[base:mixingutensil] mode:keep,
-            item 1 [Base.BucketEmpty] mode:destroy,
+            item 1 [Base.BucketEmpty] mode:destroy mappers[potatoMashMapper],
             -fluid 5.0 categories[Water] mode:mixture,
             item 5 tags[base:sugar],
             item 1 [Base.Yeast],
@@ -20,14 +21,19 @@ module Moonshine
         }
         outputs
         {
-            item 1 Moonshine.PotatoMash,
+            item 1 mapper:potatoMashMapper,
+        }
+        itemMapper potatoMashMapper
+        {
+            default = Moonshine.PotatoMash,
         }
     }
 
     craftRecipe MakeCornMashInBucket
     {
         timedAction = Making,
-        time = 200,
+        /* TESTING - REAL VALUE (restore before release): time = 200, */
+        time = 2,
         Tags = InHandCraft;Cooking,
         category = Cooking,
         NeedToBeLearn = true,
@@ -36,7 +42,7 @@ module Moonshine
         inputs
         {
             item 1 tags[base:mixingutensil] mode:keep,
-            item 1 [Base.BucketEmpty] mode:destroy,
+            item 1 [Base.BucketEmpty] mode:destroy mappers[cornMashMapper],
             -fluid 5.0 categories[Water] mode:mixture,
             item 5 tags[base:sugar],
             item 1 [Base.Yeast],
@@ -44,7 +50,11 @@ module Moonshine
         }
         outputs
         {
-            item 1 Moonshine.CornMash,
+            item 1 mapper:cornMashMapper,
+        }
+        itemMapper cornMashMapper
+        {
+            default = Moonshine.CornMash,
         }
     }
 
@@ -53,7 +63,8 @@ module Moonshine
     craftRecipe CoverCornMashBucketWithTarp
     {
         timedAction = Making,
-        time = 300,
+        /* TESTING - REAL VALUE (restore before release): time = 300, */
+        time = 2,
         Tags = InHandCraft;Cooking,
         category = Cooking,
         inputs
@@ -71,7 +82,8 @@ module Moonshine
     craftRecipe CoverPotatoMashBucketWithTarp
     {
         timedAction = Making,
-        time = 300,
+        /* TESTING - REAL VALUE (restore before release): time = 300, */
+        time = 2,
         Tags = InHandCraft;Cooking,
         category = Cooking,
         inputs

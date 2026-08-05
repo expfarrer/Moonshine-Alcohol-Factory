@@ -31,7 +31,8 @@ module Moonshine
         component CraftRecipe
         {
             timedAction = Make_With_Brick_Low,
-            time = 900,
+            /* TESTING - REAL VALUE (restore before release): time = 900, */
+            time = 2,
             category = Metalworking,
             SkillRequired = MetalWelding:2,
             Tooltip = Tooltip_item_DistillMedium,

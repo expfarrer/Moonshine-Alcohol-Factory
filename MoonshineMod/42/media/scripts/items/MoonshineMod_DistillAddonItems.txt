@@ -1,0 +1,14 @@
+module Moonshine
+{
+    item DistillPotFilter
+    {
+        DisplayName = Distill Addon (Charcoal Filter),
+        DisplayCategory = WaterContainer,
+        Weight = 1,
+        ItemType = base:normal,
+        Icon = DistillPotMediumFilter,
+        MetalValue = 20,
+        StaticModel = Distill_medium_new_filter_Ground,
+        WorldStaticModel = Distill_medium_new_filter_Ground,
+    }
+}

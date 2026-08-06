@@ -8,6 +8,15 @@ module Moonshine
             entityStyle = ES_DistillStillSmall,
             uiEnabled = true,
         }
+        component ContextMenuConfig
+        {
+            contextEntry
+            {
+                menu = Upgrade_Distill_Still,
+                icon = Item_DistillPotMediumFilter,
+                customFunction = ContextMenuCode.UpgradeDistillStillSmall,
+            }
+        }
         component SpriteConfig
         {
             health = 150,

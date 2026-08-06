@@ -70,6 +70,20 @@ module Moonshine
         scale = 0.4,
     }
 
+    model MagazineDistill3Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill3,
+        scale = 0.4,
+    }
+
+    model Distill_medium_new_filter_Ground
+    {
+        mesh = model_DistillMediumNewFilter_Ground,
+        texture = WorldItems/texture_distill_leveltwo_filter,
+        scale = 0.2,
+    }
+
     model MotorOilCanister_Ground1
     {
         mesh = model_MotorOilCanister_Ground,

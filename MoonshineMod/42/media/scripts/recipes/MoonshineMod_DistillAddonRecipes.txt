@@ -1,0 +1,33 @@
+module Moonshine
+{
+    craftRecipe CreateDistillCoalFilter
+    {
+        timedAction = Make_With_Brick_Low,
+        /* TESTING - REAL VALUE (restore before release): time = 600, */
+        time = 2,
+        Tags = InHandCraft;Metalworking,
+        category = Metalworking,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+            item 1 tags[base:hammer] mode:keep,
+            item 1 tags[base:saw] mode:keep,
+            item 1 tags[base:bucket] mode:keep,
+            -fluid 1.0 categories[Water],
+            item 3 [Base.MetalPipe] mode:destroy,
+            item 1 [Base.ScrapMetal] mode:destroy,
+            item 1 [Base.Bleach] mode:destroy,
+            item 1 [Base.OatsRaw] mode:destroy,
+            item 8 [Moonshine.Coal] mode:destroy,
+            item 1 [Base.Wire] mode:destroy,
+            item 1 [Base.DuctTape] mode:destroy,
+            item 1 [Base.BeerCanEmpty] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotFilter,
+        }
+    }
+}

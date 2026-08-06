@@ -32,4 +32,18 @@ module Moonshine
         Tags = base:magazine,
         OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
     }
+
+    item MagazineDistill3
+    {
+        Weight = 0.1,
+        ItemType = base:literature,
+        DisplayCategory = RecipeResource,
+        DisplayName = Distilling Vol.3 Isopropyl,
+        Icon = MagazineDistill3,
+        LearnedRecipes = CreateDistillCoalFilter,
+        WorldStaticModel = MagazineDistill3,
+        StaticModel = MagazineDistill3Ground,
+        Tags = base:magazine,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+    }
 }

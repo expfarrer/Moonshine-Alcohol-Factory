@@ -52,6 +52,7 @@ module Moonshine
             /* TESTING - REAL VALUE (restore before release): time = 900, */
             time = 2,
             category = Metalworking,
+            NeedToBeLearn = true,
             SkillRequired = MetalWelding:1,
             Tooltip = Tooltip_item_DistillSmall,
             inputs

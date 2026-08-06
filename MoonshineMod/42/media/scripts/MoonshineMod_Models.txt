@@ -56,6 +56,13 @@ module Moonshine
         scale = 0.4,
     }
 
+    model MagazineDistill1Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill1,
+        scale = 0.4,
+    }
+
     model MagazineDistill2Ground
     {
         mesh = model_MagazineGround,

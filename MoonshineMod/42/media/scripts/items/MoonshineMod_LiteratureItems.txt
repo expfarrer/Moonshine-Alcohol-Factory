@@ -5,6 +5,20 @@ module Moonshine
         Base
     }
 
+    item MagazineDistill1
+    {
+        Weight = 0.1,
+        ItemType = base:literature,
+        DisplayCategory = RecipeResource,
+        DisplayName = Distilling Vol.1 Getting Started,
+        Icon = MagazineDistill1,
+        LearnedRecipes = DistillStillSmall,
+        WorldStaticModel = MagazineDistill1,
+        StaticModel = MagazineDistill1Ground,
+        Tags = base:magazine,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+    }
+
     item MagazineDistill2
     {
         Weight = 0.1,

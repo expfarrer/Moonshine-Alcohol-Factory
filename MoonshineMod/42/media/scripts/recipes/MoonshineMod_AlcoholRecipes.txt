@@ -71,7 +71,7 @@ module Moonshine
         {
             item 1 [Moonshine.CornMash] mode:destroy,
             item 1 [Base.Tarp] mode:destroy,
-            item 1 [Base.RubberBand] mode:destroy,
+            item 1 [Base.RubberBand;Base.Rope;Base.Twine;Base.DenimStrips;Base.LeatherStrips;Base.RippedSheets] mode:destroy,
         }
         outputs
         {
@@ -90,7 +90,7 @@ module Moonshine
         {
             item 1 [Moonshine.PotatoMash] mode:destroy,
             item 1 [Base.Tarp] mode:destroy,
-            item 1 [Base.RubberBand] mode:destroy,
+            item 1 [Base.RubberBand;Base.Rope;Base.Twine;Base.DenimStrips;Base.LeatherStrips;Base.RippedSheets] mode:destroy,
         }
         outputs
         {

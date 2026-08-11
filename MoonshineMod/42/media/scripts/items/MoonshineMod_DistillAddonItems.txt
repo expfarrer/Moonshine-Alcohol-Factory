@@ -11,4 +11,17 @@ module Moonshine
         StaticModel = Distill_medium_new_filter_Ground,
         WorldStaticModel = Distill_medium_new_filter_Ground,
     }
+
+    item DistillPotColumn
+    {
+        DisplayName = Distill Addon (Controllable Column),
+        DisplayCategory = WaterContainer,
+        Weight = 5,
+        ItemType = base:normal,
+        Icon = DistillPotLargeColumn,
+        MetalValue = 20,
+        Tooltip = Tooltip_item_DistillPotColumn,
+        StaticModel = Distill_large_new_column_Ground,
+        WorldStaticModel = Distill_large_new_column_Ground,
+    }
 }

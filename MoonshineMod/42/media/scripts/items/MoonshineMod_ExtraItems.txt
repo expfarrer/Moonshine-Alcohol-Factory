@@ -17,7 +17,7 @@ module Moonshine
         WeightEmpty = 0.1,
         StaticModel = Charcoal_Ground,
         WorldStaticModel = Charcoal_Ground,
-        Tags = base:isfirefuel,
+        Tags = base:charcoal;base:isfirefuel,
         FireFuelRatio = 0.5,
     }
 

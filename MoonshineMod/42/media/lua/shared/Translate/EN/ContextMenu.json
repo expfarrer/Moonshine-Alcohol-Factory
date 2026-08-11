@@ -1,3 +1,5 @@
 {
-    "ContextMenu_Upgrade_Distill_Still": "Upgrade Distill Still"
+    "ContextMenu_Upgrade_Distill_Still": "Disassemble for Upgrade (Medium)",
+    "ContextMenu_Upgrade_Distill_Still_Large": "Disassemble for Upgrade (Large)",
+    "ContextMenu_Dismantle_Distill_Still": "Dismantle Still"
 }

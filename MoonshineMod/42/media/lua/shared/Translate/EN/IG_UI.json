@@ -1,3 +1,5 @@
 {
-    "IGUI_Moonshine_UpgradeStillMissingItems": "I need a Distill Coal Filter and Duct Tape to upgrade this still."
+    "IGUI_Moonshine_UpgradeStillDismantled": "Still disassembled. Got the parts back - now I need to build the Medium still.",
+    "IGUI_Moonshine_UpgradeStillLargeDismantled": "Still disassembled. Got the parts back - now I need to build the Large still.",
+    "IGUI_Moonshine_DismantleStillLargeDismantled": "Still dismantled. Got the parts back, including the Controllable Column."
 }

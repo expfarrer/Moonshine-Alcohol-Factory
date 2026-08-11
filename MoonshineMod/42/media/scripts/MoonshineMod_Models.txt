@@ -77,10 +77,24 @@ module Moonshine
         scale = 0.4,
     }
 
+    model MagazineDistill4Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill4,
+        scale = 0.4,
+    }
+
     model Distill_medium_new_filter_Ground
     {
         mesh = model_DistillMediumNewFilter_Ground,
         texture = WorldItems/texture_distill_leveltwo_filter,
+        scale = 0.2,
+    }
+
+    model Distill_large_new_column_Ground
+    {
+        mesh = model_DistillLargeNewColumn_Ground,
+        texture = WorldItems/texture_distill_levelthree_column,
         scale = 0.2,
     }
 

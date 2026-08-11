@@ -46,4 +46,18 @@ module Moonshine
         Tags = base:magazine,
         OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
     }
+
+    item MagazineDistill4
+    {
+        Weight = 0.1,
+        ItemType = base:literature,
+        DisplayCategory = RecipeResource,
+        DisplayName = Distilling Vol.4 Refining - Gasohol,
+        Icon = MagazineDistill4,
+        LearnedRecipes = CreateDistillControllableColumn,
+        WorldStaticModel = MagazineDistill4,
+        StaticModel = MagazineDistill4Ground,
+        Tags = base:magazine,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
+    }
 }

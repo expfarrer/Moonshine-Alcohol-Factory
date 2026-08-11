@@ -8,12 +8,23 @@ module Moonshine
             entityStyle = ES_DistillStillMedium,
             uiEnabled = true,
         }
+        component ContextMenuConfig
+        {
+            contextEntry
+            {
+                menu = Upgrade_Distill_Still_Large,
+                icon = Item_DistillPotMediumFilter,
+                customFunction = ContextMenuCode.UpgradeDistillStillMedium,
+            }
+        }
         component SpriteConfig
         {
             health = 200,
             skillBaseHealth = 60,
-            face S { layer { row = crafted_01_51, } }
-            face E { layer { row = crafted_01_52, } }
+            face S { layer { row = crafted_05_56, } }
+            face E { layer { row = crafted_05_57, } }
+            face N { layer { row = crafted_05_58, } }
+            face W { layer { row = crafted_05_59, } }
         }
         component Resources
         {
@@ -48,8 +59,9 @@ module Moonshine
                 item 1 [Base.SmallSheetMetal] mode:destroy,
                 item 2 [Base.DuctTape] mode:destroy,
                 item 1 [Base.PropaneTank] mode:destroy,
-                item 1 [Base.BeerCanEmpty] mode:destroy,
+                item 1 [Base.BeerCanEmpty] flags[IsEmpty] mode:destroy,
                 item 1 [Base.Bleach] mode:destroy,
+                item 1 [Moonshine.DistillPotFilter] mode:destroy,
             }
         }
     }

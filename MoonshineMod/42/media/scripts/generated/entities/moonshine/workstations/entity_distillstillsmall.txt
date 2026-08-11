@@ -76,7 +76,7 @@ module Moonshine
                 item 1 [Base.SmallSheetMetal],
                 item 1 [Base.DuctTape],
                 item 1 [Base.PropaneTank],
-                item 1 [Base.BeerCanEmpty],
+                item 1 [Base.BeerCanEmpty] flags[IsEmpty],
             }
         }
     }

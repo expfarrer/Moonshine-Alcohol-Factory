@@ -20,7 +20,7 @@ module Moonshine
             item 1 [Base.ScrapMetal] mode:destroy,
             item 1 [Base.Bleach] mode:destroy,
             item 1 [Base.OatsRaw] mode:destroy,
-            item 8 [Moonshine.Coal] mode:destroy,
+            item 8 tags[base:charcoal] mode:destroy,
             item 1 [Base.Wire] mode:destroy,
             item 1 [Base.DuctTape] mode:destroy,
             item 1 [Base.BeerCanEmpty] mode:destroy,
@@ -28,6 +28,33 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotFilter,
+        }
+    }
+
+    craftRecipe CreateDistillControllableColumn
+    {
+        timedAction = Make_With_Brick_Low,
+        /* TESTING - REAL VALUE (restore before release): time = 900, */
+        time = 2,
+        Tags = InHandCraft;Metalworking,
+        category = Metalworking,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:4;Electricity:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+            item 1 tags[base:hammer] mode:keep,
+            item 1 tags[base:saw] mode:keep,
+            item 1 [Base.Extinguisher] mode:destroy,
+            item 1 [Base.AlarmClock2] mode:destroy,
+            item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3] mode:destroy,
+            item 1 [Base.Wire] mode:destroy,
+            item 5 [Base.ElectronicsScrap] mode:destroy,
+            item 1 [Base.DuctTape] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotColumn,
         }
     }
 }

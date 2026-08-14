@@ -31,4 +31,20 @@ module Moonshine
             item variable[1:5] Moonshine.SpiritJarMedium,
         }
     }
+
+    craftRecipe DistillSpiritIntoRubbingAlcoholMedium
+    {
+        /* TESTING - REAL VALUE (restore before release): time = 45000, */
+        time = 2,
+        Tags = MoonshineDistillMediumDry,
+        category = Cooking,
+        inputs
+        {
+            item variable[1:5] [Moonshine.SpiritJarMedium] flags[ItemCount] mode:destroy,
+        }
+        outputs
+        {
+            item variable[1:5] Moonshine.RubbingAlcoholJarMedium,
+        }
+    }
 }

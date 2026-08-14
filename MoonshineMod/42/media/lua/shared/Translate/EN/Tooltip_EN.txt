@@ -51,5 +51,7 @@ Tooltip_EN = {
 	Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
 	Tooltip_item_OnlyPurifyMicrowave = "This container can only be purified using a microwave.",
 
+	Tooltip_item_RubbingAlcoholJarMedium = "Redistilled Moonshine spirit, purified into rubbing alcohol for disinfecting wounds.",
+
 
 }

@@ -1,5 +1,10 @@
 module Moonshine
 {
+    imports
+    {
+        Base
+    }
+
     item SpiritJarSmall
     {
         DisplayCategory = Food,
@@ -48,6 +53,31 @@ module Moonshine
             Fluids
             {
                 fluid = Moonshine:1.0,
+            }
+        }
+    }
+
+    item RubbingAlcoholJarMedium
+    {
+        DisplayCategory = FirstAid,
+        ItemType = base:normal,
+        Weight = 0.7,
+        DisplayName = Jar of Rubbing Alcohol,
+        Icon = GlassJar,
+        StaticModel = JarGlass_Ground,
+        WorldStaticModel = JarGlass_Ground,
+        CustomContextMenu = Drink,
+        CustomEatSound = DrinkingFromBottlePlastic,
+        Tooltip = Tooltip_item_RubbingAlcoholJarMedium,
+        component FluidContainer
+        {
+            ContainerName = RubbingAlcoholJarMedium,
+            Capacity = 1.0,
+            InitialPercentMin = 1.0,
+            InitialPercentMax = 1.0,
+            Fluids
+            {
+                fluid = RubbingAlcohol:1.0,
             }
         }
     }

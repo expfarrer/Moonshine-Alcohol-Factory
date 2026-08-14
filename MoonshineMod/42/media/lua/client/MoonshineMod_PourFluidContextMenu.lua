@@ -1,23 +1,31 @@
 require "TimedActions/ISPourMoonshineFluidAction"
 
--- Scoped to Moonshine's own fluid-bearing items only, not a general vanilla
+-- Scoped to this mod's own still-output fluids only, not a general vanilla
 -- fluid-transfer patch. See ISPourMoonshineFluidAction.lua for why this
 -- exists instead of just using vanilla's native "Transfer Fluids" UI.
 
-local function isMoonshineFluidItem(item)
+-- Fluids this mod's stills can produce, that the pour menu should offer.
+-- FluidType is a fixed native enum (~33 vanilla fluids); every modded fluid
+-- (like Moonshine) reports as FluidType.Modded there, so
+-- FluidType.FromNameLower() always silently returns nil for those. The
+-- actual per-script fluid (native or modded) lives on the separate Fluid
+-- class instead - cont:contains() expects one of those.
+local POURABLE_FLUID_NAMES = { "Moonshine", "RubbingAlcohol" }
+
+local function isPourableFluidItem(item)
     if not item then return false end
     local cont = item:getFluidContainer()
     if not cont then return false end
-    -- FluidType is a fixed native enum (~33 vanilla fluids); every modded
-    -- fluid (including this one) reports as FluidType.Modded there, so
-    -- FluidType.FromNameLower("moonshine") always silently returns nil.
-    -- The actual per-script fluid (native or modded) lives on the separate
-    -- Fluid class instead - cont:contains() expects one of those.
-    local moonshineFluid = Fluid.Get("Moonshine")
-    return moonshineFluid ~= nil and cont:contains(moonshineFluid)
+    for _, fluidName in ipairs(POURABLE_FLUID_NAMES) do
+        local fluid = Fluid.Get(fluidName)
+        if fluid ~= nil and cont:contains(fluid) then
+            return true
+        end
+    end
+    return false
 end
 
-local function doPourMoonshine(playerObj, source, target)
+local function doPourFluid(playerObj, source, target)
     ISTimedActionQueue.add(ISPourMoonshineFluidAction:new(playerObj, source, target))
 end
 
@@ -39,7 +47,7 @@ local function onFillInventoryObjectContextMenu(player, context, items)
     end
     if not firstItem then return end
 
-    if not isMoonshineFluidItem(firstItem) then return end
+    if not isPourableFluidItem(firstItem) then return end
 
     local allItems = playerObj:getInventory():getItems()
 
@@ -53,7 +61,7 @@ local function onFillInventoryObjectContextMenu(player, context, items)
         if candidate ~= firstItem and candidate:getFluidContainer() then
             local cont = candidate:getFluidContainer()
             if cont:getFreeCapacity() > 0 then
-                subMenu:addOption(candidate:getDisplayName(), playerObj, doPourMoonshine, firstItem, candidate)
+                subMenu:addOption(candidate:getDisplayName(), playerObj, doPourFluid, firstItem, candidate)
                 addedAny = true
             end
         end

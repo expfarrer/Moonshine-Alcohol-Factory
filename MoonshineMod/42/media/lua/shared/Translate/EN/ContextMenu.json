@@ -1,5 +1,7 @@
 {
     "ContextMenu_Upgrade_Distill_Still": "Disassemble for Upgrade (Medium)",
     "ContextMenu_Upgrade_Distill_Still_Large": "Disassemble for Upgrade (Large)",
-    "ContextMenu_Dismantle_Distill_Still": "Dismantle Still"
+    "ContextMenu_Dismantle_Distill_Still": "Dismantle Still",
+    "ContextMenu_Moonshine_PourSpirit": "Pour Spirit Into...",
+    "ContextMenu_Moonshine_NoContainers": "No empty containers"
 }

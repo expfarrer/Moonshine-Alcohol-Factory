@@ -9,6 +9,7 @@ module Moonshine
         inputs
         {
             item variable[1:5] [Moonshine.CornMashFermented] flags[ItemCount] mode:destroy,
+            item 2 tags[base:charcoal],
         }
         outputs
         {
@@ -25,6 +26,7 @@ module Moonshine
         inputs
         {
             item variable[1:5] [Moonshine.PotatoMashFermented] flags[ItemCount] mode:destroy,
+            item 2 tags[base:charcoal],
         }
         outputs
         {

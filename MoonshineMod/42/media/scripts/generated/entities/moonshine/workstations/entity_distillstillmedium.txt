@@ -26,18 +26,9 @@ module Moonshine
             face N { layer { row = crafted_05_58, } }
             face W { layer { row = crafted_05_59, } }
         }
-        component Resources
-        {
-            group mash_in { Item@Input@5, }
-            group spirit_out { Item@Output@5@StackAny, }
-        }
-        component DryingCraftLogic
+        component CraftBench
         {
             Recipes = MoonshineDistillMediumDry,
-            StartMode = Manual,
-            inputGroup = mash_in,
-            outputGroup = spirit_out,
-            actionAnim = Untie_High,
         }
         component CraftRecipe
         {

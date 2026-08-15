@@ -107,4 +107,54 @@ module Moonshine
             }
         }
     }
+
+    -- GasoholDrumLarge (below) is not yet produced by any recipe - reserved
+    -- for a future "combine multiple fuel containers into one big drum"
+    -- consolidation recipe, its original intended purpose. Not the output
+    -- of spirit distillation - see GasoholJarLarge for that.
+    item GasoholDrumLarge
+    {
+        DisplayCategory = VehicleMaintenance,
+        ItemType = base:normal,
+        Weight = 10.0,
+        DisplayName = Gasohol Drum,
+        Icon = DrumFull,
+        StaticModel = Drum_Ground,
+        WorldStaticModel = Drum_Ground,
+        Tags = base:petrol,
+        component FluidContainer
+        {
+            ContainerName = GasoholDrumLarge,
+            Capacity = 10.0,
+            InitialPercentMin = 1.0,
+            InitialPercentMax = 1.0,
+            Fluids
+            {
+                fluid = Petrol:1.0,
+            }
+        }
+    }
+
+    item GasoholJarLarge
+    {
+        DisplayCategory = VehicleMaintenance,
+        ItemType = base:normal,
+        Weight = 0.7,
+        DisplayName = Jar of Gasohol,
+        Icon = GlassJar,
+        StaticModel = JarGlass_Ground,
+        WorldStaticModel = JarGlass_Ground,
+        Tags = base:petrol,
+        component FluidContainer
+        {
+            ContainerName = GasoholJarLarge,
+            Capacity = 1.0,
+            InitialPercentMin = 1.0,
+            InitialPercentMax = 1.0,
+            Fluids
+            {
+                fluid = Petrol:1.0,
+            }
+        }
+    }
 }

@@ -31,4 +31,20 @@ module Moonshine
             item variable[1:5] Moonshine.SpiritJarLarge,
         }
     }
+
+    craftRecipe DistillSpiritIntoGasoholLarge
+    {
+        /* TESTING - REAL VALUE (restore before release): time = 60000, */
+        time = 2,
+        Tags = MoonshineDistillLargeDry,
+        category = Cooking,
+        inputs
+        {
+            item 1 [Moonshine.SpiritJarLarge] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholJarLarge,
+        }
+    }
 }

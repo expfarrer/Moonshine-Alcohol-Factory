@@ -12,10 +12,26 @@ require "TimedActions/ISPourMoonshineFluidAction"
 -- class instead - cont:contains() expects one of those.
 local POURABLE_FLUID_NAMES = { "Moonshine", "RubbingAlcohol" }
 
+-- Petrol is deliberately NOT in POURABLE_FLUID_NAMES above - unlike Moonshine
+-- and RubbingAlcohol, Petrol is common vanilla content (gas cans, jerry cans,
+-- vehicles), and vanilla likely restricts pouring/siphoning it on purpose
+-- (balance/realism). So our own Petrol-filled items are allowed by item type
+-- identity instead, not by fluid identity - this keeps the pour menu off
+-- every other Petrol-holding item in the game.
+local POURABLE_ITEM_TYPES = { "Moonshine.GasoholJarLarge", "Moonshine.GasoholDrumLarge" }
+
 local function isPourableFluidItem(item)
     if not item then return false end
     local cont = item:getFluidContainer()
     if not cont then return false end
+
+    local fullType = item:getFullType()
+    for _, itemType in ipairs(POURABLE_ITEM_TYPES) do
+        if fullType == itemType then
+            return true
+        end
+    end
+
     for _, fluidName in ipairs(POURABLE_FLUID_NAMES) do
         local fluid = Fluid.Get(fluidName)
         if fluid ~= nil and cont:contains(fluid) then

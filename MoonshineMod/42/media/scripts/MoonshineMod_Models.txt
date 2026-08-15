@@ -125,4 +125,11 @@ module Moonshine
         texture = WorldItems/texture_MotorOilCan1,
         scale = 0.02,
     }
+
+    model Drum_Ground
+    {
+        mesh = model_Drum_Ground,
+        texture = WorldItems/texture_drum,
+        scale = 0.02,
+    }
 }

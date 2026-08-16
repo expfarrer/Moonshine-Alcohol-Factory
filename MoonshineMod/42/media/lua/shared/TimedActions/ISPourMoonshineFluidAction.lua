@@ -5,9 +5,18 @@ require "TimedActions/ISBaseTimedAction"
 -- plain vanilla items (Beer -> empty Wine bottle: animation/progress bar completes,
 -- nothing actually transfers). The container itself accepts fluid fine (confirmed via
 -- the debug "Add Fluid" cheat, which bypasses CanTransfer entirely) - the bug is in the
--- transfer action's validation, not the container. Real vanilla WaterDispenser sidesteps
--- this the same way: never uses the generic Transfer UI, calls
--- fluidContainer:copyFluidsFrom(other) directly from its own Lua. Doing the same here.
+-- transfer action's validation, not the container.
+--
+-- copyFluidsFrom(source) (no amount argument) was tried first, matching how real vanilla
+-- WaterDispenser uses it - but live testing found it does NOT respect the target's free
+-- capacity for a partial pour: pouring a 5L bucket into a 1.5L pot left the pot "full"
+-- (1.5L, correctly capped) but the bucket fully EMPTIED anyway, silently discarding the
+-- remaining 3.5L instead of leaving it in the source. copyFluidsFrom appears to mean
+-- "transfer everything, capping the target, draining the source regardless" - fine for
+-- WaterDispenser (an infinite source), wrong for a finite portable container. Fixed by
+-- computing the fluid identity explicitly and using addFluid/removeFluid with the exact
+-- clamped amount instead, never calling copyFluidsFrom.
+local POURABLE_FLUIDS = { "Moonshine", "RubbingAlcohol", "Petrol" }
 
 ISPourMoonshineFluidAction = ISBaseTimedAction:derive("ISPourMoonshineFluidAction")
 
@@ -50,8 +59,21 @@ function ISPourMoonshineFluidAction:complete()
 
     local amountToPour = math.min(sourceCont:getAmount(), targetCont:getFreeCapacity())
 
-    targetCont:copyFluidsFrom(sourceCont)
-    sourceCont:removeFluid(amountToPour, false)
+    if amountToPour > 0 then
+        local pouredFluid = nil
+        for _, fluidName in ipairs(POURABLE_FLUIDS) do
+            local fluid = Fluid.Get(fluidName)
+            if fluid ~= nil and sourceCont:contains(fluid) then
+                pouredFluid = fluid
+                break
+            end
+        end
+
+        if pouredFluid then
+            targetCont:addFluid(pouredFluid, amountToPour)
+            sourceCont:removeFluid(amountToPour, false)
+        end
+    end
 
     self.source:syncItemFields()
     self.target:syncItemFields()

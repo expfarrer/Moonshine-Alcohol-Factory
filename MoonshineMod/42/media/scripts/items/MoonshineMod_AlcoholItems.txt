@@ -153,4 +153,30 @@ module Moonshine
         Tags = HasMetal,
         CustomContextMenu = Drink,
     }
+
+    item BucketMoonshine
+    {
+        DisplayCategory = Food,
+        ItemType = base:normal,
+        Weight = 6.0,
+        DisplayName = Bucket of Moonshine,
+        Icon = MetalBucket_Plaster,
+        StaticModel = Bucket,
+        WorldStaticModel = Bucket_Ground,
+        EatType = Bourbon,
+        PourType = Bucket,
+        CustomEatSound = DrinkingFromBottle,
+        Tags = base:bucket;Liquor,
+        component FluidContainer
+        {
+            ContainerName = BucketMoonshine,
+            Capacity = 10.0,
+            InitialPercentMin = 0.5,
+            InitialPercentMax = 0.5,
+            Fluids
+            {
+                fluid = Moonshine:1.0,
+            }
+        }
+    }
 }

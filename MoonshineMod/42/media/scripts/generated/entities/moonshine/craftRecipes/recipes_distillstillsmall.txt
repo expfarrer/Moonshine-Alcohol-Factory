@@ -8,12 +8,16 @@ module Moonshine
         category = Cooking,
         inputs
         {
-            item variable[1:5] [Moonshine.CornMashFermented] flags[ItemCount] mode:destroy,
+            item variable[1:5] [Moonshine.CornMashFermented] flags[ItemCount] mode:destroy mappers[bucketMoonshineMapper],
             item 2 tags[base:charcoal],
         }
         outputs
         {
-            item variable[1:5] Moonshine.SpiritJarSmall,
+            item variable[1:5] mapper:bucketMoonshineMapper,
+        }
+        itemMapper bucketMoonshineMapper
+        {
+            default = Moonshine.BucketMoonshine,
         }
     }
 
@@ -25,12 +29,16 @@ module Moonshine
         category = Cooking,
         inputs
         {
-            item variable[1:5] [Moonshine.PotatoMashFermented] flags[ItemCount] mode:destroy,
+            item variable[1:5] [Moonshine.PotatoMashFermented] flags[ItemCount] mode:destroy mappers[bucketMoonshineMapper],
             item 2 tags[base:charcoal],
         }
         outputs
         {
-            item variable[1:5] Moonshine.SpiritJarSmall,
+            item variable[1:5] mapper:bucketMoonshineMapper,
+        }
+        itemMapper bucketMoonshineMapper
+        {
+            default = Moonshine.BucketMoonshine,
         }
     }
 }

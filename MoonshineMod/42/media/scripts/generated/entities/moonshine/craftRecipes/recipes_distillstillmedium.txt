@@ -3,7 +3,7 @@ module Moonshine
     craftRecipe DistillCornMashIntoSpiritMedium
     {
         /* TESTING - REAL VALUE (restore before release): time = 45000, */
-        time = 2,
+        time = 60,
         Tags = MoonshineDistillMediumDry,
         category = Cooking,
         inputs
@@ -24,7 +24,7 @@ module Moonshine
     craftRecipe DistillPotatoMashIntoSpiritMedium
     {
         /* TESTING - REAL VALUE (restore before release): time = 45000, */
-        time = 2,
+        time = 60,
         Tags = MoonshineDistillMediumDry,
         category = Cooking,
         inputs
@@ -45,12 +45,13 @@ module Moonshine
     craftRecipe DistillSpiritIntoRubbingAlcoholMedium
     {
         /* TESTING - REAL VALUE (restore before release): time = 45000, */
-        time = 2,
+        time = 60,
         Tags = MoonshineDistillMediumDry,
         category = Cooking,
         inputs
         {
             item 1 [Moonshine.BucketMoonshine] mode:destroy,
+            item 3 [Base.EmptyJar] mode:destroy,
             item 3 tags[base:charcoal],
         }
         outputs

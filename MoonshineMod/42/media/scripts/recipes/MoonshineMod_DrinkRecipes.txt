@@ -1,0 +1,1165 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    /*---------------*/
+
+    
+
+    
+	    recipe Refill Spirit in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:WhiskeyRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	
+	
+	recipe Refill Spirit in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:WhiskeyRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+
+    recipe Refill Spirit in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotSmall;1,
+        Result:WhiskeyRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+
+    recipe Refill Spirit in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotMedium;1,
+        Result:WhiskeyRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+
+    recipe Refill Spirit in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotLarge;1,
+        Result:WhiskeyRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+     
+   }
+
+    /*--------------------------------------------------------------*/
+
+    recipe Refill Spirit in Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:BeerRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	  recipe Refill Spirit in Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:BeerRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	
+	
+
+    recipe Refill Spirit in Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotSmall;1,
+        Result:BeerRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotMedium;1,
+        Result:BeerRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotLarge;1,
+        Result:BeerRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    /*-----------------------------------------------------*/
+
+    recipe Refill Spirit in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:WineRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	  recipe Refill Spirit in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:WineRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+	
+    }
+	
+	
+	
+	
+	
+	
+
+    recipe Refill Spirit in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Alc_DistillPotSmall;1,
+        Result:WineRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Alc_DistillPotMedium;1,
+        Result:WineRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Alc_DistillPotLarge;1,
+        Result:WineRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    /*----------*/
+
+
+
+
+    recipe Refill Spirit in Empty Jar
+    {
+        	Base.EmptyJar,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:WhiteLightning,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	   recipe Refill Spirit in Empty Jar
+    {
+        	Base.EmptyJar,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:WhiteLightning,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+    recipe Refill Spirit in Empty Jar
+    {
+        Base.EmptyJar,
+        Alc_DistillPotSmall;1,
+        Result:WhiteLightning,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Jar
+    {
+        	Base.EmptyJar,
+        Alc_DistillPotMedium;1,
+        Result:WhiteLightning,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Jar
+    {
+       	Base.EmptyJar,
+        Alc_DistillPotLarge;1,
+        Result:WhiteLightning,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    /*----------*/
+
+    recipe Refill Spirit in Empty Soda Bottle
+    {
+        PopBottleEmpty,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:SodaBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	    recipe Refill Spirit in Empty Soda Bottle
+    {
+        PopBottleEmpty,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:SodaBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+	
+	
+	
+	
+	
+	
+	
+
+    recipe Refill Spirit in Empty Soda Bottle
+    {
+        PopBottleEmpty,
+        Alc_DistillPotSmall;1,
+        Result:SodaBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Soda Bottle
+    {
+        PopBottleEmpty,
+        Alc_DistillPotMedium;1,
+        Result:SodaBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Soda Bottle
+    {
+        PopBottleEmpty,
+        Alc_DistillPotLarge;1,
+        Result:SodaBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    /*----------*/
+
+    recipe Refill Spirit in Empty Water Bottle
+    {
+        WaterBottleEmpty,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:WaterBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	    recipe Refill Spirit in Empty Water Bottle
+    {
+        WaterBottleEmpty,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:WaterBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+    recipe Refill Spirit in Empty Water Bottle
+    {
+        WaterBottleEmpty,
+        Alc_DistillPotSmall;1,
+        Result:WaterBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Water Bottle
+    {
+        WaterBottleEmpty,
+        Alc_DistillPotMedium;1,
+        Result:WaterBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Water Bottle
+    {
+        WaterBottleEmpty,
+        Alc_DistillPotLarge;1,
+        Result:WaterBottleRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    /*----------*/
+
+    recipe Refill Spirit in Empty Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotMediumRefillSpirit;1,
+        Result:BleachBottleRefill,
+        Time:70.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	    recipe Refill Spirit in Empty Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotLargeRefillSpirit;1,
+        Result:BleachBottleRefill,
+        Time:70.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+	
+	
+	
+	
+	
+
+    recipe Refill Spirit in Empty Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotSmall;1,
+        Result:BleachBottleRefill,
+        Time:70.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotMedium;1,
+        Result:BleachBottleRefill,
+        Time:70.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Spirit in Empty Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotLarge;1,
+        Result:BleachBottleRefill,
+        Time:70.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+  /*---*/
+
+
+recipe Refill Water in Mug
+    {
+        Mug1,
+        Water_DistillPotSmall;1,
+        Result:MuglWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+recipe Refill Water in Mug
+    {
+        MugRed,
+        Water_DistillPotSmall;1,
+        Result:MugRedWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+recipe Refill Water in Mug
+    {
+        MugWhite,
+        Water_DistillPotSmall;1,
+        Result:MugWhiteWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+
+recipe Refill Water in Mug
+    {
+        MugSpiffo,
+        Water_DistillPotSmall;1,
+        Result:MugSpiffoWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+/*---------*/
+
+
+
+    recipe Refill Water in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Water_DistillPotSmall;1,
+        Result:WhiskeyWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Beer Bottle
+    {
+        BeerEmpty,
+        Water_DistillPotSmall;1,
+        Result:BeerWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Water_DistillPotSmall;1,
+        Result:WineWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Jar
+    {
+        EmptyJar,
+        Water_DistillPotSmall;1,
+        Result:JarWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Pop Bottle
+    {
+        PopBottleEmpty,
+        Water_DistillPotSmall;1,
+        Result:PopBottleWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Water Bottle
+    {
+        WaterBottleEmpty,
+        Water_DistillPotSmall;1,
+        Result:BottleWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water Bleach Bottle
+    {
+        BleachEmpty,
+        Water_DistillPotSmall;1,
+        Result:BleachWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+/*----------------------------------------------------*/
+recipe Refill Water in Mug
+    {
+        Mug1,
+         Water_DistillPotMedium;1,
+        Result:MuglWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+recipe Refill Water in Mug
+    {
+        MugRed,
+        Water_DistillPotMedium;1,
+        Result:MugRedWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+recipe Refill Water in Mug
+    {
+        MugWhite,
+         Water_DistillPotMedium;1,
+        Result:MugWhiteWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+
+recipe Refill Water in Mug
+    {
+        MugSpiffo,
+         Water_DistillPotMedium;1,
+        Result:MugSpiffoWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+/*---------*/
+
+    recipe Refill Water in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Water_DistillPotMedium;1,
+        Result:WhiskeyWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Beer Bottle
+    {
+        BeerEmpty,
+        Water_DistillPotMedium;1,
+        Result:BeerWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Water_DistillPotMedium;1,
+        Result:WineWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Jar
+    {
+        EmptyJar,
+        Water_DistillPotMedium;1,
+        Result:JarWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Pop Bottle
+    {
+        PopBottleEmpty,
+        Water_DistillPotMedium;1,
+        Result:PopBottleWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Water Bottle
+    {
+        WaterBottleEmpty,
+        Water_DistillPotMedium;1,
+        Result:BottleWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water Bleach Bottle
+    {
+        BleachEmpty,
+        Water_DistillPotMedium;1,
+        Result:BleachWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+/*------------------------------*/
+
+
+
+recipe Refill Water in Mug
+    {
+        Mug1,
+        Water_DistillPotLarge;1,
+        Result:MuglWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+recipe Refill Water in Mug
+    {
+        MugRed,
+        Water_DistillPotLarge;1,
+        Result:MugRedWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+recipe Refill Water in Mug
+    {
+        MugWhite,
+         Water_DistillPotLarge;1,
+        Result:MugWhiteWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+
+recipe Refill Water in Mug
+    {
+        MugSpiffo,
+         Water_DistillPotLarge;1,
+        Result:MugSpiffoWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+/*---------*/
+
+    recipe Refill Water in Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Water_DistillPotLarge;1,
+        Result:WhiskeyWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Beer Bottle
+    {
+        BeerEmpty,
+        Water_DistillPotLarge;1,
+        Result:BeerWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Wine Bottle
+    {
+        WineEmpty2/WineEmpty,
+        Water_DistillPotLarge;1,
+        Result:WineWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Jar
+    {
+        EmptyJar,
+        Water_DistillPotLarge;1,
+        Result:JarWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Pop Bottle
+    {
+        PopBottleEmpty,
+        Water_DistillPotLarge;1,
+        Result:PopBottleWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Water Bottle
+    {
+        WaterBottleEmpty,
+        Water_DistillPotLarge;1,
+        Result:BottleWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Water in Bleach Bottle
+    {
+        BleachEmpty,
+        Water_DistillPotLarge;1,
+        Result:BleachWaterRefill,
+        Time:50.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        OnTest:Recipe.OnTest.NotTaintedWater,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	
+	
+	
+    /*------------*/
+}

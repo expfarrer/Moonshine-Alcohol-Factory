@@ -1,0 +1,272 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+
+    model Charcoal_Ground
+    {
+        mesh = Charcoal,
+        texture = WorldItems/128px-Charcoal_Model,
+        scale = 0.5,
+    }
+    
+    model Drum_Ground
+    {
+        mesh = model_Drum_Ground,
+        texture = WorldItems/texture_drum,
+        scale = 0.4,
+    }
+    
+	
+	
+	
+	
+	
+	
+	model MagazineDistill1
+    {
+        mesh = model_Magazine,
+        texture = MagazineDistill1,
+        scale = 0.4,
+    }
+	
+
+    
+    model MagazineDistill1Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill1,
+        scale = 0.4,
+    }
+	
+	
+	
+	  model MagazineDistill2
+    {
+        mesh = model_Magazine,
+        texture = MagazineDistill2,
+        scale = 0.4,
+    }
+    
+    
+    model MagazineDistill2Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill2,
+        scale = 0.4,
+    }
+    
+	
+	
+	 model MagazineDistill3
+    {
+        mesh = model_Magazine,
+        texture = MagazineDistill3,
+        scale = 0.4,
+    }
+	
+	
+	
+    model MagazineDistill3Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill3,
+        scale = 0.4,
+    }
+    
+	
+	    model MagazineDistill4
+    {
+        mesh = model_Magazine,
+        texture = MagazineDistill4,
+        scale = 0.4,
+    }
+    
+	
+	
+	
+	
+    model MagazineDistill4Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill4,
+        scale = 0.4,
+    }
+    
+   
+       model MagazineDistill5
+    {
+        mesh = model_Magazine,
+        texture = MagazineDistill5,
+        scale = 0.4,
+    }
+   
+       model MagazineDistill5Ground
+    {
+        mesh = model_MagazineGround,
+        texture = WorldItems/MagazineDistill5,
+        scale = 0.4,
+    }
+   
+   
+   /*------*/
+   
+   
+   
+    
+    model Distill_medium_new_filter_Ground
+    {
+        mesh = model_DistillMediumNewFilter_Ground,
+        texture = WorldItems/texture_distill_leveltwo_filter,
+        scale = 0.2,
+    }
+    
+    model Distill_large_new_column_Ground
+    {
+        mesh = model_DistillLargeNewColumn_Ground,
+        texture = WorldItems/texture_distill_levelthree_column,
+        scale = 0.2,
+    }
+    
+    
+    
+    model MotorOilCanister_Ground1
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan1,
+        scale = 0.02,
+    }
+    
+    model MotorOilCanister_Ground2
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan2,
+        scale = 0.02,
+    }
+    
+    model MotorOilCanister_Ground3
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan1,
+        scale = 0.02,
+    }
+
+    model MotorOilCanister_Ground4
+    {
+        mesh = model_MotorOilCanister_Ground,
+        texture = WorldItems/texture_MotorOilCan1,
+        scale = 0.02,
+    }
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    
+    model distill_small_Ground
+    {
+        
+        mesh = model_DistillSmallNew_Ground,
+        texture = WorldItems/texture_distill_levelone,
+        scale = 0.2,
+    }
+    
+    model distill_medium_Ground
+    {
+        mesh = model_DistillMediumNew_Ground,
+        texture = WorldItems/texture_distill_leveltwo,
+        scale = 0.2,
+    }
+    
+    model distill_large_Ground
+    {
+        mesh = model_DistillLargeNew_Ground,
+        texture = WorldItems/texture_distill_levelthree,
+        scale = 0.2,
+    }
+    
+  
+    
+    model BucketMash_GroundCorn 
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashCorn,
+        scale = 0.4,
+    }
+    
+    model BucketMash_GroundPotato
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashPotato,
+        scale = 0.4,
+    }
+    
+   
+    
+    model BucketMash_GroundCorn_Covered 
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashFermented,
+        scale = 0.4,
+    }
+    
+    model BucketMash_GroundPotato_Covered
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashFermented,
+        scale = 0.4,
+    }
+    
+   
+    
+    model BucketMash_GroundCorn_Fermented 
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashFermented,
+        scale = 0.4,
+    }
+    
+    model BucketMash_GroundPotato_Fermented
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashFermented,
+        scale = 0.4,
+    }
+    
+   
+    
+    model BucketMash_Ground_Rotten
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashRotten,
+        scale = 0.4,
+    }
+    
+    model BucketMash_Ground_Rotten_Fermented
+    {
+        mesh = BucketFull,
+        texture = WorldItems/BucketFullMashRotten,
+        scale = 0.4,
+    }
+    
+	
+	
+	
+	
+	
+	
+	
+ 
+}

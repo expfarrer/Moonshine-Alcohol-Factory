@@ -1,0 +1,96 @@
+
+	
+	    recipe Fill Gasohol Drum
+    {
+        PetrolCan=20,
+        destroy EmptyGasoholDrum,
+        Result:GasoholDrum,
+        Time:950.0,
+        Category:Survivalist,
+		CanBeDoneFromFloor:true,
+		
+	
+		Prop2:Base.RippedSheetsDirty,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+
+	
+	    recipe Fill Gasohol Drum
+    {
+        MotorOilPetrolCan=80,
+        destroy EmptyGasoholDrum,
+        Result:GasoholDrum,
+        Time:950.0,
+        Category:Survivalist,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheetsDirty,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	 recipe Fill Gasohol Drum
+    {
+        BleachPetrolCan=80,
+        destroy EmptyGasoholDrum,
+        Result:GasoholDrum,
+        Time:950.0,
+        Category:Survivalist,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheetsDirty,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	 recipe Fill Gasohol Drum
+    {
+        WhiskeyPetrolCan=80,
+        destroy EmptyGasoholDrum,
+        Result:GasoholDrum,
+        Time:950.0,
+        Category:Survivalist,
+		CanBeDoneFromFloor:true,
+		
+		Prop2:Base.RippedSheetsDirty,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	 
+	 
+	 
+	  recipe Fill Gasohol Drum
+    {
+        BeerPetrolCan=80,
+        destroy EmptyGasoholDrum,
+        Result:GasoholDrum,
+        Time:950.0,
+        Category:Survivalist,
+	    CanBeDoneFromFloor:true,
+		Prop2:Base.RippedSheetsDirty,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	
+		recipe Fill Gasohol Drum
+    {
+        WinePetrolCan=80,
+        destroy EmptyGasoholDrum,
+        Result:GasoholDrum,
+        Time:950.0,
+        Category:Survivalist,
+        CanBeDoneFromFloor:true,
+		Prop2:Base.RippedSheetsDirty,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	

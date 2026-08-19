@@ -1,0 +1,83 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+   
+
+    item Coal
+    {
+        DisplayCategory = Material,
+        Weight = 1,
+        Type = Normal,
+        UseWhileEquipped = FALSE,
+        UseDelta = 0.1,
+        DisplayName = Piece of Coal,
+        Icon = Coal,
+        WeightEmpty = 0.1,
+        StaticModel = Charcoal_Ground,
+        WorldStaticModel = Charcoal_Ground,
+    }
+
+  
+    item MoonshineMolotov
+    {
+        DisplayCategory = Explosives,
+        OtherHandUse = TRUE,
+        MaxRange = 8,
+        WeaponSprite = Molotov,
+        Type = Weapon,
+        MinimumSwingTime = 1.5,
+        SwingAnim = Throw,
+        UseSelf = TRUE,
+        DisplayName = Moonshiners Molotov,
+        SwingTime = 1.5,
+        SwingAmountBeforeImpact = 0.1,
+        PhysicsObject = MolotovCocktail,
+        MinDamage = 0,
+        Weight = 1.5,
+        MaxDamage = 0,
+        OtherHandRequire = Lighter,
+        MaxHitCount = 0,
+        FirePower = 90,
+        FireRange = 4,
+        Icon = Molotov,
+        EquipSound = MolotovCocktailEquip,
+        ExplosionSound = MolotovCocktailExplode,
+        SwingSound = MolotovCocktailThrow,
+    }
+
+    item MoonshineMolotovBig
+    {
+        DisplayCategory = Explosives,
+        OtherHandUse = TRUE,
+        MaxRange = 8,
+        WeaponSprite = Molotov,
+        Type = Weapon,
+        MinimumSwingTime = 1.5,
+        SwingAnim = Throw,
+        UseSelf = TRUE,
+        DisplayName = Moonshiners Molotov,
+        SwingTime = 1.1,
+        SwingAmountBeforeImpact = 0.1,
+        PhysicsObject = MolotovCocktail,
+        MinDamage = 0,
+        Weight = 1.5,
+        MaxDamage = 0,
+        OtherHandRequire = Lighter,
+        MaxHitCount = 0,
+        FirePower = 450,
+        FireRange = 3,
+        Icon = Molotov,
+        EquipSound = MolotovCocktailEquip,
+        ExplosionSound = MolotovCocktailExplode,
+        SwingSound = MolotovCocktailThrow,
+    }
+
+   
+	
+	
+	
+}

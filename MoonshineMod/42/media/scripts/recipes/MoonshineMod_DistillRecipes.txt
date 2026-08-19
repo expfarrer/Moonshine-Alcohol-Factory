@@ -1,0 +1,596 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    } 
+
+    /*------------------DISTILL POT CREATION------------------*/
+
+    recipe Create Distill Pot(I)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+
+        destroy BucketEmpty,
+        MetalPipe=2,
+		ScrapMetal,
+       
+	    Water=2,
+        Wire,
+        Bleach,
+		
+        destroy Pot,
+        destroy SmallSheetMetal,
+        destroy DuctTape,
+        destroy PropaneTank,
+        destroy BeerCanEmpty,
+
+        Result:DistillPotSmall,
+        Time:900.0,
+
+         Sound:BreakMetalItem,
+         Prop1:Screwdriver,
+         Prop2:Source=4,
+         AnimNode:Disassemble,
+		 
+        CanBeDoneFromFloor:true,
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		SkillRequired:MetalWelding=1,
+		
+    }
+	
+	
+	
+	
+	
+	recipe Dismantle Distill(I)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        
+        keep Wrench/PipeWrench,
+        destroy DistillPotSmall,
+		
+        
+        Result:ScrapMetal,
+        Time:400.0,
+		
+        Sound:BreakMetalItem,
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillPartsSm,
+		SkillRequired:MetalWelding=1,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		
+		
+    }
+	
+	recipe Dismantle Distill(II)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        
+        keep Wrench/PipeWrench,
+        destroy DistillPotMedium,
+		
+        
+        Result:ScrapMetal,
+        Time:600.0,
+		
+        Sound:BreakMetalItem,
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillPartsMd,
+		SkillRequired:MetalWelding=2,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		
+		
+    }
+	
+	recipe Dismantle Distill(III)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        
+        keep Wrench/PipeWrench,
+        destroy DistillPotLarge,
+		
+        
+        Result:ScrapMetal,
+        Time:900.0,
+		
+        Sound:BreakMetalItem,
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillPartsLg,
+		SkillRequired:MetalWelding=4;Electricity=2,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		
+    }
+	
+	
+	
+	
+	recipe Dismantle Charcoal Filter
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        
+        keep Wrench/PipeWrench,
+        destroy DistillPotFilter,
+        Result:ScrapMetal,
+        Time:900.0,
+		
+        Sound:BreakMetalItem,
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.DistillPartsFilter,
+		SkillRequired:MetalWelding=2,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		
+    }
+	
+	
+	
+	
+		recipe Dismantle Controllable Column
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        
+        keep Wrench/PipeWrench,
+        destroy DistillPotColumn,
+		Result:ScrapMetal,
+        Time:900.0,
+		
+        Sound:BreakMetalItem,
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillPartsColumn,
+		SkillRequired:MetalWelding=4;Electricity=2,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    /*------------------CORN MASH IN POT------------------*/
+
+    recipe Fill Distill with Corn Mash
+    {
+        destroy DistillPotSmall,
+        CornMashFermented;10,
+        Result:Mash_DistillPotSmall,
+        Time:400.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+		
+        
+		OnCreate:Moonshine.BucketCover,
+        CanBeDoneFromFloor:true,
+		
+    }
+
+
+
+    recipe Fill Distill with Corn Mash
+    {
+        destroy DistillPotMedium,
+        CornMashFermented;10,
+        Result:Mash_DistillPotMedium,
+        Time:400.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,Sound:PourWaterIntoObject,
+        
+		Prop2:Source=1,
+        AnimNode:Disassemble,
+		
+        OnCreate:Moonshine.BucketCover,
+        CanBeDoneFromFloor:true,
+	
+		}
+
+
+
+    recipe Fill Distill with Corn Mash
+    {
+        destroy DistillPotLarge,
+        CornMashFermented;10,
+        Result:Mash_DistillPotLarge,
+        Time:400.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+       
+	    /*Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+
+        OnCreate:Moonshine.BucketCover,
+        CanBeDoneFromFloor:true,
+		
+    }
+
+
+
+
+
+    /*------------------POTATO MASH IN POT------------------*/
+
+    recipe Fill Distill with Potato Mash
+    {
+        destroy DistillPotSmall,
+        PotatoMashFermented;10,
+        Result:Mash_DistillPotSmall,
+        Time:400.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+		      
+		/*
+		Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+		
+		OnCreate:Moonshine.BucketCover,
+        CanBeDoneFromFloor:true,
+		
+    }
+
+    recipe Fill Distill with Potato Mash
+    {
+        destroy DistillPotMedium,
+        PotatoMashFermented;10,
+        Result:Mash_DistillPotMedium,
+        Time:400.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+      
+		/*
+		Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+		OnCreate:Moonshine.BucketCover,
+        CanBeDoneFromFloor:true,
+		
+    }
+	
+
+    recipe Fill Distill with Potato Mash
+    {
+        destroy DistillPotLarge,
+        PotatoMashFermented;10,
+        Result:Mash_DistillPotLarge,
+        Time:400.0,
+        Category:Cooking,
+        Sound:PourWaterIntoObject,
+        /*
+		Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+        OnCreate:Moonshine.BucketCover,
+        CanBeDoneFromFloor:true,
+		
+    }
+
+
+
+
+
+
+    /*------------------FILL DISTILL WITH WATER------------------*/
+
+    recipe Fill Distill with Water
+    {
+        destroy DistillPotSmall,
+        Water=40,
+        Result:Water_DistillPotSmall,
+        Time:400.0,
+        Category:Survivalist,
+        Sound:PourWaterIntoObject,
+        /*
+		Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+		
+    }
+
+    recipe Fill Distill with Water
+    {
+        destroy DistillPotMedium,
+        Water=60,
+        Result:Water_DistillPotMedium,
+        Time:400.0,
+        Category:Survivalist,
+        Sound:PourWaterIntoObject,
+        /*
+		Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+        CanBeDoneFromFloor:true,
+    }
+
+    recipe Fill Distill with Water
+    {
+        destroy DistillPotLarge,
+        Water=80,
+        Result:Water_DistillPotLarge,
+        Time:400.0,
+        Category:Survivalist,
+        Sound:PourWaterIntoObject,
+        /*
+		Prop1:Source=1,
+        Prop2:BucketWaterFull,
+        AnimNode:Disassemble,
+		*/
+        Prop2:Source=1,
+        AnimNode:Disassemble,
+		
+        CanBeDoneFromFloor:true,
+    }
+
+    /*------------------DISTILL ADD-ONS------------------*/
+
+    recipe Create Distill Coal Filter
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+
+        MetalPipe=3,
+        Water=1,
+        ScrapMetal,
+        Bleach,
+        destroy OatsRaw,
+        Coal=8,
+        Wire,
+        destroy DuctTape,
+        destroy BeerCanEmpty,
+
+        Result:DistillPotFilter,
+        Time:600.0,
+        Sound:BreakMetalItem,
+       
+	    Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+	   
+        CanBeDoneFromFloor:true,
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		SkillRequired:MetalWelding=2,
+		
+    }
+	
+	/*---2nd set of coal to build filter with og coal----*/
+	
+	recipe Create Distill Coal Filter
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+
+        MetalPipe=3,
+        Water=1,
+        ScrapMetal,
+        Bleach,
+        destroy OatsRaw,
+        Charcoal=1,
+        Wire,
+        destroy DuctTape,
+        destroy BeerCanEmpty,
+
+        Result:DistillPotFilter,
+        Time:600.0,
+        Sound:BreakMetalItem,
+     
+	    Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+	 
+        CanBeDoneFromFloor:true,
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		SkillRequired:MetalWelding=2,
+		
+    }
+	
+	
+	
+	
+
+
+    recipe Create Controllable Distill Column
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        Extinguisher,
+        AlarmClock2,
+        destroy CarBattery1/CarBattery2/CarBattery3,
+        Wire,
+        ElectronicsScrap=5,
+        destroy DuctTape,
+
+        Result:DistillPotColumn,
+        Time:900.0,
+        Sound:BreakMetalItem,
+        
+		Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+		
+        CanBeDoneFromFloor:true,
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		SkillRequired:MetalWelding=4;Electricity=2,
+    }
+
+    /*------------------Assemble Stage 1/2------------------*/
+
+    recipe Upgrade Distill(I)to(II)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        destroy DuctTape,
+        destroy DistillPotFilter,
+        destroy DistillPotSmall,
+
+        Result:DistillPotMedium,
+        Time:900.0,
+        Sound:BreakMetalItem,
+		
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+		
+		
+        CanBeDoneFromFloor:true,
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		SkillRequired:MetalWelding=2,
+    }
+
+
+  /*------------------Assemble Stage 2/2------------------*/
+
+
+    recipe Upgrade Distill(II)to(III)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        destroy DuctTape,
+        destroy DistillPotColumn,
+        destroy DistillPotMedium,
+
+        Result:DistillPotLarge,
+        Time:900.0,
+        Sound:BreakMetalItem,
+        
+		Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+		
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
+		SkillRequired:MetalWelding=4;Electricity=2,
+	
+        
+    }
+	
+	/*------------Disassemble Stage 2 to 1 --------------*/
+	
+	
+	 recipe Downgrade Distill(II)to(I)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        keep Wrench/PipeWrench,
+        
+        destroy DistillPotMedium,
+
+        Result:DistillPotSmall,
+        Time:900.0,
+        Sound:BreakMetalItem,
+		
+        Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+        
+		CanBeDoneFromFloor:true,
+		/*OnCreate:Moonshine.GiveFilter,*/
+		OnCreate:Moonshine.DistillPartsFilter,
+		NeedToBeLearn:true,
+		SkillRequired:MetalWelding=2,
+		
+    }
+	
+	
+	/*--------------Disassemble Stage 3-2---*/
+	
+	
+		 recipe Downgrade Distill(III)to(II)
+    {
+        keep [Recipe.GetItemTypes.Hammer],
+        keep [Recipe.GetItemTypes.Saw],
+        
+        keep Wrench/PipeWrench,
+        destroy DistillPotLarge,
+
+        Result:DistillPotMedium,
+        Time:900.0,
+        Sound:BreakMetalItem,
+       
+	    Prop2:Base.ScrapMetal,
+        Prop1:Screwdriver,
+        AnimNode:Disassemble,
+	   
+        CanBeDoneFromFloor:true,
+		/*OnCreate:Moonshine.GiveColumn,*/
+		OnCreate:Moonshine.GiveDistillPartsColumn,
+		NeedToBeLearn:true,
+		SkillRequired:MetalWelding=4;Electricity=2,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    /*------------------End------------------*/
+}

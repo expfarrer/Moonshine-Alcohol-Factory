@@ -1,0 +1,820 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+ 
+ /*---------- [Recipe.GetItemTypes.Liquor];4,    ------------*/
+ 
+ 
+ /*
+    recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+       
+        BleachBottleRefill/WhiskeyRefill/BeerRefill/WineRefill/WhiteLightning/SodaBottleRefill/WaterBottleRefill/Wine/WhiskeyFull=6,
+        destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+        Result: Alc_DistillPotMediumRefillSpirit,
+		
+		OnCreate:Moonshine.DoubbleFilledReturnLg,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+        
+		 CanBeDoneFromFloor: true,
+		 
+    }
+	
+	*/
+	
+	
+	
+	
+	/*-----Moonshine.GiveDistillMed---[Recipe.GetItemTypes.Screwdriver]-----------*/
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        BleachBottleRefill=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:Base.BleachEmpty=6,
+		/*OnCreate:Moonshine.GiveDistillMed,*/
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Source=Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	recipe Fill Spirit from Distill Pot(II)
+    {
+	    BleachBottleEmpty =6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:BleachBottleRefill=6,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        WhiskeyRefill/WhiskeyFull=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:Base.WhiskeyEmpty=6,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	recipe Fill Spirit from Distill Pot(II)
+    {
+	    WhiskeyEmpty= 6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:WhiskeyRefill=6,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        BeerRefill=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:Base.BeerEmpty=6,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+		recipe Fill Spirit from Distill Pot(II)
+    {
+	    BeerEmpty =6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:BeerRefill=6,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        WineRefill/Wine=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:Base.WineEmpty=6,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+		
+		
+		recipe Fill Spirit from Distill Pot(II)
+    {
+	    WineEmpty =6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:WineRefill=6,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	
+	
+	
+	
+	
+		recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        WhiteLightning=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		/*Result:JarEmpty=6,*/
+		Result:EmptyJar=6,
+		
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	recipe Fill Spirit from Distill Pot(II)
+    {
+	    EmptyJar=6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:WhiteLightning=6,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        SodaBottleRefill=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:Base.PopBottleEmpty=6,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+		recipe Fill Spirit from Distill Pot(II)
+    {
+	    SodaBottleEmpty=6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:SodaBottleRefill=6,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	recipe Refill Distill Pot(II) with 6 x Spirit
+    {
+        WaterBottleRefill=6,
+		destroy DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:Base.WaterBottleEmpty=6,
+		OnCreate:Moonshine.DoubbleFilledReturnMed,
+		CanBeDoneFromFloor: true,
+		NeedToBeLearn:true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+		recipe Fill Spirit from Distill Pot(II)
+    {
+	    WaterBottleEmpty=6,
+        
+		destroy Alc_DistillPotMedium,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:WaterBottleRefill=6,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+	
+	
+	
+	
+	/*-------------------------------------*/
+/*	
+	  recipe Refill Distill Pot(III) with 8 x Spirit
+
+{
+    BleachBottleRefill/WhiskeyRefill/BeerRefill/WineRefill/WhiteLightning/SodaBottleRefill/WaterBottleRefill/Wine/WhiskeyFull=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Alc_DistillPotMediumRefillSpirit,
+    OnCreate: Moonshine.DoubbleFilledReturn,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+}
+*/
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    BleachBottleRefill=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Base.BleachEmpty=8,
+    OnCreate:Moonshine.DoubbleFilledReturnLg,
+    CanBeDoneFromFloor: true,
+
+	NeedToBeLearn:true,
+	
+	    Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+
+		recipe Fill Spirit from Distill Pot(III)
+    {
+	    BleachBottleEmpty=8,
+        destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:BleachBottleRefill=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+		
+    }
+
+
+
+
+
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    WhiskeyRefill/WhiskeyFull=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Base.WhiskeyEmpty=8,
+    OnCreate:Moonshine.DoubbleFilledReturnLg,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+	
+	    Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+
+	recipe Fill Spirit from Distill Pot(III)
+    {
+	    WhiskeyEmpty=8,
+        
+		destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:WhiskeyRefill=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    BeerRefill=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Base.BeerEmpty=8,
+    OnCreate:Moonshine.DoubbleFilledReturnLg,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+	
+	Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+
+
+	recipe Fill Spirit from Distill Pot(III)
+    {
+	    BeerEmpty=8,
+        
+		destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:BeerRefill=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    WineRefill/Wine=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Base.WineEmpty=8,
+    OnCreate: Moonshine.GiveDistillLargeEmpty,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+	
+	Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+
+
+	recipe Fill Spirit from Distill Pot(III)
+    {
+	    WineEmpty=8,
+        
+		destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:WineRefill=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+ }
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    WhiteLightning=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+     Result:EmptyJar=8,
+    OnCreate:Moonshine.DoubbleFilledReturnLg,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+	
+	    Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+recipe Fill Spirit from Distill Pot(III)
+    {
+	    EmptyJar=8,
+        
+		destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result: WhiteLightning=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+ }
+
+
+
+
+
+
+
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    SodaBottleRefill=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Base.PopBottleEmpty=8,
+    OnCreate:Moonshine.DoubbleFilledReturnLg,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+	
+	Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+	recipe Fill Spirit from Distill Pot(III)
+    {
+	     SodaBottleEmpty=8,
+        
+		destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result: SodaBottleRefill=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+recipe Refill Distill Pot(III) with 8 x Spirit
+{
+    WaterBottleRefill=8,
+    destroy DistillPotLarge,
+    Time: 450.0,
+    Sound: PourWaterIntoObject,
+    Result: Base.WaterBottleEmpty=8,
+    OnCreate:Moonshine.DoubbleFilledReturnLg,
+    CanBeDoneFromFloor: true,
+	NeedToBeLearn:true,
+	
+	    Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+}
+
+	recipe Fill Spirit from Distill Pot(III)
+    {
+	      WaterBottleEmpty=8,
+        
+		destroy Alc_DistillPotLarge,
+        Time: 350.0,
+        Sound: PourWaterIntoObject,
+		Result:  WaterBottleRefill=8,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+ }
+
+
+
+
+
+
+
+	
+	/*--------------------------------------------*/
+	
+	
+
+    recipe Refill Disinfectant Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotMediumIso;1,
+        Result: DisinfectantRefillWhiskey,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		 CanBeDoneFromFloor: true,
+		 
+		 Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotMediumIso;1,
+        Result: DisinfectantRefillBeer,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		 CanBeDoneFromFloor: true,
+		 
+		 Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Wine Bottle
+    {
+        WineEmpty/WineEmpty2,
+        Alc_DistillPotMediumIso;1,
+        Result: DisinfectantRefillWine,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Soda Bottle
+    {
+        PopBottleEmpty/WaterBottleEmpty,
+        Alc_DistillPotMediumIso;1,
+        Result: DisinfectantRefillSoda,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotMediumIso;1,
+        Result: DisinfectantRefillBleach,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	/*----------------------------------------*/
+	
+	
+	  recipe Refill Disinfectant Whiskey Bottle
+    {
+        WhiskeyEmpty,
+        Alc_DistillPotLargeIso;1,
+        Result: DisinfectantRefillWhiskey,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Beer Bottle
+    {
+        BeerEmpty,
+        Alc_DistillPotLargeIso;1,
+        Result: DisinfectantRefillBeer,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Wine Bottle
+    {
+        WineEmpty/WineEmpty2,
+        Alc_DistillPotLargeIso;1,
+        Result: DisinfectantRefillWine,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Soda Bottle
+    {
+        PopBottleEmpty/WaterBottleEmpty,
+        Alc_DistillPotLargeIso;1,
+        Result: DisinfectantRefillSoda,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+
+    recipe Refill Disinfectant Bleach Bottle
+    {
+        BleachEmpty,
+        Alc_DistillPotLargeIso;1,
+        Result: DisinfectantRefillBleach,
+        Time: 200.0,
+        Sound: PourWaterIntoObject,
+		CanBeDoneFromFloor: true,
+		
+		Prop2:Base.RippedSheets,
+		Prop1:Source=1,
+        AnimNode:RipSheets,
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

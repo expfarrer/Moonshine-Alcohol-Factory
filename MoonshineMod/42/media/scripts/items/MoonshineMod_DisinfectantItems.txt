@@ -1,0 +1,116 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    item DisinfectantRefillWhiskey
+    {
+        DisplayCategory = FirstAid,
+        Type = Drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = Whiskey Bottle filled with Disinfectant,
+        Icon = Whiskey_Water_Full,
+        Weight = 0.3,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = WhiskeyBottle,
+        WorldStaticModel = WhiskeyBottleGround,
+        Tags = Disinfectant,
+        ReplaceOnUse = WhiskeyEmpty,
+    }
+
+    item DisinfectantRefillBeer
+    {
+        DisplayCategory = FirstAid,
+        Type = Drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = Beer Bottle filled with Disinfectant,
+        Icon = BeerBottle,
+        Weight = 0.3,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = BeerBottle,
+        WorldStaticModel = BeerBottle,
+        Tags = Disinfectant,
+        ReplaceOnUse = BeerEmpty,
+    }
+
+    item DisinfectantRefillWine
+    {
+        DisplayCategory = FirstAid,
+        Type = Drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = Wine Bottle filled with Disinfectant,
+        Icon = WineFull,
+        Weight = 0.3,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = WhiteWineBottle,
+        WorldStaticModel = WhiteWineBottle,
+        Tags = Disinfectant,
+        ReplaceOnUse = WineEmpty,
+    }
+
+    item DisinfectantRefillSoda
+    {
+        DisplayCategory = FirstAid,
+        Type = Drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = Soda Bottle filled with Disinfectant,
+        Icon = Pop_empty,
+        Weight = 0.3,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = PopBottle,
+        WorldStaticModel = EmptyPopBottle,
+        Tags = Disinfectant,
+        ReplaceOnUse = PopBottleEmpty,
+    }
+
+    item DisinfectantRefillWaterBottle
+    {
+        DisplayCategory = FirstAid,
+        Type = Drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = WaterBottle Bottle filled with Disinfectant,
+        Icon = WaterBottle_Empty,
+        Weight = 0.3,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = PopBottle,
+        WorldStaticModel = EmptyPopBottle,
+        Tags = Disinfectant,
+        ReplaceOnUse = WaterBottleEmpty,
+    }
+
+    item DisinfectantRefillBleach
+    {
+        DisplayCategory = FirstAid,
+        Type = Drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = Bleach Bottle filled with Disinfectant,
+        Icon = Bleach,
+        Weight = 0.3,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = BleachBottle,
+        EatType = BleachBottle,
+        WorldStaticModel = BleachBottle,
+        Tags = Disinfectant,
+        ReplaceOnUse = BleachEmpty,
+    }
+}

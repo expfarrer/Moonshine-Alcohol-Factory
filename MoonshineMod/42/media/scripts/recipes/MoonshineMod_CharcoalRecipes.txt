@@ -1,0 +1,170 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    /*------------FILL WOOD AND REMOVE WOOD----------------------------------------*/
+
+    recipe Fill Distill(I) with Wood 
+    {
+        destroy DistillPotSmall,
+        TreeBranch=6,
+        Result:DistillPotSmallWood,
+        Time:400.0,
+        CanBeDoneFromFloor: true,
+	
+        /*Prop2:Source=1,*/
+		Prop1:TreeBranch,
+        AnimNode:RipSheets,
+		
+		
+    }
+	
+	
+	
+	
+
+    recipe Remove Wood from Distill(I)  
+    {
+        destroy DistillPotSmallWood,
+        Result: DistillPotSmall,
+        Time: 400.0,
+        CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveWoodSmall,
+		
+		 /*Prop2:Source=1,*/
+		Prop1:TreeBranch,
+        AnimNode:RipSheets,
+		
+    }
+
+
+
+    /*------------------------------*/
+
+
+    recipe Fill Distill(II) with Wood
+     {
+        destroy DistillPotMedium,
+        TreeBranch=4,
+        Result: DistillPotMediumWood,
+        Time: 400.0,
+        CanBeDoneFromFloor: true,
+		
+		/*Prop2:Source=1,*/
+		Prop1:TreeBranch,
+        AnimNode:RipSheets,
+		
+    }
+	
+
+	
+	
+	
+
+    recipe Remove Wood from Distill(II)  
+    {
+        destroy DistillPotMediumWood,
+        Result: DistillPotMedium,
+        Time: 400.0,
+        CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveWoodMedium,
+		
+		/*Prop2:Source=1,*/
+		Prop1:TreeBranch,
+        AnimNode:RipSheets,
+		
+    }
+	
+	/*------------------------------*/
+
+    recipe Fill Distill(III) with Wood
+	
+    {
+        destroy DistillPotLarge,
+        TreeBranch=2,
+        Result: DistillPotLargeWood,
+        Time: 400.0,
+        CanBeDoneFromFloor: true,
+		
+		/*Prop2:Source=1,*/
+		Prop1:TreeBranch,
+        AnimNode:RipSheets,
+		
+    }
+	
+
+	
+	
+	
+
+    recipe Remove Wood from Distill(III)  
+    {
+        OnCreate:Moonshine.GiveWoodLarge,
+		destroy DistillPotLargeWood,
+        Result: DistillPotLarge,
+        Time: 400.0,
+        CanBeDoneFromFloor: true,
+		
+		/*Prop2:Source=1,*/
+		Prop1:TreeBranch,
+        AnimNode:RipSheets,
+		
+    }
+
+    /*-------------REMOVE--COAL------------------------*/
+
+    recipe Remove Coal from Distill(I)
+    {
+        destroy DistillPotSmallCoal,
+        Result: DistillPotSmall,
+        Time: 400.0,
+        OnCreate:Moonshine.GiveCoalSmall,
+        CanBeDoneFromFloor: true,
+		
+		/*Prop2:Source=1,*/
+		Prop1:Moonshine.Coal,
+        AnimNode:RipSheets,
+		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
+	
+    }
+
+    recipe Remove Coal from Distill(II) 
+    {
+        destroy DistillPotMediumCoal,
+        Result: DistillPotMedium,
+        Time: 400.0,
+        OnCreate: Moonshine.GiveCoalMedium,
+        CanBeDoneFromFloor: true,
+		
+		/*Prop2:Source=1,*/
+		Prop1:Moonshine.Coal,
+        AnimNode:RipSheets,
+		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
+	
+		
+    }
+
+    recipe Remove Coal from Distill(III) 
+    {
+        destroy DistillPotLargeCoal,
+        Result: DistillPotLarge,
+        Time: 400.0,
+        OnCreate:Moonshine.GiveCoalLarge,
+        CanBeDoneFromFloor: true,
+		
+		/*Prop2:Source=1,*/
+		Prop1:Moonshine.Coal,
+        AnimNode:RipSheets,
+		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
+	
+		
+    }
+
+
+
+
+
+}

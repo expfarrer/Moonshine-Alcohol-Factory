@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         inputs
         {
         item 20 [Base.PetrolCan],
@@ -25,7 +25,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         inputs
         {
         item 80 [Moonshine.MotorOilPetrolCan],
@@ -41,7 +41,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         inputs
         {
         item 80 [Moonshine.BleachPetrolCan],
@@ -57,7 +57,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         inputs
         {
         item 80 [Moonshine.WhiskeyPetrolCan],
@@ -73,7 +73,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         inputs
         {
         item 80 [Moonshine.BeerPetrolCan],
@@ -89,7 +89,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         inputs
         {
         item 80 [Moonshine.WinePetrolCan],

@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 150.0,
+        time = 150,
         inputs
         {
         item 1 tags[base:alcoholicbeverage],
@@ -26,7 +26,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 150.0,
+        time = 150,
         inputs
         {
         item 1 [Moonshine.WinePetrolCan;Moonshine.WhiskeyPetrolCan;Moonshine.BeerPetrolCan],
@@ -43,7 +43,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 150.0,
+        time = 150,
         inputs
         {
         item 1 [Moonshine.WinePetrolCan;Moonshine.WhiskeyPetrolCan;Moonshine.BeerPetrolCan],

@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:1,
         xpAward = MetalWelding:25,
@@ -39,7 +39,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         SkillRequired = MetalWelding:1,
         xpAward = MetalWelding:25,
         OnCreate = RecipeCodeOnCreate.GiveDistillPartsSm,
@@ -60,7 +60,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 600.0,
+        time = 600,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
         OnCreate = RecipeCodeOnCreate.GiveDistillPartsMd,
@@ -81,7 +81,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
         OnCreate = RecipeCodeOnCreate.GiveDistillPartsLg,
@@ -102,7 +102,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
         OnCreate = RecipeCodeOnCreate.DistillPartsFilter,
@@ -123,7 +123,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
         OnCreate = RecipeCodeOnCreate.GiveDistillPartsColumn,
@@ -144,7 +144,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
@@ -161,7 +161,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
@@ -178,7 +178,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
@@ -195,7 +195,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
@@ -212,7 +212,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
@@ -229,7 +229,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
@@ -246,7 +246,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 400.0,
+        time = 400,
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
@@ -262,7 +262,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 400.0,
+        time = 400,
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
@@ -278,7 +278,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 400.0,
+        time = 400,
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
@@ -294,7 +294,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 600.0,
+        time = 600,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
@@ -322,7 +322,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 600.0,
+        time = 600,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
@@ -350,7 +350,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
@@ -375,7 +375,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
@@ -397,7 +397,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
@@ -419,7 +419,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
         OnCreate = RecipeCodeOnCreate.DistillPartsFilter,
@@ -440,7 +440,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 900.0,
+        time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
         OnCreate = RecipeCodeOnCreate.GiveDistillPartsColumn,

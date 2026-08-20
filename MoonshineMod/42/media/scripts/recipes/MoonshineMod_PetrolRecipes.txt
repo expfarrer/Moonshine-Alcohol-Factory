@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 550.0,
+        time = 550,
         OnCreate = RecipeCodeOnCreate.GiveOil,
         inputs
         {
@@ -26,7 +26,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 650.0,
+        time = 650,
         OnCreate = RecipeCodeOnCreate.GiveMotorOil,
         inputs
         {
@@ -43,7 +43,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 250.0,
+        time = 250,
         inputs
         {
         item 1 [Moonshine.EmptyMotorOilCan1],
@@ -59,7 +59,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 250.0,
+        time = 250,
         inputs
         {
         item 1 [Moonshine.EmptyMotorOilCan1],
@@ -75,7 +75,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 250.0,
+        time = 250,
         inputs
         {
         item 1 [Moonshine.EmptyMotorOilCan1],
@@ -91,7 +91,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 250.0,
+        time = 250,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -107,7 +107,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 250.0,
+        time = 250,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -123,7 +123,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 250.0,
+        time = 250,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -139,7 +139,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 950.0,
+        time = 950,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4,
         xpAward = MetalWelding:25,
@@ -162,7 +162,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
@@ -179,7 +179,7 @@ module Moonshine
     {
         timedAction = Making, category = Survivalist,
         Tags = InHandCraft;Survivalist,
-        time = 950.0,
+        time = 950,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {

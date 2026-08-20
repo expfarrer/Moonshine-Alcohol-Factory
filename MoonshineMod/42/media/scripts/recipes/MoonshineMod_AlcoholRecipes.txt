@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -32,7 +32,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -55,7 +55,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -79,7 +79,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -102,7 +102,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -126,7 +126,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -149,7 +149,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 200.0,
+        time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
         xpAward = Cooking:10,
@@ -173,7 +173,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 300.0,
+        time = 300,
         inputs
         {
         item 1 [Moonshine.CornMash],
@@ -190,7 +190,7 @@ module Moonshine
     {
         timedAction = Making, category = Cooking,
         Tags = InHandCraft;Cooking,
-        time = 300.0,
+        time = 300,
         inputs
         {
         item 1 [Moonshine.PotatoMash],

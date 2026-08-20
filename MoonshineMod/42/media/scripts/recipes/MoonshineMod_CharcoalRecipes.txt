@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
@@ -25,7 +25,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.GiveWoodSmall,
         inputs
         {
@@ -41,7 +41,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
@@ -57,7 +57,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.GiveWoodMedium,
         inputs
         {
@@ -73,7 +73,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
@@ -89,7 +89,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         OnCreate = RecipeCodeOnCreate.GiveWoodLarge,
         inputs
         {
@@ -105,7 +105,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         xpAward = Woodwork:5,
         OnCreate = RecipeCodeOnCreate.GiveCoalSmall,
         inputs
@@ -122,7 +122,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         xpAward = Woodwork:5,
         OnCreate = RecipeCodeOnCreate.GiveCoalMedium,
         inputs
@@ -139,7 +139,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 400.0,
+        time = 400,
         xpAward = Woodwork:5,
         OnCreate = RecipeCodeOnCreate.GiveCoalLarge,
         inputs

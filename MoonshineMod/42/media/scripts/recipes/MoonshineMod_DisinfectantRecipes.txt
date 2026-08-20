@@ -9,7 +9,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 350.0,
+        time = 350,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
         inputs
@@ -27,7 +27,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 350.0,
+        time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
@@ -44,7 +44,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 350.0,
+        time = 350,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
         inputs
@@ -62,7 +62,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 350.0,
+        time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
@@ -79,7 +79,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 450.0,
+        time = 450,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
         inputs
@@ -97,7 +97,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 350.0,
+        time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
@@ -114,7 +114,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 450.0,
+        time = 450,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
         inputs
@@ -132,7 +132,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 350.0,
+        time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
@@ -149,7 +149,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 200.0,
+        time = 200,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -165,7 +165,7 @@ module Moonshine
     {
         timedAction = Making,
         Tags = InHandCraft,
-        time = 200.0,
+        time = 200,
         inputs
         {
         item 1 [Base.BeerEmpty],

@@ -8,7 +8,7 @@ module Moonshine
     item DisinfectantRefillWhiskey
     {
         DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Whiskey Bottle filled with Disinfectant,
@@ -26,7 +26,7 @@ module Moonshine
     item DisinfectantRefillBeer
     {
         DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Beer Bottle filled with Disinfectant,
@@ -44,7 +44,7 @@ module Moonshine
     item DisinfectantRefillWine
     {
         DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Wine Bottle filled with Disinfectant,
@@ -62,7 +62,7 @@ module Moonshine
     item DisinfectantRefillSoda
     {
         DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Soda Bottle filled with Disinfectant,
@@ -80,7 +80,7 @@ module Moonshine
     item DisinfectantRefillWaterBottle
     {
         DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = WaterBottle Bottle filled with Disinfectant,
@@ -98,7 +98,7 @@ module Moonshine
     item DisinfectantRefillBleach
     {
         DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Bleach Bottle filled with Disinfectant,

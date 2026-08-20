@@ -11,7 +11,7 @@ item OiledSheetsDirty
         CanBandage	=	TRUE,
         Weight	=	0.05,
         
-        Type	=	Normal,
+        ItemType	= base:normal,
         DisplayName	=	Oily Rag,
         Icon	=	RagDirty,
         BandagePower    =   0.5,
@@ -33,7 +33,7 @@ item OiledSheetsDirty
     {
         DisplayCategory = VehicleMaintenance,
         Weight =2.5,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseWhileEquipped = FALSE,
         UseDelta = 0.25,
         DisplayName = Motor Oil Can,
@@ -52,7 +52,7 @@ item OiledSheetsDirty
     {
         DisplayCategory = VehicleMaintenance,
         Weight =2.5,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseWhileEquipped = FALSE,
         UseDelta = 0.25,
         DisplayName = Motor Oil Can,
@@ -70,7 +70,7 @@ item OiledSheetsDirty
     {
         DisplayCategory = VehicleMaintenance,
         Weight =2.5,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseWhileEquipped = FALSE,
         UseDelta = 0.25,
         DisplayName = Motor Oil Can,
@@ -88,7 +88,7 @@ item OiledSheetsDirty
     {
         DisplayCategory = VehicleMaintenance,
         Weight =2.5,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseWhileEquipped = FALSE,
         UseDelta = 0.25,
         DisplayName = Motor Oil Can,
@@ -109,7 +109,7 @@ item EmptyMotorOilCan1
 {
     DisplayCategory = VehicleMaintenance,
     Weight = 0.8,
-    Type = Normal,
+    ItemType	= base:normal,
     DisplayName = Empty Motor Oil Can,
     Icon = MotorOilCan,
     SurvivalGear = TRUE,
@@ -128,7 +128,7 @@ item EmptyMotorOilCan2
 {
     DisplayCategory = VehicleMaintenance,
     Weight = 0.8,
-    Type = Normal,
+    ItemType	= base:normal,
     DisplayName = Empty Motor Oil Can,
     Icon = MotorOilCan,
     SurvivalGear = TRUE,
@@ -145,7 +145,7 @@ item EmptyMotorOilCan3
 {
     DisplayCategory = VehicleMaintenance,
     Weight = 0.8,
-    Type = Normal,
+    ItemType	= base:normal,
     DisplayName = Empty Motor Oil Can,
     Icon = MotorOilCan,
     SurvivalGear = TRUE,
@@ -162,7 +162,7 @@ item EmptyMotorOilCan4
 {
     DisplayCategory = VehicleMaintenance,
     Weight = 0.8,
-    Type = Normal,
+    ItemType	= base:normal,
     DisplayName = Empty Motor Oil Can,
     Icon = MotorOilCan,
     SurvivalGear = TRUE,
@@ -180,7 +180,7 @@ item EmptyMotorOilCan4
     {
         DisplayCategory = VehicleMaintenance,
         Weight = 5.0,
-        Type = Normal,
+        ItemType	= base:normal,
         DisplayName = Gasohol Drum (Empty),
         Icon = DrumEmpty,
         StaticModel = Drum_Ground,
@@ -199,7 +199,7 @@ item EmptyMotorOilCan4
         DisplayCategory = VehicleMaintenance,
         DisplayName = Gasohol Drum (Half full),
         Weight = 25,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseWhileEquipped = FALSE,
         /*UseDelta = 0.0625,*/
 		UseDelta = 0.1,
@@ -231,7 +231,7 @@ item EmptyMotorOilCan4
         DisplayCategory = VehicleMaintenance,
         DisplayName = Gasohol Drum (Full),
         Weight = 50,
-        Type = Drainable,
+        ItemType	= base:drainable,
         UseWhileEquipped = FALSE,
         UseDelta = 0.0625,
 		/*UseDelta = 0.1,*/
@@ -267,7 +267,7 @@ item EmptyMotorOilCan4
 	    DisplayName	=	Water Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
 		Weight	=	1,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
 		ReplaceOnDeplete	= Base.WaterBottleEmpty,
@@ -287,7 +287,7 @@ item EmptyMotorOilCan4
 	    DisplayName	=	Pop Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
 		Weight	=	1,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
 		ReplaceOnDeplete	= Base.PopBottleEmpty,
@@ -309,7 +309,7 @@ item EmptyMotorOilCan4
 	    DisplayName	=	Bleach Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
 		Weight	=	5,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
 		ReplaceOnDeplete	=	BleachEmpty,
@@ -330,7 +330,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayCategory = VehicleMaintenance,
 		Weight	=	4,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
 		DisplayName	=	MotorOil Gas Can,
@@ -352,7 +352,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayCategory = VehicleMaintenance,
 		Weight	=	3,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
 		DisplayName	=	Whiskey Bottle Gas Can,
@@ -370,7 +370,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayCategory = VehicleMaintenance,
 		Weight	=	2,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
 		DisplayName	=	Beer Bottle Gas Can,
@@ -389,7 +389,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayCategory = VehicleMaintenance,
 		Weight	=	5,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
 		DisplayName	=	Wine Bottle Gas Can,

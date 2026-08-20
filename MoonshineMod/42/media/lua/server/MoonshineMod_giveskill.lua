@@ -1,7 +1,6 @@
-require "recipecode"
-require 'timedactionshelper'
-
 Moonshine = Moonshine or {}
+Recipe = Recipe or {}
+Recipe.OnGiveXP = Recipe.OnGiveXP or {}
 
 
 

@@ -14,7 +14,7 @@ module Moonshine
     {
 	    DisplayCategory = SkillBook,
         Weight = 0.1,
-        Type = Literature,
+        ItemType	= base:literature,
         DisplayName = Distilling Vol.1 Getting Started,
         Icon = MagazineDistill1,
         TeachedRecipes = Create Distill Pot(I),
@@ -28,7 +28,7 @@ module Moonshine
     item MagazineDistill2
     {
         Weight = 0.1,
-        Type = Literature,
+        ItemType	= base:literature,
         DisplayCategory = SkillBook,
         DisplayName = Distilling Vol.2 Mash and Fermenting,
         Icon = MagazineDistill2,
@@ -49,7 +49,7 @@ module Moonshine
     item MagazineDistill3
     {
         Weight = 0.1,
-        Type = Literature,
+        ItemType	= base:literature,
         DisplayCategory = SkillBook,
         DisplayName = Distilling Vol.3 Isopropyl,
         Icon = MagazineDistill3,
@@ -65,7 +65,7 @@ module Moonshine
     item MagazineDistill4
     {
         Weight = 0.1,
-        Type = Literature,
+        ItemType	= base:literature,
         DisplayCategory = SkillBook,
         DisplayName = Distilling Vol.4 Refining - Gasohol,
         Icon = MagazineDistill4,

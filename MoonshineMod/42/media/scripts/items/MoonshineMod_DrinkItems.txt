@@ -29,7 +29,7 @@ imports
 		
 		Weight	=	0.7,
 		
-		Type	=	Food,
+		ItemType	= base:food,
 		FoodType = Liquor,
 		
 		UnhappyChange	=	-50,
@@ -66,7 +66,7 @@ imports
 		HungerChange	=	-9,
 		Weight	=	0.7,
 		
-		Type	=	Food,
+		ItemType	= base:food,
 		FoodType = Liquor,
 		
 		UnhappyChange	=	-30,
@@ -106,7 +106,7 @@ imports
 	    StressChange	=	-50,
         HungerChange	=	-10,
         Weight	=	0.7,
-        Type	=	Food,
+        ItemType	= base:food,
 		FoodType = Liquor,
 		 DisplayCategory = Food,
 		 
@@ -145,7 +145,7 @@ imports
 	StressChange	=	-99,
 	HungerChange	=	-2,
 	Weight	=	0.7,
-	Type	=	Food,
+	ItemType	= base:food,
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning,
@@ -178,7 +178,7 @@ imports
  item EmptyJar
 	{
 	    DisplayCategory = Cooking,
-		Type				=		Normal,
+		ItemType	= base:normal,
 		DisplayName			=		Empty Jar,
 		Icon				=		JarEmpty2,
 		Weight				=		0.2,
@@ -195,7 +195,7 @@ imports
 		HungerChange	=	-9,
 		Weight	=	0.4,
 		
-		Type	=	Food,
+		ItemType	= base:food,
 		FoodType = Liquor,
 		
 		UnhappyChange	=	-26,
@@ -231,7 +231,7 @@ imports
 		HungerChange	=	-5,
 		Weight	=	0.4,
 		
-		Type	=	Food,
+		ItemType	= base:food,
 		FoodType = Liquor,
 		UnhappyChange	=	-26,
 		ThirstChange	=	-13,
@@ -270,7 +270,7 @@ imports
 		HungerChange	=	-5,
 		Weight	=	0.7,
 		
-		Type	=	Food,
+		ItemType	= base:food,
 		FoodType = Liquor,
 		
 		UnhappyChange	=	-26,
@@ -311,7 +311,7 @@ item MuglWaterRefill
 {
     Weight = 0.2,
     CanStoreWater = TRUE,
-   Type			= Drainable,
+   ItemType	= base:drainable,
    UseWhileEquipped	= FALSE,
     DisplayName = Cyan Mug filled with Water,
     ReplaceOnUseOn = WaterSource-WaterMug,
@@ -335,7 +335,7 @@ item MugRedWaterRefill
     IsWaterSource = TRUE,
     Weight = 0.2,
     CanStoreWater = TRUE,
-    Type = Drainable,
+    ItemType	= base:drainable,
     UseWhileEquipped = FALSE,
     UseDelta = 1,
     DisplayName = Red Mug filled with Water,
@@ -355,7 +355,7 @@ item MugWhiteWaterRefill
 {
     Weight = 0.2,
     CanStoreWater = TRUE,
-    Type			= Drainable,
+    ItemType	= base:drainable,
 IsCookable		= TRUE,
     DisplayName = White Mug filled with Water,
     ReplaceOnUseOn = WaterSource-WaterMugWhite,
@@ -378,7 +378,7 @@ item MugSpiffoWaterRefill
 {
     Weight = 0.2,
     CanStoreWater = TRUE,
-    Type			= Drainable,
+    ItemType	= base:drainable,
     IsCookable		= TRUE,
     DisplayName = Spiffo Mug filled with Water,
     ReplaceOnUseOn = WaterSource-WaterMugSpiffo,
@@ -417,7 +417,7 @@ item MugSpiffoWaterRefill
 	CanStoreWater		= TRUE,
 	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
 	FillFromTapSound 	= GetWaterFromTapGlass,
-	Type			= Drainable,
+	ItemType	= base:drainable,
 	UseWhileEquipped	= FALSE,
 	UseDelta		= 0.16,
 	DisplayName		= Beer Bottle filled with Water,
@@ -451,7 +451,7 @@ item MugSpiffoWaterRefill
 	CanStoreWater		= TRUE,
 	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
 	FillFromTapSound 	= GetWaterFromTapGlass,
-	Type			= Drainable,
+	ItemType	= base:drainable,
 	UseWhileEquipped	= FALSE,
 	UseDelta		= 0.16,
 	DisplayName		= Wine Bottle filled with Water,
@@ -467,14 +467,14 @@ item MugSpiffoWaterRefill
 		item WhiskeyWaterRefill
 		
 	{
-	Type			= Drainable,
+	ItemType	= base:drainable,
    
     RainFactor = 0.2,
     Tooltip = Tooltip_item_RainFromGround,
 	
 		DisplayName		= Whiskey Bottle filled with Water,
 		DisplayCategory		= Water,
-		Type 			= Drainable,
+		ItemType	= base:drainable,
 		Weight			= 0.7,
 		Icon			= Whiskey_Water_Full,
 		CanStoreWater		= TRUE,
@@ -508,7 +508,7 @@ item MugSpiffoWaterRefill
 	
                 DisplayName = Bottle filled with Water,
                 DisplayCategory = Water,
-                Type = Drainable,
+                ItemType	= base:drainable,
                 Weight = 0.7,
                 Icon	=	WaterBottle_Empty,
 				
@@ -541,7 +541,7 @@ item MugSpiffoWaterRefill
 		CanStoreWater		= TRUE,
 		FillFromDispenserSound 	= GetWaterFromDispenserPlasticMedium,
 		FillFromTapSound 	= GetWaterFromTapPlasticMedium,
-		Type			= Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	= FALSE,
 		UseDelta		= 0.1,
 		DisplayName		= Pop Bottle filled with Water,
@@ -572,7 +572,7 @@ item MugSpiffoWaterRefill
 		Icon	=	Bleach,
 		Weight	=	1.6,
 		CanStoreWater	=	TRUE,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.1,
 		DisplayName	=	Bleach Bottle filled with Water,
@@ -597,7 +597,7 @@ item MugSpiffoWaterRefill
 		CanStoreWater	=	TRUE,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.07,
 		DisplayName	=	Kettle filled with Water,
@@ -618,7 +618,7 @@ item SaucepanWaterRefill
 {
 		DisplayName = Saucepan filled with Water,
 		DisplayCategory = Water,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		Weight = 2,
 		Icon = SaucepanEmpty,
 		CanStoreWater = TRUE,
@@ -649,7 +649,7 @@ item SaucepanWaterRefill
 		CanStoreWater	=	TRUE,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		DisplayName	=	Bucket filled with Water,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.04,
@@ -670,7 +670,7 @@ item SaucepanWaterRefill
 
 	{
 	DisplayCategory 	= Water,
-	Type			= Drainable,
+	ItemType	= base:drainable,
 	DisplayName		= Watering Can filled with Water,
 	Icon			= WateringCan,
 	Weight			= 4.0,
@@ -704,7 +704,7 @@ item SaucepanWaterRefill
 	CanStoreWater		= TRUE,
 	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
 	FillFromTapSound 	= GetWaterFromTapGlass,
-	Type			= Drainable,
+	ItemType	= base:drainable,
 	UseWhileEquipped	= FALSE,
 	UseDelta		= 0.16,
 	DisplayName		= Jar with Water (Full),

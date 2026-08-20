@@ -28,7 +28,7 @@ imports
 	    DisplayCategory = WaterContainer,
 		Weight	=	2,
 		CanStoreWater	=	TRUE,
-		Type	=	Normal,
+		ItemType	=	base:normal,
 		DisplayName = Distill Pot(I)(Empty),
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotSmall,
 		Icon = DistillPotSmall,
@@ -54,7 +54,7 @@ imports
 	
 		DisplayName = Distill Pot(I)(Filled with Water),
 		DisplayCategory = Water,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		Weight = 10,
 	    MetalValue = 40,
 		Icon = WaterDistillPotSmall,
@@ -86,7 +86,7 @@ imports
 	    DisplayCategory = WaterContainer,
 		Weight	=	2.5,
 		CanStoreWater	=	TRUE,
-		Type	=	Normal,
+		ItemType	= base:normal,
 		DisplayName = Distill Pot(II)(Empty),
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotMedium,
 		Icon = DistillPotMedium,
@@ -110,7 +110,7 @@ imports
 	{
 		DisplayName = Distill Pot(II)(Filled with Water),
 		DisplayCategory = Water,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		Weight = 15,
 		MetalValue = 60,
 		Icon = WaterDistillPotMedium,
@@ -142,7 +142,7 @@ imports
 	    DisplayCategory = WaterContainer,
 		Weight	=	5,
 		CanStoreWater	=	TRUE,
-		Type	=	Normal,
+		ItemType	= base:normal,
 		DisplayName = Distill Pot(III)(Empty),
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotLarge,
 		Icon = DistillPotLarge,
@@ -166,7 +166,7 @@ imports
 	{
 		DisplayName = Distill Pot(III)(Filled with Water),
 		DisplayCategory = Water,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		Weight = 20,
 		
 		Icon = WaterDistillPotLarge,
@@ -211,21 +211,21 @@ imports
 	{
 		DisplayName = Distill Pot(I)(Filled with Mash),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType = base:food,
 		Weight = 10.0,
 	    UseDelta = 0.25,
-	
+
 		Icon = DistillPotSmallMash,
-		
+
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
 		EatType = Pot,
 		IsCookable = true,
 		ReplaceOnUse = DistillPotSmall,
-      
-        ReplaceOnCooked = Moonshine.Alc_DistillPotSmall,	
-		
-		MinutesToCook = 950,
+
+        ReplaceOnCooked = Moonshine.Alc_DistillPotSmall,
+
+		MinutesToCook = 1,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -253,7 +253,7 @@ imports
 	{
 		DisplayName = Distill Pot(II)(Filled with Mash),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType	= base:food,
 		Weight = 15.0,
 	    
 		
@@ -296,7 +296,7 @@ imports
 	{
 		DisplayName = Distill Pot(III)(Filled with Mash),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType	= base:food,
 		Weight = 20,
 	    
 		
@@ -341,7 +341,7 @@ imports
         
         DisplayName = Distill Pot(I)(Filled with Spirit),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType = base:food,
 		Weight = 10.0,
 		
         Icon = WaterDistillPotSmall,
@@ -355,7 +355,7 @@ imports
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnUse = DistillPotSmall,
 		/*ReplaceOnDeplete = DistillPotSmall,*/
@@ -396,7 +396,7 @@ item Alc_DistillPotMedium
         
         DisplayName = Distill Pot(II)(Filled with Spirit),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType	= base:food,
 		Weight = 15.0,
 		
         Icon = WaterDistillPotMedium,
@@ -410,7 +410,7 @@ item Alc_DistillPotMedium
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnUse = DistillPotMedium,
 		HungerChange = -6.5,
@@ -449,7 +449,7 @@ item Alc_DistillPotLarge
         
         DisplayName = Distill Pot(III)(Filled with Spirit),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType	= base:food,
 		Weight = 20.0,
 		
         Icon = WaterDistillPotLarge,
@@ -463,7 +463,7 @@ item Alc_DistillPotLarge
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		
         ReplaceOnUse = DistillPotLarge,
@@ -514,7 +514,7 @@ item Alc_DistillPotMediumRefillSpirit
         
         DisplayName = Distill Pot(II)(Refilled with Spirit),
         DisplayCategory = Food,
-		Type = Food,
+		ItemType	= base:food,
 		Weight = 15.0,
 		
         Icon = WaterDistillPotMedium,
@@ -529,7 +529,7 @@ item Alc_DistillPotMediumRefillSpirit
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
         ReplaceOnUse = DistillPotMedium,
@@ -576,7 +576,7 @@ item Alc_DistillPotLargeRefillSpirit
         
         DisplayName = Distill Pot(III)(Refilled with Spirit),
 		DisplayCategory = Food,
-		Type = Food,
+		ItemType	= base:food,
 		Weight = 20.0,
 		
         Icon = WaterDistillPotLarge,
@@ -591,7 +591,7 @@ item Alc_DistillPotLargeRefillSpirit
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
+		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
         ReplaceOnUse = DistillPotLarge,
@@ -646,7 +646,7 @@ item Alc_DistillPotLargeRefillSpirit
 	    DisplayName = Distill Pot(III)(Filled with Motor Oil),
 		
 		DisplayCategory = VehicleMaintenance,
-		Type = Food,
+		ItemType	= base:food,
 		
 		PoisonPower = 120,
 	    UseForPoison = 38,
@@ -686,7 +686,7 @@ item Alc_DistillPotLargeRefillSpirit
 	{
 	    DisplayName = Distill Pot(III)(Filled with Gasohol),
 		DisplayCategory = VehicleMaintenance,
-		Type	=	Drainable,
+		ItemType	= base:drainable,
 		Weight = 20.0,
 		Icon = DistillPotLargePetrol,
 		CantBeFrozen = TRUE,
@@ -712,7 +712,7 @@ item Alc_DistillPotLargeRefillSpirit
 
         DisplayName = Distill Pot(II)(Filled with Isopropyl),
 		DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
 		Weight = 15.0,
 		Icon = WaterDistillPotMedium,
 		CookingSound = BoilingFood,
@@ -750,7 +750,7 @@ item Alc_DistillPotLargeIso
        
 		DisplayName = Distill Pot(III)(Filled with Isopropyl),
 		DisplayCategory = FirstAid,
-        Type = Drainable,
+        ItemType	= base:drainable,
 		Weight = 20.0,
 		Icon = WaterDistillPotLarge,
 		CookingSound = BoilingFood,
@@ -791,7 +791,7 @@ item DistillPotSmallWood
 
         DisplayName = Distill Pot(I)(Filled with Wood),
 		DisplayCategory = Material,
-		Type = Food,
+		ItemType	= base:food,
 		IsCookable = true,
 		ReplaceOnCooked = Moonshine.DistillPotSmallCoal,
 		Weight = 10.0,
@@ -818,7 +818,7 @@ item DistillPotSmallCoal
 
         DisplayName = Distill Pot(I)(Filled with Coal),
 		DisplayCategory = Material,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		
 		Weight = 10.0,
 		
@@ -843,7 +843,7 @@ item DistillPotMediumWood
 
         DisplayName = Distill Pot(II)(Filled with Wood),
 		DisplayCategory = Material,
-		Type = Food,
+		ItemType	= base:food,
 		IsCookable = true,
 		Weight = 15.0,
 		
@@ -876,7 +876,7 @@ item DistillPotMediumCoal
 
         DisplayName = Distill Pot(II)(Filled with Coal),
 		DisplayCategory = Material,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		Weight = 15.0,
 		
         Icon = DistillPotMediumCoal,
@@ -906,7 +906,7 @@ item DistillPotLargeWood
 
         DisplayName = Distill Pot(III)(Filled with Wood),
 		DisplayCategory = Material,
-		Type = Food,
+		ItemType	= base:food,
 		IsCookable = true,
 		Weight = 20.0,
 	
@@ -935,7 +935,7 @@ item DistillPotLargeCoal
 
         DisplayName = Distill Pot(III)(Filled with Coal),
 		DisplayCategory = Material,
-		Type = Drainable,
+		ItemType	= base:drainable,
 		Weight = 20.0,
 		
         Icon = DistillPotLargeCoal,
@@ -972,7 +972,7 @@ item DistillPotLargeCoal
 	    DisplayCategory = WaterContainer,
 		Weight	=	1,
 	
-		Type	=	Normal,
+		ItemType	= base:normal,
         Icon = DistillPotMediumFilter,
         MetalValue = 20,
         StaticModel = Distill_medium_new_filter_Ground, 
@@ -990,7 +990,7 @@ item DistillPotLargeCoal
 	    DisplayCategory = WaterContainer,
 		Weight	=	5,
 		CanStoreWater	=	TRUE,
-		Type	=	Normal,
+		ItemType	= base:normal,
 		UseDelta	=	0.5,
 		Icon = DistillPotLargeColumn,
         /*ReplaceOnUseOn = DistillPotColumn,*/

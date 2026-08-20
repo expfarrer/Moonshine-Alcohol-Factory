@@ -12,37 +12,39 @@ module Moonshine
 
     item MagazineDistill1
     {
-	    DisplayCategory = SkillBook,
+	    DisplayCategory = RecipeResource,
         Weight = 0.1,
         ItemType	= base:literature,
+        Tags = base:magazine,
         DisplayName = Distilling Vol.1 Getting Started,
         Icon = MagazineDistill1,
-        TeachedRecipes = Create Distill Pot(I),
-	    ReplaceOnUse = MagazineDistill1,
+        LearnedRecipes = CreateDistillPotI,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
         WorldStaticModel = MagazineDistill1,
         StaticModel = MagazineDistill1Ground,
-		
-		
+
+
     }
 
     item MagazineDistill2
     {
         Weight = 0.1,
         ItemType	= base:literature,
-        DisplayCategory = SkillBook,
+        Tags = base:magazine,
+        DisplayCategory = RecipeResource,
         DisplayName = Distilling Vol.2 Mash and Fermenting,
         Icon = MagazineDistill2,
-		
-        TeachedRecipes = Make Potato Mash in Bucket;Make Corn Mash in Bucket;Make Canned Corn Mash in Bucket;Make Canned Potato Mash in Bucket,
-        ReplaceOnUse = MagazineDistill2,
+
+        LearnedRecipes = MakePotatoMashInBucket;MakeCornMashInBucket;MakeCannedCornMashInBucket;MakeCannedCornMashInBucket2;MakeCannedPotatoMashInBucket;MakeCannedPotatoMashInBucket2;MakeCannedPotatoMashInBucket3,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
         WorldStaticModel = MagazineDistill2,
         StaticModel = MagazineDistill2Ground,
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
     }
 
 
@@ -50,27 +52,29 @@ module Moonshine
     {
         Weight = 0.1,
         ItemType	= base:literature,
-        DisplayCategory = SkillBook,
+        Tags = base:magazine,
+        DisplayCategory = RecipeResource,
         DisplayName = Distilling Vol.3 Isopropyl,
         Icon = MagazineDistill3,
-        TeachedRecipes = Create Distill Coal Filter;Refill Distill Pot(II) with 6 x Spirit;Upgrade Distill(I)to(II);Downgrade Distill(II)to(I),
-		ReplaceOnUse = MagazineDistill3,
+        LearnedRecipes = CreateDistillCoalFilter;CreateDistillCoalFilter2;RefillDistillPotIIWith6XSpirit;RefillDistillPotIIWith6XSpirit2;UpgradeDistillIToII;DowngradeDistillIIToI,
+		OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
         WorldStaticModel = MagazineDistill3,
         StaticModel = MagazineDistill3Ground,
-		
-		
+
+
     }
-	
+
 
     item MagazineDistill4
     {
         Weight = 0.1,
         ItemType	= base:literature,
-        DisplayCategory = SkillBook,
+        Tags = base:magazine,
+        DisplayCategory = RecipeResource,
         DisplayName = Distilling Vol.4 Refining - Gasohol,
         Icon = MagazineDistill4,
-        TeachedRecipes = Create Controllable Distill Column;Create Gasohol Drum;Refill Distill Pot(III) with 8 x Spirit;Upgrade Distill(II)to(III);Downgrade Distill(III)to(II),
-        ReplaceOnUse = MagazineDistill4,
+        LearnedRecipes = CreateControllableDistillColumn;CreateGasoholDrum;RefillDistillPotIIIWith8XSpirit;RefillDistillPotIIIWith8XSpirit2;UpgradeDistillIIToIII;DowngradeDistillIIIToII,
+        OnCreate = ItemCodeOnCreate.onCreateRecipeMagazine,
         WorldStaticModel = MagazineDistill4,
         StaticModel = MagazineDistill4Ground,
     }

@@ -7,8 +7,8 @@ module Moonshine
 
     craftRecipe MakeMoonshinersMolotovCocktail
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 150,
         inputs
         {
@@ -24,8 +24,8 @@ module Moonshine
 
     craftRecipe MakeMoonshinersMolotovCocktail2
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 150,
         inputs
         {
@@ -41,8 +41,8 @@ module Moonshine
 
     craftRecipe MakeMolotovCocktail
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 150,
         inputs
         {

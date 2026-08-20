@@ -7,8 +7,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrum
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         inputs
         {
@@ -23,8 +23,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrum2
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         inputs
         {
@@ -39,8 +39,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrum3
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         inputs
         {
@@ -55,8 +55,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrum4
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         inputs
         {
@@ -71,8 +71,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrum5
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         inputs
         {
@@ -87,8 +87,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrum6
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         inputs
         {

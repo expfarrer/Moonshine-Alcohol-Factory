@@ -7,8 +7,8 @@ module Moonshine
 
     craftRecipe CreateDistillPotI
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:1,
@@ -37,8 +37,8 @@ module Moonshine
 
     craftRecipe DismantleDistillI
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         SkillRequired = MetalWelding:1,
         xpAward = MetalWelding:25,
@@ -58,8 +58,8 @@ module Moonshine
 
     craftRecipe DismantleDistillII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 600,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
@@ -79,8 +79,8 @@ module Moonshine
 
     craftRecipe DismantleDistillIII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
@@ -100,8 +100,8 @@ module Moonshine
 
     craftRecipe DismantleCharcoalFilter
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
@@ -121,8 +121,8 @@ module Moonshine
 
     craftRecipe DismantleControllableColumn
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
@@ -142,8 +142,8 @@ module Moonshine
 
     craftRecipe FillDistillWithCornMash
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
@@ -159,8 +159,8 @@ module Moonshine
 
     craftRecipe FillDistillWithCornMash2
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
@@ -176,8 +176,8 @@ module Moonshine
 
     craftRecipe FillDistillWithCornMash3
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
@@ -193,8 +193,8 @@ module Moonshine
 
     craftRecipe FillDistillWithPotatoMash
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
@@ -210,8 +210,8 @@ module Moonshine
 
     craftRecipe FillDistillWithPotatoMash2
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
@@ -227,8 +227,8 @@ module Moonshine
 
     craftRecipe FillDistillWithPotatoMash3
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
@@ -244,8 +244,8 @@ module Moonshine
 
     craftRecipe FillDistillWithWater
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         inputs
         {
@@ -260,8 +260,8 @@ module Moonshine
 
     craftRecipe FillDistillWithWater2
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         inputs
         {
@@ -276,8 +276,8 @@ module Moonshine
 
     craftRecipe FillDistillWithWater3
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         inputs
         {
@@ -292,8 +292,8 @@ module Moonshine
 
     craftRecipe CreateDistillCoalFilter
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 600,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
@@ -321,8 +321,8 @@ module Moonshine
 
     craftRecipe CreateDistillCoalFilter2
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 600,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
@@ -350,8 +350,8 @@ module Moonshine
 
     craftRecipe CreateControllableDistillColumn
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
@@ -375,8 +375,8 @@ module Moonshine
 
     craftRecipe UpgradeDistillIToII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
@@ -397,8 +397,8 @@ module Moonshine
 
     craftRecipe UpgradeDistillIIToIII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
@@ -419,8 +419,8 @@ module Moonshine
 
     craftRecipe DowngradeDistillIIToI
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
@@ -440,8 +440,8 @@ module Moonshine
 
     craftRecipe DowngradeDistillIIIToII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,

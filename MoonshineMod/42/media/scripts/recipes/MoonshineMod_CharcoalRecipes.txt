@@ -7,8 +7,8 @@ module Moonshine
 
     craftRecipe FillDistillIWithWood
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         inputs
         {
@@ -23,8 +23,8 @@ module Moonshine
 
     craftRecipe RemoveWoodFromDistillI
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.GiveWoodSmall,
         inputs
@@ -39,8 +39,8 @@ module Moonshine
 
     craftRecipe FillDistillIIWithWood
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         inputs
         {
@@ -55,8 +55,8 @@ module Moonshine
 
     craftRecipe RemoveWoodFromDistillII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.GiveWoodMedium,
         inputs
@@ -71,8 +71,8 @@ module Moonshine
 
     craftRecipe FillDistillIIIWithWood
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         inputs
         {
@@ -87,8 +87,8 @@ module Moonshine
 
     craftRecipe RemoveWoodFromDistillIII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         OnCreate = RecipeCodeOnCreate.GiveWoodLarge,
         inputs
@@ -103,8 +103,8 @@ module Moonshine
 
     craftRecipe RemoveCoalFromDistillI
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         xpAward = Woodwork:5,
         OnCreate = RecipeCodeOnCreate.GiveCoalSmall,
@@ -120,8 +120,8 @@ module Moonshine
 
     craftRecipe RemoveCoalFromDistillII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         xpAward = Woodwork:5,
         OnCreate = RecipeCodeOnCreate.GiveCoalMedium,
@@ -137,8 +137,8 @@ module Moonshine
 
     craftRecipe RemoveCoalFromDistillIII
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 400,
         xpAward = Woodwork:5,
         OnCreate = RecipeCodeOnCreate.GiveCoalLarge,

@@ -7,8 +7,8 @@ module Moonshine
 
     craftRecipe FillDistillIIIWithMotorOil
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 550,
         OnCreate = RecipeCodeOnCreate.GiveOil,
         inputs
@@ -24,8 +24,8 @@ module Moonshine
 
     craftRecipe RefillMotorOilCanWithMotorOil
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 650,
         OnCreate = RecipeCodeOnCreate.GiveMotorOil,
         inputs
@@ -41,8 +41,8 @@ module Moonshine
 
     craftRecipe FillMotorOilCanWithGasoholFuel
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 250,
         inputs
         {
@@ -57,8 +57,8 @@ module Moonshine
 
     craftRecipe FillMotorOilCanWithGasoholFuel2
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 250,
         inputs
         {
@@ -73,8 +73,8 @@ module Moonshine
 
     craftRecipe FillMotorOilCanWithGasoholFuel3
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 250,
         inputs
         {
@@ -89,8 +89,8 @@ module Moonshine
 
     craftRecipe FillBeerBottleWithGasoholFuel
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 250,
         inputs
         {
@@ -105,8 +105,8 @@ module Moonshine
 
     craftRecipe FillBeerBottleWithGasoholFuel2
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 250,
         inputs
         {
@@ -121,8 +121,8 @@ module Moonshine
 
     craftRecipe FillBeerBottleWithGasoholFuel3
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 250,
         inputs
         {
@@ -137,8 +137,8 @@ module Moonshine
 
     craftRecipe CreateGasoholDrum
     {
-        timedAction = Making,
-        Tags = InHandCraft,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4,
@@ -160,8 +160,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrumHalf
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
@@ -177,8 +177,8 @@ module Moonshine
 
     craftRecipe FillGasoholDrumFull
     {
-        timedAction = Making, category = Survivalist,
-        Tags = InHandCraft;Survivalist,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 950,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs

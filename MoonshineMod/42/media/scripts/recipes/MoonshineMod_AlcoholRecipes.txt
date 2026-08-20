@@ -7,8 +7,8 @@ module Moonshine
 
     craftRecipe MakePotatoMashInBucket
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -30,8 +30,8 @@ module Moonshine
 
     craftRecipe MakeCornMashInBucket
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -53,8 +53,8 @@ module Moonshine
 
     craftRecipe MakeCannedCornMashInBucket
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -77,8 +77,8 @@ module Moonshine
 
     craftRecipe MakeCannedCornMashInBucket2
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -100,8 +100,8 @@ module Moonshine
 
     craftRecipe MakeCannedPotatoMashInBucket
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -124,8 +124,8 @@ module Moonshine
 
     craftRecipe MakeCannedPotatoMashInBucket2
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -147,8 +147,8 @@ module Moonshine
 
     craftRecipe MakeCannedPotatoMashInBucket3
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 200,
         NeedToBeLearn = true,
         SkillRequired = Cooking:1,
@@ -171,8 +171,8 @@ module Moonshine
 
     craftRecipe CoverCornMashBucketWithTarp
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 300,
         inputs
         {
@@ -188,8 +188,8 @@ module Moonshine
 
     craftRecipe CoverPotatoMashBucketWithTarp
     {
-        timedAction = Making, category = Cooking,
-        Tags = InHandCraft;Cooking,
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine,
         time = 300,
         inputs
         {

@@ -1,96 +1,103 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
 
-	
-	    recipe Fill Gasohol Drum
+    craftRecipe FillGasoholDrum
     {
-        PetrolCan=20,
-        destroy EmptyGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		CanBeDoneFromFloor:true,
-		
-	
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        inputs
+        {
+        item 20 [Base.PetrolCan],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	
 
-	
-	    recipe Fill Gasohol Drum
+    craftRecipe FillGasoholDrum2
     {
-        MotorOilPetrolCan=80,
-        destroy EmptyGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        inputs
+        {
+        item 80 [Moonshine.MotorOilPetrolCan],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	
-	
-	
-	 recipe Fill Gasohol Drum
+
+    craftRecipe FillGasoholDrum3
     {
-        BleachPetrolCan=80,
-        destroy EmptyGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        inputs
+        {
+        item 80 [Moonshine.BleachPetrolCan],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	
-	
-	
-	 recipe Fill Gasohol Drum
+
+    craftRecipe FillGasoholDrum4
     {
-        WhiskeyPetrolCan=80,
-        destroy EmptyGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        inputs
+        {
+        item 80 [Moonshine.WhiskeyPetrolCan],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	 
-	 
-	 
-	  recipe Fill Gasohol Drum
+
+    craftRecipe FillGasoholDrum5
     {
-        BeerPetrolCan=80,
-        destroy EmptyGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-	    CanBeDoneFromFloor:true,
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        inputs
+        {
+        item 80 [Moonshine.BeerPetrolCan],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	
-	
-	
-	
-		recipe Fill Gasohol Drum
+
+    craftRecipe FillGasoholDrum6
     {
-        WinePetrolCan=80,
-        destroy EmptyGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-        CanBeDoneFromFloor:true,
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        inputs
+        {
+        item 80 [Moonshine.WinePetrolCan],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	
+}

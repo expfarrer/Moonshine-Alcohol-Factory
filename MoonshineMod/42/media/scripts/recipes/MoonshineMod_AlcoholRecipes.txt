@@ -4,219 +4,202 @@ module Moonshine
     {
         Base
     }
-	
-	
-	
-    recipe Make Potato Mash in Bucket
+
+    craftRecipe MakePotatoMashInBucket
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-       
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-        Potato=10,
-        Result: PotatoMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        
-		Prop1: Spoon,
-        Prop2: Source=3,
-		
-		
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		 OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		 SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 10 [Base.Potato],
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMash,
+        }
     }
-	
-	
-    recipe Make Corn Mash in Bucket
+
+    craftRecipe MakeCornMashInBucket
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-        
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-        Corn=10,
-        Result: CornMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=3,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		 OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		 SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 10 [Base.Corn],
+        }
+        outputs
+        {
+            item 1 Moonshine.CornMash,
+        }
     }
-	
-	
-    
-	recipe Make Canned Corn Mash in Bucket
+
+    craftRecipe MakeCannedCornMashInBucket
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-        keep [Recipe.GetItemTypes.CanOpener],
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-        CannedCorn=5,
-        Result: CornMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=4,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		 OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		 SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:canopener] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 5 [Base.CannedCorn],
+        }
+        outputs
+        {
+            item 1 Moonshine.CornMash,
+        }
     }
-	
-	
-	recipe Make Canned Corn Mash in Bucket
+
+    craftRecipe MakeCannedCornMashInBucket2
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-   
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-        CannedCornOpen=5,
-        Result: CornMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=3,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		 OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		 SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 5 [Base.CannedCornOpen],
+        }
+        outputs
+        {
+            item 1 Moonshine.CornMash,
+        }
     }
-	
-	
-	
-	
-	
-	
-    recipe Make Canned Potato Mash in Bucket
+
+    craftRecipe MakeCannedPotatoMashInBucket
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-        keep [Recipe.GetItemTypes.CanOpener],
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-		CannedPotato2=5,
-     
-        Result: PotatoMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=4,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:canopener] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 5 [Base.CannedPotato2],
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMash,
+        }
     }
-	
-	
-	
-	 recipe Make Canned Potato Mash in Bucket
+
+    craftRecipe MakeCannedPotatoMashInBucket2
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-        
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-		
-        CannedPotatoOpen=5,
-        Result: PotatoMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=4,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		 OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		 SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 5 [Base.CannedPotatoOpen],
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMash,
+        }
     }
-	
-	
-		 recipe Make Canned Potato Mash in Bucket
+
+    craftRecipe MakeCannedPotatoMashInBucket3
     {
-        CanBeDoneFromFloor: true,
-        keep [Recipe.GetItemTypes.Spoon]/[Recipe.GetItemTypes.Fork],
-        keep [Recipe.GetItemTypes.CanOpener],
-        destroy BucketEmpty,
-        Water=5,
-        [Recipe.GetItemTypes.Sugar];5,
-        Yeast,
-		
-        CannedPotato=5,
-        Result: PotatoMash,
-        Time: 200.0,
-        Category: Cooking,
-        Sound: MakePlaster,
-        Prop1: Spoon,
-        Prop2: Source=4,
-        AnimNode: Disassemble,
-        OnTest: Recipe.OnTest.NotTaintedWater,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.Cooking10,
-		SkillRequired:Cooking=1,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 200.0,
+        NeedToBeLearn = true,
+        SkillRequired = Cooking:1,
+        xpAward = Cooking:10,
+        inputs
+        {
+        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:canopener] mode:keep,
+        item 1 [Base.BucketEmpty],
+        -fluid 5.0 [Water],
+        item 5 tags[base:sugar],
+        item 1 [Base.Yeast],
+        item 5 [Base.CannedPotato],
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMash,
+        }
     }
-	
-	/*-----------COVER --------------*/
-	
-	
-    recipe Cover Corn Mash Bucket with Tarp
+
+    craftRecipe CoverCornMashBucketWithTarp
     {
-        CanBeDoneFromFloor: true,
-        destroy CornMash,
-        destroy Tarp,
-        destroy RubberBand,
-        Result: CornMashCovered,
-        Time: 300.0,
-        Category: Cooking,
-        Sound: PutItemInBag,
-        Prop1: Tarp,
-        Prop2: Source=1,
-        AnimNode: Disassemble,
-		
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 300.0,
+        inputs
+        {
+        item 1 [Moonshine.CornMash],
+        item 1 [Base.Tarp],
+        item 1 [Base.RubberBand],
+        }
+        outputs
+        {
+            item 1 Moonshine.CornMashCovered,
+        }
     }
-    recipe Cover Potato Mash Bucket with Tarp
+
+    craftRecipe CoverPotatoMashBucketWithTarp
     {
-        CanBeDoneFromFloor: true,
-        destroy PotatoMash,
-        destroy Tarp,
-        destroy RubberBand,
-        Result: PotatoMashCovered,
-        Time: 300.0,
-        Category: Cooking,
-        Sound: PutItemInBag,
-        Prop1: Tarp,
-        Prop2: Source=1,
-        AnimNode: Disassemble,
-		
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 300.0,
+        inputs
+        {
+        item 1 [Moonshine.PotatoMash],
+        item 1 [Base.Tarp],
+        item 1 [Base.RubberBand],
+        }
+        outputs
+        {
+            item 1 Moonshine.PotatoMashCovered,
+        }
     }
 }

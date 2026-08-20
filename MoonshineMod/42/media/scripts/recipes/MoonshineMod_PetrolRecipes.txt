@@ -5,670 +5,190 @@ module Moonshine
         Base
     }
 
- 
-	
-	
-	
-	
-	
-	
-	 recipe Fill Distill(III) with Motor Oil
+    craftRecipe FillDistillIIIWithMotorOil
     {
-        MotorOilCan1=32,
-        destroy DistillPotLarge,
-        Result:Oil_DistillPotLarge,
-        Time:550.0,
-        Sound:PourWaterIntoObject,
-        OnCreate: Moonshine.GiveOil,
-        CanBeDoneFromFloor:true,
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-
-
-
-/* experimental distill recipe near fire to simulate more natural placement of distill outside in the fire */
-
-/*
- recipe Distill Motor Oil to Gasohol
-    {
-        
-		
-		
-	    destroy Oil_DistillPotLarge,
-        Result:Petrol_DistillPotLarge,
-        Time:950.0,
-        Sound:PourWaterIntoObject,
-        
-        CanBeDoneFromFloor:true,
-		NearItem:Campfire,
-	    OnTest:Moonshine.StoveTest,
-		
-		 
-		
-		/* OnCreate:Moonshine.CookingUtils_OnCreate,
-	       OnTest:CookingUtils.isCloseToCookingUtil,
-           OnCreate:CookingUtils_OnCreate,
-		   OnTest:CookingUtils.isCloseToCookingUtil,
-  
-		
-          OnCreate:CookingUtils_OnCreate,*/
-  
-		 
-		 
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 550.0,
+        OnCreate = RecipeCodeOnCreate.GiveOil,
+        inputs
+        {
+        item 32 [Moonshine.MotorOilCan1],
+        item 1 [Moonshine.DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.Oil_DistillPotLarge,
+        }
     }
 
+    craftRecipe RefillMotorOilCanWithMotorOil
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 650.0,
+        OnCreate = RecipeCodeOnCreate.GiveMotorOil,
+        inputs
+        {
+        item 8 [Moonshine.EmptyMotorOilCan1],
+        item 1 [Moonshine.Oil_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
+    }
 
-*/
+    craftRecipe FillMotorOilCanWithGasoholFuel
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 250.0,
+        inputs
+        {
+        item 1 [Moonshine.EmptyMotorOilCan1],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.MotorOilPetrolCan,
+        }
+    }
 
-	/*-----------------------------------*/
-	/* BleachEmpty/WhiskeyEmpty/BeerRefill/WineRefill/WhiteLightning/SodaBottleRefill/WaterBottleRefill/Wine/WhiskeyFull */
+    craftRecipe FillMotorOilCanWithGasoholFuel2
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 250.0,
+        inputs
+        {
+        item 1 [Moonshine.EmptyMotorOilCan1],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.MotorOilPetrolCan,
+        }
+    }
 
-    
-	   recipe Refill Motor Oil Can with Motor Oil
+    craftRecipe FillMotorOilCanWithGasoholFuel3
     {
-        Moonshine.EmptyMotorOilCan1=8,
-        Oil_DistillPotLarge,
-        Result:DistillPotLarge,
-        Time:650.0,
-        Sound:PourWaterIntoObject,
-        OnCreate:Moonshine.GiveMotorOil,
-        CanBeDoneFromFloor:true,
-		
-		Prop1:Source=1,
-		Prop2:Base.RippedSheetsDirty,
-		
-        AnimNode:RipSheets,
-		
-		
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 250.0,
+        inputs
+        {
+        item 1 [Moonshine.EmptyMotorOilCan1],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.MotorOilPetrolCan,
+        }
     }
-	
-	 
-	
-	
-	
-	
-	
-	
-	
 
-/*---fill gasohol--*/
+    craftRecipe FillBeerBottleWithGasoholFuel
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 250.0,
+        inputs
+        {
+        item 1 [Base.BeerEmpty],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.BeerPetrolCan,
+        }
+    }
 
-	recipe Fill Petrol Can with Gasohol Fuel 
+    craftRecipe FillBeerBottleWithGasoholFuel2
     {
-        EmptyPetrolCan,
-        Petrol_DistillPotLarge;1,
-        Result:PetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 250.0,
+        inputs
+        {
+        item 1 [Base.BeerEmpty],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.BeerPetrolCan,
+        }
     }
-	
-	
-	recipe Fill Petrol Can with Gasohol Fuel 
-    {
-        EmptyPetrolCan,
-        GasoholDrum;1,
-        Result:PetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	recipe Fill Petrol Can with Gasohol Fuel 
-    {
-        EmptyPetrolCan,
-         HalfGasoholDrum;1,
-        Result:PetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
 
-	
-	/*--*/
-	
-	
-	
-		recipe Fill Motor Oil Can with Gasohol Fuel 
+    craftRecipe FillBeerBottleWithGasoholFuel3
     {
-        EmptyMotorOilCan1,
-        GasoholDrum;1,
-        Result:MotorOilPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 250.0,
+        inputs
+        {
+        item 1 [Base.BeerEmpty],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.BeerPetrolCan,
+        }
     }
-	
-	
-		recipe Fill Motor Oil Can with Gasohol Fuel 
-    {
-        EmptyMotorOilCan1,
-        Petrol_DistillPotLarge;1,
-        Result:MotorOilPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-		recipe Fill Motor Oil Can with Gasohol Fuel 
-    {
-        EmptyMotorOilCan1,
-        HalfGasoholDrum;1,
-        Result:MotorOilPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	 
-	/*----*/
-	
-	 recipe Fill Water Bottle with Gasohol Fuel 
-    {
-        WaterBottleEmpty,
-        GasoholDrum;1,
-        Result:WaterBottlePetrolCan,
 
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	recipe Fill Water Bottle with Gasohol Fuel 
+    craftRecipe CreateGasoholDrum
     {
-        WaterBottleEmpty,
-        Petrol_DistillPotLarge;1,
-        Result:WaterBottlePetrolCan,
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 950.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:4,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:weldingmask] mode:keep,
+        item 1 [Base.SmallSheetMetal],
+        item 1 [Base.Wire],
+        item 2 [Base.BlowTorch],
+        item 5 [Base.SheetMetal],
+        }
+        outputs
+        {
+            item 1 Moonshine.EmptyGasoholDrum,
+        }
+    }
 
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	 recipe Fill Water Bottle with Gasohol Fuel 
+    craftRecipe FillGasoholDrumHalf
     {
-        WaterBottleEmpty,
-        HalfGasoholDrum;1,
-        Result:WaterBottlePetrolCan,
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        item 1 [Moonshine.EmptyGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.HalfGasoholDrum,
+        }
+    }
 
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	
-/*------*/
-	
-		 recipe Fill Soda Bottle with Gasohol Fuel 
+    craftRecipe FillGasoholDrumFull
     {
-        PopBottleEmpty,
-        Petrol_DistillPotLarge;1,
-        Result:PopBottlePetrolCan,
-
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 950.0,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.GasoholDrum,
+        }
     }
-	
-	 recipe Fill Soda Bottle with Gasohol Fuel 
-    {
-        PopBottleEmpty,
-        GasoholDrum;1,
-        Result:PopBottlePetrolCan,
-
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	recipe Fill Soda Bottle with Gasohol Fuel 
-    {
-        PopBottleEmpty,
-        HalfGasoholDrum;1,
-        Result:PopBottlePetrolCan,
-
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	/*-----*/
-	
-	
-	
-	
-	
-
-	
-		
-	
-	
-	  recipe Fill Bleach Bottle with Gasohol Fuel 
-    {
-        BleachEmpty,
-        GasoholDrum;1,
-        Result:BleachPetrolCan,
-
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	
-	 recipe Fill Bleach Bottle with Gasohol Fuel 
-    {
-        BleachEmpty,
-        HalfGasoholDrum;1,
-        Result:BleachPetrolCan,
-
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-	  recipe Fill Bleach Bottle with Gasohol Fuel 
-    {
-        BleachEmpty,
-        Petrol_DistillPotLarge;1,
-        Result:BleachPetrolCan,
-
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-		
-    }
-	
-		/*--*/
-	
-	
-	
-	 recipe Fill Whiskey Bottle with Gasohol Fuel 
-    {
-        WhiskeyEmpty,
-        GasoholDrum;1,
-        Result:WhiskeyPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-        Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-		 recipe Fill Whiskey Bottle with Gasohol Fuel 
-    {
-        WhiskeyEmpty,
-        HalfGasoholDrum;1,
-        Result:WhiskeyPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-        Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-		
-	 recipe Fill Whiskey Bottle with Gasohol Fuel 
-    {
-        WhiskeyEmpty,
-        Petrol_DistillPotLarge;1,
-        Result:WhiskeyPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-       
-		CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-		/*--*/
-	
-	 recipe Fill Beer Bottle with Gasohol Fuel 
-    {
-        BeerEmpty,
-        GasoholDrum;1,
-        Result:BeerPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-	
-	
-	
-	
-	 recipe Fill Beer Bottle with Gasohol Fuel 
-    {
-        BeerEmpty,
-        HalfGasoholDrum;1,
-        Result:BeerPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-	
-	
-	recipe Fill Beer Bottle with Gasohol Fuel 
-    {
-        BeerEmpty,
-        Petrol_DistillPotLarge;1,
-        Result:BeerPetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-		/*--*/
-	
-	 
-	 recipe Fill Wine Bottle with Gasohol Fuel 
-    {
-        WineEmpty,
-        GasoholDrum;1,
-        Result:WinePetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-	
-		 recipe Fill Wine Bottle with Gasohol Fuel 
-    {
-        WineEmpty,
-        HalfGasoholDrum;1,
-        Result:WinePetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-		 recipe Fill Wine Bottle with Gasohol Fuel 
-    {
-        WineEmpty,
-        Petrol_DistillPotLarge;1,
-        Result:WinePetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	/*--*/
-	
-	
-	
-		recipe Fill Wine Bottle with Gasohol Fuel 
-    {
-        WineEmpty/WineEmpty2,
-       GasoholDrum;1,
-       Result:WinePetrolCan,
-       Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	recipe Fill Wine Bottle with Gasohol Fuel 
-    {
-        WineEmpty/WineEmpty2,
-       HalfGasoholDrum;1,
-       Result:WinePetrolCan,
-       Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-	
-	
-	
-	
-		recipe Fill Wine Bottle with Gasohol Fuel 
-    {
-        WineEmpty/WineEmpty2,
-        Petrol_DistillPotLarge;1,
-        Result:WinePetrolCan,
-        Time:250.0,
-        Sound:PourWaterIntoObject,
-        CanBeDoneFromFloor:true,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-
-
-/*-------------DRUMDUM DUM DUM --------------------------*/
-
-   recipe Create Gasohol Drum
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.WeldingMask],
-        SmallSheetMetal,
-        Base.Wire,
-		
-	    BlowTorch=2,
-		SheetMetal=5,
-		
-		Result:EmptyGasoholDrum,
-        Time:950.0,
-        
-		Prop2:Source=1,
-		Prop1:Base.Wire,
-        AnimNode:RipSheets,
-		Sound:BreakMetalItem,
-		CanBeDoneFromFloor:true,
-		 SkillRequired:MetalWelding=2,
-         OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
-		 NeedToBeLearn:true,
-		 SkillRequired:MetalWelding=4,
-		 OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-	
-    }
-	
-	
-	
-		/*-Fill the Drum---*/	/*-Half---*/
-
-        recipe Fill Gasohol Drum (1/2)
-    {
-        destroy Petrol_DistillPotLarge,
-        destroy EmptyGasoholDrum,
-        Result:HalfGasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		OnTest:Moonshine.FullPetrol,
-		OnCreate:Moonshine.GiveDistillLargeEmpty,
-		CanBeDoneFromFloor:true,
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-
-      /*  recipe Fill Gasohol Drum (1/2)
-    {
-        [Recipe.GetItemTypes.Petrol];8,
-        destroy EmptyGasoholDrum,
-        Result:HalfGasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		OnTest:Moonshine.FullPetrol,
-		
-		CanBeDoneFromFloor:true,
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-	
-*/
-
-
-
-
-		
-		
-		
-		/*-Fill the Drum---*/	/*-Full---*/
-		
-	
-	       recipe Fill Gasohol Drum (2/2)
-    {
-        destroy Petrol_DistillPotLarge,
-        destroy HalfGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		CanBeDoneFromFloor:true,
-		OnTest:Moonshine.FullPetrol,
-		OnCreate:Moonshine.GiveDistillLargeEmpty,
-		
-        Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-		
- 
-	
-	/*   recipe Fill Gasohol Drum (2/2)
-    {
-        [Recipe.GetItemTypes.Petrol];8,
-        destroy HalfGasoholDrum,
-        Result:GasoholDrum,
-        Time:950.0,
-        Category:Survivalist,
-		CanBeDoneFromFloor:true,
-		OnTest:Moonshine.FullPetrol,
-		
-		Prop2:Base.RippedSheetsDirty,
-		Prop1:Source=1,
-        AnimNode:RipSheets,
-    }
-		
-	*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
 }

@@ -5,166 +5,150 @@ module Moonshine
         Base
     }
 
-    /*------------FILL WOOD AND REMOVE WOOD----------------------------------------*/
-
-    recipe Fill Distill(I) with Wood 
+    craftRecipe FillDistillIWithWood
     {
-        destroy DistillPotSmall,
-        TreeBranch=6,
-        Result:DistillPotSmallWood,
-        Time:400.0,
-        CanBeDoneFromFloor: true,
-	
-        /*Prop2:Source=1,*/
-		Prop1:TreeBranch,
-        AnimNode:RipSheets,
-		
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotSmall],
+        item 6 [Base.TreeBranch2],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmallWood,
+        }
     }
-	
-	
-	
-	
 
-    recipe Remove Wood from Distill(I)  
+    craftRecipe RemoveWoodFromDistillI
     {
-        destroy DistillPotSmallWood,
-        Result: DistillPotSmall,
-        Time: 400.0,
-        CanBeDoneFromFloor: true,
-		OnCreate:Moonshine.GiveWoodSmall,
-		
-		 /*Prop2:Source=1,*/
-		Prop1:TreeBranch,
-        AnimNode:RipSheets,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.GiveWoodSmall,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotSmallWood],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmall,
+        }
     }
 
-
-
-    /*------------------------------*/
-
-
-    recipe Fill Distill(II) with Wood
-     {
-        destroy DistillPotMedium,
-        TreeBranch=4,
-        Result: DistillPotMediumWood,
-        Time: 400.0,
-        CanBeDoneFromFloor: true,
-		
-		/*Prop2:Source=1,*/
-		Prop1:TreeBranch,
-        AnimNode:RipSheets,
-		
-    }
-	
-
-	
-	
-	
-
-    recipe Remove Wood from Distill(II)  
+    craftRecipe FillDistillIIWithWood
     {
-        destroy DistillPotMediumWood,
-        Result: DistillPotMedium,
-        Time: 400.0,
-        CanBeDoneFromFloor: true,
-		OnCreate:Moonshine.GiveWoodMedium,
-		
-		/*Prop2:Source=1,*/
-		Prop1:TreeBranch,
-        AnimNode:RipSheets,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotMedium],
+        item 4 [Base.TreeBranch2],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMediumWood,
+        }
     }
-	
-	/*------------------------------*/
 
-    recipe Fill Distill(III) with Wood
-	
+    craftRecipe RemoveWoodFromDistillII
     {
-        destroy DistillPotLarge,
-        TreeBranch=2,
-        Result: DistillPotLargeWood,
-        Time: 400.0,
-        CanBeDoneFromFloor: true,
-		
-		/*Prop2:Source=1,*/
-		Prop1:TreeBranch,
-        AnimNode:RipSheets,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.GiveWoodMedium,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotMediumWood],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMedium,
+        }
     }
-	
 
-	
-	
-	
-
-    recipe Remove Wood from Distill(III)  
+    craftRecipe FillDistillIIIWithWood
     {
-        OnCreate:Moonshine.GiveWoodLarge,
-		destroy DistillPotLargeWood,
-        Result: DistillPotLarge,
-        Time: 400.0,
-        CanBeDoneFromFloor: true,
-		
-		/*Prop2:Source=1,*/
-		Prop1:TreeBranch,
-        AnimNode:RipSheets,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotLarge],
+        item 2 [Base.TreeBranch2],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLargeWood,
+        }
     }
 
-    /*-------------REMOVE--COAL------------------------*/
-
-    recipe Remove Coal from Distill(I)
+    craftRecipe RemoveWoodFromDistillIII
     {
-        destroy DistillPotSmallCoal,
-        Result: DistillPotSmall,
-        Time: 400.0,
-        OnCreate:Moonshine.GiveCoalSmall,
-        CanBeDoneFromFloor: true,
-		
-		/*Prop2:Source=1,*/
-		Prop1:Moonshine.Coal,
-        AnimNode:RipSheets,
-		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
-	
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.GiveWoodLarge,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotLargeWood],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
     }
 
-    recipe Remove Coal from Distill(II) 
+    craftRecipe RemoveCoalFromDistillI
     {
-        destroy DistillPotMediumCoal,
-        Result: DistillPotMedium,
-        Time: 400.0,
-        OnCreate: Moonshine.GiveCoalMedium,
-        CanBeDoneFromFloor: true,
-		
-		/*Prop2:Source=1,*/
-		Prop1:Moonshine.Coal,
-        AnimNode:RipSheets,
-		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
-	
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        xpAward = Woodwork:5,
+        OnCreate = RecipeCodeOnCreate.GiveCoalSmall,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotSmallCoal],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmall,
+        }
     }
 
-    recipe Remove Coal from Distill(III) 
+    craftRecipe RemoveCoalFromDistillII
     {
-        destroy DistillPotLargeCoal,
-        Result: DistillPotLarge,
-        Time: 400.0,
-        OnCreate:Moonshine.GiveCoalLarge,
-        CanBeDoneFromFloor: true,
-		
-		/*Prop2:Source=1,*/
-		Prop1:Moonshine.Coal,
-        AnimNode:RipSheets,
-		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
-	
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        xpAward = Woodwork:5,
+        OnCreate = RecipeCodeOnCreate.GiveCoalMedium,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotMediumCoal],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMedium,
+        }
     }
 
-
-
-
-
+    craftRecipe RemoveCoalFromDistillIII
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        xpAward = Woodwork:5,
+        OnCreate = RecipeCodeOnCreate.GiveCoalLarge,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotLargeCoal],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
+    }
 }

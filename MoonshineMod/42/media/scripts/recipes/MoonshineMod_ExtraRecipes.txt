@@ -1,4 +1,3 @@
-/* ALCO ITEMS */
 module Moonshine
 {
     imports
@@ -6,59 +5,53 @@ module Moonshine
         Base
     }
 
-    recipe Make Moonshiners Molotov Cocktail
+    craftRecipe MakeMoonshinersMolotovCocktail
     {
-        destroy [Recipe.GetItemTypes.Liquor],
-        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
-        Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
-        Result:MoonshineMolotovBig,
-        Time:150.0,
-        OnTest:Recipe.OnTest.FullLiquor,
-        Sound:PourWaterIntoObject,
-		CanBeDoneFromFloor:true,
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 150.0,
+        inputs
+        {
+        item 1 tags[base:alcoholicbeverage],
+        item 1 [Base.RippedSheets;Base.RippedSheetsDirty;Base.DenimStrips;Base.DenimStripsDirty],
+        item 1 [Base.Charcoal;Base.Sparklers;Base.Aluminum;Base.Bleach;Base.Hairgel;Base.Fertilizer],
+        }
+        outputs
+        {
+            item 1 Moonshine.MoonshineMolotovBig,
+        }
     }
 
-    recipe Make Moonshiners Molotov Cocktail
+    craftRecipe MakeMoonshinersMolotovCocktail2
     {
-        WineEmpty/WineEmpty2/WhiskeyEmpty/BeerEmpty,
-        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
-        Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
-        [Recipe.GetItemTypes.Petrol]=1,
-        Result:MoonshineMolotovBig,
-        Time:150.0,
-        Sound:PourWaterIntoObject,
-		CanBeDoneFromFloor:true,
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 150.0,
+        inputs
+        {
+        item 1 [Moonshine.WinePetrolCan;Moonshine.WhiskeyPetrolCan;Moonshine.BeerPetrolCan],
+        item 1 [Base.RippedSheets;Base.RippedSheetsDirty;Base.DenimStrips;Base.DenimStripsDirty],
+        item 1 [Base.Charcoal;Base.Sparklers;Base.Aluminum;Base.Bleach;Base.Hairgel;Base.Fertilizer],
+        }
+        outputs
+        {
+            item 1 Moonshine.MoonshineMolotovBig,
+        }
     }
 
-    recipe Make Moonshiners Molotov Cocktail
+    craftRecipe MakeMolotovCocktail
     {
-        destroy WinePetrolCan/WhiskeyPetrolCan/BeerPetrolCan,
-        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
-        Charcoal/Sparklers/Aluminum/Bleach/Hairgel/Fertilizer,
-        Result:MoonshineMolotovBig,
-        Time:150.0,
-        OnTest:Recipe.OnTest.FullPetrolBottle,
-        Sound:PourWaterIntoObject,
-		CanBeDoneFromFloor:true,
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 150.0,
+        inputs
+        {
+        item 1 [Moonshine.WinePetrolCan;Moonshine.WhiskeyPetrolCan;Moonshine.BeerPetrolCan],
+        item 1 [Base.RippedSheets;Base.RippedSheetsDirty;Base.DenimStrips;Base.DenimStripsDirty],
+        }
+        outputs
+        {
+            item 1 Moonshine.MoonshineMolotov,
+        }
     }
-	
-	
-	recipe Make Molotov Cocktail
-    {
-        destroy WinePetrolCan/WhiskeyPetrolCan/BeerPetrolCan,
-        RippedSheets/RippedSheetsDirty/DenimStrips/DenimStripsDirty,
-        
-        Result:MoonshineMolotov,
-        Time:150.0,
-        OnTest:Recipe.OnTest.FullPetrolBottle,
-        Sound:PourWaterIntoObject,
-		CanBeDoneFromFloor:true,
-    }
-	
-	
-	
-	
-	
-	
-	
 }

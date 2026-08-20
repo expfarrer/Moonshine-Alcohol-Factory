@@ -1,198 +1,184 @@
 Moonshine = Moonshine or {}
+RecipeCodeOnCreate = RecipeCodeOnCreate or {}
 
 
 --
 --
 
-function Moonshine.GiveDistillMed(items, result, player)
+function RecipeCodeOnCreate.GiveDistillMed(recipeData, character)
 
-player:getInventory():AddItem("Moonshine.Alc_DistillPotMedium")
-print("A medium distll back!")
-end
-
---
-
-function Moonshine.GiveDistillMedEmpty(items, result, player)
-
-player:getInventory():AddItem("Moonshine.DistillPotMedium")
-print("A medium empty distll back!")
-end
+character:getInventory():AddItem("Moonshine.Alc_DistillPotMedium")
+print("A medium distll back!")end
 
 --
 
+function RecipeCodeOnCreate.GiveDistillMedEmpty(recipeData, character)
 
-function Moonshine.GiveDistillLarge(items, result, player)
-
-player:getInventory():AddItem("Moonshine.Alc_DistillPotLarge")
-print("A large distll back!")
-end
+character:getInventory():AddItem("Moonshine.DistillPotMedium")
+print("A medium empty distll back!")end
 
 --
 
-function Moonshine.GiveDistillLargeEmpty(items, result, player)
 
-player:getInventory():AddItem("Moonshine.DistillPotLarge")
-print("A large empty distll back!")
-end
+function RecipeCodeOnCreate.GiveDistillLarge(recipeData, character)
+
+character:getInventory():AddItem("Moonshine.Alc_DistillPotLarge")
+print("A large distll back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveDistillLargeEmpty(recipeData, character)
+
+character:getInventory():AddItem("Moonshine.DistillPotLarge")
+print("A large empty distll back!")end
 
 
 
 --
 
-function Moonshine.GiveEmptyPetrol(items, result, player)
+function RecipeCodeOnCreate.GiveEmptyPetrol(recipeData, character)
 
-player:getInventory():AddItem("Base.EmptyPetrolCan")
-print("A empty petrol can back!")
-end
-
+character:getInventory():AddItem("Base.EmptyPetrolCan")
+print("A empty petrol can back!")end
 
 
 
 
 
 
-function Moonshine.GiveOil(items, result, player)
 
---player:getInventory():AddItem("Moonshine.Oil_DistillPotLarge")
-player:getInventory():AddItem("Base.RippedSheetsDirty")
-print("A Oiler back!")
-end
+function RecipeCodeOnCreate.GiveOil(recipeData, character)
 
-
-
-
-function Moonshine.GiveMotorOil(items, result, player)
-
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Moonshine.MotorOilCan1")
-player:getInventory():AddItem("Base.RippedSheetsDirty")
-print("A Oiler back!")
-end
+--character:getInventory():AddItem("Moonshine.Oil_DistillPotLarge")
+character:getInventory():AddItem("Base.RippedSheetsDirty")
+print("A Oiler back!")end
 
 
 
 
+function RecipeCodeOnCreate.GiveMotorOil(recipeData, character)
 
-function Moonshine.BucketCover(items, result, player)
-  local inventory = player:getInventory()
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Moonshine.MotorOilCan1")
+character:getInventory():AddItem("Base.RippedSheetsDirty")
+print("A Oiler back!")end
+
+
+
+
+
+function RecipeCodeOnCreate.BucketCover(recipeData, character)
+  local inventory = character:getInventory()
   print("A Tarp back!")
 
-  --function BucketCover(items, result, player)
+  --function BucketCover(items, result, character)
     local tarpChance = ZombRand(1, 7)
 
     if tarpChance == 1 then
-      player:getInventory():AddItem("Base.RubberBand")
-      player:getInventory():AddItem("Base.Tarp")
+      character:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.Tarp")
     elseif tarpChance == 2 then
-      player:getInventory():AddItem("Base.Tarp")
-      player:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.Tarp")
+      character:getInventory():AddItem("Base.RubberBand")
     elseif tarpChance == 3 then
-      player:getInventory():AddItem("Base.RubberBand")
-      player:getInventory():AddItem("Base.Tarp")
-      player:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.Tarp")
+      character:getInventory():AddItem("Base.RubberBand")
     elseif tarpChance == 4 then
-      player:getInventory():AddItem("Base.RubberBand")
-      player:getInventory():AddItem("Base.Tarp")
+      character:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.Tarp")
     elseif tarpChance == 5 then
-      player:getInventory():AddItem("Base.RubberBand")
-      player:getInventory():AddItem("Base.Tarp")
+      character:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.Tarp")
     elseif tarpChance == 6 then
-      player:getInventory():AddItem("Base.RubberBand")
-      player:getInventory():AddItem("Base.Tarp")
-      player:getInventory():AddItem("Base.Button")
+      character:getInventory():AddItem("Base.RubberBand")
+      character:getInventory():AddItem("Base.Tarp")
+      character:getInventory():AddItem("Base.Button")
     end
-  end
-
-
-
+end
 
 --
 
-function Moonshine.GiveCoalSmall(items, result, player)
-  
+function RecipeCodeOnCreate.GiveCoalSmall(recipeData, character)
+
   print("A coal sm back!")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
 end
 --
 
-function Moonshine.GiveCoalMedium(items, result, player)
+function RecipeCodeOnCreate.GiveCoalMedium(recipeData, character)
   
   print("A coal med back!")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-end
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")end
 --
-function Moonshine.GiveCoalLarge(items, result, player)
+function RecipeCodeOnCreate.GiveCoalLarge(recipeData, character)
   
   print("A coal lg back!")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-  player:getInventory():AddItem("Moonshine.Coal")
-end
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")
+  character:getInventory():AddItem("Moonshine.Coal")end
 
 
 
 
 --
 
-function Moonshine.GiveWoodSmall(items, result, player)
+function RecipeCodeOnCreate.GiveWoodSmall(recipeData, character)
   
   
     print("A branch small back!")
-    player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
-     player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
-
+    character:getInventory():AddItem("Base.TreeBranch")
+ character:getInventory():AddItem("Base.TreeBranch")
+ character:getInventory():AddItem("Base.TreeBranch")
+ character:getInventory():AddItem("Base.TreeBranch")
+     character:getInventory():AddItem("Base.TreeBranch")
+ character:getInventory():AddItem("Base.TreeBranch")
 end
 
 --
-function Moonshine.GiveWoodMedium(items, result, player)
+function RecipeCodeOnCreate.GiveWoodMedium(recipeData, character)
   
   
     print("A branch small back!")
-    player:getInventory():AddItem("Base.TreeBranch")
-    player:getInventory():AddItem("Base.TreeBranch")
-    player:getInventory():AddItem("Base.TreeBranch")
-    player:getInventory():AddItem("Base.TreeBranch")
-
+    character:getInventory():AddItem("Base.TreeBranch")
+    character:getInventory():AddItem("Base.TreeBranch")
+    character:getInventory():AddItem("Base.TreeBranch")
+    character:getInventory():AddItem("Base.TreeBranch")
 end
 --
-function Moonshine.GiveWoodLarge(items, result, player)
+function RecipeCodeOnCreate.GiveWoodLarge(recipeData, character)
   
   
     print("A branch Lg back!")
-    player:getInventory():AddItem("Base.TreeBranch")
-    player:getInventory():AddItem("Base.TreeBranch")
+    character:getInventory():AddItem("Base.TreeBranch")
+    character:getInventory():AddItem("Base.TreeBranch")
   
 
 	
-     
-end
+     end
 --
 
 
-function Moonshine.GiveDistillPartsSm(items, result, player)
+function RecipeCodeOnCreate.GiveDistillPartsSm(recipeData, character)
   
   
     print("Distill parts back!")
@@ -200,20 +186,19 @@ function Moonshine.GiveDistillPartsSm(items, result, player)
 
 
 
-    player:getInventory():AddItem("Base.MetalPipe")
-    player:getInventory():AddItem("Base.Pot")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.Pot")
 	
-	player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.PropaneTank")
+	character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.PropaneTank")
 	
-    player:getInventory():AddItem("Base.BeerCanEmpty")
+    character:getInventory():AddItem("Base.BeerCanEmpty")
  
-
 
 end
 
 
-function Moonshine.GiveDistillPartsMd(items, result, player)
+function RecipeCodeOnCreate.GiveDistillPartsMd(recipeData, character)
   
   
     print("Distill parts back!")
@@ -221,82 +206,78 @@ function Moonshine.GiveDistillPartsMd(items, result, player)
 
 
 
-    player:getInventory():AddItem("Base.MetalPipe")
-    player:getInventory():AddItem("Base.BucketEmpty")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.BucketEmpty")
 
-    player:getInventory():AddItem("Base.Wire")
-    player:getInventory():AddItem("Base.Pot")
+    character:getInventory():AddItem("Base.Wire")
+    character:getInventory():AddItem("Base.Pot")
 	
-	player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.PropaneTank")
+	character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.PropaneTank")
 	
-    player:getInventory():AddItem("Base.BeerCanEmpty")
+    character:getInventory():AddItem("Base.BeerCanEmpty")
  
-
 
 end
 
-function Moonshine.GiveDistillPartsLg(items, result, player)
+function RecipeCodeOnCreate.GiveDistillPartsLg(recipeData, character)
   
   
     print("Distill parts back!")
-	player:getInventory():AddItem("Base.MetalPipe")
-	player:getInventory():AddItem("Base.MetalPipe")
+	character:getInventory():AddItem("Base.MetalPipe")
+	character:getInventory():AddItem("Base.MetalPipe")
 	  
-    player:getInventory():AddItem("Base.BucketEmpty")
+    character:getInventory():AddItem("Base.BucketEmpty")
 
-    player:getInventory():AddItem("Base.Wire")
-    player:getInventory():AddItem("Base.Pot")
+    character:getInventory():AddItem("Base.Wire")
+    character:getInventory():AddItem("Base.Pot")
 	
-	player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.PropaneTank")
+	character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.PropaneTank")
 	
-    player:getInventory():AddItem("Base.BeerCanEmpty")
+    character:getInventory():AddItem("Base.BeerCanEmpty")
  
-
 
 end
 
 
-function Moonshine.DistillPartsFilter(items, result, player)
+function RecipeCodeOnCreate.DistillPartsFilter(recipeData, character)
   
   
     print("filter parts back!")
 	
 
 
-        player:getInventory():AddItem("Base.MetalPipe")
-	    player:getInventory():AddItem("Moonshine.Coal")
-	  	player:getInventory():AddItem("Moonshine.Coal")
-	  	player:getInventory():AddItem("Moonshine.Coal")
+        character:getInventory():AddItem("Base.MetalPipe")
+	    character:getInventory():AddItem("Moonshine.Coal")
+	  	character:getInventory():AddItem("Moonshine.Coal")
+	  	character:getInventory():AddItem("Moonshine.Coal")
 	   
-	   player:getInventory():AddItem("Base.SmallSheetMetal")
-       player:getInventory():AddItem("Base.BeerCanEmpty")
+	   character:getInventory():AddItem("Base.SmallSheetMetal")
+       character:getInventory():AddItem("Base.BeerCanEmpty")
  
-
 
 end
 
-function Moonshine.GiveDistillPartsColumn(items, result, player)
+function RecipeCodeOnCreate.GiveDistillPartsColumn(recipeData, character)
   
   
     print("Column parts back!")
-	player:getInventory():AddItem("Base.MetalPipe")
-	player:getInventory():AddItem("Base.MetalPipe")
+	character:getInventory():AddItem("Base.MetalPipe")
+	character:getInventory():AddItem("Base.MetalPipe")
 	  
     
 
-    player:getInventory():AddItem("Base.Wire")
-    player:getInventory():AddItem("Base.Pot")
+    character:getInventory():AddItem("Base.Wire")
+    character:getInventory():AddItem("Base.Pot")
 	
-	player:getInventory():AddItem("Base.CarBattery1")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
+	character:getInventory():AddItem("Base.CarBattery1")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
    
-    player:getInventory():AddItem("Base.BeerCanEmpty")
+    character:getInventory():AddItem("Base.BeerCanEmpty")
  
-
 
 end
 
@@ -314,63 +295,62 @@ end
 --
 
 
-function Moonshine.DoubbleFilledReturn(items, result, player)
+function RecipeCodeOnCreate.DoubbleFilledReturn(recipeData, character)
  local bottleChance = ZombRand(1, 7)
  print("A vessel back!")
 
 
 
   if bottleChance == 1 then
-    player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	 player:getInventory():AddItem("Base.WaterBottleEmpty")
-	  player:getInventory():AddItem("Base.BeerEmpty")
-	 	player:getInventory():AddItem("Base.WaterBottleEmpty")
-	 	player:getInventory():AddItem("Base.WaterBottleEmpty")
+    character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	 character:getInventory():AddItem("Base.WaterBottleEmpty")
+	  character:getInventory():AddItem("Base.BeerEmpty")
+	 	character:getInventory():AddItem("Base.WaterBottleEmpty")
+	 	character:getInventory():AddItem("Base.WaterBottleEmpty")
 	 
   elseif bottleChance == 2 then
-    player:getInventory():AddItem("Base.WaterBottleEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WaterBottleEmpty")
-		player:getInventory():AddItem("Base.WaterBottleEmpty")
-			player:getInventory():AddItem("Base.WaterBottleEmpty")
+    character:getInventory():AddItem("Base.WaterBottleEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WaterBottleEmpty")
+		character:getInventory():AddItem("Base.WaterBottleEmpty")
+			character:getInventory():AddItem("Base.WaterBottleEmpty")
 	
   elseif bottleChance == 3 then
-    player:getInventory():AddItem("Base.WaterBottleEmpty")
-	  player:getInventory():AddItem("Base.EmptyJar")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WaterBottleEmpty")
-		player:getInventory():AddItem("Base.WaterBottleEmpty")
+    character:getInventory():AddItem("Base.WaterBottleEmpty")
+	  character:getInventory():AddItem("Base.EmptyJar")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WaterBottleEmpty")
+		character:getInventory():AddItem("Base.WaterBottleEmpty")
 	
   elseif bottleChance == 4 then
-    player:getInventory():AddItem("Base.PopBottleEmpty")
-	 player:getInventory():AddItem("Base.WaterBottleEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WaterBottleEmpty")
-		player:getInventory():AddItem("Base.WaterBottleEmpty")
+    character:getInventory():AddItem("Base.PopBottleEmpty")
+	 character:getInventory():AddItem("Base.WaterBottleEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WaterBottleEmpty")
+		character:getInventory():AddItem("Base.WaterBottleEmpty")
 	
   elseif bottleChance == 5 then
-    player:getInventory():AddItem("Base.BeerEmpty")
-	  player:getInventory():AddItem("Base.WaterBottleEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WaterBottleEmpty")
-		player:getInventory():AddItem("Base.WaterBottleEmpty")
+    character:getInventory():AddItem("Base.BeerEmpty")
+	  character:getInventory():AddItem("Base.WaterBottleEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WaterBottleEmpty")
+		character:getInventory():AddItem("Base.WaterBottleEmpty")
 		
   elseif bottleChance == 6 then
-    player:getInventory():AddItem("Base.WineEmpty2")
-	  player:getInventory():AddItem("Base.WaterBottleEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WhiskeyEmpty")
-	player:getInventory():AddItem("Base.WaterBottleEmpty")
-		player:getInventory():AddItem("Base.WaterBottleEmpty")
+    character:getInventory():AddItem("Base.WineEmpty2")
+	  character:getInventory():AddItem("Base.WaterBottleEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WhiskeyEmpty")
+	character:getInventory():AddItem("Base.WaterBottleEmpty")
+		character:getInventory():AddItem("Base.WaterBottleEmpty")
 	
   end
- 
-end
+ end
 
 
 --
@@ -378,34 +358,32 @@ end
 
 
 
-function Moonshine.DoubbleFilledReturnMed(items, result, player)
+function RecipeCodeOnCreate.DoubbleFilledReturnMed(recipeData, character)
  local bottleChance = ZombRand(1, 7)
  print("A vessel back!")
 
 
 
-    player:getInventory():AddItem("Moonshine.Alc_DistillPotMediumRefillSpirit")
+    character:getInventory():AddItem("Moonshine.Alc_DistillPotMediumRefillSpirit")
 
 	 
 
- 
-end
+ end
 
 
 
 --
-function Moonshine.DoubbleFilledReturnLg(items, result, player)
+function RecipeCodeOnCreate.DoubbleFilledReturnLg(recipeData, character)
  local bottleChance = ZombRand(1, 7)
  print("A vessel back!")
 
 
 
-    player:getInventory():AddItem("Moonshine.Alc_DistillPotLargeRefillSpirit")
+    character:getInventory():AddItem("Moonshine.Alc_DistillPotLargeRefillSpirit")
 
 	 
 
- 
-end
+ end
 
 --
 
@@ -441,4 +419,3 @@ end
 
 
 
-Events.OnTick.Add(Tick);

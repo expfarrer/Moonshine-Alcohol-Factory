@@ -3,594 +3,457 @@ module Moonshine
     imports
     {
         Base
-    } 
-
-    /*------------------DISTILL POT CREATION------------------*/
-
-    recipe Create Distill Pot(I)
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-
-        destroy BucketEmpty,
-        MetalPipe=2,
-		ScrapMetal,
-       
-	    Water=2,
-        Wire,
-        Bleach,
-		
-        destroy Pot,
-        destroy SmallSheetMetal,
-        destroy DuctTape,
-        destroy PropaneTank,
-        destroy BeerCanEmpty,
-
-        Result:DistillPotSmall,
-        Time:900.0,
-
-         Sound:BreakMetalItem,
-         Prop1:Screwdriver,
-         Prop2:Source=4,
-         AnimNode:Disassemble,
-		 
-        CanBeDoneFromFloor:true,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		SkillRequired:MetalWelding=1,
-		
-    }
-	
-	
-	
-	
-	
-	recipe Dismantle Distill(I)
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        
-        keep Wrench/PipeWrench,
-        destroy DistillPotSmall,
-		
-        
-        Result:ScrapMetal,
-        Time:400.0,
-		
-        Sound:BreakMetalItem,
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
-		OnCreate:Moonshine.GiveDistillPartsSm,
-		SkillRequired:MetalWelding=1,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		
-		
-    }
-	
-	recipe Dismantle Distill(II)
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        
-        keep Wrench/PipeWrench,
-        destroy DistillPotMedium,
-		
-        
-        Result:ScrapMetal,
-        Time:600.0,
-		
-        Sound:BreakMetalItem,
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
-		OnCreate:Moonshine.GiveDistillPartsMd,
-		SkillRequired:MetalWelding=2,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		
-		
-    }
-	
-	recipe Dismantle Distill(III)
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        
-        keep Wrench/PipeWrench,
-        destroy DistillPotLarge,
-		
-        
-        Result:ScrapMetal,
-        Time:900.0,
-		
-        Sound:BreakMetalItem,
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
-		OnCreate:Moonshine.GiveDistillPartsLg,
-		SkillRequired:MetalWelding=4;Electricity=2,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		
-    }
-	
-	
-	
-	
-	recipe Dismantle Charcoal Filter
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        
-        keep Wrench/PipeWrench,
-        destroy DistillPotFilter,
-        Result:ScrapMetal,
-        Time:900.0,
-		
-        Sound:BreakMetalItem,
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
-		OnCreate:Moonshine.DistillPartsFilter,
-		SkillRequired:MetalWelding=2,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		
-    }
-	
-	
-	
-	
-		recipe Dismantle Controllable Column
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        
-        keep Wrench/PipeWrench,
-        destroy DistillPotColumn,
-		Result:ScrapMetal,
-        Time:900.0,
-		
-        Sound:BreakMetalItem,
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
-		OnCreate:Moonshine.GiveDistillPartsColumn,
-		SkillRequired:MetalWelding=4;Electricity=2,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		
-    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-    /*------------------CORN MASH IN POT------------------*/
-
-    recipe Fill Distill with Corn Mash
-    {
-        destroy DistillPotSmall,
-        CornMashFermented;10,
-        Result:Mash_DistillPotSmall,
-        Time:400.0,
-        Category:Cooking,
-        Sound:PourWaterIntoObject,
-		
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-		
-        
-		OnCreate:Moonshine.BucketCover,
-        CanBeDoneFromFloor:true,
-		
     }
 
-
-
-    recipe Fill Distill with Corn Mash
+    craftRecipe CreateDistillPotI
     {
-        destroy DistillPotMedium,
-        CornMashFermented;10,
-        Result:Mash_DistillPotMedium,
-        Time:400.0,
-        Category:Cooking,
-        Sound:PourWaterIntoObject,Sound:PourWaterIntoObject,
-        
-		Prop2:Source=1,
-        AnimNode:Disassemble,
-		
-        OnCreate:Moonshine.BucketCover,
-        CanBeDoneFromFloor:true,
-	
-		}
-
-
-
-    recipe Fill Distill with Corn Mash
-    {
-        destroy DistillPotLarge,
-        CornMashFermented;10,
-        Result:Mash_DistillPotLarge,
-        Time:400.0,
-        Category:Cooking,
-        Sound:PourWaterIntoObject,
-       
-	    /*Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-
-        OnCreate:Moonshine.BucketCover,
-        CanBeDoneFromFloor:true,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:1,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.BucketEmpty],
+        item 2 [Base.MetalPipe],
+        item 1 [Base.ScrapMetal],
+        -fluid 2.0 [Water],
+        item 1 [Base.Wire],
+        item 1 [Base.Bleach],
+        item 1 [Base.Pot],
+        item 1 [Base.SmallSheetMetal],
+        item 1 [Base.DuctTape],
+        item 1 [Base.PropaneTank],
+        item 1 [Base.BeerCanEmpty],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmall,
+        }
     }
 
-
-
-
-
-    /*------------------POTATO MASH IN POT------------------*/
-
-    recipe Fill Distill with Potato Mash
+    craftRecipe DismantleDistillI
     {
-        destroy DistillPotSmall,
-        PotatoMashFermented;10,
-        Result:Mash_DistillPotSmall,
-        Time:400.0,
-        Category:Cooking,
-        Sound:PourWaterIntoObject,
-		      
-		/*
-		Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-		
-		OnCreate:Moonshine.BucketCover,
-        CanBeDoneFromFloor:true,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 400.0,
+        SkillRequired = MetalWelding:1,
+        xpAward = MetalWelding:25,
+        OnCreate = RecipeCodeOnCreate.GiveDistillPartsSm,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Base.ScrapMetal,
+        }
     }
 
-    recipe Fill Distill with Potato Mash
+    craftRecipe DismantleDistillII
     {
-        destroy DistillPotMedium,
-        PotatoMashFermented;10,
-        Result:Mash_DistillPotMedium,
-        Time:400.0,
-        Category:Cooking,
-        Sound:PourWaterIntoObject,
-      
-		/*
-		Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-		OnCreate:Moonshine.BucketCover,
-        CanBeDoneFromFloor:true,
-		
-    }
-	
-
-    recipe Fill Distill with Potato Mash
-    {
-        destroy DistillPotLarge,
-        PotatoMashFermented;10,
-        Result:Mash_DistillPotLarge,
-        Time:400.0,
-        Category:Cooking,
-        Sound:PourWaterIntoObject,
-        /*
-		Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-        OnCreate:Moonshine.BucketCover,
-        CanBeDoneFromFloor:true,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 600.0,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:25,
+        OnCreate = RecipeCodeOnCreate.GiveDistillPartsMd,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Base.ScrapMetal,
+        }
     }
 
-
-
-
-
-
-    /*------------------FILL DISTILL WITH WATER------------------*/
-
-    recipe Fill Distill with Water
+    craftRecipe DismantleDistillIII
     {
-        destroy DistillPotSmall,
-        Water=40,
-        Result:Water_DistillPotSmall,
-        Time:400.0,
-        Category:Survivalist,
-        Sound:PourWaterIntoObject,
-        /*
-		Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
-		
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        SkillRequired = MetalWelding:4;Electricity:2,
+        xpAward = MetalWelding:25,
+        OnCreate = RecipeCodeOnCreate.GiveDistillPartsLg,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Base.ScrapMetal,
+        }
     }
 
-    recipe Fill Distill with Water
+    craftRecipe DismantleCharcoalFilter
     {
-        destroy DistillPotMedium,
-        Water=60,
-        Result:Water_DistillPotMedium,
-        Time:400.0,
-        Category:Survivalist,
-        Sound:PourWaterIntoObject,
-        /*
-		Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-        CanBeDoneFromFloor:true,
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:25,
+        OnCreate = RecipeCodeOnCreate.DistillPartsFilter,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotFilter],
+        }
+        outputs
+        {
+            item 1 Base.ScrapMetal,
+        }
     }
 
-    recipe Fill Distill with Water
+    craftRecipe DismantleControllableColumn
     {
-        destroy DistillPotLarge,
-        Water=80,
-        Result:Water_DistillPotLarge,
-        Time:400.0,
-        Category:Survivalist,
-        Sound:PourWaterIntoObject,
-        /*
-		Prop1:Source=1,
-        Prop2:BucketWaterFull,
-        AnimNode:Disassemble,
-		*/
-        Prop2:Source=1,
-        AnimNode:Disassemble,
-		
-        CanBeDoneFromFloor:true,
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        SkillRequired = MetalWelding:4;Electricity:2,
+        xpAward = MetalWelding:25,
+        OnCreate = RecipeCodeOnCreate.GiveDistillPartsColumn,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotColumn],
+        }
+        outputs
+        {
+            item 1 Base.ScrapMetal,
+        }
     }
 
-    /*------------------DISTILL ADD-ONS------------------*/
-
-    recipe Create Distill Coal Filter
+    craftRecipe FillDistillWithCornMash
     {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-
-        MetalPipe=3,
-        Water=1,
-        ScrapMetal,
-        Bleach,
-        destroy OatsRaw,
-        Coal=8,
-        Wire,
-        destroy DuctTape,
-        destroy BeerCanEmpty,
-
-        Result:DistillPotFilter,
-        Time:600.0,
-        Sound:BreakMetalItem,
-       
-	    Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-	   
-        CanBeDoneFromFloor:true,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		SkillRequired:MetalWelding=2,
-		
-    }
-	
-	/*---2nd set of coal to build filter with og coal----*/
-	
-	recipe Create Distill Coal Filter
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-
-        MetalPipe=3,
-        Water=1,
-        ScrapMetal,
-        Bleach,
-        destroy OatsRaw,
-        Charcoal=1,
-        Wire,
-        destroy DuctTape,
-        destroy BeerCanEmpty,
-
-        Result:DistillPotFilter,
-        Time:600.0,
-        Sound:BreakMetalItem,
-     
-	    Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-	 
-        CanBeDoneFromFloor:true,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		SkillRequired:MetalWelding=2,
-		
-    }
-	
-	
-	
-	
-
-
-    recipe Create Controllable Distill Column
-    {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        Extinguisher,
-        AlarmClock2,
-        destroy CarBattery1/CarBattery2/CarBattery3,
-        Wire,
-        ElectronicsScrap=5,
-        destroy DuctTape,
-
-        Result:DistillPotColumn,
-        Time:900.0,
-        Sound:BreakMetalItem,
-        
-		Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-		
-        CanBeDoneFromFloor:true,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		SkillRequired:MetalWelding=4;Electricity=2,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.BucketCover,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotSmall],
+        item 10 [Moonshine.CornMashFermented],
+        }
+        outputs
+        {
+            item 1 Moonshine.Mash_DistillPotSmall,
+        }
     }
 
-    /*------------------Assemble Stage 1/2------------------*/
-
-    recipe Upgrade Distill(I)to(II)
+    craftRecipe FillDistillWithCornMash2
     {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        destroy DuctTape,
-        destroy DistillPotFilter,
-        destroy DistillPotSmall,
-
-        Result:DistillPotMedium,
-        Time:900.0,
-        Sound:BreakMetalItem,
-		
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-		
-		
-        CanBeDoneFromFloor:true,
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		SkillRequired:MetalWelding=2,
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.BucketCover,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotMedium],
+        item 10 [Moonshine.CornMashFermented],
+        }
+        outputs
+        {
+            item 1 Moonshine.Mash_DistillPotMedium,
+        }
     }
 
-
-  /*------------------Assemble Stage 2/2------------------*/
-
-
-    recipe Upgrade Distill(II)to(III)
+    craftRecipe FillDistillWithCornMash3
     {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        destroy DuctTape,
-        destroy DistillPotColumn,
-        destroy DistillPotMedium,
-
-        Result:DistillPotLarge,
-        Time:900.0,
-        Sound:BreakMetalItem,
-        
-		Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-		
-		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
-		SkillRequired:MetalWelding=4;Electricity=2,
-	
-        
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.BucketCover,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotLarge],
+        item 10 [Moonshine.CornMashFermented],
+        }
+        outputs
+        {
+            item 1 Moonshine.Mash_DistillPotLarge,
+        }
     }
-	
-	/*------------Disassemble Stage 2 to 1 --------------*/
-	
-	
-	 recipe Downgrade Distill(II)to(I)
+
+    craftRecipe FillDistillWithPotatoMash
     {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        keep Wrench/PipeWrench,
-        
-        destroy DistillPotMedium,
-
-        Result:DistillPotSmall,
-        Time:900.0,
-        Sound:BreakMetalItem,
-		
-        Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-        
-		CanBeDoneFromFloor:true,
-		/*OnCreate:Moonshine.GiveFilter,*/
-		OnCreate:Moonshine.DistillPartsFilter,
-		NeedToBeLearn:true,
-		SkillRequired:MetalWelding=2,
-		
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.BucketCover,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotSmall],
+        item 10 [Moonshine.PotatoMashFermented],
+        }
+        outputs
+        {
+            item 1 Moonshine.Mash_DistillPotSmall,
+        }
     }
-	
-	
-	/*--------------Disassemble Stage 3-2---*/
-	
-	
-		 recipe Downgrade Distill(III)to(II)
+
+    craftRecipe FillDistillWithPotatoMash2
     {
-        keep [Recipe.GetItemTypes.Hammer],
-        keep [Recipe.GetItemTypes.Saw],
-        
-        keep Wrench/PipeWrench,
-        destroy DistillPotLarge,
-
-        Result:DistillPotMedium,
-        Time:900.0,
-        Sound:BreakMetalItem,
-       
-	    Prop2:Base.ScrapMetal,
-        Prop1:Screwdriver,
-        AnimNode:Disassemble,
-	   
-        CanBeDoneFromFloor:true,
-		/*OnCreate:Moonshine.GiveColumn,*/
-		OnCreate:Moonshine.GiveDistillPartsColumn,
-		NeedToBeLearn:true,
-		SkillRequired:MetalWelding=4;Electricity=2,
-		
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.BucketCover,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotMedium],
+        item 10 [Moonshine.PotatoMashFermented],
+        }
+        outputs
+        {
+            item 1 Moonshine.Mash_DistillPotMedium,
+        }
     }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-    /*------------------End------------------*/
+    craftRecipe FillDistillWithPotatoMash3
+    {
+        timedAction = Making, category = Cooking,
+        Tags = InHandCraft;Cooking,
+        time = 400.0,
+        OnCreate = RecipeCodeOnCreate.BucketCover,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotLarge],
+        item 10 [Moonshine.PotatoMashFermented],
+        }
+        outputs
+        {
+            item 1 Moonshine.Mash_DistillPotLarge,
+        }
+    }
+
+    craftRecipe FillDistillWithWater
+    {
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 400.0,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotSmall],
+        -fluid 40.0 [Water],
+        }
+        outputs
+        {
+            item 1 Moonshine.Water_DistillPotSmall,
+        }
+    }
+
+    craftRecipe FillDistillWithWater2
+    {
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 400.0,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotMedium],
+        -fluid 60.0 [Water],
+        }
+        outputs
+        {
+            item 1 Moonshine.Water_DistillPotMedium,
+        }
+    }
+
+    craftRecipe FillDistillWithWater3
+    {
+        timedAction = Making, category = Survivalist,
+        Tags = InHandCraft;Survivalist,
+        time = 400.0,
+        inputs
+        {
+        item 1 [Moonshine.DistillPotLarge],
+        -fluid 80.0 [Water],
+        }
+        outputs
+        {
+            item 1 Moonshine.Water_DistillPotLarge,
+        }
+    }
+
+    craftRecipe CreateDistillCoalFilter
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 600.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 3 [Base.MetalPipe],
+        -fluid 1.0 [Water],
+        item 1 [Base.ScrapMetal],
+        item 1 [Base.Bleach],
+        item 1 [Base.OatsRaw],
+        item 8 [Moonshine.Coal],
+        item 1 [Base.Wire],
+        item 1 [Base.DuctTape],
+        item 1 [Base.BeerCanEmpty],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotFilter,
+        }
+    }
+
+    craftRecipe CreateDistillCoalFilter2
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 600.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 3 [Base.MetalPipe],
+        -fluid 1.0 [Water],
+        item 1 [Base.ScrapMetal],
+        item 1 [Base.Bleach],
+        item 1 [Base.OatsRaw],
+        item 1 [Base.Charcoal],
+        item 1 [Base.Wire],
+        item 1 [Base.DuctTape],
+        item 1 [Base.BeerCanEmpty],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotFilter,
+        }
+    }
+
+    craftRecipe CreateControllableDistillColumn
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:4;Electricity:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Extinguisher],
+        item 1 [Base.AlarmClock2],
+        item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3],
+        item 1 [Base.Wire],
+        item 5 [Base.ElectronicsScrap],
+        item 1 [Base.DuctTape],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotColumn,
+        }
+    }
+
+    craftRecipe UpgradeDistillIToII
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.DuctTape],
+        item 1 [Moonshine.DistillPotFilter],
+        item 1 [Moonshine.DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMedium,
+        }
+    }
+
+    craftRecipe UpgradeDistillIIToIII
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:4;Electricity:2,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.DuctTape],
+        item 1 [Moonshine.DistillPotColumn],
+        item 1 [Moonshine.DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
+    }
+
+    craftRecipe DowngradeDistillIIToI
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:2,
+        OnCreate = RecipeCodeOnCreate.DistillPartsFilter,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmall,
+        }
+    }
+
+    craftRecipe DowngradeDistillIIIToII
+    {
+        timedAction = Making,
+        Tags = InHandCraft,
+        time = 900.0,
+        NeedToBeLearn = true,
+        SkillRequired = MetalWelding:4;Electricity:2,
+        OnCreate = RecipeCodeOnCreate.GiveDistillPartsColumn,
+        inputs
+        {
+        item 1 tags[base:hammer] mode:keep,
+        item 1 tags[base:saw] mode:keep,
+        item 1 [Base.Wrench;Base.PipeWrench] mode:keep,
+        item 1 [Moonshine.DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMedium,
+        }
+    }
 }

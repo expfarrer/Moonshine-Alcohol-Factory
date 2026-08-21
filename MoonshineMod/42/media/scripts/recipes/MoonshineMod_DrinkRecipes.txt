@@ -6,7 +6,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInBeerBottle
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -22,7 +23,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInBeerBottle2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -38,7 +40,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInBeerBottle3
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -54,7 +57,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInBeerBottle4
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -70,7 +74,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInBeerBottle5
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -86,7 +91,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -102,7 +108,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -118,7 +125,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar3
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -134,7 +142,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar4
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -150,7 +159,8 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar5
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -166,7 +176,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -182,7 +194,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -198,7 +212,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug3
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -214,7 +230,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInBeerBottle
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -230,7 +248,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInJar
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -246,7 +266,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug4
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -262,7 +284,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug5
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -278,7 +302,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug6
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -294,7 +320,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInBeerBottle2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -310,7 +338,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInJar2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -326,7 +356,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug7
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -342,7 +374,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug8
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -358,7 +392,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug9
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -374,7 +410,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInBeerBottle3
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -390,7 +428,9 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInJar3
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,

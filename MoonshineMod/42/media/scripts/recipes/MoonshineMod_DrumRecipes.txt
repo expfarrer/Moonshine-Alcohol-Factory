@@ -6,7 +6,8 @@ module Moonshine
     }
 
     craftRecipe FillGasoholDrum
-    {
+    {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
@@ -22,7 +23,8 @@ module Moonshine
     }
 
     craftRecipe FillGasoholDrum2
-    {
+    {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
@@ -38,7 +40,8 @@ module Moonshine
     }
 
     craftRecipe FillGasoholDrum3
-    {
+    {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
@@ -54,7 +57,8 @@ module Moonshine
     }
 
     craftRecipe FillGasoholDrum4
-    {
+    {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
@@ -70,7 +74,8 @@ module Moonshine
     }
 
     craftRecipe FillGasoholDrum5
-    {
+    {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
@@ -86,7 +91,8 @@ module Moonshine
     }
 
     craftRecipe FillGasoholDrum6
-    {
+    {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,

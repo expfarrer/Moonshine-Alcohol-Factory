@@ -6,7 +6,8 @@ module Moonshine
     }
 
     craftRecipe MakePotatoMashInBucket
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -15,7 +16,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
         item 5 tags[base:sugar],
@@ -29,7 +30,8 @@ module Moonshine
     }
 
     craftRecipe MakeCornMashInBucket
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -38,7 +40,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
         item 5 tags[base:sugar],
@@ -52,7 +54,8 @@ module Moonshine
     }
 
     craftRecipe MakeCannedCornMashInBucket
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -61,7 +64,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 tags[base:canopener] mode:keep,
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
@@ -76,7 +79,8 @@ module Moonshine
     }
 
     craftRecipe MakeCannedCornMashInBucket2
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -85,7 +89,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
         item 5 tags[base:sugar],
@@ -99,7 +103,8 @@ module Moonshine
     }
 
     craftRecipe MakeCannedPotatoMashInBucket
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -108,7 +113,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 tags[base:canopener] mode:keep,
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
@@ -123,7 +128,8 @@ module Moonshine
     }
 
     craftRecipe MakeCannedPotatoMashInBucket2
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -132,7 +138,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
         item 5 tags[base:sugar],
@@ -146,7 +152,8 @@ module Moonshine
     }
 
     craftRecipe MakeCannedPotatoMashInBucket3
-    {
+    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -155,7 +162,7 @@ module Moonshine
         xpAward = Cooking:10,
         inputs
         {
-        item 1 tags[base:mixingutensil] mode:keep,
+        item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 tags[base:canopener] mode:keep,
         item 1 [Base.BucketEmpty],
         -fluid 5.0 [Water],
@@ -177,7 +184,7 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.CornMash],
-        item 1 [Base.Tarp],
+        item 1 [Base.Tarp] flags[Prop1],
         item 1 [Base.RubberBand],
         }
         outputs
@@ -194,7 +201,7 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.PotatoMash],
-        item 1 [Base.Tarp],
+        item 1 [Base.Tarp] flags[Prop1],
         item 1 [Base.RubberBand],
         }
         outputs

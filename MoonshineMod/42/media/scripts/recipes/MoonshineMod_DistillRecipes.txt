@@ -6,7 +6,8 @@ module Moonshine
     }
 
     craftRecipe CreateDistillPotI
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -36,7 +37,9 @@ module Moonshine
     }
 
     craftRecipe DismantleDistillI
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
@@ -57,7 +60,9 @@ module Moonshine
     }
 
     craftRecipe DismantleDistillII
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 600,
@@ -78,7 +83,9 @@ module Moonshine
     }
 
     craftRecipe DismantleDistillIII
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -99,7 +106,9 @@ module Moonshine
     }
 
     craftRecipe DismantleCharcoalFilter
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -120,7 +129,9 @@ module Moonshine
     }
 
     craftRecipe DismantleControllableColumn
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -291,7 +302,8 @@ module Moonshine
     }
 
     craftRecipe CreateDistillCoalFilter
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 600,
@@ -305,7 +317,7 @@ module Moonshine
         item 3 [Base.MetalPipe],
         item 1 [*],
         -fluid 1.0 [Water],
-        item 1 [Base.ScrapMetal],
+        item 1 [Base.ScrapMetal] flags[Prop2],
         item 1 [Base.Bleach],
         item 1 [Base.OatsRaw],
         item 8 [Moonshine.Coal],
@@ -320,7 +332,8 @@ module Moonshine
     }
 
     craftRecipe CreateDistillCoalFilter2
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 600,
@@ -334,7 +347,7 @@ module Moonshine
         item 3 [Base.MetalPipe],
         item 1 [*],
         -fluid 1.0 [Water],
-        item 1 [Base.ScrapMetal],
+        item 1 [Base.ScrapMetal] flags[Prop2],
         item 1 [Base.Bleach],
         item 1 [Base.OatsRaw],
         item 1 [Base.Charcoal],
@@ -349,7 +362,9 @@ module Moonshine
     }
 
     craftRecipe CreateControllableDistillColumn
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -374,7 +389,9 @@ module Moonshine
     }
 
     craftRecipe UpgradeDistillIToII
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -396,7 +413,9 @@ module Moonshine
     }
 
     craftRecipe UpgradeDistillIIToIII
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -418,7 +437,9 @@ module Moonshine
     }
 
     craftRecipe DowngradeDistillIIToI
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
@@ -439,7 +460,9 @@ module Moonshine
     }
 
     craftRecipe DowngradeDistillIIIToII
-    {
+    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,

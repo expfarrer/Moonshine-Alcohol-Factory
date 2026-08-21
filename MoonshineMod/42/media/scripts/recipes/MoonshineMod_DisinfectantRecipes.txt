@@ -6,7 +6,8 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIWith6XSpirit
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -24,7 +25,8 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotII
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -41,7 +43,8 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIWith6XSpirit2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -59,7 +62,8 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotII2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -76,7 +80,8 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIIWith8XSpirit
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
@@ -94,7 +99,8 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotIII
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -111,7 +117,8 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIIWith8XSpirit2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
@@ -129,7 +136,8 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotIII2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -146,7 +154,8 @@ module Moonshine
     }
 
     craftRecipe RefillDisinfectantBeerBottle
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
@@ -162,7 +171,8 @@ module Moonshine
     }
 
     craftRecipe RefillDisinfectantBeerBottle2
-    {
+    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,

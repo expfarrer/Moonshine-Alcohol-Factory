@@ -8,7 +8,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIWith6XSpirit
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
@@ -26,7 +26,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotII
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
@@ -43,7 +43,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIWith6XSpirit2
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
@@ -61,7 +61,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotII2
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
@@ -78,7 +78,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIIWith8XSpirit
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
@@ -96,7 +96,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotIII
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
@@ -113,7 +113,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIIWith8XSpirit2
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
         NeedToBeLearn = true,
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
@@ -131,7 +131,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotIII2
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
@@ -148,7 +148,7 @@ module Moonshine
     craftRecipe RefillDisinfectantBeerBottle
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
@@ -164,7 +164,7 @@ module Moonshine
     craftRecipe RefillDisinfectantBeerBottle2
     {
         timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {

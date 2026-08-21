@@ -5,7 +5,7 @@ module Moonshine
         Base
     }
 
-    craftRecipe CreateDistillPotI
+    craftRecipe MakeDistillPotI
     {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
 
         timedAction = Making, category = Moonshine,
@@ -21,9 +21,7 @@ module Moonshine
         item 1 [Base.BucketEmpty],
         item 2 [Base.MetalPipe],
         item 1 [Base.ScrapMetal],
-        -fluid 1.0 [Water],
         item 1 [Base.Wire],
-        item 1 [Base.Bleach],
         item 1 [Base.Pot],
         item 1 [Base.SmallSheetMetal],
         item 1 [Base.DuctTape],
@@ -301,7 +299,7 @@ module Moonshine
         }
     }
 
-    craftRecipe CreateDistillCoalFilter
+    craftRecipe MakeDistillCoalFilter
     {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
 
         timedAction = Making, category = Moonshine,
@@ -331,7 +329,7 @@ module Moonshine
         }
     }
 
-    craftRecipe CreateDistillCoalFilter2
+    craftRecipe MakeDistillCoalFilter2
     {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
 
         timedAction = Making, category = Moonshine,
@@ -361,7 +359,7 @@ module Moonshine
         }
     }
 
-    craftRecipe CreateControllableDistillColumn
+    craftRecipe MakeControllableDistillColumn
     {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
         /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 

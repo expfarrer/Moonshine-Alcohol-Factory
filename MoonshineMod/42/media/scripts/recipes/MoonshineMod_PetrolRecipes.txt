@@ -139,7 +139,7 @@ module Moonshine
         }
     }
 
-    craftRecipe CreateGasoholDrum
+    craftRecipe MakeGasoholDrum
     {
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,

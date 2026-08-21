@@ -20,7 +20,7 @@ module Moonshine
         item 1 [Base.BucketEmpty],
         item 2 [Base.MetalPipe],
         item 1 [Base.ScrapMetal],
-        -fluid 2.0 [Water],
+        -fluid 1.0 [Water],
         item 1 [Base.Wire],
         item 1 [Base.Bleach],
         item 1 [Base.Pot],

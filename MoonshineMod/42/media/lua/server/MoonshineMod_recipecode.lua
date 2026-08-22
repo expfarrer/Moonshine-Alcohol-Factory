@@ -285,7 +285,7 @@ function RecipeCodeOnCreate.GiveDistillPartsColumn(recipeData, character)
     character:getInventory():AddItem("Base.SmallSheetMetal")
    
     character:getInventory():AddItem("Base.BeerCanEmpty")
- 
+    character:getInventory():AddItem("Moonshine.DistillPotColumn")
 
 end
 

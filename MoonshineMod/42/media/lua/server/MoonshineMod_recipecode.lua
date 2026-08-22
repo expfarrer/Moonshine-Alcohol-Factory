@@ -249,20 +249,21 @@ end
 
 
 function RecipeCodeOnCreate.DistillPartsFilter(recipeData, character)
-  
-  
+
+
     print("filter parts back!")
-	
+
 
 
         character:getInventory():AddItem("Base.MetalPipe")
 	    character:getInventory():AddItem("Moonshine.Coal")
 	  	character:getInventory():AddItem("Moonshine.Coal")
 	  	character:getInventory():AddItem("Moonshine.Coal")
-	   
+
 	   character:getInventory():AddItem("Base.SmallSheetMetal")
        character:getInventory():AddItem("Base.BeerCanEmpty")
- 
+       character:getInventory():AddItem("Moonshine.DistillPotFilter")
+
 
 end
 

@@ -225,7 +225,7 @@ imports
 
         ReplaceOnCooked = Moonshine.Alc_DistillPotSmall,
 
-		MinutesToCook = 1,
+		MinutesToCook = 950,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,

@@ -443,7 +443,7 @@ module Moonshine
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
-        OnCreate = RecipeCodeOnCreate.DistillPartsFilter,
+        OnCreate = RecipeCodeOnCreate.DowngradeGiveFilter,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -466,7 +466,7 @@ module Moonshine
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
-        OnCreate = RecipeCodeOnCreate.GiveDistillPartsColumn,
+        OnCreate = RecipeCodeOnCreate.DowngradeGiveColumn,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,

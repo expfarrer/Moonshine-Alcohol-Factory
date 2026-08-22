@@ -249,7 +249,7 @@ end
 
 
 function RecipeCodeOnCreate.DistillPartsFilter(recipeData, character)
-
+-- Used by DismantleCharcoalFilter (scraps the filter) - must NOT return a filter.
 
     print("filter parts back!")
 
@@ -262,28 +262,59 @@ function RecipeCodeOnCreate.DistillPartsFilter(recipeData, character)
 
 	   character:getInventory():AddItem("Base.SmallSheetMetal")
        character:getInventory():AddItem("Base.BeerCanEmpty")
-       character:getInventory():AddItem("Moonshine.DistillPotFilter")
 
+end
+
+function RecipeCodeOnCreate.DowngradeGiveFilter(recipeData, character)
+-- Used by DowngradeDistillIIToI - must return the filter (that's what makes it a downgrade, not a dismantle).
+
+    print("filter parts + filter back!")
+
+        character:getInventory():AddItem("Base.MetalPipe")
+	    character:getInventory():AddItem("Moonshine.Coal")
+	  	character:getInventory():AddItem("Moonshine.Coal")
+	  	character:getInventory():AddItem("Moonshine.Coal")
+
+	   character:getInventory():AddItem("Base.SmallSheetMetal")
+       character:getInventory():AddItem("Base.BeerCanEmpty")
+       character:getInventory():AddItem("Moonshine.DistillPotFilter")
 
 end
 
 function RecipeCodeOnCreate.GiveDistillPartsColumn(recipeData, character)
-  
-  
+-- Used by DismantleControllableColumn (scraps the column) - must NOT return a column.
+
     print("Column parts back!")
 	character:getInventory():AddItem("Base.MetalPipe")
 	character:getInventory():AddItem("Base.MetalPipe")
-	  
-    
 
     character:getInventory():AddItem("Base.Wire")
     character:getInventory():AddItem("Base.Pot")
-	
+
 	character:getInventory():AddItem("Base.CarBattery1")
     character:getInventory():AddItem("Base.SmallSheetMetal")
     character:getInventory():AddItem("Base.SmallSheetMetal")
     character:getInventory():AddItem("Base.SmallSheetMetal")
-   
+
+    character:getInventory():AddItem("Base.BeerCanEmpty")
+
+end
+
+function RecipeCodeOnCreate.DowngradeGiveColumn(recipeData, character)
+-- Used by DowngradeDistillIIIToII - must return the column (that's what makes it a downgrade, not a dismantle).
+
+    print("Column parts + column back!")
+	character:getInventory():AddItem("Base.MetalPipe")
+	character:getInventory():AddItem("Base.MetalPipe")
+
+    character:getInventory():AddItem("Base.Wire")
+    character:getInventory():AddItem("Base.Pot")
+
+	character:getInventory():AddItem("Base.CarBattery1")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+
     character:getInventory():AddItem("Base.BeerCanEmpty")
     character:getInventory():AddItem("Moonshine.DistillPotColumn")
 

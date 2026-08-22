@@ -5,6 +5,21 @@ module Moonshine
         Base
     }
 
+    craftRecipe DumpOilDistillPotLarge
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Oil_DistillPotLarge],
+        }
+        outputs
+        {
+        }
+    }
+
     craftRecipe FillDistillIIIWithMotorOil
     {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 

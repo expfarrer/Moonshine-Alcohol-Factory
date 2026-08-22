@@ -5,6 +5,81 @@ module Moonshine
         Base
     }
 
+    craftRecipe DumpSpiritDistillPotSmall
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpSpiritDistillPotMedium
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpSpiritDistillPotLarge
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpSpiritDistillPotMediumRefill
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpSpiritDistillPotLargeRefill
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+        }
+    }
+
     craftRecipe RefillSpiritInBeerBottle
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 

@@ -1,4 +1,10 @@
 {
+    "DumpSpiritDistillPotSmall": "Dump Spirit (Distill Pot I)",
+    "DumpSpiritDistillPotMedium": "Dump Spirit (Distill Pot II)",
+    "DumpSpiritDistillPotLarge": "Dump Spirit (Distill Pot III)",
+    "DumpSpiritDistillPotMediumRefill": "Dump Spirit (Distill Pot II)",
+    "DumpSpiritDistillPotLargeRefill": "Dump Spirit (Distill Pot III)",
+    "DumpOilDistillPotLarge": "Dump Motor Oil (Distill Pot III)",
     "CoverCornMashBucketWithTarp": "Cover Corn Mash Bucket with Tarp",
     "CoverPotatoMashBucketWithTarp": "Cover Potato Mash Bucket with Tarp",
     "DismantleCharcoalFilter": "Dismantle Charcoal Filter",

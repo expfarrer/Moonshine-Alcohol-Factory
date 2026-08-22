@@ -442,12 +442,12 @@ function Moonshine.CheckDrumXD(item, result, player)
     print("CheckDrum")
     local drum = item:getType()
     local condition = 12
-    
+
     -- print("Main item: " .. item:getName())
-    
+
     if drum == "EmptyGasoholDrum" then
         print("Main item no name: " .. drum)
-      	
+
     end
 end
 
@@ -455,6 +455,20 @@ end
 
 --
 --
+
+function RecipeCodeOnCreate.GiveEmptyMotorOilCans80(recipeData, character)
+-- Used by FillGasoholDrum2 (80x Moonshine.MotorOilPetrolCan consumed) - returns the 80 emptied cans.
+    for i=1,80 do
+        character:getInventory():AddItem("Moonshine.EmptyMotorOilCan1")
+    end
+end
+
+function RecipeCodeOnCreate.GiveEmptyBeerBottles80(recipeData, character)
+-- Used by FillGasoholDrum5 (80x Moonshine.BeerPetrolCan consumed) - returns the 80 emptied bottles.
+    for i=1,80 do
+        character:getInventory():AddItem("Base.BeerEmpty")
+    end
+end
 
 
 

@@ -28,6 +28,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
+        OnCreate = RecipeCodeOnCreate.GiveEmptyMotorOilCans80,
         inputs
         {
         item 80 [Moonshine.MotorOilPetrolCan],
@@ -79,6 +80,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
+        OnCreate = RecipeCodeOnCreate.GiveEmptyBeerBottles80,
         inputs
         {
         item 80 [Moonshine.BeerPetrolCan],

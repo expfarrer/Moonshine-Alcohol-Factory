@@ -11,6 +11,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -28,6 +29,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -45,6 +47,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -62,6 +65,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -79,6 +83,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.BeerEmpty],
@@ -96,6 +101,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Base.EmptyJar],
@@ -113,6 +119,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.EmptyJar],
@@ -130,6 +137,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
         item 1 [Base.EmptyJar],
@@ -147,6 +155,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Base.EmptyJar],
@@ -164,6 +173,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.EmptyJar],

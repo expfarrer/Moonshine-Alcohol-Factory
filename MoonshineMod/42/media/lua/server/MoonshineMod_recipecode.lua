@@ -19,6 +19,13 @@ print("A medium empty distll back!")end
 
 --
 
+function RecipeCodeOnCreate.GiveDistillSmallEmpty(recipeData, character)
+
+character:getInventory():AddItem("Moonshine.DistillPotSmall")
+print("A small empty distll back!")end
+
+--
+
 
 function RecipeCodeOnCreate.GiveDistillLarge(recipeData, character)
 

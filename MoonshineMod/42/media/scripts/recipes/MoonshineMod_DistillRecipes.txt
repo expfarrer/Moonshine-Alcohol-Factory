@@ -344,7 +344,7 @@ module Moonshine
         item 1 [Base.ScrapMetal] flags[Prop2],
         item 1 [Base.Bleach],
         item 1 [Base.OatsRaw],
-        item 1 [Base.Charcoal],
+        item 8 [Base.Charcoal],
         item 1 [Base.Wire],
         item 1 [Base.DuctTape],
         item 1 [Base.BeerCanEmpty],

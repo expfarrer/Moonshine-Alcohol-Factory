@@ -187,65 +187,68 @@ function RecipeCodeOnCreate.GiveWoodLarge(recipeData, character)
 --
 
 
+-- Realistic cumulative dismantle returns: tearing down an assembled pot recovers
+-- everything that ever went into building it up to that tier. Filter/Column come
+-- back as intact salvaged components (matching how Downgrade already treats them),
+-- not unpacked into their own raw sub-materials.
+
 function RecipeCodeOnCreate.GiveDistillPartsSm(recipeData, character)
-  
-  
+-- Full build cost of MakeDistillPotI (ScrapMetal excluded - the recipe's own
+-- declared output already gives that back): BucketEmpty, 2x MetalPipe, Wire, Pot,
+-- SmallSheetMetal, DuctTape, PropaneTank, BeerCanEmpty.
+
     print("Distill parts back!")
-	
-
-
-
+    character:getInventory():AddItem("Base.BucketEmpty")
     character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.Wire")
     character:getInventory():AddItem("Base.Pot")
-	
-	character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.DuctTape")
     character:getInventory():AddItem("Base.PropaneTank")
-	
     character:getInventory():AddItem("Base.BeerCanEmpty")
- 
 
 end
 
 
 function RecipeCodeOnCreate.GiveDistillPartsMd(recipeData, character)
-  
-  
+-- Small-tier build cost + UpgradeDistillIToII's own cost (DuctTape + the intact
+-- DistillPotFilter component, salvageable and reusable/dismantlable on its own).
+
     print("Distill parts back!")
-	
-
-
-
-    character:getInventory():AddItem("Base.MetalPipe")
     character:getInventory():AddItem("Base.BucketEmpty")
-
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.MetalPipe")
     character:getInventory():AddItem("Base.Wire")
     character:getInventory():AddItem("Base.Pot")
-	
-	character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.DuctTape")
     character:getInventory():AddItem("Base.PropaneTank")
-	
     character:getInventory():AddItem("Base.BeerCanEmpty")
- 
+    character:getInventory():AddItem("Base.DuctTape")
+    character:getInventory():AddItem("Moonshine.DistillPotFilter")
 
 end
 
 function RecipeCodeOnCreate.GiveDistillPartsLg(recipeData, character)
-  
-  
-    print("Distill parts back!")
-	character:getInventory():AddItem("Base.MetalPipe")
-	character:getInventory():AddItem("Base.MetalPipe")
-	  
-    character:getInventory():AddItem("Base.BucketEmpty")
+-- Medium-tier cumulative cost + UpgradeDistillIIToIII's own cost (DuctTape + the
+-- intact DistillPotColumn component, salvageable and reusable/dismantlable on its own).
 
+    print("Distill parts back!")
+    character:getInventory():AddItem("Base.BucketEmpty")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.MetalPipe")
     character:getInventory():AddItem("Base.Wire")
     character:getInventory():AddItem("Base.Pot")
-	
-	character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.SmallSheetMetal")
+    character:getInventory():AddItem("Base.DuctTape")
     character:getInventory():AddItem("Base.PropaneTank")
-	
     character:getInventory():AddItem("Base.BeerCanEmpty")
- 
+    character:getInventory():AddItem("Base.DuctTape")
+    character:getInventory():AddItem("Moonshine.DistillPotFilter")
+    character:getInventory():AddItem("Base.DuctTape")
+    character:getInventory():AddItem("Moonshine.DistillPotColumn")
+
 
 end
 

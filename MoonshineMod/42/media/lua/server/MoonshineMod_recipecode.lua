@@ -55,9 +55,11 @@ print("A empty petrol can back!")end
 
 
 function RecipeCodeOnCreate.GiveOil(recipeData, character)
-
---character:getInventory():AddItem("Moonshine.Oil_DistillPotLarge")
+-- Used only by FillDistillIIIWithMotorOil (32x Moonshine.MotorOilCan1 consumed) - returns the 32 emptied cans.
 character:getInventory():AddItem("Base.RippedSheetsDirty")
+for i=1,32 do
+    character:getInventory():AddItem("Moonshine.EmptyMotorOilCan1")
+end
 print("A Oiler back!")end
 
 

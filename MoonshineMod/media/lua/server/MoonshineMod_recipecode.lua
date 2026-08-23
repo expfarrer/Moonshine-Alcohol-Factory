@@ -259,67 +259,71 @@ end
 --
 
 
+-- Realistic cumulative dismantle returns: tearing down an assembled pot recovers
+-- everything that ever went into building it up to that tier. Filter/Column come
+-- back as intact salvaged components (matching how Downgrade already treats them),
+-- not unpacked into their own raw sub-materials.
+
 function Moonshine.GiveDistillPartsSm(items, result, player)
-  
-  
+-- Full build cost of Create Distill Pot(I) (ScrapMetal excluded - the recipe's own
+-- declared Result already gives that back): BucketEmpty, 2x MetalPipe, Wire,
+-- Bleach, Pot, SmallSheetMetal, DuctTape, PropaneTank, BeerCanEmpty.
+
     print("Distill parts back!")
-	
-
-
-
+    player:getInventory():AddItem("Base.BucketEmpty")
     player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.Wire")
+    player:getInventory():AddItem("Base.Bleach")
     player:getInventory():AddItem("Base.Pot")
-	
-	player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.DuctTape")
     player:getInventory():AddItem("Base.PropaneTank")
-	
     player:getInventory():AddItem("Base.BeerCanEmpty")
- 
-
 
 end
 
 
 function Moonshine.GiveDistillPartsMd(items, result, player)
-  
-  
+-- Small-tier build cost + Upgrade Distill(I)to(II)'s own cost (DuctTape + the
+-- intact DistillPotFilter component, salvageable and dismantlable on its own).
+
     print("Distill parts back!")
-	
-
-
-
-    player:getInventory():AddItem("Base.MetalPipe")
     player:getInventory():AddItem("Base.BucketEmpty")
-
+    player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.MetalPipe")
     player:getInventory():AddItem("Base.Wire")
+    player:getInventory():AddItem("Base.Bleach")
     player:getInventory():AddItem("Base.Pot")
-	
-	player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.DuctTape")
     player:getInventory():AddItem("Base.PropaneTank")
-	
     player:getInventory():AddItem("Base.BeerCanEmpty")
- 
-
+    player:getInventory():AddItem("Base.DuctTape")
+    player:getInventory():AddItem("Moonshine.DistillPotFilter")
 
 end
 
 function Moonshine.GiveDistillPartsLg(items, result, player)
-  
-  
-    print("Distill parts back!")
-	player:getInventory():AddItem("Base.MetalPipe")
-	player:getInventory():AddItem("Base.MetalPipe")
-	  
-    player:getInventory():AddItem("Base.BucketEmpty")
+-- Medium-tier cumulative cost + Upgrade Distill(II)to(III)'s own cost (DuctTape +
+-- the intact DistillPotColumn component, salvageable and dismantlable on its own).
 
+    print("Distill parts back!")
+    player:getInventory():AddItem("Base.BucketEmpty")
+    player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.MetalPipe")
     player:getInventory():AddItem("Base.Wire")
+    player:getInventory():AddItem("Base.Bleach")
     player:getInventory():AddItem("Base.Pot")
-	
-	player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.DuctTape")
     player:getInventory():AddItem("Base.PropaneTank")
-	
     player:getInventory():AddItem("Base.BeerCanEmpty")
- 
+    player:getInventory():AddItem("Base.DuctTape")
+    player:getInventory():AddItem("Moonshine.DistillPotFilter")
+    player:getInventory():AddItem("Base.DuctTape")
+    player:getInventory():AddItem("Moonshine.DistillPotColumn")
+
 
 
 end

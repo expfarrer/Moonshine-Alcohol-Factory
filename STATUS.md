@@ -14,6 +14,20 @@ build ("finish `MoonshineSpikeTest` into the shipped mod") — that was stale/wr
 was **reconciled 2026-07-26**: Feature 9 now summarizes the real plan below and links
 here + to the two plan files, rather than duplicating an outdated framing.
 
+**STRATEGIC PIVOT, 2026-08-19 — Track 2 (entity-based beta migration, below) is
+DEPRIORITIZED, not deleted.** After Track 2 accumulated many sessions of cost
+concentrated almost entirely in Build 42's entity/station system (sprite-row
+collisions, `addWorkstationEntity` failing 100% of the time it was tried,
+`DryingCraftLogic`/`CraftBench` rigidity, custom tile-atlas art, an unresolved
+idle-processing container bug), the user asked for a from-scratch reassessment:
+fastest path to a working B42 conversion, ignoring the entity work's sunk cost.
+**Track 3 (`b42-fast-port` branch, new section near the bottom of this file) is now
+the active approach** — keeps distill pots as portable items (no entities, no native
+fluids at all), doing a minimal syntax-only port instead. Track 2's branch
+(`beta-migration`, entity work now called `still-idle-processing`) is kept exactly as
+it stood, uncommitted work intact, for possible later revival — read Track 2 below as
+a historical/paused record, not the current plan.
+
 ## What it is
 Craftable distilling chain: mash buckets (corn/potato) → ferment → distill pots
 (Small/Medium/Large, wood/coal/filter/column upgrade path) → spirit → drinkable
@@ -26,12 +40,14 @@ magazines, and a Molotov cocktail variant. Real scale: ~69 items, ~140 recipe bl
   directly.
 - `develop` — tracks `origin/develop`, stable-branch-targeted. All Phase 1-6 bugfix
   work happens here. Currently 12 commits ahead of `main` (`9ca31bc`..`cef1f08`).
-- `beta-migration` — **created 2026-07-29**, branched off `develop`, checked out as a
-  git worktree at `MoonshineModbf42/` (sibling of the repo root, same `.git`/remote),
-  pushed to `origin`. Zero content commits yet — mirrors `develop` exactly. Will
-  intentionally break save/item-ID compatibility with the stable-targeted
-  `develop`/`main` — a separate future version track, existing subscribers on stable
-  stay unaffected.
+- `beta-migration` (now `still-idle-processing` for its entity-track content) —
+  created 2026-07-29 off `develop`, worktree at `MoonshineModbf42/`. **Deprioritized
+  2026-08-19** — see the pivot note above. Uncommitted content-track work is intact,
+  kept for possible later revival, not currently the active path.
+- `b42-fast-port` — **created 2026-08-19, off `develop`** (deliberately NOT off
+  `beta-migration` — a clean restart from the stable B41 bugfix baseline), worktree at
+  `MoonshineModb42fast/`, pushed to `origin`. **This is the current active B42
+  approach.** See "Track 3" near the end of this file for full status.
 
 ## Build 42 went stable — 2026-07-29
 Build 42.20.0 was promoted to Steam's public/stable branch overnight 2026-07-28→29,
@@ -443,6 +459,54 @@ the whole rebuilt chain. This satisfies the plan's Phase 3 "critical gate"
 requirement for Small tier's SP side; MP re-verification of the full chain
 (not just the distill-recipe/entity-sync pieces already confirmed earlier)
 is still open before calling Small tier fully done.
+
+---
+
+## Track 3: b42-fast-port — active B42 approach (2026-08-19 → present)
+
+**Key insight that drove the pivot:** converting distill pots into world-placed
+entities was always an optional design choice, not a B42 requirement. B41's pots are
+portable `Moveable` items using vanilla's generic item-cooking pipeline
+(`IsCookable`/`MinutesToCook`/`ReplaceOnCooked`/`ReplaceOnUse`) — nothing
+entity-specific. Keeping them portable sidesteps every expensive failure mode found
+in Track 2 (all entity-only): no tile art, no `addWorkstationEntity`, no
+`CraftBench`/`DryingCraftLogic` quirks, no `FluidContainer` API landmines.
+
+**Mechanical port done:** `Type=`→`ItemType=base:x` (~87 items), legacy `recipe{}`→
+`craftRecipe{}` (95 converted; 96 intentionally dropped — B42 vanilla deleted the
+Empty-item pattern, e.g. `WhiskeyEmpty`/`WineEmpty`, several recipe families depended
+on), magazine `TeachedRecipes=`→`LearnedRecipes=` conversion. Fatal-crash-class bugs
+found and fixed: invalid `EvolvedRecipe` tokens (crashes at script load, not just a
+silent dead-field), `time=` field float-vs-int `NumberFormatException`, `-fluid`
+input-ordering requirement.
+
+**Real recipe-design bugs found via a full 95-recipe input/output balance audit
+(2026-08-22)** — a class of bug where a `craftRecipe` consumes a reusable vessel
+(pot/jar/bottle/can) but never returns it empty, destroying it instead. Found and
+fixed across ~30 recipes (spirit/water decant, disinfectant, petrol, 2 of 6 drum
+recipes), plus a duplication regression self-caught and fixed the same session (two
+recipes sharing one refund function with opposite correct behavior). **Two of these
+turned out to be live bugs in the current shipping B41 Workshop version, not porting
+artifacts** — backported to `develop` (bigger scope there: 68 decant recipes and all
+6 drum recipes fixable, since B41 still has container items B42 vanilla later
+removed).
+
+**Confirmed live via real testing** on a working dedicated test server (`mvfast`):
+Small+Medium tier mash→cover→heat→spirit→decant chain, fuel-interruption-mid-cook
+safety, magazine-gated recipe unlocking, `CanBeDoneFromFloor` semantics (confirmed
+additive against real B42 engine source, not floor-only).
+
+**Still open, not yet done:** Medium/Large tier's full loop beyond decanting,
+save/reload persistence mid-cook, real 2-player MP, several specific known bugs
+(largest: `FillDistillIIIWithMotorOil` loses 32 empty cans per craft), a couple of
+recipes where B42 vanilla deleted the target "empty" item entirely (no clean fix
+possible as originally designed). All 9 `MinutesToCook` values are currently `1` for
+testing (real values commented out above each) — must be reverted before release.
+
+Full detail, chronological and exhaustive: this repo's Claude project memory —
+`project_b42_fast_port.md` (findings log), `project_b42_fast_port_roadmap.md`
+(done/open/feature-ideas/weak-points, the best single "state of the whole thing"
+read), `project_b42_fast_port_test_checklist.md` (live-test queue).
 
 ---
 

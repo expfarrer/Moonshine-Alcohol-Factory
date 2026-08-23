@@ -369,22 +369,19 @@ end
 
 function Moonshine.GiveDistillPartsColumn(items, result, player)
 -- Used by Dismantle Controllable Column (scraps the column) - must NOT return a column.
+-- Returns the FULL build cost of Create Controllable Distill Column (ScrapMetal
+-- excluded - the recipe's own declared Result already gives that back): Extinguisher,
+-- AlarmClock2, CarBattery1, Wire, 5x ElectronicsScrap, DuctTape.
 
     print("Column parts back!")
-	player:getInventory():AddItem("Base.MetalPipe")
-	player:getInventory():AddItem("Base.MetalPipe")
-
-
-
+    player:getInventory():AddItem("Base.Extinguisher")
+    player:getInventory():AddItem("Base.AlarmClock2")
+    player:getInventory():AddItem("Base.CarBattery1")
     player:getInventory():AddItem("Base.Wire")
-    player:getInventory():AddItem("Base.Pot")
-
-	player:getInventory():AddItem("Base.CarBattery1")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-
-    player:getInventory():AddItem("Base.BeerCanEmpty")
+    for i=1,5 do
+        player:getInventory():AddItem("Base.ElectronicsScrap")
+    end
+    player:getInventory():AddItem("Base.DuctTape")
 
 
 

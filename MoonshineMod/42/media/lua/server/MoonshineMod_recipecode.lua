@@ -290,20 +290,19 @@ end
 
 function RecipeCodeOnCreate.GiveDistillPartsColumn(recipeData, character)
 -- Used by DismantleControllableColumn (scraps the column) - must NOT return a column.
+-- Returns the FULL build cost of MakeControllableDistillColumn (ScrapMetal excluded -
+-- the recipe's own declared outputs already give that back): Extinguisher, AlarmClock2,
+-- CarBattery1, Wire, 5x ElectronicsScrap, DuctTape.
 
     print("Column parts back!")
-	character:getInventory():AddItem("Base.MetalPipe")
-	character:getInventory():AddItem("Base.MetalPipe")
-
+    character:getInventory():AddItem("Base.Extinguisher")
+    character:getInventory():AddItem("Base.AlarmClock2")
+    character:getInventory():AddItem("Base.CarBattery1")
     character:getInventory():AddItem("Base.Wire")
-    character:getInventory():AddItem("Base.Pot")
-
-	character:getInventory():AddItem("Base.CarBattery1")
-    character:getInventory():AddItem("Base.SmallSheetMetal")
-    character:getInventory():AddItem("Base.SmallSheetMetal")
-    character:getInventory():AddItem("Base.SmallSheetMetal")
-
-    character:getInventory():AddItem("Base.BeerCanEmpty")
+    for i=1,5 do
+        character:getInventory():AddItem("Base.ElectronicsScrap")
+    end
+    character:getInventory():AddItem("Base.DuctTape")
 
 end
 

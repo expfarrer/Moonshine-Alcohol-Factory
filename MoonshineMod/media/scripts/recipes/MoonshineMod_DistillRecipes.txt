@@ -15,8 +15,7 @@ module Moonshine
         destroy BucketEmpty,
         MetalPipe=2,
 		ScrapMetal,
-       
-	    Water=2,
+
         Wire,
         Bleach,
 		
@@ -383,7 +382,6 @@ module Moonshine
         keep [Recipe.GetItemTypes.Saw],
 
         MetalPipe=3,
-        Water=1,
         ScrapMetal,
         Bleach,
         destroy OatsRaw,
@@ -415,7 +413,6 @@ module Moonshine
         keep [Recipe.GetItemTypes.Saw],
 
         MetalPipe=3,
-        Water=1,
         ScrapMetal,
         Bleach,
         destroy OatsRaw,

@@ -23,6 +23,14 @@ end
 
 --
 
+function Moonshine.GiveDistillSmallEmpty(items, result, player)
+
+player:getInventory():AddItem("Moonshine.DistillPotSmall")
+print("A small empty distll back!")
+end
+
+--
+
 
 function Moonshine.GiveDistillLarge(items, result, player)
 
@@ -46,6 +54,62 @@ function Moonshine.GiveEmptyPetrol(items, result, player)
 
 player:getInventory():AddItem("Base.EmptyPetrolCan")
 print("A empty petrol can back!")
+end
+
+--
+-- Fill Gasohol Drum recipes (MoonshineMod_DrumRecipes.txt) destroy a bulk quantity of full
+-- fuel cans/bottles to fill one drum but never returned the empties - these give them back.
+
+function Moonshine.GiveEmptyPetrolCans20(items, result, player)
+for i=1,20 do
+player:getInventory():AddItem("Base.EmptyPetrolCan")
+end
+print("20 empty petrol cans back!")
+end
+
+--
+
+function Moonshine.GiveEmptyMotorOilCans80(items, result, player)
+for i=1,80 do
+player:getInventory():AddItem("Base.EmptyMotorOilCan1")
+end
+print("80 empty motor oil cans back!")
+end
+
+--
+
+function Moonshine.GiveBleachEmpty80(items, result, player)
+for i=1,80 do
+player:getInventory():AddItem("Base.BleachEmpty")
+end
+print("80 empty bleach bottles back!")
+end
+
+--
+
+function Moonshine.GiveWhiskeyEmpty80(items, result, player)
+for i=1,80 do
+player:getInventory():AddItem("Base.WhiskeyEmpty")
+end
+print("80 empty whiskey bottles back!")
+end
+
+--
+
+function Moonshine.GiveBeerEmpty80(items, result, player)
+for i=1,80 do
+player:getInventory():AddItem("Base.BeerEmpty")
+end
+print("80 empty beer bottles back!")
+end
+
+--
+
+function Moonshine.GiveWineEmpty80(items, result, player)
+for i=1,80 do
+player:getInventory():AddItem("Base.WineEmpty")
+end
+print("80 empty wine bottles back!")
 end
 
 
@@ -262,44 +326,85 @@ end
 
 
 function Moonshine.DistillPartsFilter(items, result, player)
-  
-  
+-- Used by Dismantle Charcoal Filter (scraps the filter) - must NOT return a filter.
+
+
     print("filter parts back!")
-	
+
 
 
         player:getInventory():AddItem("Base.MetalPipe")
 	    player:getInventory():AddItem("Moonshine.Coal")
 	  	player:getInventory():AddItem("Moonshine.Coal")
 	  	player:getInventory():AddItem("Moonshine.Coal")
-	   
+
 	   player:getInventory():AddItem("Base.SmallSheetMetal")
        player:getInventory():AddItem("Base.BeerCanEmpty")
- 
+
 
 
 end
 
+function Moonshine.DowngradeGiveFilter(items, result, player)
+-- Used by Downgrade Distill(II)to(I) - must return the filter (that's what makes it a downgrade, not a dismantle).
+-- Fixes a long-standing live bug: this recipe used to call DistillPartsFilter (scrap-only),
+-- so downgrading never actually returned the DistillPotFilter component.
+
+    print("filter parts + filter back!")
+
+        player:getInventory():AddItem("Base.MetalPipe")
+	    player:getInventory():AddItem("Moonshine.Coal")
+	  	player:getInventory():AddItem("Moonshine.Coal")
+	  	player:getInventory():AddItem("Moonshine.Coal")
+
+	   player:getInventory():AddItem("Base.SmallSheetMetal")
+       player:getInventory():AddItem("Base.BeerCanEmpty")
+       player:getInventory():AddItem("Moonshine.DistillPotFilter")
+
+end
+
 function Moonshine.GiveDistillPartsColumn(items, result, player)
-  
-  
+-- Used by Dismantle Controllable Column (scraps the column) - must NOT return a column.
+
     print("Column parts back!")
 	player:getInventory():AddItem("Base.MetalPipe")
 	player:getInventory():AddItem("Base.MetalPipe")
-	  
-    
+
+
 
     player:getInventory():AddItem("Base.Wire")
     player:getInventory():AddItem("Base.Pot")
-	
+
 	player:getInventory():AddItem("Base.CarBattery1")
     player:getInventory():AddItem("Base.SmallSheetMetal")
     player:getInventory():AddItem("Base.SmallSheetMetal")
     player:getInventory():AddItem("Base.SmallSheetMetal")
-   
-    player:getInventory():AddItem("Base.BeerCanEmpty")
- 
 
+    player:getInventory():AddItem("Base.BeerCanEmpty")
+
+
+
+end
+
+function Moonshine.DowngradeGiveColumn(items, result, player)
+-- Used by Downgrade Distill(III)to(II) - must return the column (that's what makes it a downgrade, not a dismantle).
+-- Fixes a long-standing live bug: this recipe used to call GiveDistillPartsColumn (scrap-only),
+-- so downgrading never actually returned the DistillPotColumn component.
+
+    print("Column parts + column back!")
+	player:getInventory():AddItem("Base.MetalPipe")
+	player:getInventory():AddItem("Base.MetalPipe")
+
+    player:getInventory():AddItem("Base.Wire")
+    player:getInventory():AddItem("Base.Pot")
+
+	player:getInventory():AddItem("Base.CarBattery1")
+    player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.SmallSheetMetal")
+    player:getInventory():AddItem("Base.SmallSheetMetal")
+
+    player:getInventory():AddItem("Base.BeerCanEmpty")
+    player:getInventory():AddItem("Moonshine.DistillPotColumn")
 
 end
 

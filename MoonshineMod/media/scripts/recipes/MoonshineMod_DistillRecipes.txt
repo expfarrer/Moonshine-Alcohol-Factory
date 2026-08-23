@@ -541,8 +541,7 @@ module Moonshine
         AnimNode:Disassemble,
         
 		CanBeDoneFromFloor:true,
-		/*OnCreate:Moonshine.GiveFilter,*/
-		OnCreate:Moonshine.DistillPartsFilter,
+		OnCreate:Moonshine.DowngradeGiveFilter,
 		NeedToBeLearn:true,
 		SkillRequired:MetalWelding=2,
 		
@@ -569,8 +568,7 @@ module Moonshine
         AnimNode:Disassemble,
 	   
         CanBeDoneFromFloor:true,
-		/*OnCreate:Moonshine.GiveColumn,*/
-		OnCreate:Moonshine.GiveDistillPartsColumn,
+		OnCreate:Moonshine.DowngradeGiveColumn,
 		NeedToBeLearn:true,
 		SkillRequired:MetalWelding=4;Electricity=2,
 		

@@ -106,6 +106,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -174,6 +175,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -223,6 +225,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		
 		Prop1:Source=1,
@@ -258,6 +261,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		
 		Prop1:Source=1,
@@ -350,6 +354,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -397,6 +402,7 @@ module Moonshine
         Sound:PourWaterIntoObject,
        
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -447,6 +453,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -495,6 +502,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -541,6 +549,7 @@ module Moonshine
         Time:250.0,
         Sound:PourWaterIntoObject,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,

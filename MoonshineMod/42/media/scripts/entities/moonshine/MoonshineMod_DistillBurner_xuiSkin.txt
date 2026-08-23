@@ -1,0 +1,12 @@
+module Moonshine
+{
+    xuiSkin default
+    {
+        entity ES_DistillBurner
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = Distill Burner,
+            Icon = Build_BarrelOven,
+        }
+    }
+}

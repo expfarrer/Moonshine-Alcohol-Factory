@@ -1,5 +1,35 @@
 Moonshine = Moonshine or {}
 RecipeCodeOnCreate = RecipeCodeOnCreate or {}
+Moonshine.distillBurner = Moonshine.distillBurner or {}
+
+-- Clone of vanilla BuildRecipeCode.barrelOven.OnCreate (buildRecipeCode.lua) - self-replaces
+-- the built thumpable into a real native IsoFireplace, same as the vanilla Metal Barrel Oven,
+-- giving a full working menu/fuel/heat system for free. Only addition: an explicit
+-- getContainer():setCapacity() override so the Large-tier pot (Weight=20) can be placed in it -
+-- real vanilla BarrelOven's container capacity comes from a sprite-level ContainerCapacity
+-- property (15), which we're reusing the sprite of, so it needs an explicit override here.
+function Moonshine.distillBurner.OnCreate(params)
+    local thumpable = params.thumpable;
+	local sq = thumpable:getSquare();
+	local sprite = thumpable:getSprite():getName();
+    local javaObject = IsoFireplace.new( getCell(), sq, getSprite(sprite) );
+	sq:AddTileObject(javaObject)
+
+	if thumpable:getSquare() ~= nil then
+		thumpable:removeFromWorld();
+		thumpable:removeFromSquare();
+		thumpable:setSquare(nil);
+	end
+
+	if javaObject:getContainer() then
+		javaObject:getContainer():setCapacity(20)
+		print("Distill Burner container capacity set to: " .. tostring(javaObject:getContainer():getCapacity()))
+	else
+		print("Distill Burner: getContainer() returned nil, capacity NOT set")
+	end
+
+	return { replaceObject = true, object = javaObject };
+end
 
 
 --

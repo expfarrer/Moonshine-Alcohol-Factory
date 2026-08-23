@@ -327,19 +327,23 @@ end
 
 function Moonshine.DistillPartsFilter(items, result, player)
 -- Used by Dismantle Charcoal Filter (scraps the filter) - must NOT return a filter.
-
+-- Returns the FULL build cost of Create Distill Coal Filter (ScrapMetal excluded -
+-- the recipe's own declared Result already gives that back): 3x MetalPipe, Bleach,
+-- OatsRaw, 8x Coal, Wire, DuctTape, BeerCanEmpty.
 
     print("filter parts back!")
 
-
-
-        player:getInventory():AddItem("Base.MetalPipe")
-	    player:getInventory():AddItem("Moonshine.Coal")
-	  	player:getInventory():AddItem("Moonshine.Coal")
-	  	player:getInventory():AddItem("Moonshine.Coal")
-
-	   player:getInventory():AddItem("Base.SmallSheetMetal")
-       player:getInventory():AddItem("Base.BeerCanEmpty")
+    player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.MetalPipe")
+    player:getInventory():AddItem("Base.Bleach")
+    player:getInventory():AddItem("Base.OatsRaw")
+    for i=1,8 do
+        player:getInventory():AddItem("Moonshine.Coal")
+    end
+    player:getInventory():AddItem("Base.Wire")
+    player:getInventory():AddItem("Base.DuctTape")
+    player:getInventory():AddItem("Base.BeerCanEmpty")
 
 
 

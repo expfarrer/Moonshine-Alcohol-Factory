@@ -252,18 +252,23 @@ end
 
 function RecipeCodeOnCreate.DistillPartsFilter(recipeData, character)
 -- Used by DismantleCharcoalFilter (scraps the filter) - must NOT return a filter.
+-- Returns the FULL build cost of MakeDistillCoalFilter (ScrapMetal excluded - the
+-- recipe's own declared outputs already give that back): 3x MetalPipe, Bleach,
+-- OatsRaw, 8x Coal, Wire, DuctTape, BeerCanEmpty.
 
     print("filter parts back!")
 
-
-
-        character:getInventory():AddItem("Base.MetalPipe")
-	    character:getInventory():AddItem("Moonshine.Coal")
-	  	character:getInventory():AddItem("Moonshine.Coal")
-	  	character:getInventory():AddItem("Moonshine.Coal")
-
-	   character:getInventory():AddItem("Base.SmallSheetMetal")
-       character:getInventory():AddItem("Base.BeerCanEmpty")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.MetalPipe")
+    character:getInventory():AddItem("Base.Bleach")
+    character:getInventory():AddItem("Base.OatsRaw")
+    for i=1,8 do
+        character:getInventory():AddItem("Moonshine.Coal")
+    end
+    character:getInventory():AddItem("Base.Wire")
+    character:getInventory():AddItem("Base.DuctTape")
+    character:getInventory():AddItem("Base.BeerCanEmpty")
 
 end
 

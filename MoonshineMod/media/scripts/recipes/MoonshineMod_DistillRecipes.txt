@@ -509,11 +509,12 @@ module Moonshine
         Result:DistillPotLarge,
         Time:900.0,
         Sound:BreakMetalItem,
-        
+
 		Prop2:Base.ScrapMetal,
         Prop1:Screwdriver,
         AnimNode:Disassemble,
-		
+		CanBeDoneFromFloor:true,
+
 		NeedToBeLearn:true,
 		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
 		SkillRequired:MetalWelding=4;Electricity=2,

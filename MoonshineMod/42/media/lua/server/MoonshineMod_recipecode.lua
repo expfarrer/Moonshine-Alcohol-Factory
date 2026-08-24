@@ -312,20 +312,12 @@ end
 function RecipeCodeOnCreate.DowngradeGiveColumn(recipeData, character)
 -- Used by DowngradeDistillIIIToII - must return the column (that's what makes it a downgrade, not a dismantle).
 
-    print("Column parts + column back!")
-	character:getInventory():AddItem("Base.MetalPipe")
-	character:getInventory():AddItem("Base.MetalPipe")
-
-    character:getInventory():AddItem("Base.Wire")
-    character:getInventory():AddItem("Base.Pot")
-
-	character:getInventory():AddItem("Base.CarBattery1")
-    character:getInventory():AddItem("Base.SmallSheetMetal")
-    character:getInventory():AddItem("Base.SmallSheetMetal")
-    character:getInventory():AddItem("Base.SmallSheetMetal")
-
-    character:getInventory():AddItem("Base.BeerCanEmpty")
-    character:getInventory():AddItem("Moonshine.DistillPotColumn")
+    print("Column parts + column back! DIAG character=" .. tostring(character) .. " inv=" .. tostring(character and character:getInventory()))
+    local names = {"Base.MetalPipe","Base.MetalPipe","Base.Wire","Base.Pot","Base.CarBattery1","Base.SmallSheetMetal","Base.SmallSheetMetal","Base.SmallSheetMetal","Base.BeerCanEmpty","Moonshine.DistillPotColumn"}
+    for i, itemName in ipairs(names) do
+        local ok, result = pcall(function() return character:getInventory():AddItem(itemName) end)
+        print("DIAG AddItem[" .. i .. "] " .. itemName .. " ok=" .. tostring(ok) .. " result=" .. tostring(result))
+    end
 
 end
 

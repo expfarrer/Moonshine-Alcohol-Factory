@@ -26,7 +26,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 550,
-        OnCreate = RecipeCodeOnCreate.GiveOil,
         inputs
         {
         item 32 [Moonshine.MotorOilCan1],
@@ -35,6 +34,8 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.Oil_DistillPotLarge,
+            item 1 Base.RippedSheetsDirty,
+            item 32 Moonshine.EmptyMotorOilCan1,
         }
     }
 
@@ -44,7 +45,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 650,
-        OnCreate = RecipeCodeOnCreate.GiveMotorOil,
         inputs
         {
         item 8 [Moonshine.EmptyMotorOilCan1],
@@ -53,6 +53,8 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotLarge,
+            item 8 Moonshine.MotorOilCan1,
+            item 1 Base.RippedSheetsDirty,
         }
     }
 

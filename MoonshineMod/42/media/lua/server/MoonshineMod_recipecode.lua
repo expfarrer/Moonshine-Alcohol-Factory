@@ -54,32 +54,8 @@ print("A empty petrol can back!")end
 
 
 
-function RecipeCodeOnCreate.GiveOil(recipeData, character)
--- Used only by FillDistillIIIWithMotorOil (32x Moonshine.MotorOilCan1 consumed) - returns the 32 emptied cans.
-character:getInventory():AddItem("Base.RippedSheetsDirty")
-for i=1,32 do
-    character:getInventory():AddItem("Moonshine.EmptyMotorOilCan1")
-end
-print("A Oiler back!")end
-
-
-
-
-function RecipeCodeOnCreate.GiveMotorOil(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Moonshine.MotorOilCan1")
-character:getInventory():AddItem("Base.RippedSheetsDirty")
-print("A Oiler back!")end
-
-
-
+-- GiveOil and GiveMotorOil removed: converted to native outputs blocks on
+-- FillDistillIIIWithMotorOil / RefillMotorOilCanWithMotorOil (sync-gap fix).
 
 
 function RecipeCodeOnCreate.BucketCover(recipeData, character)
@@ -114,76 +90,9 @@ end
 
 --
 
-function RecipeCodeOnCreate.GiveCoalSmall(recipeData, character)
-
-  print("A coal sm back!")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-end
---
-
-function RecipeCodeOnCreate.GiveCoalMedium(recipeData, character)
-  
-  print("A coal med back!")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")end
---
-function RecipeCodeOnCreate.GiveCoalLarge(recipeData, character)
-  
-  print("A coal lg back!")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")
-  character:getInventory():AddItem("Moonshine.Coal")end
-
-
-
-
---
-
-function RecipeCodeOnCreate.GiveWoodSmall(recipeData, character)
-  
-  
-    print("A branch small back!")
-    character:getInventory():AddItem("Base.TreeBranch")
- character:getInventory():AddItem("Base.TreeBranch")
- character:getInventory():AddItem("Base.TreeBranch")
- character:getInventory():AddItem("Base.TreeBranch")
-     character:getInventory():AddItem("Base.TreeBranch")
- character:getInventory():AddItem("Base.TreeBranch")
-end
-
---
-function RecipeCodeOnCreate.GiveWoodMedium(recipeData, character)
-  
-  
-    print("A branch small back!")
-    character:getInventory():AddItem("Base.TreeBranch")
-    character:getInventory():AddItem("Base.TreeBranch")
-    character:getInventory():AddItem("Base.TreeBranch")
-    character:getInventory():AddItem("Base.TreeBranch")
-end
---
-function RecipeCodeOnCreate.GiveWoodLarge(recipeData, character)
-  
-  
-    print("A branch Lg back!")
-    character:getInventory():AddItem("Base.TreeBranch")
-    character:getInventory():AddItem("Base.TreeBranch")
-  
-
-	
-     end
+-- GiveCoalSmall/Medium/Large and GiveWoodSmall/Medium/Large removed: converted
+-- to native outputs blocks on RemoveCoalFromDistillI/II/III and
+-- RemoveWoodFromDistillI/II/III (sync-gap fix).
 --
 
 

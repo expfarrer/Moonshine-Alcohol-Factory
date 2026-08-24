@@ -27,7 +27,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.GiveWoodSmall,
         inputs
         {
         item 1 [Moonshine.DistillPotSmallWood],
@@ -35,6 +34,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotSmall,
+            item 6 Base.TreeBranch,
         }
     }
 
@@ -60,7 +60,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.GiveWoodMedium,
         inputs
         {
         item 1 [Moonshine.DistillPotMediumWood],
@@ -68,6 +67,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotMedium,
+            item 4 Base.TreeBranch,
         }
     }
 
@@ -93,7 +93,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.GiveWoodLarge,
         inputs
         {
         item 1 [Moonshine.DistillPotLargeWood],
@@ -101,6 +100,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotLarge,
+            item 2 Base.TreeBranch,
         }
     }
 
@@ -111,7 +111,6 @@ module Moonshine
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         xpAward = Woodwork:5,
-        OnCreate = RecipeCodeOnCreate.GiveCoalSmall,
         inputs
         {
         item 1 [Moonshine.DistillPotSmallCoal],
@@ -119,6 +118,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotSmall,
+            item 4 Moonshine.Coal,
         }
     }
 
@@ -129,7 +129,6 @@ module Moonshine
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         xpAward = Woodwork:5,
-        OnCreate = RecipeCodeOnCreate.GiveCoalMedium,
         inputs
         {
         item 1 [Moonshine.DistillPotMediumCoal],
@@ -137,6 +136,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotMedium,
+            item 6 Moonshine.Coal,
         }
     }
 
@@ -147,7 +147,6 @@ module Moonshine
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         xpAward = Woodwork:5,
-        OnCreate = RecipeCodeOnCreate.GiveCoalLarge,
         inputs
         {
         item 1 [Moonshine.DistillPotLargeCoal],
@@ -155,6 +154,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotLarge,
+            item 8 Moonshine.Coal,
         }
     }
 }

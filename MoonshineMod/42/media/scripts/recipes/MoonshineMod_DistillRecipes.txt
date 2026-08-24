@@ -58,7 +58,6 @@ module Moonshine
             item 1 Base.Wire,
             item 1 Base.Pot,
             item 1 Base.SmallSheetMetal,
-            item 1 Base.DuctTape,
             item 1 Base.PropaneTank,
             item 1 Base.BeerCanEmpty,
         }
@@ -88,7 +87,6 @@ module Moonshine
             item 1 Base.Wire,
             item 1 Base.Pot,
             item 1 Base.SmallSheetMetal,
-            item 2 Base.DuctTape,
             item 1 Base.PropaneTank,
             item 1 Base.BeerCanEmpty,
             item 1 Moonshine.DistillPotFilter,
@@ -119,7 +117,6 @@ module Moonshine
             item 1 Base.Wire,
             item 1 Base.Pot,
             item 1 Base.SmallSheetMetal,
-            item 3 Base.DuctTape,
             item 1 Base.PropaneTank,
             item 1 Base.BeerCanEmpty,
             item 1 Moonshine.DistillPotFilter,
@@ -151,7 +148,6 @@ module Moonshine
             item 1 Base.OatsRaw,
             item 8 Moonshine.Coal,
             item 1 Base.Wire,
-            item 1 Base.DuctTape,
             item 1 Base.BeerCanEmpty,
         }
     }
@@ -180,7 +176,6 @@ module Moonshine
             item 1 Base.CarBattery1,
             item 1 Base.Wire,
             item 5 Base.ElectronicsScrap,
-            item 1 Base.DuctTape,
         }
     }
 

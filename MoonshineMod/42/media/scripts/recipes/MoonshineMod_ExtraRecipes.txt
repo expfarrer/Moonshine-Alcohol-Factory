@@ -5,9 +5,16 @@ module Moonshine
         Base
     }
 
-    craftRecipe MakeMoonshinersMolotovCocktail
-    {        /* OnTest: Recipe.OnTest.FullLiquor -- dropped legacy reference, verify before deleting */
+    /* PARKED 2026-08-24, priority B - Molotov feature deferred out of this release,
+       to be revisited as a dedicated spike after the base mod is confirmed stable.
+       See project memory (checklist + project_b42_fast_port.md) for the
+       "Bootlegger's Bombshell" naming/design decision. Stripped the pre-existing
+       inline "OnTest: ... dropped legacy reference" comments from the first two
+       recipes below before wrapping this whole block in one comment, since C-style
+       block comments don't nest and would otherwise break here.
 
+    craftRecipe MakeMoonshinersMolotovCocktail
+    {
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 150,
@@ -41,8 +48,7 @@ module Moonshine
     }
 
     craftRecipe MakeMolotovCocktail
-    {        /* OnTest: Recipe.OnTest.FullPetrolBottle -- dropped legacy reference, verify before deleting */
-
+    {
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 150,
@@ -56,4 +62,22 @@ module Moonshine
             item 1 Moonshine.MoonshineMolotov,
         }
     }
+
+    craftRecipe MakeBootleggersBombshell
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 150,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning],
+        item 1 [Base.RippedSheets;Base.RippedSheetsDirty;Base.DenimStrips;Base.DenimStripsDirty],
+        item 1 [Moonshine.MotorOilCan1],
+        }
+        outputs
+        {
+            item 1 Moonshine.MoonshineMolotov,
+        }
+    }
+    END PARKED SECTION */
 }

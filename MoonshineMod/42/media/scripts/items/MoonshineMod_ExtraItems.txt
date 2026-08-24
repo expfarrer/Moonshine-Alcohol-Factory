@@ -21,7 +21,17 @@ module Moonshine
         WorldStaticModel = Charcoal_Ground,
     }
 
-  
+
+    /* PARKED 2026-08-24, priority B - Molotov feature deferred out of this release,
+       to be revisited as a dedicated spike after the base mod is confirmed stable.
+       Real bugs found and fixed here (FirePower isn't a real B42 field - the
+       correct fields are FireStartingEnergy/FireStartingChance; OtherHandRequire
+       needs the base:lighter tag prefix, bare "Lighter" isn't valid) - both fixes
+       preserved in this commented-out version so the spike starts from a corrected
+       baseline, not the original buggy one. See project memory (checklist +
+       project_b42_fast_port.md) for the "Bootlegger's Bombshell" naming/design
+       decision and the oily-rag recipe that was queued alongside this.
+
     item MoonshineMolotov
     {
         DisplayCategory = Explosives,
@@ -32,17 +42,18 @@ module Moonshine
         MinimumSwingTime = 1.5,
         SwingAnim = Throw,
         UseSelf = TRUE,
-        DisplayName = Moonshiners Molotov,
+        DisplayName = Bootlegger's Bombshell,
         SwingTime = 1.5,
         SwingAmountBeforeImpact = 0.1,
         PhysicsObject = MolotovCocktail,
         MinDamage = 0,
         Weight = 1.5,
         MaxDamage = 0,
-        OtherHandRequire = Lighter,
+        OtherHandRequire = base:lighter,
         MaxHitCount = 0,
-        FirePower = 90,
-        FireRange = 4,
+        FireStartingEnergy = 40,
+        FireStartingChance = 40,
+        FireRange = 5,
         Icon = Molotov,
         EquipSound = MolotovCocktailEquip,
         ExplosionSound = MolotovCocktailExplode,
@@ -66,15 +77,17 @@ module Moonshine
         MinDamage = 0,
         Weight = 1.5,
         MaxDamage = 0,
-        OtherHandRequire = Lighter,
+        OtherHandRequire = base:lighter,
         MaxHitCount = 0,
-        FirePower = 450,
-        FireRange = 3,
+        FireStartingEnergy = 60,
+        FireStartingChance = 60,
+        FireRange = 4,
         Icon = Molotov,
         EquipSound = MolotovCocktailEquip,
         ExplosionSound = MolotovCocktailExplode,
         SwingSound = MolotovCocktailThrow,
     }
+    END PARKED SECTION */
 
    
 	

@@ -170,6 +170,91 @@ module Moonshine
         }
     }
 
+    craftRecipe RefillSpiritInWineBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen],
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWineBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen],
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWineBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWineBottle4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWineBottle5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineRefill,
+        }
+    }
+
     craftRecipe RefillSpiritInEmptyJar
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 

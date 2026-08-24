@@ -92,8 +92,45 @@ imports
         WorldStaticModel = BeerBottle,
 		UseDelta = 0.25,
 		Tags = Liquor,
-		
-	
+
+
+	}
+
+	item WineRefill
+	{
+	    StressChange	=	-50,
+	    DisplayCategory = Food,
+		HungerChange	=	-9,
+		Weight	=	0.7,
+
+		ItemType	= base:food,
+		FoodType = Liquor,
+
+		UnhappyChange	=	-30,
+		ThirstChange	=	-13,
+		DisplayName	=	Wine Bottle filled with Spirit,
+
+		ReplaceOnUse = WineOpen,
+		Alcoholic	=	TRUE,
+		AlcoholPower = 2,
+		Icon	=	Wine,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+
+		Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1200,
+
+
+        Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel = WhiteWineBottle,
+        WorldStaticModel = WineWhiteGround,
+		UseDelta = 0.25,
+		Tags = Liquor,
+
+
 	}
 	
 	

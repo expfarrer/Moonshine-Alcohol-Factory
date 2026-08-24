@@ -178,7 +178,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.WineOpen],
+        item 1 [Base.WineOpen;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
         }
         outputs
@@ -195,7 +195,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.WineOpen],
+        item 1 [Base.WineOpen;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
         }
         outputs
@@ -212,7 +212,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        item 1 [Base.WineOpen],
+        item 1 [Base.WineOpen;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
@@ -229,7 +229,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.WineOpen],
+        item 1 [Base.WineOpen;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
@@ -246,7 +246,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.WineOpen],
+        item 1 [Base.WineOpen;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotLarge],
         }
         outputs

@@ -34,7 +34,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotSmall,
-            item 6 Base.TreeBranch,
+            item 6 Base.TreeBranch2,
         }
     }
 
@@ -67,7 +67,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotMedium,
-            item 4 Base.TreeBranch,
+            item 4 Base.TreeBranch2,
         }
     }
 
@@ -100,7 +100,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotLarge,
-            item 2 Base.TreeBranch,
+            item 2 Base.TreeBranch2,
         }
     }
 

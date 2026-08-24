@@ -43,7 +43,6 @@ module Moonshine
         time = 400,
         SkillRequired = MetalWelding:1,
         xpAward = MetalWelding:25,
-        OnCreate = RecipeCodeOnCreate.GiveDistillPartsSm,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -54,6 +53,14 @@ module Moonshine
         outputs
         {
             item 1 Base.ScrapMetal,
+            item 1 Base.BucketEmpty,
+            item 2 Base.MetalPipe,
+            item 1 Base.Wire,
+            item 1 Base.Pot,
+            item 1 Base.SmallSheetMetal,
+            item 1 Base.DuctTape,
+            item 1 Base.PropaneTank,
+            item 1 Base.BeerCanEmpty,
         }
     }
 
@@ -66,7 +73,6 @@ module Moonshine
         time = 600,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
-        OnCreate = RecipeCodeOnCreate.GiveDistillPartsMd,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -77,6 +83,15 @@ module Moonshine
         outputs
         {
             item 1 Base.ScrapMetal,
+            item 1 Base.BucketEmpty,
+            item 2 Base.MetalPipe,
+            item 1 Base.Wire,
+            item 1 Base.Pot,
+            item 1 Base.SmallSheetMetal,
+            item 2 Base.DuctTape,
+            item 1 Base.PropaneTank,
+            item 1 Base.BeerCanEmpty,
+            item 1 Moonshine.DistillPotFilter,
         }
     }
 
@@ -89,7 +104,6 @@ module Moonshine
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
-        OnCreate = RecipeCodeOnCreate.GiveDistillPartsLg,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -100,6 +114,16 @@ module Moonshine
         outputs
         {
             item 1 Base.ScrapMetal,
+            item 1 Base.BucketEmpty,
+            item 2 Base.MetalPipe,
+            item 1 Base.Wire,
+            item 1 Base.Pot,
+            item 1 Base.SmallSheetMetal,
+            item 3 Base.DuctTape,
+            item 1 Base.PropaneTank,
+            item 1 Base.BeerCanEmpty,
+            item 1 Moonshine.DistillPotFilter,
+            item 1 Moonshine.DistillPotColumn,
         }
     }
 
@@ -112,7 +136,6 @@ module Moonshine
         time = 900,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
-        OnCreate = RecipeCodeOnCreate.DistillPartsFilter,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -123,6 +146,13 @@ module Moonshine
         outputs
         {
             item 1 Base.ScrapMetal,
+            item 3 Base.MetalPipe,
+            item 1 Base.Bleach,
+            item 1 Base.OatsRaw,
+            item 8 Moonshine.Coal,
+            item 1 Base.Wire,
+            item 1 Base.DuctTape,
+            item 1 Base.BeerCanEmpty,
         }
     }
 
@@ -135,7 +165,6 @@ module Moonshine
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
-        OnCreate = RecipeCodeOnCreate.GiveDistillPartsColumn,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -146,6 +175,12 @@ module Moonshine
         outputs
         {
             item 1 Base.ScrapMetal,
+            item 1 Base.Extinguisher,
+            item 1 Base.AlarmClock2,
+            item 1 Base.CarBattery1,
+            item 1 Base.Wire,
+            item 5 Base.ElectronicsScrap,
+            item 1 Base.DuctTape,
         }
     }
 
@@ -439,7 +474,6 @@ module Moonshine
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:2,
-        OnCreate = RecipeCodeOnCreate.DowngradeGiveFilter,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -450,6 +484,11 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotSmall,
+            item 1 Base.MetalPipe,
+            item 3 Moonshine.Coal,
+            item 1 Base.SmallSheetMetal,
+            item 1 Base.BeerCanEmpty,
+            item 1 Moonshine.DistillPotFilter,
         }
     }
 
@@ -462,7 +501,6 @@ module Moonshine
         time = 900,
         NeedToBeLearn = true,
         SkillRequired = MetalWelding:4;Electricity:2,
-        OnCreate = RecipeCodeOnCreate.DowngradeGiveColumn,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -473,6 +511,13 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotMedium,
+            item 2 Base.MetalPipe,
+            item 1 Base.Wire,
+            item 1 Base.Pot,
+            item 1 Base.CarBattery1,
+            item 3 Base.SmallSheetMetal,
+            item 1 Base.BeerCanEmpty,
+            item 1 Moonshine.DistillPotColumn,
         }
     }
 }

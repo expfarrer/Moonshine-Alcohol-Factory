@@ -1360,4 +1360,440 @@ module Moonshine
             item 1 Moonshine.JarWaterRefill,
         }
     }
+
+    craftRecipe DumpWaterDistillPotSmall
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmall,
+        }
+    }
+
+    craftRecipe DumpWaterDistillPotMedium
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMedium,
+        }
+    }
+
+    craftRecipe DumpWaterDistillPotLarge
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
+    }
+
+    craftRecipe DumpMashDistillPotSmall
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Mash_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotSmall,
+        }
+    }
+
+    craftRecipe DumpMashDistillPotMedium
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Mash_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotMedium,
+        }
+    }
+
+    craftRecipe DumpMashDistillPotLarge
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Mash_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
+    }
+
+    craftRecipe DumpSpiritWhiskeyBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiskeyRefill],
+        }
+        outputs
+        {
+            item 1 Base.Whiskey,
+        }
+    }
+
+    craftRecipe DumpSpiritBeerBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.BeerRefill],
+        }
+        outputs
+        {
+            item 1 Base.BeerEmpty,
+        }
+    }
+
+    craftRecipe DumpSpiritWineBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WineRefill],
+        }
+        outputs
+        {
+            item 1 Base.WineOpen,
+        }
+    }
+
+    craftRecipe DumpSpiritJar
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning],
+        }
+        outputs
+        {
+            item 1 Base.EmptyJar,
+        }
+    }
+
+    craftRecipe DumpSpiritSodaBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.SodaBottleRefill],
+        }
+        outputs
+        {
+            item 1 Base.PopBottle,
+        }
+    }
+
+    craftRecipe DumpSpiritWaterBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WaterBottleRefill],
+        }
+        outputs
+        {
+            item 1 Base.WaterBottle,
+        }
+    }
+
+    craftRecipe DumpSpiritSportsBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.SportsBottleRefill],
+        }
+        outputs
+        {
+            item 1 Base.Sportsbottle,
+        }
+    }
+
+    craftRecipe DumpSpiritBleachBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.BleachBottleRefill],
+        }
+        outputs
+        {
+            item 1 Base.Bleach,
+        }
+    }
+
+    craftRecipe DumpWaterMug
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.MuglWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.Mugl,
+        }
+    }
+
+    craftRecipe DumpWaterMugWhite
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.MugWhiteWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.MugWhite,
+        }
+    }
+
+    craftRecipe DumpWaterMugSpiffo
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.MugSpiffoWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.MugSpiffo,
+        }
+    }
+
+    craftRecipe DumpWaterBeerBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.BeerWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.BeerEmpty,
+        }
+    }
+
+    craftRecipe DumpWaterWineBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WineWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.WineOpen,
+        }
+    }
+
+    craftRecipe DumpWaterWhiskeyBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiskeyWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.Whiskey,
+        }
+    }
+
+    craftRecipe DumpWaterWaterBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.BottleWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.WaterBottle,
+        }
+    }
+
+    craftRecipe DumpWaterSportsBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.SportsBottleWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.Sportsbottle,
+        }
+    }
+
+    craftRecipe DumpWaterSodaBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.PopBottleWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.PopBottle,
+        }
+    }
+
+    craftRecipe DumpWaterBleachBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.BleachWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.Bleach,
+        }
+    }
+
+    craftRecipe DumpWaterKettle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.KettleWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.Kettle,
+        }
+    }
+
+    craftRecipe DumpWaterSaucepan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.SaucepanWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.Saucepan,
+        }
+    }
+
+    craftRecipe DumpWaterBucket
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.BucketWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.BucketEmpty,
+        }
+    }
+
+    craftRecipe DumpWaterWateringcan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WateringcanWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.WateredCan,
+        }
+    }
+
+    craftRecipe DumpWaterJar
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.JarWaterRefill],
+        }
+        outputs
+        {
+            item 1 Base.EmptyJar,
+        }
+    }
+
 }

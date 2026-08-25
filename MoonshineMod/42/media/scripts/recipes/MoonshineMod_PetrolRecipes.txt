@@ -512,4 +512,20 @@ module Moonshine
             item 1 Moonshine.GasoholDrum,
         }
     }
+
+    craftRecipe DumpPetrolDistillPotLarge
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.DistillPotLarge,
+        }
+    }
+
 }

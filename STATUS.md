@@ -528,11 +528,25 @@ for Whiskey/Wine/Beer; full new-vessel batch deployed, not yet individually
 re-confirmed per-vessel by the user. Full detail: this repo's Claude project memory,
 `project_bottle_family_coverage_done.md`.
 
+**2026-08-24, same session — `ReplaceOnUse` vs `ReplaceOnDeplete` bug found and
+fixed, mod-wide, pre-existing (not introduced this session).** Any `base:drainable`
+item with a `UseDelta` gauge needs `ReplaceOnDeplete` to swap into an empty item when
+the gauge hits 0 — `ReplaceOnUse` is silently a no-op on drainables in B42 (confirmed:
+0 occurrences on any vanilla drainable item, vs 380+ real uses of `ReplaceOnDeplete`).
+19 items had this bug: all 7 water-refill bottles, 5 non-bottle water vessels
+(Kettle/Saucepan/Bucket/Watering Can/Jar), all 7 Disinfectant-refill bottles, and —
+notably — the still's own 3 Coal-fuel states (core loop, not just a decorative
+bottle). Symptom: item vanishes instead of leaving an empty container behind when
+drained. Fixed by field-rename across all 19; also caught `JarWaterRefill` pointing
+at a dead `JarEmpty` name (should be `Base.EmptyJar`) in the same pass. Not yet
+live-tested as of this note. Full detail: `project_replaceondeplete_bug_done.md`.
+
 Full detail, chronological and exhaustive: this repo's Claude project memory —
 `project_b42_fast_port.md` (findings log), `project_b42_fast_port_roadmap.md`
 (done/open/feature-ideas/weak-points, the best single "state of the whole thing"
 read), `project_b42_fast_port_test_checklist.md` (live-test queue),
-`project_bottle_family_coverage_done.md` (this session's findings),
+`project_bottle_family_coverage_done.md` (this session's vessel-coverage findings),
+`project_replaceondeplete_bug_done.md` (this session's ReplaceOnDeplete fix),
 `reference_recipe_display_name_translation.md` (Recipes.json requirement for new
 recipes).
 

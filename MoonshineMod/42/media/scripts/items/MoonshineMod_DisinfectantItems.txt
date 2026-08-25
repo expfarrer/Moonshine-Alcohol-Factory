@@ -20,7 +20,7 @@ module Moonshine
         StaticModel = WhiskeyBottle,
         WorldStaticModel = WhiskeyBottleGround,
         Tags = Disinfectant,
-        ReplaceOnUse = Whiskey,
+        ReplaceOnDeplete = Whiskey,
     }
 
     item DisinfectantRefillBeer
@@ -38,7 +38,7 @@ module Moonshine
         StaticModel = BeerBottle,
         WorldStaticModel = BeerBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = BeerEmpty,
+        ReplaceOnDeplete = BeerEmpty,
     }
 
     item DisinfectantRefillWine
@@ -56,7 +56,7 @@ module Moonshine
         StaticModel = WhiteWineBottle,
         WorldStaticModel = WhiteWineBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = WineOpen,
+        ReplaceOnDeplete = WineOpen,
     }
 
     item DisinfectantRefillSoda
@@ -74,7 +74,7 @@ module Moonshine
         StaticModel = PopBottleWorld,
         WorldStaticModel = PopBottleWorld,
         Tags = Disinfectant,
-        ReplaceOnUse = PopBottle,
+        ReplaceOnDeplete = PopBottle,
     }
 
     item DisinfectantRefillWaterBottle
@@ -92,7 +92,7 @@ module Moonshine
         StaticModel = WaterBottle,
         WorldStaticModel = WaterBottleFull,
         Tags = Disinfectant,
-        ReplaceOnUse = WaterBottle,
+        ReplaceOnDeplete = WaterBottle,
     }
 
     item DisinfectantRefillSportsBottle
@@ -110,7 +110,7 @@ module Moonshine
         StaticModel = Sportsbottle,
         WorldStaticModel = Sportsbottle,
         Tags = Disinfectant,
-        ReplaceOnUse = Sportsbottle,
+        ReplaceOnDeplete = Sportsbottle,
     }
 
     item DisinfectantRefillBleach
@@ -129,6 +129,6 @@ module Moonshine
         EatType = BleachBottle,
         WorldStaticModel = BleachBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = Bleach,
+        ReplaceOnDeplete = Bleach,
     }
 }

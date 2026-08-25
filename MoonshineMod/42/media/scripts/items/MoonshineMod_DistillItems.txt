@@ -833,7 +833,7 @@ item DistillPotSmallCoal
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		EvolvedRecipeName = Coal,
-        ReplaceOnUse = DistillPotSmall,
+        ReplaceOnDeplete = DistillPotSmall,
 			
 		StaticModel = distill_small_Ground,
 		WorldStaticModel = distill_small_Ground,
@@ -891,7 +891,7 @@ item DistillPotMediumCoal
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		EvolvedRecipeName = Coal,
-        ReplaceOnUse = DistillPotMedium,
+        ReplaceOnDeplete = DistillPotMedium,
 		
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
@@ -951,7 +951,7 @@ item DistillPotLargeCoal
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		EvolvedRecipeName = Coal,
-        ReplaceOnUse = DistillPotLarge,
+        ReplaceOnDeplete = DistillPotLarge,
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
         StaticModel = distill_large_Ground,

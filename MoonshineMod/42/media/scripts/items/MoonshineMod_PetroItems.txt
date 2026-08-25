@@ -270,18 +270,34 @@ item EmptyMotorOilCan4
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
-		ReplaceOnDeplete	= Base.WaterBottleEmpty,
-		
-		Icon = WaterBottle_Full,
+		ReplaceOnDeplete	= Base.WaterBottle,
+
+		Icon = WaterBottle,
 		StaticModel = WaterBottle,
         WorldStaticModel = WaterBottle,
 		Tags = Petrol,
 		ReplaceInSecondHand = Bag_WaterBottle_LHand holdingbagleft,
         ReplaceInPrimaryHand = Bag_WaterBottle_RHand holdingbagright,
-		
-	      
+
+
 	}
-	
+
+	item SportsBottlePetrolCan
+	{
+	    DisplayName	=	Sports Bottle Gas Can,
+		DisplayCategory = VehicleMaintenance,
+		Weight	=	1,
+		ItemType	= base:drainable,
+        UseWhileEquipped	=	FALSE,
+		UseDelta = 0.125,
+		ReplaceOnDeplete	= Base.Sportsbottle,
+
+		Icon = Sportsbottle,
+		StaticModel = Sportsbottle,
+        WorldStaticModel = Sportsbottle,
+		Tags = Petrol,
+	}
+
 	item PopBottlePetrolCan
 	{
 	    DisplayName	=	Pop Bottle Gas Can,
@@ -290,9 +306,9 @@ item EmptyMotorOilCan4
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
-		ReplaceOnDeplete	= Base.PopBottleEmpty,
-		
-		Icon = Pop_water,
+		ReplaceOnDeplete	= Base.PopBottle,
+
+		Icon = PopBottle,
 		StaticModel = PopBottle,
         WorldStaticModel =PopBottle,
 		Tags = Petrol,
@@ -312,7 +328,7 @@ item EmptyMotorOilCan4
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
-		ReplaceOnDeplete	=	BleachEmpty,
+		ReplaceOnDeplete	=	Bleach,
 		
 		Icon	=	Bleach,
 		StaticModel = BleachBottle,
@@ -356,8 +372,8 @@ item EmptyMotorOilCan4
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
 		DisplayName	=	Whiskey Bottle Gas Can,
-		Icon	=	WhiskeyFull,
-		ReplaceOnDeplete	=	WhiskeyEmpty,
+		Icon	=	Whiskey,
+		ReplaceOnDeplete	=	Whiskey,
 		StaticModel = WhiskeyBottle,
 		ReplaceInSecondHand = Bag_WhiskeyBottle_LHand holdingbagleft,
         ReplaceInPrimaryHand = Bag_WhiskeyBottle_RHand holdingbagright,
@@ -393,8 +409,8 @@ item EmptyMotorOilCan4
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
 		DisplayName	=	Wine Bottle Gas Can,
-		Icon	=	WineFull,
-		ReplaceOnDeplete	=	WineEmpty,
+		Icon	=	Wine,
+		ReplaceOnDeplete	=	WineOpen,
 		StaticModel = WhiteWineBottle,
         WorldStaticModel = WhiteWineBottle,
 		/*ReplaceInSecondHand = Bag_WineEmpty_LHand holdingbagleft,

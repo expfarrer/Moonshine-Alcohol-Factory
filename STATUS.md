@@ -473,11 +473,11 @@ in Track 2 (all entity-only): no tile art, no `addWorkstationEntity`, no
 `CraftBench`/`DryingCraftLogic` quirks, no `FluidContainer` API landmines.
 
 **Mechanical port done:** `Type=`→`ItemType=base:x` (~87 items), legacy `recipe{}`→
-`craftRecipe{}` (95 converted; 96 intentionally dropped — B42 vanilla deleted the
-Empty-item pattern, e.g. `WhiskeyEmpty`/`WineEmpty`, several recipe families depended
-on), magazine `TeachedRecipes=`→`LearnedRecipes=` conversion. Fatal-crash-class bugs
-found and fixed: invalid `EvolvedRecipe` tokens (crashes at script load, not just a
-silent dead-field), `time=` field float-vs-int `NumberFormatException`, `-fluid`
+`craftRecipe{}` (95 converted; 96 originally dropped as "unfixable" — **this
+diagnosis was wrong, corrected 2026-08-24, see below**), magazine
+`TeachedRecipes=`→`LearnedRecipes=` conversion. Fatal-crash-class bugs found and
+fixed: invalid `EvolvedRecipe` tokens (crashes at script load, not just a silent
+dead-field), `time=` field float-vs-int `NumberFormatException`, `-fluid`
 input-ordering requirement.
 
 **Real recipe-design bugs found via a full 95-recipe input/output balance audit
@@ -498,15 +498,43 @@ additive against real B42 engine source, not floor-only).
 
 **Still open, not yet done:** Medium/Large tier's full loop beyond decanting,
 save/reload persistence mid-cook, real 2-player MP, several specific known bugs
-(largest: `FillDistillIIIWithMotorOil` loses 32 empty cans per craft), a couple of
-recipes where B42 vanilla deleted the target "empty" item entirely (no clean fix
-possible as originally designed). All 9 `MinutesToCook` values are currently `1` for
+(largest: `FillDistillIIIWithMotorOil` loses 32 empty cans per craft — **note: this
+was actually fixed 2026-08-23 as part of the native-outputs conversion below**, this
+line kept until re-confirmed live). All 9 `MinutesToCook` values are currently `1` for
 testing (real values commented out above each) — must be reverted before release.
+
+**2026-08-23/24 — MP sync-gap root fix, then full vessel-family coverage.** Found
+that a burst of Lua `OnCreate` `AddItem()` calls (used by most refund/decant recipes)
+has a real MP client-sync gap: server-side state is correct immediately, but the
+client only sees the new items after a full reconnect, not a UI refresh. Root-fixed
+(not just documented as a workaround) by converting every multi-item `OnCreate` burst
+to native `outputs {}` blocks, which sync correctly. Same pass fixed a fatal
+`Base.TreeBranch`→`Base.TreeBranch2` crash surfaced by the stricter validation native
+outputs perform.
+
+Then, **the "96 dropped, unfixable" diagnosis above was found to be wrong.** B42
+didn't delete the Empty-item pattern — it renamed/collapsed several item families
+into a single always-live ID (`Base.WhiskeyEmpty` doesn't exist, but `Base.Whiskey`
+does; same for `Base.WineEmpty`→`Base.WineOpen`). Re-pointing `ReplaceOnUse`/
+`ReplaceOnDeplete`/`Icon` at the correct current vanilla ID, then auditing every
+vessel-input bracket against vanilla's real item family (Red Wine/Cheap Red
+Wine/Aged Wine were missing from the Wine bracket; Imported Beer missing from Beer;
+the entire Whiskey Bottle recipe family was missing from the port, not just
+item-level bugs) restored full coverage. Extended to net-new vessel families (Soda,
+Water Bottle, Sports Bottle, Bleach Bottle) across all 4 refill categories (Spirit,
+Water, Disinfectant, Gasohol fuel-can), plus a new `DisinfectRagWithMoonshine
+Disinfectant` recipe (mirrors vanilla's `DisinfectRag`). Confirmed live on `mvfast`
+for Whiskey/Wine/Beer; full new-vessel batch deployed, not yet individually
+re-confirmed per-vessel by the user. Full detail: this repo's Claude project memory,
+`project_bottle_family_coverage_done.md`.
 
 Full detail, chronological and exhaustive: this repo's Claude project memory —
 `project_b42_fast_port.md` (findings log), `project_b42_fast_port_roadmap.md`
 (done/open/feature-ideas/weak-points, the best single "state of the whole thing"
-read), `project_b42_fast_port_test_checklist.md` (live-test queue).
+read), `project_b42_fast_port_test_checklist.md` (live-test queue),
+`project_bottle_family_coverage_done.md` (this session's findings),
+`reference_recipe_display_name_translation.md` (Recipes.json requirement for new
+recipes).
 
 ---
 

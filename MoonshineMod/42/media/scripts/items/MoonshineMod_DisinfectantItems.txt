@@ -12,7 +12,7 @@ module Moonshine
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Whiskey Bottle filled with Disinfectant,
-        Icon = Whiskey_Water_Full,
+        Icon = Whiskey,
         Weight = 0.3,
         AlcoholPower = 3,
         Tooltip = Tooltip_Disinfectant,
@@ -20,7 +20,7 @@ module Moonshine
         StaticModel = WhiskeyBottle,
         WorldStaticModel = WhiskeyBottleGround,
         Tags = Disinfectant,
-        ReplaceOnUse = WhiskeyEmpty,
+        ReplaceOnUse = Whiskey,
     }
 
     item DisinfectantRefillBeer
@@ -48,7 +48,7 @@ module Moonshine
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Wine Bottle filled with Disinfectant,
-        Icon = WineFull,
+        Icon = Wine,
         Weight = 0.3,
         AlcoholPower = 3,
         Tooltip = Tooltip_Disinfectant,
@@ -56,7 +56,7 @@ module Moonshine
         StaticModel = WhiteWineBottle,
         WorldStaticModel = WhiteWineBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = WineEmpty,
+        ReplaceOnUse = WineOpen,
     }
 
     item DisinfectantRefillSoda
@@ -66,15 +66,15 @@ module Moonshine
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
         DisplayName = Soda Bottle filled with Disinfectant,
-        Icon = Pop_empty,
+        Icon = PopBottle,
         Weight = 0.3,
         AlcoholPower = 3,
         Tooltip = Tooltip_Disinfectant,
         Medical = TRUE,
-        StaticModel = PopBottle,
-        WorldStaticModel = EmptyPopBottle,
+        StaticModel = PopBottleWorld,
+        WorldStaticModel = PopBottleWorld,
         Tags = Disinfectant,
-        ReplaceOnUse = PopBottleEmpty,
+        ReplaceOnUse = PopBottle,
     }
 
     item DisinfectantRefillWaterBottle
@@ -83,16 +83,34 @@ module Moonshine
         ItemType	= base:drainable,
         UseDelta = 0.1,
         UseWhileEquipped = FALSE,
-        DisplayName = WaterBottle Bottle filled with Disinfectant,
-        Icon = WaterBottle_Empty,
+        DisplayName = Water Bottle filled with Disinfectant,
+        Icon = WaterBottle,
         Weight = 0.3,
         AlcoholPower = 3,
         Tooltip = Tooltip_Disinfectant,
         Medical = TRUE,
-        StaticModel = PopBottle,
-        WorldStaticModel = EmptyPopBottle,
+        StaticModel = WaterBottle,
+        WorldStaticModel = WaterBottleFull,
         Tags = Disinfectant,
-        ReplaceOnUse = WaterBottleEmpty,
+        ReplaceOnUse = WaterBottle,
+    }
+
+    item DisinfectantRefillSportsBottle
+    {
+        DisplayCategory = FirstAid,
+        ItemType	= base:drainable,
+        UseDelta = 0.1,
+        UseWhileEquipped = FALSE,
+        DisplayName = Sports Bottle filled with Disinfectant,
+        Icon = Sportsbottle,
+        Weight = 0.1,
+        AlcoholPower = 3,
+        Tooltip = Tooltip_Disinfectant,
+        Medical = TRUE,
+        StaticModel = Sportsbottle,
+        WorldStaticModel = Sportsbottle,
+        Tags = Disinfectant,
+        ReplaceOnUse = Sportsbottle,
     }
 
     item DisinfectantRefillBleach
@@ -111,6 +129,6 @@ module Moonshine
         EatType = BleachBottle,
         WorldStaticModel = BleachBottle,
         Tags = Disinfectant,
-        ReplaceOnUse = BleachEmpty,
+        ReplaceOnUse = Bleach,
     }
 }

@@ -115,7 +115,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -131,7 +131,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -149,12 +149,306 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
         {
             item 1 Moonshine.BeerPetrolCan,
+        }
+    }
+
+    craftRecipe FillWineBottleWithGasoholFuel
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.WinePetrolCan,
+        }
+    }
+
+    craftRecipe FillWineBottleWithGasoholFuel2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.WinePetrolCan,
+        }
+    }
+
+    craftRecipe FillWineBottleWithGasoholFuel3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WinePetrolCan,
+        }
+    }
+
+    craftRecipe FillWhiskeyBottleWithGasoholFuel
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyPetrolCan,
+        }
+    }
+
+    craftRecipe FillWhiskeyBottleWithGasoholFuel2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyPetrolCan,
+        }
+    }
+
+    craftRecipe FillWhiskeyBottleWithGasoholFuel3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyPetrolCan,
+        }
+    }
+
+    craftRecipe FillWaterBottleWithGasoholFuel
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillWaterBottleWithGasoholFuel2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillWaterBottleWithGasoholFuel3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillSodaBottleWithGasoholFuel
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.PopBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillSodaBottleWithGasoholFuel2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.PopBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillSodaBottleWithGasoholFuel3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.PopBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillBleachBottleWithGasoholFuel
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachPetrolCan,
+        }
+    }
+
+    craftRecipe FillBleachBottleWithGasoholFuel2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachPetrolCan,
+        }
+    }
+
+    craftRecipe FillBleachBottleWithGasoholFuel3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachPetrolCan,
+        }
+    }
+
+    craftRecipe FillSportsBottleWithGasoholFuel
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillSportsBottleWithGasoholFuel2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottlePetrolCan,
+        }
+    }
+
+    craftRecipe FillSportsBottleWithGasoholFuel3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 250,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottlePetrolCan,
         }
     }
 

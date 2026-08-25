@@ -89,7 +89,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
         }
         outputs
@@ -107,7 +107,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
         }
         outputs
@@ -125,7 +125,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
@@ -143,7 +143,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
@@ -161,7 +161,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Alc_DistillPotLarge],
         }
         outputs
@@ -178,7 +178,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.WineOpen;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
         }
         outputs
@@ -195,7 +195,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.WineOpen;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
         }
         outputs
@@ -212,7 +212,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        item 1 [Base.WineOpen;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
@@ -229,7 +229,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.WineOpen;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
@@ -246,12 +246,437 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.WineOpen;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
         item 1 [Moonshine.Alc_DistillPotLarge],
         }
         outputs
         {
             item 1 Moonshine.WineRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWhiskeyBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWhiskeyBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWhiskeyBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWhiskeyBottle4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWhiskeyBottle5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSodaBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.SodaBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSodaBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.SodaBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSodaBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.SodaBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSodaBottle4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.SodaBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSodaBottle5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.SodaBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWaterBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWaterBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWaterBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWaterBottle4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInWaterBottle5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WaterBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBleachBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBleachBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBleachBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBleachBottle4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBleachBottle5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSportsBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSportsBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSportsBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSportsBottle4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInSportsBottle5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleRefill,
         }
     }
 
@@ -412,7 +837,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
@@ -507,7 +932,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
@@ -602,12 +1027,318 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
             item 1 Moonshine.BeerWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWhiskeyBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWhiskeyBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWhiskeyBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Whiskey],
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiskeyWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWineBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWineBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWineBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.WineWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInSodaBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.PopBottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInSodaBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.PopBottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInSodaBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.PopBottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWaterBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.BottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWaterBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.BottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInWaterBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.WaterBottle],
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.BottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInBleachBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInBleachBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInBleachBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Bleach],
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.BleachWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInSportsBottle
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Water_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInSportsBottle2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Water_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleWaterRefill,
+        }
+    }
+
+    craftRecipe RefillWaterInSportsBottle3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
+        inputs
+        {
+        item 1 [Base.Sportsbottle],
+        item 1 [Moonshine.Water_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.SportsBottleWaterRefill,
         }
     }
 

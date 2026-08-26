@@ -770,91 +770,6 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInBucket
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketRefill,
-        }
-    }
-
-    craftRecipe RefillSpiritInBucket2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketRefill,
-        }
-    }
-
-    craftRecipe RefillSpiritInBucket3
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Alc_DistillPotSmall],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketRefill,
-        }
-    }
-
-    craftRecipe RefillSpiritInBucket4
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Alc_DistillPotMedium],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketRefill,
-        }
-    }
-
-    craftRecipe RefillSpiritInBucket5
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Alc_DistillPotLarge],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketRefill,
-        }
-    }
-
     craftRecipe RefillWaterInMug
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
         /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
@@ -1446,57 +1361,6 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillWaterInBucket
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Water_DistillPotSmall],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketWaterRefill,
-        }
-    }
-
-    craftRecipe RefillWaterInBucket2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Water_DistillPotMedium],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketWaterRefill,
-        }
-    }
-
-    craftRecipe RefillWaterInBucket3
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
-        inputs
-        {
-        item 1 [Base.BucketEmpty],
-        item 1 [Moonshine.Water_DistillPotLarge],
-        }
-        outputs
-        {
-            item 1 Moonshine.BucketWaterRefill,
-        }
-    }
-
     craftRecipe DumpWaterDistillPotSmall
     {
         timedAction = Making, category = Moonshine,
@@ -1896,21 +1760,6 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.BucketWaterRefill],
-        }
-        outputs
-        {
-        }
-    }
-
-    craftRecipe DumpSpiritBucket
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveBackBucket,
-        inputs
-        {
-        item 1 [Moonshine.BucketRefill],
         }
         outputs
         {

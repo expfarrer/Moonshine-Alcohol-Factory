@@ -693,41 +693,6 @@ item SaucepanWaterRefill
 }
 	
 	
-	item BucketRefill
-	{
-	    StressChange	=	-50,
-	    DisplayCategory = Food,
-
-		Weight	=	4,
-
-		ItemType	= base:food,
-		FoodType = Liquor,
-
-		UnhappyChange	=	-50,
-		ThirstChange	=	-10,
-		HungerChange	=	-10,
-
-		DisplayName	= Bucket filled with Spirit,
-		ReplaceOnUse	= BucketEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
-		Icon	=	MetalBucket_Water,
-		CustomContextMenu = Drink,
-		CustomEatSound = DrinkingFromBottleGlass,
-		Carbohydrates = 1,
-        Proteins = 0,
-        Lipids = 0,
-        Calories = 1200,
-		Packaged = TRUE,
-        CantBeFrozen = TRUE,
-        StaticModel = Bucket,
-        WorldStaticModel = BucketFullWater_Ground,
-		EatType = Bucket,
-		UseDelta = 0.25,
-		Tags = HasMetal;Liquor,
-	}
-
-
 	item BucketWaterRefill
 
 	{

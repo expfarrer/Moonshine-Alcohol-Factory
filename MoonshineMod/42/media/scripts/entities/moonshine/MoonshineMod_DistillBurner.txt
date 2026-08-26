@@ -1,0 +1,62 @@
+module Moonshine
+{
+    entity DistillBurner
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_DistillBurner,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            OnCreate = Moonshine.distillBurner.OnCreate,
+            face S
+            {
+                layer
+                {
+                    row = crafted_05_64,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = crafted_05_65,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = crafted_05_66,
+                }
+            }
+            face N
+            {
+                layer
+                {
+                    row = crafted_05_67,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            timedAction = BuildMetalStructureMedium,
+            time = 50,
+            SkillRequired = MetalWelding:5,
+            xpAward = MetalWelding:50,
+            category = Moonshine,
+            Tags = Welding,
+            Tooltip = Tooltip_craft_distillBurnerDesc,
+            inputs
+            {
+                item 4 [Base.BlowTorch] flags[DontRecordInput],
+                item 2 [Base.SmallSheetMetal],
+                item 2 [Base.SheetMetal],
+                item 1 [Base.ScrapMetal],
+                item 4 [Base.WeldingRods] flags[DontRecordInput],
+            }
+        }
+    }
+}

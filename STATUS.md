@@ -541,12 +541,29 @@ drained. Fixed by field-rename across all 19; also caught `JarWaterRefill` point
 at a dead `JarEmpty` name (should be `Base.EmptyJar`) in the same pass. Not yet
 live-tested as of this note. Full detail: `project_replaceondeplete_bug_done.md`.
 
+**2026-08-25 — Pour-on-Ground extended to 39 more items, but a menu-placement
+inconsistency is still OPEN/unresolved.** Added "Pour on Ground" recipes (matching
+vanilla's own "Pour on ground" wording) for every remaining liquid state: still
+tiers' Water/Mash/Iso/Petrol states, and every spirit/water/disinfectant-filled
+bottle from the vessel-coverage pass. User then reported the original 6 recipes
+show up directly in the item's quick right-click menu while the 39 new ones only
+appeared in the full Craft submenu. Converted all 39 to match the original 6's
+exact shape (empty `outputs{}` + `OnCreate` single-`AddItem`, 15 new small Lua
+helper functions) — user reports **no visible change** after this fix, and
+separately reports the still item `Alc_DistillPotMedium` shows **two** distinct
+"Pour Spirit on Ground" entries at once, source unconfirmed (searched this mod's
+Lua for a second context-menu mechanism — none found; only one recipe exists for
+that action). **Not root-caused as of end of session** — full detail and next
+steps: `project_pour_on_ground_menu_placement_open.md`.
+
 Full detail, chronological and exhaustive: this repo's Claude project memory —
 `project_b42_fast_port.md` (findings log), `project_b42_fast_port_roadmap.md`
 (done/open/feature-ideas/weak-points, the best single "state of the whole thing"
 read), `project_b42_fast_port_test_checklist.md` (live-test queue),
 `project_bottle_family_coverage_done.md` (this session's vessel-coverage findings),
 `project_replaceondeplete_bug_done.md` (this session's ReplaceOnDeplete fix),
+`project_pour_on_ground_done.md` (the 39-recipe batch),
+`project_pour_on_ground_menu_placement_open.md` (OPEN menu-placement issue),
 `reference_recipe_display_name_translation.md` (Recipes.json requirement for new
 recipes).
 

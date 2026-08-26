@@ -1366,13 +1366,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotSmall,
         }
     }
 
@@ -1381,13 +1381,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotMedium,
         }
     }
 
@@ -1396,13 +1396,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotLarge,
         }
     }
 
@@ -1411,13 +1411,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
         item 1 [Moonshine.Mash_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotSmall,
         }
     }
 
@@ -1426,13 +1426,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Moonshine.Mash_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotMedium,
         }
     }
 
@@ -1441,13 +1441,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Moonshine.Mash_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotLarge,
         }
     }
 
@@ -1456,13 +1456,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWhiskeyBottle,
         inputs
         {
         item 1 [Moonshine.WhiskeyRefill],
         }
         outputs
         {
-            item 1 Base.Whiskey,
         }
     }
 
@@ -1471,13 +1471,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBeerBottle,
         inputs
         {
         item 1 [Moonshine.BeerRefill],
         }
         outputs
         {
-            item 1 Base.BeerEmpty,
         }
     }
 
@@ -1486,13 +1486,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWineBottle,
         inputs
         {
         item 1 [Moonshine.WineRefill],
         }
         outputs
         {
-            item 1 Base.WineOpen,
         }
     }
 
@@ -1501,13 +1501,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackEmptyJar,
         inputs
         {
         item 1 [Moonshine.WhiteLightning],
         }
         outputs
         {
-            item 1 Base.EmptyJar,
         }
     }
 
@@ -1516,13 +1516,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSodaBottle,
         inputs
         {
         item 1 [Moonshine.SodaBottleRefill],
         }
         outputs
         {
-            item 1 Base.PopBottle,
         }
     }
 
@@ -1531,13 +1531,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWaterBottle,
         inputs
         {
         item 1 [Moonshine.WaterBottleRefill],
         }
         outputs
         {
-            item 1 Base.WaterBottle,
         }
     }
 
@@ -1546,13 +1546,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSportsBottle,
         inputs
         {
         item 1 [Moonshine.SportsBottleRefill],
         }
         outputs
         {
-            item 1 Base.Sportsbottle,
         }
     }
 
@@ -1561,13 +1561,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBleachBottle,
         inputs
         {
         item 1 [Moonshine.BleachBottleRefill],
         }
         outputs
         {
-            item 1 Base.Bleach,
         }
     }
 
@@ -1576,13 +1576,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackMug,
         inputs
         {
         item 1 [Moonshine.MuglWaterRefill],
         }
         outputs
         {
-            item 1 Base.Mugl,
         }
     }
 
@@ -1591,13 +1591,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackMugWhite,
         inputs
         {
         item 1 [Moonshine.MugWhiteWaterRefill],
         }
         outputs
         {
-            item 1 Base.MugWhite,
         }
     }
 
@@ -1606,13 +1606,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackMugSpiffo,
         inputs
         {
         item 1 [Moonshine.MugSpiffoWaterRefill],
         }
         outputs
         {
-            item 1 Base.MugSpiffo,
         }
     }
 
@@ -1621,13 +1621,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBeerBottle,
         inputs
         {
         item 1 [Moonshine.BeerWaterRefill],
         }
         outputs
         {
-            item 1 Base.BeerEmpty,
         }
     }
 
@@ -1636,13 +1636,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWineBottle,
         inputs
         {
         item 1 [Moonshine.WineWaterRefill],
         }
         outputs
         {
-            item 1 Base.WineOpen,
         }
     }
 
@@ -1651,13 +1651,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWhiskeyBottle,
         inputs
         {
         item 1 [Moonshine.WhiskeyWaterRefill],
         }
         outputs
         {
-            item 1 Base.Whiskey,
         }
     }
 
@@ -1666,13 +1666,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWaterBottle,
         inputs
         {
         item 1 [Moonshine.BottleWaterRefill],
         }
         outputs
         {
-            item 1 Base.WaterBottle,
         }
     }
 
@@ -1681,13 +1681,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSportsBottle,
         inputs
         {
         item 1 [Moonshine.SportsBottleWaterRefill],
         }
         outputs
         {
-            item 1 Base.Sportsbottle,
         }
     }
 
@@ -1696,13 +1696,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSodaBottle,
         inputs
         {
         item 1 [Moonshine.PopBottleWaterRefill],
         }
         outputs
         {
-            item 1 Base.PopBottle,
         }
     }
 
@@ -1711,13 +1711,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBleachBottle,
         inputs
         {
         item 1 [Moonshine.BleachWaterRefill],
         }
         outputs
         {
-            item 1 Base.Bleach,
         }
     }
 
@@ -1726,13 +1726,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackKettle,
         inputs
         {
         item 1 [Moonshine.KettleWaterRefill],
         }
         outputs
         {
-            item 1 Base.Kettle,
         }
     }
 
@@ -1741,13 +1741,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSaucepan,
         inputs
         {
         item 1 [Moonshine.SaucepanWaterRefill],
         }
         outputs
         {
-            item 1 Base.Saucepan,
         }
     }
 
@@ -1756,13 +1756,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBucket,
         inputs
         {
         item 1 [Moonshine.BucketWaterRefill],
         }
         outputs
         {
-            item 1 Base.BucketEmpty,
         }
     }
 
@@ -1771,13 +1771,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWateringcan,
         inputs
         {
         item 1 [Moonshine.WateringcanWaterRefill],
         }
         outputs
         {
-            item 1 Base.WateredCan,
         }
     }
 
@@ -1786,13 +1786,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackEmptyJar,
         inputs
         {
         item 1 [Moonshine.JarWaterRefill],
         }
         outputs
         {
-            item 1 Base.EmptyJar,
         }
     }
 

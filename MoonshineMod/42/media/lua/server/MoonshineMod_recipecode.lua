@@ -48,6 +48,111 @@ function RecipeCodeOnCreate.GiveEmptyPetrol(recipeData, character)
 character:getInventory():AddItem("Base.EmptyPetrolCan")
 print("A empty petrol can back!")end
 
+--
+
+function RecipeCodeOnCreate.GiveBackWhiskeyBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.Whiskey")
+print("An empty whiskey bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackBeerBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.BeerEmpty")
+print("An empty beer bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackWineBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.WineOpen")
+print("An empty wine bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackEmptyJar(recipeData, character)
+
+character:getInventory():AddItem("Base.EmptyJar")
+print("An empty jar back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackSodaBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.PopBottle")
+print("An empty soda bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackWaterBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.WaterBottle")
+print("An empty water bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackSportsBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.Sportsbottle")
+print("An empty sports bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackBleachBottle(recipeData, character)
+
+character:getInventory():AddItem("Base.Bleach")
+print("An empty bleach bottle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackMug(recipeData, character)
+
+character:getInventory():AddItem("Base.Mugl")
+print("An empty mug back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackMugWhite(recipeData, character)
+
+character:getInventory():AddItem("Base.MugWhite")
+print("An empty white mug back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackMugSpiffo(recipeData, character)
+
+character:getInventory():AddItem("Base.MugSpiffo")
+print("An empty spiffo mug back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackKettle(recipeData, character)
+
+character:getInventory():AddItem("Base.Kettle")
+print("An empty kettle back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackSaucepan(recipeData, character)
+
+character:getInventory():AddItem("Base.Saucepan")
+print("An empty saucepan back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackBucket(recipeData, character)
+
+character:getInventory():AddItem("Base.BucketEmpty")
+print("An empty bucket back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackWateringcan(recipeData, character)
+
+character:getInventory():AddItem("Base.WateredCan")
+print("An empty watering can back!")end
+
 
 
 

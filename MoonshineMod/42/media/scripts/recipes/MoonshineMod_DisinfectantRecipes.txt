@@ -398,13 +398,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotMedium,
         }
     }
 
@@ -413,13 +413,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotLarge,
         }
     }
 
@@ -428,13 +428,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWhiskeyBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillWhiskey],
         }
         outputs
         {
-            item 1 Base.Whiskey,
         }
     }
 
@@ -443,13 +443,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBeerBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillBeer],
         }
         outputs
         {
-            item 1 Base.BeerEmpty,
         }
     }
 
@@ -458,13 +458,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWineBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillWine],
         }
         outputs
         {
-            item 1 Base.WineOpen,
         }
     }
 
@@ -473,13 +473,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSodaBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillSoda],
         }
         outputs
         {
-            item 1 Base.PopBottle,
         }
     }
 
@@ -488,13 +488,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWaterBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillWaterBottle],
         }
         outputs
         {
-            item 1 Base.WaterBottle,
         }
     }
 
@@ -503,13 +503,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSportsBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillSportsBottle],
         }
         outputs
         {
-            item 1 Base.Sportsbottle,
         }
     }
 
@@ -518,13 +518,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBleachBottle,
         inputs
         {
         item 1 [Moonshine.DisinfectantRefillBleach],
         }
         outputs
         {
-            item 1 Base.Bleach,
         }
     }
 

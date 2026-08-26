@@ -518,13 +518,13 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotLarge,
         }
     }
 

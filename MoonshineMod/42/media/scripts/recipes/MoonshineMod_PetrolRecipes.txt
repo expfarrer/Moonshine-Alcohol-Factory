@@ -528,4 +528,169 @@ module Moonshine
         }
     }
 
+    craftRecipe DumpGasoholDrum
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackGasoholDrum,
+        inputs
+        {
+        item 1 [Moonshine.GasoholDrum],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpHalfGasoholDrum
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackGasoholDrum,
+        inputs
+        {
+        item 1 [Moonshine.HalfGasoholDrum],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpMotorOilPetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackMotorOilCan,
+        inputs
+        {
+        item 1 [Moonshine.MotorOilPetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpMotorOilCan1
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackMotorOilCan,
+        inputs
+        {
+        item 1 [Moonshine.MotorOilCan1],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpBeerPetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBeerBottle,
+        inputs
+        {
+        item 1 [Moonshine.BeerPetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpWinePetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWineBottle,
+        inputs
+        {
+        item 1 [Moonshine.WinePetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpWhiskeyPetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWhiskeyBottle,
+        inputs
+        {
+        item 1 [Moonshine.WhiskeyPetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpWaterBottlePetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackWaterBottle,
+        inputs
+        {
+        item 1 [Moonshine.WaterBottlePetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpSodaBottlePetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSodaBottle,
+        inputs
+        {
+        item 1 [Moonshine.PopBottlePetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpBleachPetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBleachBottle,
+        inputs
+        {
+        item 1 [Moonshine.BleachPetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe DumpSportsBottlePetrolCan
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackSportsBottle,
+        inputs
+        {
+        item 1 [Moonshine.SportsBottlePetrolCan],
+        }
+        outputs
+        {
+        }
+    }
+
 }

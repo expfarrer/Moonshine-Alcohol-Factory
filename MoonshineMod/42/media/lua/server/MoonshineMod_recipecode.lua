@@ -153,6 +153,20 @@ function RecipeCodeOnCreate.GiveBackWateringcan(recipeData, character)
 character:getInventory():AddItem("Base.WateredCan")
 print("An empty watering can back!")end
 
+--
+
+function RecipeCodeOnCreate.GiveBackGasoholDrum(recipeData, character)
+
+character:getInventory():AddItem("Moonshine.EmptyGasoholDrum")
+print("An empty gasohol drum back!")end
+
+--
+
+function RecipeCodeOnCreate.GiveBackMotorOilCan(recipeData, character)
+
+character:getInventory():AddItem("Moonshine.EmptyMotorOilCan1")
+print("An empty motor oil can back!")end
+
 
 
 

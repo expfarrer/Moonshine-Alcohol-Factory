@@ -218,5 +218,16 @@
     "DumpDisinfectantSodaBottle": "Pour Disinfectant on Ground (Soda Bottle)",
     "DumpDisinfectantWaterBottle": "Pour Disinfectant on Ground (Water Bottle)",
     "DumpDisinfectantSportsBottle": "Pour Disinfectant on Ground (Sports Bottle)",
-    "DumpDisinfectantBleachBottle": "Pour Disinfectant on Ground (Bleach Bottle)"
+    "DumpDisinfectantBleachBottle": "Pour Disinfectant on Ground (Bleach Bottle)",
+    "DumpGasoholDrum": "Pour Gasohol on Ground (Drum)",
+    "DumpHalfGasoholDrum": "Pour Gasohol on Ground (Half Drum)",
+    "DumpMotorOilPetrolCan": "Pour Gasohol on Ground (Motor Oil Can)",
+    "DumpMotorOilCan1": "Pour Motor Oil on Ground (Motor Oil Can)",
+    "DumpBeerPetrolCan": "Pour Gasohol on Ground (Beer Bottle)",
+    "DumpWinePetrolCan": "Pour Gasohol on Ground (Wine Bottle)",
+    "DumpWhiskeyPetrolCan": "Pour Gasohol on Ground (Whiskey Bottle)",
+    "DumpWaterBottlePetrolCan": "Pour Gasohol on Ground (Water Bottle)",
+    "DumpSodaBottlePetrolCan": "Pour Gasohol on Ground (Soda Bottle)",
+    "DumpBleachPetrolCan": "Pour Gasohol on Ground (Bleach Bottle)",
+    "DumpSportsBottlePetrolCan": "Pour Gasohol on Ground (Sports Bottle)"
 }

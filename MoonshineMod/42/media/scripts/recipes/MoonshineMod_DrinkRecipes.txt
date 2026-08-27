@@ -772,7 +772,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -791,7 +791,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug2
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -810,7 +810,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug3
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -829,7 +829,7 @@ module Moonshine
 
     craftRecipe RefillWaterInBeerBottle
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -848,7 +848,7 @@ module Moonshine
 
     craftRecipe RefillWaterInJar
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -867,7 +867,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug4
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -886,7 +886,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug5
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -905,7 +905,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug6
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -924,7 +924,7 @@ module Moonshine
 
     craftRecipe RefillWaterInBeerBottle2
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -943,7 +943,7 @@ module Moonshine
 
     craftRecipe RefillWaterInJar2
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -962,7 +962,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug7
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -981,7 +981,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug8
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -1000,7 +1000,7 @@ module Moonshine
 
     craftRecipe RefillWaterInMug9
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -1019,7 +1019,7 @@ module Moonshine
 
     craftRecipe RefillWaterInBeerBottle3
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -1344,7 +1344,7 @@ module Moonshine
 
     craftRecipe RefillWaterInJar3
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- dropped legacy reference, verify before deleting */
+        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,

@@ -477,7 +477,6 @@ module Moonshine
 
     craftRecipe FillGasoholDrumHalf
     {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Moonshine.FullPetrol -- dropped legacy reference, verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -485,7 +484,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Petrol_DistillPotLarge],
+        item 1 [Moonshine.Petrol_DistillPotLarge] flags[IsFull],
         item 1 [Moonshine.EmptyGasoholDrum],
         }
         outputs
@@ -496,7 +495,6 @@ module Moonshine
 
     craftRecipe FillGasoholDrumFull
     {        /* Prop2: Base.RippedSheetsDirty -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Moonshine.FullPetrol -- dropped legacy reference, verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -504,7 +502,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Petrol_DistillPotLarge],
+        item 1 [Moonshine.Petrol_DistillPotLarge] flags[IsFull],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs

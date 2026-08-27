@@ -2,15 +2,15 @@ Moonshine = Moonshine or {}
 RecipeCodeOnCreate = RecipeCodeOnCreate or {}
 Moonshine.distillBurner = Moonshine.distillBurner or {}
 
--- EXPERIMENT (see MEMORY): 1:1 clone of vanilla BuildRecipeCode.barrelOven.OnCreate, zero
--- custom container code, to test whether real vanilla's single-container "woodstove" behavior
--- comes from the sprite/tile-level `container = woodstove` / `ContainerCapacity` properties on
--- its own crafted_05_4-7 rows (which our borrowed crafted_05_64-67 "Burn Barrel" rows don't
--- carry) rather than from any Lua. If this logs "getContainer() returned nil" again, the
--- single-container stove behavior is tile-driven and unreachable with these rows without
--- further Java-level investigation. If a container DOES appear this time, our own earlier
--- manual ItemContainer.new() attachment was creating an unwanted SECOND panel alongside a
--- native one we hadn't detected yet.
+-- Clone of vanilla BuildRecipeCode.barrelOven.OnCreate - self-replaces the built thumpable
+-- into a real native IsoFireplace. The native fuel/light/burn-time system (right-click Add
+-- Fuel/Light Fire/Put Out Fire) is CONFIRMED separate from any ItemContainer - real vanilla
+-- ISBBQAddFuel.lua calls fireplace:addFuel(amount), a pure internal Java counter with no
+-- container involved at all - so that system needs no help from us and is left completely
+-- alone here. The only thing genuinely missing on a bare IsoFireplace is a container for
+-- holding the pot to cook (confirmed live: getContainer() returns nil before this), which we
+-- attach explicitly. ItemContainer.new takes exactly (name, square, isoObject) - confirmed via
+-- decompiling the real 42.x ItemContainer class during the still-idle-processing spike.
 function Moonshine.distillBurner.OnCreate(params)
     local thumpable = params.thumpable;
 	local sq = thumpable:getSquare();
@@ -24,11 +24,11 @@ function Moonshine.distillBurner.OnCreate(params)
 		thumpable:setSquare(nil);
 	end
 
-	if javaObject:getContainer() then
-		print("Distill Burner EXPERIMENT: getContainer() returned a container, type=" .. tostring(javaObject:getContainer():getType()) .. " capacity=" .. tostring(javaObject:getContainer():getCapacity()))
-	else
-		print("Distill Burner EXPERIMENT: getContainer() returned nil")
-	end
+	local container = ItemContainer.new("DistillBurner", sq, javaObject)
+	container:setCapacity(20)
+	container:setExplored(true)
+	javaObject:setContainer(container)
+	javaObject:transmitCompleteItemToClients()
 
 	return { replaceObject = true, object = javaObject };
 end

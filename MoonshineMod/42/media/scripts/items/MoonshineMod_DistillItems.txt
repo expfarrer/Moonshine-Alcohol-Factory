@@ -111,7 +111,7 @@ imports
 		DisplayName = Distill Pot(II)(Filled with Water),
 		DisplayCategory = Water,
 		ItemType	= base:drainable,
-		Weight = 12, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12,
 		MetalValue = 60,
 		Icon = WaterDistillPotMedium,
 		CanStoreWater = TRUE,
@@ -167,7 +167,7 @@ imports
 		DisplayName = Distill Pot(III)(Filled with Water),
 		DisplayCategory = Water,
 		ItemType	= base:drainable,
-		Weight = 15, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15,
 		
 		Icon = WaterDistillPotLarge,
 		CanStoreWater = TRUE,
@@ -254,7 +254,7 @@ imports
 		DisplayName = Distill Pot(II)(Filled with Mash),
 		DisplayCategory = Food,
 		ItemType	= base:food,
-		Weight = 12.0, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12.0,
 	    
 		
 		Icon = DistillPotMediumMash,
@@ -297,7 +297,7 @@ imports
 		DisplayName = Distill Pot(III)(Filled with Mash),
 		DisplayCategory = Food,
 		ItemType	= base:food,
-		Weight = 15, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15,
 	    
 		
 		Icon = DistillPotLargeMash,
@@ -397,7 +397,7 @@ item Alc_DistillPotMedium
         DisplayName = Distill Pot(II)(Filled with Spirit),
 		DisplayCategory = Food,
 		ItemType	= base:food,
-		Weight = 12.0, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12.0,
 		
         Icon = WaterDistillPotMedium,
 		
@@ -450,7 +450,7 @@ item Alc_DistillPotLarge
         DisplayName = Distill Pot(III)(Filled with Spirit),
 		DisplayCategory = Food,
 		ItemType	= base:food,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 		
         Icon = WaterDistillPotLarge,
 		
@@ -515,7 +515,7 @@ item Alc_DistillPotMediumRefillSpirit
         DisplayName = Distill Pot(II)(Refilled with Spirit),
         DisplayCategory = Food,
 		ItemType	= base:food,
-		Weight = 12.0, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12.0,
 		
         Icon = WaterDistillPotMedium,
 		IsCookable = true,
@@ -577,7 +577,7 @@ item Alc_DistillPotLargeRefillSpirit
         DisplayName = Distill Pot(III)(Refilled with Spirit),
 		DisplayCategory = Food,
 		ItemType	= base:food,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 		
         Icon = WaterDistillPotLarge,
 		IsCookable = true,
@@ -654,7 +654,7 @@ item Alc_DistillPotLargeRefillSpirit
 		PoisonDetectionLevel = 7,
 		
 		IsCookable = true,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 	    Icon = DistillPotLargeOil,
 		
 		CookingSound = BoilingFood,
@@ -687,7 +687,7 @@ item Alc_DistillPotLargeRefillSpirit
 	    DisplayName = Distill Pot(III)(Filled with Gasohol),
 		DisplayCategory = VehicleMaintenance,
 		ItemType	= base:drainable,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 		Icon = DistillPotLargePetrol,
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
@@ -713,7 +713,7 @@ item Alc_DistillPotLargeRefillSpirit
         DisplayName = Distill Pot(II)(Filled with Isopropyl),
 		DisplayCategory = FirstAid,
         ItemType	= base:drainable,
-		Weight = 12.0, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12.0,
 		Icon = WaterDistillPotMedium,
 		CookingSound = BoilingFood,
 		/*FoodType = Liquor,*/
@@ -751,7 +751,7 @@ item Alc_DistillPotLargeIso
 		DisplayName = Distill Pot(III)(Filled with Isopropyl),
 		DisplayCategory = FirstAid,
         ItemType	= base:drainable,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 		Icon = WaterDistillPotLarge,
 		CookingSound = BoilingFood,
 		AlcoholPower = 8,
@@ -845,7 +845,7 @@ item DistillPotMediumWood
 		DisplayCategory = Material,
 		ItemType	= base:food,
 		IsCookable = true,
-		Weight = 12.0, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12.0,
 		
         Icon = DistillPotMediumWood,
         CookingSound = BoilingFood,
@@ -877,7 +877,7 @@ item DistillPotMediumCoal
         DisplayName = Distill Pot(II)(Filled with Coal),
 		DisplayCategory = Material,
 		ItemType	= base:drainable,
-		Weight = 12.0, /* TEMP: was 15 - revert before release, see release notes */
+		Weight = 12.0,
 		
         Icon = DistillPotMediumCoal,
         CookingSound = BoilingFood,
@@ -908,7 +908,7 @@ item DistillPotLargeWood
 		DisplayCategory = Material,
 		ItemType	= base:food,
 		IsCookable = true,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 	
         Icon = DistillPotLargeWood,
         CookingSound = BoilingFood,
@@ -936,7 +936,7 @@ item DistillPotLargeCoal
         DisplayName = Distill Pot(III)(Filled with Coal),
 		DisplayCategory = Material,
 		ItemType	= base:drainable,
-		Weight = 15.0, /* TEMP: was 20 - revert before release, see release notes */
+		Weight = 15.0,
 		
         Icon = DistillPotLargeCoal,
         CookingSound = BoilingFood,

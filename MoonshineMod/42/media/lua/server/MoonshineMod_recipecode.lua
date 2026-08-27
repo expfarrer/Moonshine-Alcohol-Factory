@@ -4,11 +4,17 @@ Moonshine.distillBurner = Moonshine.distillBurner or {}
 
 -- Clone of vanilla BuildRecipeCode.barrelOven.OnCreate (buildRecipeCode.lua) - self-replaces
 -- the built thumpable into a real native IsoFireplace, same as the vanilla Metal Barrel Oven,
--- giving a full working menu/fuel/heat system for free. Only addition: an explicit
--- getContainer():setCapacity() override so the Large-tier pot (Weight=20) can be placed in it -
--- the sprite rows we use (crafted_05_64-67, "Burn Barrel") don't carry the ContainerCapacity
--- tile property vanilla's own crafted_05_4-7 ("Oven") rows have, so IsoFireplace's default
--- container capacity applies unless overridden here.
+-- giving a full working menu/fuel/heat system for free. A bare IsoFireplace has no cooking
+-- container at all (confirmed live: getContainer() returns nil) - even vanilla's own campfire
+-- needs one explicitly attached via Lua (SCampfireGlobalObject:addContainer()), it's not
+-- automatic from the IsoFireplace class itself. ItemContainer.new takes exactly
+-- (name, square, isoObject) - confirmed via decompiling the real 42.x ItemContainer class
+-- during the (deprioritized) still-idle-processing spike; the 5-arg form some vanilla Lua
+-- references doesn't exist. Attaching it here, at build time, means native left-click-to-open
+-- (ISObjectClickHandler.doClick's generic "if object:getContainer() then open it" path) just
+-- works with zero further custom code - no click-handler bootstrap patch needed, unlike the
+-- deprioritized still-idle-processing track, because here we already have a direct handle to
+-- the built object instead of needing to create one lazily on first click.
 function Moonshine.distillBurner.OnCreate(params)
     local thumpable = params.thumpable;
 	local sq = thumpable:getSquare();
@@ -22,12 +28,11 @@ function Moonshine.distillBurner.OnCreate(params)
 		thumpable:setSquare(nil);
 	end
 
-	if javaObject:getContainer() then
-		javaObject:getContainer():setCapacity(20)
-		print("Distill Burner container capacity set to: " .. tostring(javaObject:getContainer():getCapacity()))
-	else
-		print("Distill Burner: getContainer() returned nil, capacity NOT set")
-	end
+	local container = ItemContainer.new("DistillBurner", sq, javaObject)
+	container:setCapacity(20)
+	container:setExplored(true)
+	javaObject:setContainer(container)
+	javaObject:transmitCompleteItemToClients()
 
 	return { replaceObject = true, object = javaObject };
 end

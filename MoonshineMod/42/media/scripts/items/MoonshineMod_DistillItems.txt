@@ -225,8 +225,7 @@ imports
 
         ReplaceOnCooked = Moonshine.Alc_DistillPotSmall,
 
-		/*MinutesToCook = 950,*/
-		MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+		MinutesToCook = 950,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -268,8 +267,7 @@ imports
       
         ReplaceOnCooked = Moonshine.Alc_DistillPotMedium,	
 		
-		/*MinutesToCook = 750,*/
-		MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+		MinutesToCook = 750,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -312,8 +310,7 @@ imports
       
         ReplaceOnCooked = Moonshine.Alc_DistillPotLarge,	
 		
-		/*MinutesToCook = 550,*/
-		MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+		MinutesToCook = 550,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -557,8 +554,7 @@ item Alc_DistillPotMediumRefillSpirit
 		WorldStaticModel = distill_medium_Ground, 
 		/*Tags = Liquor,*/
 	
-		/*MinutesToCook = 750,*/
-		MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+		MinutesToCook = 750,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 300,
@@ -620,8 +616,7 @@ item Alc_DistillPotLargeRefillSpirit
 		WorldStaticModel = distill_large_Ground,
 		/*Tags = Liquor,*/
 
-		/*MinutesToCook = 550,*/
-		MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+		MinutesToCook = 550,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 300,
@@ -677,8 +672,7 @@ item Alc_DistillPotLargeRefillSpirit
 		*/
 		
 		ThirstChange	=	-60,
-	    /*MinutesToCook = 950,*/
-	    MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+	    MinutesToCook = 950,
 		MinutesToBurn = 5000,
         MetalValue = 120,
 		BadInMicrowave = true,
@@ -808,8 +802,7 @@ item DistillPotSmallWood
         ReplaceOnUse = DistillPotSmall,
 		StaticModel = distill_small_Ground,
 		WorldStaticModel = distill_small_Ground, 
-        /*MinutesToCook = 950,*/
-        MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+        MinutesToCook = 950,
 		MinutesToBurn = 3000,
         MetalValue = 40,
 		BadInMicrowave = true,
@@ -858,8 +851,7 @@ item DistillPotMediumWood
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		ReplaceOnCooked = Moonshine.DistillPotMediumCoal,
-        /*MinutesToCook = 750,*/
-        MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+        MinutesToCook = 750,
 		MinutesToBurn = 3000,
 		
 		EvolvedRecipeName = Coal,
@@ -920,8 +912,7 @@ item DistillPotLargeWood
 	
         Icon = DistillPotLargeWood,
         CookingSound = BoilingFood,
-		 /*MinutesToCook = 550,*/
-		 MinutesToCook = 1, // TESTING - revert to the commented og value above before release
+		 MinutesToCook = 550,
 		MinutesToBurn = 3000,
 		
         Packaged = TRUE,

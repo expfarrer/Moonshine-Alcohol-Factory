@@ -266,7 +266,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayName	=	Water Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
-		Weight	=	1,
+		Weight	=	0.2,
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
@@ -286,7 +286,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayName	=	Sports Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
-		Weight	=	1,
+		Weight	=	0.2,
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
@@ -302,7 +302,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayName	=	Pop Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
-		Weight	=	1,
+		Weight	=	0.2,
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
@@ -324,7 +324,7 @@ item EmptyMotorOilCan4
 	{
 	    DisplayName	=	Bleach Bottle Gas Can,
 		DisplayCategory = VehicleMaintenance,
-		Weight	=	5,
+		Weight	=	0.7,
 		ItemType	= base:drainable,
         UseWhileEquipped	=	FALSE,
 		UseDelta = 0.125,
@@ -367,7 +367,7 @@ item EmptyMotorOilCan4
 	item WhiskeyPetrolCan
 	{
 	    DisplayCategory = VehicleMaintenance,
-		Weight	=	3,
+		Weight	=	0.7,
 		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
@@ -385,7 +385,7 @@ item EmptyMotorOilCan4
 	item BeerPetrolCan
 	{
 	    DisplayCategory = VehicleMaintenance,
-		Weight	=	2,
+		Weight	=	0.7,
 		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,
@@ -404,7 +404,7 @@ item EmptyMotorOilCan4
 	item WinePetrolCan
 	{
 	    DisplayCategory = VehicleMaintenance,
-		Weight	=	5,
+		Weight	=	0.7,
 		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.125,

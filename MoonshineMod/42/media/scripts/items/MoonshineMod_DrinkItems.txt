@@ -137,28 +137,28 @@ imports
 	item WhiteLightning
     {
 	StressChange	=	-99,
-	HungerChange	=	-2,
-	Weight	=	0.7,
+	HungerChange	=	-6,
+	Weight	=	0.4,
 	ItemType	= base:food,
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning,
-	ThirstChange	=	-10,
-	
+	ThirstChange	=	-6,
+
 	Alcoholic	=	TRUE,
-	AlcoholPower = 2,
+	AlcoholPower = 1.1,
 	UnhappyChange	=	-99,
-	
+
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,
 	CustomContextMenu = Drink,
 	CustomEatSound = DrinkingFromBottle,
-	
+
 
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1200,
+        Calories = 686,
 	
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -186,19 +186,19 @@ imports
 	{
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-9,
-		Weight	=	0.4,
-		
+		HungerChange	=	-3,
+		Weight	=	0.2,
+
 		ItemType	= base:food,
 		FoodType = Liquor,
-		
+
 		UnhappyChange	=	-26,
-		ThirstChange	=	-13,
+		ThirstChange	=	-3,
 		DisplayName	= Soda Bottle filled with Spirit,
 		/* ReplaceOnUse	= PopBottleEmpty, */
 		ReplaceOnUse = PopBottle,
 		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
+		AlcoholPower = 0.6,
 		Icon	=	PopBottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
@@ -206,7 +206,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1200,
+        Calories = 343,
 
 
         Packaged = TRUE,
@@ -222,18 +222,18 @@ imports
 	{
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-5,
-		Weight	=	0.4,
-		
+		HungerChange	=	-3,
+		Weight	=	0.2,
+
 		ItemType	= base:food,
 		FoodType = Liquor,
 		UnhappyChange	=	-26,
-		ThirstChange	=	-13,
+		ThirstChange	=	-3,
 		DisplayName	=	Water Bottle filled with Spirit,
 		/*ReplaceOnUse	= WaterBottleEmpty,*/
 		ReplaceOnUse = WaterBottle,
 		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
+		AlcoholPower = 0.6,
 		Icon	=	WaterBottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
@@ -241,7 +241,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1200,
+        Calories = 343,
 
 		Packaged = TRUE,
         CantBeFrozen = TRUE,
@@ -255,17 +255,17 @@ imports
 	{
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-5,
-		Weight	=	0.4,
+		HungerChange	=	-3,
+		Weight	=	0.2,
 
 		ItemType	= base:food,
 		FoodType = Liquor,
 		UnhappyChange	=	-26,
-		ThirstChange	=	-13,
+		ThirstChange	=	-3,
 		DisplayName	=	Sports Bottle filled with Spirit,
 		ReplaceOnUse = Sportsbottle,
 		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
+		AlcoholPower = 0.6,
 		Icon	=	Sportsbottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
@@ -273,7 +273,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1200,
+        Calories = 343,
 
 		Packaged = TRUE,
         CantBeFrozen = TRUE,
@@ -335,7 +335,7 @@ imports
 	
 item MuglWaterRefill
 {
-    Weight = 0.2,
+    Weight = 0.4,
     CanStoreWater = TRUE,
    ItemType	= base:drainable,
    UseWhileEquipped	= FALSE,
@@ -359,7 +359,7 @@ item MuglWaterRefill
 item MugRedWaterRefill
 {
     IsWaterSource = TRUE,
-    Weight = 0.2,
+    Weight = 0.4,
     CanStoreWater = TRUE,
     ItemType	= base:drainable,
     UseWhileEquipped = FALSE,
@@ -379,7 +379,7 @@ item MugRedWaterRefill
 
 item MugWhiteWaterRefill
 {
-    Weight = 0.2,
+    Weight = 0.4,
     CanStoreWater = TRUE,
     ItemType	= base:drainable,
 IsCookable		= TRUE,
@@ -402,7 +402,7 @@ IsCookable		= TRUE,
 
 item MugSpiffoWaterRefill
 {
-    Weight = 0.2,
+    Weight = 0.4,
     CanStoreWater = TRUE,
     ItemType	= base:drainable,
     IsCookable		= TRUE,
@@ -535,7 +535,7 @@ item MugSpiffoWaterRefill
                 DisplayName = Bottle filled with Water,
                 DisplayCategory = Water,
                 ItemType	= base:drainable,
-                Weight = 0.7,
+                Weight = 0.2,
                 Icon	=	WaterBottle,
 
                 CanStoreWater = TRUE,
@@ -563,7 +563,7 @@ item MugSpiffoWaterRefill
                 DisplayName = Sports Bottle filled with Water,
                 DisplayCategory = Water,
                 ItemType	= base:drainable,
-                Weight = 0.1,
+                Weight = 0.2,
                 Icon	=	Sportsbottle,
 
                 CanStoreWater = TRUE,
@@ -590,7 +590,7 @@ item MugSpiffoWaterRefill
 	
 		DisplayCategory 	= Water,
 		IsWaterSource		= TRUE,
-		Weight			= 0.7,
+		Weight			= 0.2,
 		CanStoreWater		= TRUE,
 		FillFromDispenserSound 	= GetWaterFromDispenserPlasticMedium,
 		FillFromTapSound 	= GetWaterFromTapPlasticMedium,
@@ -623,7 +623,7 @@ item MugSpiffoWaterRefill
 	    DisplayCategory = Water,
 		IsWaterSource	=	TRUE,
 		Icon	=	Bleach,
-		Weight	=	1.6,
+		Weight	=	0.7,
 		CanStoreWater	=	TRUE,
 		ItemType	= base:drainable,
 		UseWhileEquipped	=	FALSE,

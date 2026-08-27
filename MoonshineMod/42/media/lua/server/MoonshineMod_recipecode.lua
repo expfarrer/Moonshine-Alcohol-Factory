@@ -2,19 +2,15 @@ Moonshine = Moonshine or {}
 RecipeCodeOnCreate = RecipeCodeOnCreate or {}
 Moonshine.distillBurner = Moonshine.distillBurner or {}
 
--- Clone of vanilla BuildRecipeCode.barrelOven.OnCreate (buildRecipeCode.lua) - self-replaces
--- the built thumpable into a real native IsoFireplace, same as the vanilla Metal Barrel Oven,
--- giving a full working menu/fuel/heat system for free. A bare IsoFireplace has no cooking
--- container at all (confirmed live: getContainer() returns nil) - even vanilla's own campfire
--- needs one explicitly attached via Lua (SCampfireGlobalObject:addContainer()), it's not
--- automatic from the IsoFireplace class itself. ItemContainer.new takes exactly
--- (name, square, isoObject) - confirmed via decompiling the real 42.x ItemContainer class
--- during the (deprioritized) still-idle-processing spike; the 5-arg form some vanilla Lua
--- references doesn't exist. Attaching it here, at build time, means native left-click-to-open
--- (ISObjectClickHandler.doClick's generic "if object:getContainer() then open it" path) just
--- works with zero further custom code - no click-handler bootstrap patch needed, unlike the
--- deprioritized still-idle-processing track, because here we already have a direct handle to
--- the built object instead of needing to create one lazily on first click.
+-- EXPERIMENT (see MEMORY): 1:1 clone of vanilla BuildRecipeCode.barrelOven.OnCreate, zero
+-- custom container code, to test whether real vanilla's single-container "woodstove" behavior
+-- comes from the sprite/tile-level `container = woodstove` / `ContainerCapacity` properties on
+-- its own crafted_05_4-7 rows (which our borrowed crafted_05_64-67 "Burn Barrel" rows don't
+-- carry) rather than from any Lua. If this logs "getContainer() returned nil" again, the
+-- single-container stove behavior is tile-driven and unreachable with these rows without
+-- further Java-level investigation. If a container DOES appear this time, our own earlier
+-- manual ItemContainer.new() attachment was creating an unwanted SECOND panel alongside a
+-- native one we hadn't detected yet.
 function Moonshine.distillBurner.OnCreate(params)
     local thumpable = params.thumpable;
 	local sq = thumpable:getSquare();
@@ -28,11 +24,11 @@ function Moonshine.distillBurner.OnCreate(params)
 		thumpable:setSquare(nil);
 	end
 
-	local container = ItemContainer.new("DistillBurner", sq, javaObject)
-	container:setCapacity(20)
-	container:setExplored(true)
-	javaObject:setContainer(container)
-	javaObject:transmitCompleteItemToClients()
+	if javaObject:getContainer() then
+		print("Distill Burner EXPERIMENT: getContainer() returned a container, type=" .. tostring(javaObject:getContainer():getType()) .. " capacity=" .. tostring(javaObject:getContainer():getCapacity()))
+	else
+		print("Distill Burner EXPERIMENT: getContainer() returned nil")
+	end
 
 	return { replaceObject = true, object = javaObject };
 end

@@ -11,6 +11,13 @@ Moonshine.distillBurner = Moonshine.distillBurner or {}
 -- holding the pot to cook (confirmed live: getContainer() returns nil before this), which we
 -- attach explicitly. ItemContainer.new takes exactly (name, square, isoObject) - confirmed via
 -- decompiling the real 42.x ItemContainer class during the still-idle-processing spike.
+--
+-- CRITICAL MP-safety rule already learned the hard way on a different feature
+-- (MoonshineMod_StillIdleProcessing.lua's ensureContainer): OnCreate for an entity-embedded
+-- CraftRecipe runs BOTH client-side (for instant placement feedback) and server-side
+-- (authoritative) - a container created client-side is invisible to/disconnected from the
+-- server's own copy. Confirmed live: two independent, non-functional container panels
+-- appeared until this guard was added. Container creation must ONLY run server-side.
 function Moonshine.distillBurner.OnCreate(params)
     local thumpable = params.thumpable;
 	local sq = thumpable:getSquare();
@@ -24,11 +31,13 @@ function Moonshine.distillBurner.OnCreate(params)
 		thumpable:setSquare(nil);
 	end
 
-	local container = ItemContainer.new("DistillBurner", sq, javaObject)
-	container:setCapacity(20)
-	container:setExplored(true)
-	javaObject:setContainer(container)
-	javaObject:transmitCompleteItemToClients()
+	if not isClient() then
+		local container = ItemContainer.new("DistillBurner", sq, javaObject)
+		container:setCapacity(20)
+		container:setExplored(true)
+		javaObject:setContainer(container)
+		javaObject:transmitCompleteItemToClients()
+	end
 
 	return { replaceObject = true, object = javaObject };
 end

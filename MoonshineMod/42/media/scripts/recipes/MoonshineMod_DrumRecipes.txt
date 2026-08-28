@@ -13,7 +13,7 @@ module Moonshine
         time = 950,
         inputs
         {
-        item 20 [Base.PetrolCan],
+        item 20 [Base.PetrolCan] flags[ItemCount],
         item 1 [Moonshine.EmptyGasoholDrum],
         }
         outputs

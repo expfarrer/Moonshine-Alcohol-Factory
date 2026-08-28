@@ -22,7 +22,7 @@ module Moonshine
         {
         item 1 tags[base:alcoholicbeverage],
         item 1 [Base.RippedSheets;Base.RippedSheetsDirty;Base.DenimStrips;Base.DenimStripsDirty],
-        item 1 [Base.Charcoal;Base.Sparklers;Base.Aluminum;Base.Bleach;Base.Hairgel;Base.Fertilizer],
+        item 1 [Base.Charcoal;Base.Sparklers;Base.Aluminum;Base.Bleach;Base.Hairgel;Base.Fertilizer] flags[ItemCount],
         }
         outputs
         {
@@ -39,7 +39,7 @@ module Moonshine
         {
         item 1 [Moonshine.WinePetrolCan;Moonshine.WhiskeyPetrolCan;Moonshine.BeerPetrolCan],
         item 1 [Base.RippedSheets;Base.RippedSheetsDirty;Base.DenimStrips;Base.DenimStripsDirty],
-        item 1 [Base.Charcoal;Base.Sparklers;Base.Aluminum;Base.Bleach;Base.Hairgel;Base.Fertilizer],
+        item 1 [Base.Charcoal;Base.Sparklers;Base.Aluminum;Base.Bleach;Base.Hairgel;Base.Fertilizer] flags[ItemCount],
         }
         outputs
         {

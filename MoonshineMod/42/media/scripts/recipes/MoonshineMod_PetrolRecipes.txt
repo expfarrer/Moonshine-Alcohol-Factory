@@ -115,7 +115,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -131,7 +131,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -149,7 +149,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -165,7 +165,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -181,7 +181,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -198,7 +198,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -214,7 +214,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.Whiskey],
+        item 1 [Base.Whiskey] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -230,7 +230,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.Whiskey],
+        item 1 [Base.Whiskey] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -247,7 +247,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.Whiskey],
+        item 1 [Base.Whiskey] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -263,7 +263,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.WaterBottle],
+        item 1 [Base.WaterBottle] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -279,7 +279,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.WaterBottle],
+        item 1 [Base.WaterBottle] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -296,7 +296,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.WaterBottle],
+        item 1 [Base.WaterBottle] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -312,7 +312,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -328,7 +328,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -345,7 +345,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare],
+        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -361,7 +361,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.Bleach],
+        item 1 [Base.Bleach] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -377,7 +377,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.Bleach],
+        item 1 [Base.Bleach] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -394,7 +394,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.Bleach],
+        item 1 [Base.Bleach] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -410,7 +410,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.Sportsbottle],
+        item 1 [Base.Sportsbottle] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -426,7 +426,7 @@ module Moonshine
         time = 250,
         inputs
         {
-        item 1 [Base.Sportsbottle],
+        item 1 [Base.Sportsbottle] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -443,7 +443,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Base.Sportsbottle],
+        item 1 [Base.Sportsbottle] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs

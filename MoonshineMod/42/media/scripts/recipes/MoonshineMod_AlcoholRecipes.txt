@@ -17,11 +17,11 @@ module Moonshine
         inputs
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 10 [Base.Potato],
+        item 15 [Base.Potato] flags[ItemCount],
         }
         outputs
         {
@@ -41,11 +41,11 @@ module Moonshine
         inputs
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 10 [Base.Corn],
+        item 15 [Base.Corn] flags[ItemCount],
         }
         outputs
         {
@@ -66,15 +66,16 @@ module Moonshine
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 tags[base:canopener] mode:keep,
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 5 [Base.CannedCorn],
+        item 2 [Base.CannedCorn] mode:destroy flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.CornMash,
+            item 2 Base.TinCanEmpty,
         }
     }
 
@@ -90,15 +91,16 @@ module Moonshine
         inputs
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 5 [Base.CannedCornOpen],
+        item 2 [Base.CannedCornOpen] mode:destroy flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.CornMash,
+            item 2 Base.TinCanEmpty,
         }
     }
 
@@ -115,15 +117,16 @@ module Moonshine
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
         item 1 tags[base:canopener] mode:keep,
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 5 [Base.CannedPotato2],
+        item 2 [Base.CannedPotato2] mode:destroy flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.PotatoMash,
+            item 2 Base.TinCanEmpty,
         }
     }
 
@@ -139,15 +142,16 @@ module Moonshine
         inputs
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 5 [Base.CannedPotatoOpen],
+        item 2 [Base.CannedPotatoOpen] mode:destroy flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.PotatoMash,
+            item 2 Base.TinCanEmpty,
         }
     }
 
@@ -163,16 +167,16 @@ module Moonshine
         inputs
         {
         item 1 tags[base:mixingutensil] mode:keep flags[Prop1],
-        item 1 tags[base:canopener] mode:keep,
-        item 1 [Base.BucketEmpty] flags[ItemCount],
-        -fluid 5.0 [Water],
+        item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
+        -fluid 10.0 [Water],
         item 5 tags[base:sugar],
         item 1 [Base.Yeast],
-        item 5 [Base.CannedPotato],
+        item 2 [Base.CannedPotato;Base.CannedPotato_Open] mode:destroy flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.PotatoMash,
+            item 2 Base.EmptyJar,
         }
     }
 
@@ -185,7 +189,7 @@ module Moonshine
         {
         item 1 [Moonshine.CornMash],
         item 1 [Base.Tarp] flags[Prop1],
-        item 1 [Base.RubberBand;Base.Rope;Base.Wire],
+        item 1 [Base.RubberBand;Base.RubberHose;Base.Rope;Base.Wire],
         }
         outputs
         {
@@ -202,7 +206,7 @@ module Moonshine
         {
         item 1 [Moonshine.PotatoMash],
         item 1 [Base.Tarp] flags[Prop1],
-        item 1 [Base.RubberBand;Base.Rope;Base.Wire],
+        item 1 [Base.RubberBand;Base.RubberHose;Base.Rope;Base.Wire],
         }
         outputs
         {

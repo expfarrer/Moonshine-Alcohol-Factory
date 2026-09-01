@@ -156,6 +156,50 @@ module Moonshine
         }
     }
 
+    /* P3 -- "fill all" for the GASOHOL pot.  Petrol_DistillPotLarge is base:drainable
+       UseDelta 0.125 = 8 servings; `item 8 [pot]` drains the whole charge in one craft
+       and ReplaceOnDeplete returns exactly ONE DistillPotLarge, so NO OnCreate
+       (quirks rule 37 -- an AddItem here is the infinite-pot dupe).
+       Per-serving equivalent: FillBeerBottleWithGasoholFuel3. */
+    craftRecipe FillGasoholFromDistillPotIII
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        inputs
+        {
+        item 8 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 8 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+            item 8 Moonshine.BeerPetrolCan,
+        }
+    }
+
+    /* B1 -- fill a REAL vanilla jerry can (Base.PetrolCan) from a full gasohol pot.
+       Base.PetrolCan is a component FluidContainer, so it cannot be produced by an
+       `item 1 Base.PetrolCan` output line at all (quirks rule 31).  Instead the can is
+       a mode:keep input gated to empty, the whole 8-serving pot is drained, and
+       OnCreate fills the SAME can instance with real vanilla Petrol fluid.
+       mode:keep + fluid-edit-in-place is the rule-30 shape; the OnCreate must never
+       Remove the kept can (rule 27) -- it only writes its fluid. */
+    craftRecipe FillPetrolCanFromDistillPotIII
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        OnCreate = RecipeCodeOnCreate.FillPetrolCanWithGasohol,
+        inputs
+        {
+        item 1 [Base.PetrolCan] mode:keep flags[IsEmpty;ItemCount],
+        item 8 [Moonshine.Petrol_DistillPotLarge],
+        }
+        outputs
+        {
+        }
+    }
+
     craftRecipe FillWineBottleWithGasoholFuel
     {
         timedAction = Making, category = Moonshine,

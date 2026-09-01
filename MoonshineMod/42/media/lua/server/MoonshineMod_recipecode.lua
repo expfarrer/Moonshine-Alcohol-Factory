@@ -50,6 +50,35 @@ print("A empty petrol can back!")end
 
 --
 
+-- B1: FillPetrolCanFromDistillPotIII.
+-- Base.PetrolCan is a real component FluidContainer, so it can NOT be produced by an
+-- `item 1 Base.PetrolCan` output line (craftRecipe quirks rule 31).  The recipe instead
+-- keeps the player's own empty can (`mode:keep flags[IsEmpty;ItemCount]`) and this
+-- callback fills THAT SAME INSTANCE with real vanilla Petrol.
+-- Deliberately does NOT Remove/AddItem anything: removing a mode:keep input from its own
+-- OnCreate is the rule-27 SyncItemFields rollback, and re-spawning a FluidContainer is
+-- rule 31 + the rule-22 MP sync gap.  Editing the kept item's fluid in place is exactly
+-- what the engine's post-craft sync packet is for.
+function RecipeCodeOnCreate.FillPetrolCanWithGasohol(recipeData, character)
+    local kept = recipeData:getAllKeepInputItems()
+    if not kept then return end
+    for i = 0, kept:size() - 1 do
+        local it = kept:get(i)
+        if it and it:getFullType() == "Base.PetrolCan" then
+            local fc = it:getFluidContainer()
+            if fc then
+                fc:Empty()
+                fc:addFluid("Petrol", fc:getCapacity())   -- name FIRST, then litres
+                print("[Moonshine] gas can filled with " .. tostring(fc:getAmount()) .. "L gasohol")
+            end
+            return
+        end
+    end
+    print("[Moonshine] FillPetrolCanWithGasohol: no kept Base.PetrolCan found")
+end
+
+--
+
 function RecipeCodeOnCreate.GiveBackWhiskeyBottle(recipeData, character)
 
 character:getInventory():AddItem("Base.Whiskey")

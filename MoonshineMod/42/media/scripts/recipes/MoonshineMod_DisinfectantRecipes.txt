@@ -24,6 +24,43 @@ module Moonshine
         }
     }
 
+    /* P1 -- "fill all" for the SMALL tier.  Alc_DistillPotSmall is base:drainable
+       with UseDelta 0.25 = 4 servings, so `item 4 [pot]` drains the whole charge in
+       one craft and ReplaceOnDeplete hands back exactly ONE DistillPotSmall.
+       NO OnCreate: an AddItem here would be the infinite-pot dupe (quirks rule 37).
+       Mirrors FillSpiritFromDistillPotII / III. */
+    craftRecipe FillSpiritFromDistillPotI
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        inputs
+        {
+        item 4 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 4 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 4 Moonshine.BeerRefill,
+        }
+    }
+
+    craftRecipe FillSpiritFromDistillPotI2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        inputs
+        {
+        item 4 [Moonshine.EmptyJar],
+        item 4 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 4 Moonshine.WhiteLightning,
+        }
+    }
+
     craftRecipe FillSpiritFromDistillPotII
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
@@ -146,6 +183,44 @@ module Moonshine
         outputs
         {
             item 8 Moonshine.WhiteLightning,
+        }
+    }
+
+    /* P2 -- "fill all" for the ISOPROPYL pots, mirroring FillSpiritFromDistillPot*.
+       Alc_DistillPotMediumIso = UseDelta 0.16 (6 servings),
+       Alc_DistillPotLargeIso  = UseDelta 0.125 (8 servings).
+       `item N [pot]` drains the whole charge in ONE craft; ReplaceOnDeplete returns
+       exactly one empty pot, so there is deliberately NO OnCreate (quirks rule 37).
+       Output matches the per-serving RefillDisinfectantBeerBottle/2 recipes. */
+    craftRecipe FillDisinfectantFromDistillPotII
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        inputs
+        {
+        item 6 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 6 [Moonshine.Alc_DistillPotMediumIso],
+        }
+        outputs
+        {
+            item 6 Moonshine.DisinfectantRefillBeer,
+        }
+    }
+
+    craftRecipe FillDisinfectantFromDistillPotIII
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        inputs
+        {
+        item 8 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 8 [Moonshine.Alc_DistillPotLargeIso],
+        }
+        outputs
+        {
+            item 8 Moonshine.DisinfectantRefillBeer,
         }
     }
 

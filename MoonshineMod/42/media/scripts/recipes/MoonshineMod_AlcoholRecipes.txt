@@ -20,7 +20,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 15 [Base.Potato] flags[ItemCount],
         }
@@ -45,7 +45,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 15 [Base.Corn] flags[ItemCount],
         }
@@ -71,7 +71,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 2 [Base.CannedCorn] mode:destroy flags[ItemCount],
         }
@@ -97,7 +97,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 2 [Base.CannedCornOpen] mode:destroy flags[ItemCount],
         }
@@ -124,7 +124,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 2 [Base.CannedPotato2] mode:destroy flags[ItemCount],
         }
@@ -150,7 +150,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 2 [Base.CannedPotatoOpen] mode:destroy flags[ItemCount],
         }
@@ -176,7 +176,7 @@ module Moonshine
         item 1 [Base.BucketEmpty] mode:destroy flags[ItemCount],
         item 1 [Base.WaterBottle] mode:keep,
         -fluid 0.1 [Water],
-        item 45 [Base.Sugar],
+        item 1 [Base.Sugar;Base.SugarBrown] flags[ItemCount],
         item 1 [Base.Yeast],
         item 2 [Base.CannedPotato;Base.CannedPotato_Open] mode:destroy flags[ItemCount],
         }
@@ -194,7 +194,7 @@ module Moonshine
         time = 300,
         inputs
         {
-        item 1 [Moonshine.CornMash],
+        item 1 [Moonshine.CornMash] flags[ItemCount],
         item 1 [Base.Tarp] flags[Prop1],
         item 1 [Base.RubberBand;Base.RubberHose;Base.Rope;Base.Wire],
         }
@@ -211,7 +211,7 @@ module Moonshine
         time = 300,
         inputs
         {
-        item 1 [Moonshine.PotatoMash],
+        item 1 [Moonshine.PotatoMash] flags[ItemCount],
         item 1 [Base.Tarp] flags[Prop1],
         item 1 [Base.RubberBand;Base.RubberHose;Base.Rope;Base.Wire],
         }

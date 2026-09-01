@@ -80,7 +80,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Moonshine.EmptyMotorOilCan1],
@@ -146,7 +145,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
@@ -195,7 +193,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
@@ -244,7 +241,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.Whiskey] flags[ItemCount],
@@ -293,7 +289,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.WaterBottle] flags[ItemCount],
@@ -342,7 +337,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
@@ -391,7 +385,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.Bleach] flags[ItemCount],
@@ -440,7 +433,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Base.Sportsbottle] flags[ItemCount],
@@ -481,10 +473,9 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Petrol_DistillPotLarge] flags[IsFull],
+        item 8 [Moonshine.Petrol_DistillPotLarge] flags[IsFull],
         item 1 [Moonshine.EmptyGasoholDrum],
         }
         outputs
@@ -499,10 +490,9 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Petrol_DistillPotLarge] flags[IsFull],
+        item 8 [Moonshine.Petrol_DistillPotLarge] flags[IsFull],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -516,10 +506,9 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Petrol_DistillPotLarge],
+        item 1 [Moonshine.Petrol_DistillPotLarge] flags[ItemCount],
         }
         outputs
         {

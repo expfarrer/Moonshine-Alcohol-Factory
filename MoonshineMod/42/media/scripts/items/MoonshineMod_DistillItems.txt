@@ -341,7 +341,11 @@ imports
         
         DisplayName = Distill Pot(I)(Filled with Spirit),
 		DisplayCategory = Food,
-		ItemType = base:food,
+		/* base:food -> base:drainable so the pot holds 4 servings (UseDelta 0.25)
+		   and ReplaceOnDeplete hands back exactly ONE empty pot at 0.  As
+		   base:food the craft ate 1/100 nutrition unit, never consumed the pot,
+		   and ReplaceOnUse/ReplaceOnDeplete never fired on a craft-consume. */
+		ItemType = base:drainable,
 		Weight = 10.0,
 		
         Icon = WaterDistillPotSmall,
@@ -357,8 +361,8 @@ imports
 		
 		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
-		ReplaceOnUse = DistillPotSmall,
-		/*ReplaceOnDeplete = DistillPotSmall,*/
+		/*ReplaceOnUse = DistillPotSmall,*/	/* invalid on base:drainable */
+		ReplaceOnDeplete = DistillPotSmall,
 		HungerChange = -4.5,
 		ThirstChange = -4.5,
 		
@@ -396,7 +400,9 @@ item Alc_DistillPotMedium
         
         DisplayName = Distill Pot(II)(Filled with Spirit),
 		DisplayCategory = Food,
-		ItemType	= base:food,
+		/* base:food -> base:drainable: 6 servings (UseDelta 0.16) then
+		   ReplaceOnDeplete returns exactly ONE empty pot.  See Alc_DistillPotSmall. */
+		ItemType	= base:drainable,
 		Weight = 12.0,
 		
         Icon = WaterDistillPotMedium,
@@ -412,7 +418,8 @@ item Alc_DistillPotMedium
 		
 		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
-		ReplaceOnUse = DistillPotMedium,
+		/*ReplaceOnUse = DistillPotMedium,*/	/* invalid on base:drainable */
+		ReplaceOnDeplete = DistillPotMedium,
 		HungerChange = -6.5,
 		ThirstChange = -6.5,
 		UnhappyChange = -50,
@@ -420,16 +427,16 @@ item Alc_DistillPotMedium
 		Carbohydrates = 1,
 		Lipids = 0,
 		Proteins = 0,
-		
+
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-   
-		
+
+
         CustomContextMenu = Drink,
-		
+
 		CustomEatSound = DrinkingFromBottleGlasss,
 		StaticModel = distill_medium_Ground,
-		
+
 		WorldStaticModel = distill_medium_Ground,
 		
 		DaysFresh = 3000,
@@ -449,7 +456,9 @@ item Alc_DistillPotLarge
         
         DisplayName = Distill Pot(III)(Filled with Spirit),
 		DisplayCategory = Food,
-		ItemType	= base:food,
+		/* base:food -> base:drainable: 8 servings (UseDelta 0.125) then
+		   ReplaceOnDeplete returns exactly ONE empty pot.  See Alc_DistillPotSmall. */
+		ItemType	= base:drainable,
 		Weight = 15.0,
 		
         Icon = WaterDistillPotLarge,
@@ -466,8 +475,9 @@ item Alc_DistillPotLarge
 		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		
-        ReplaceOnUse = DistillPotLarge,
-		
+        /*ReplaceOnUse = DistillPotLarge,*/	/* invalid on base:drainable */
+		ReplaceOnDeplete = DistillPotLarge,
+
 		HungerChange = -8.5,
 		ThirstChange = -8.5,
 		UnhappyChange = -50,
@@ -514,7 +524,14 @@ item Alc_DistillPotMediumRefillSpirit
         
         DisplayName = Distill Pot(II)(Refilled with Spirit),
         DisplayCategory = Food,
-		ItemType	= base:food,
+		/* base:food -> base:drainable: 6 servings (UseDelta 0.16) then
+		   ReplaceOnDeplete returns exactly ONE empty pot.  IsCookable /
+		   ReplaceOnCooked / MinutesToCook / MinutesToBurn are KEPT:
+		   zombie.inventory.types.DrainableComboItem carries the full cooking
+		   implementation (isCookable / isCooked / setCooked / minutesToCook /
+		   minutesToBurn / getReplaceOnCooked), so the second-distillation
+		   RefillSpirit -> Iso chain survives the conversion. */
+		ItemType	= base:drainable,
 		Weight = 12.0,
 		
         Icon = WaterDistillPotMedium,
@@ -532,9 +549,9 @@ item Alc_DistillPotMediumRefillSpirit
 		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
-        ReplaceOnUse = DistillPotMedium,
-		/*ReplaceOnDeplete = DistillPotSmall,*/
-		
+        /*ReplaceOnUse = DistillPotMedium,*/	/* invalid on base:drainable */
+		ReplaceOnDeplete = DistillPotMedium,	/* was wrongly DistillPotSmall while commented out */
+
 		ThirstChange = -6.5,
 		HungerChange = -6.5,
 		UnhappyChange = -50,
@@ -576,7 +593,11 @@ item Alc_DistillPotLargeRefillSpirit
         
         DisplayName = Distill Pot(III)(Refilled with Spirit),
 		DisplayCategory = Food,
-		ItemType	= base:food,
+		/* base:food -> base:drainable: 8 servings (UseDelta 0.125) then
+		   ReplaceOnDeplete returns exactly ONE empty pot.  IsCookable /
+		   ReplaceOnCooked / MinutesToCook / MinutesToBurn KEPT -- see
+		   Alc_DistillPotMediumRefillSpirit. */
+		ItemType	= base:drainable,
 		Weight = 15.0,
 		
         Icon = WaterDistillPotLarge,
@@ -594,9 +615,9 @@ item Alc_DistillPotLargeRefillSpirit
 		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
 		EvolvedRecipeName = Moonshine,
 		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
-        ReplaceOnUse = DistillPotLarge,
-		/*ReplaceOnDeplete = DistillPotSmall,*/
-		
+        /*ReplaceOnUse = DistillPotLarge,*/	/* invalid on base:drainable */
+		ReplaceOnDeplete = DistillPotLarge,	/* was wrongly DistillPotSmall while commented out */
+
 		HungerChange = -8.5,
 		ThirstChange = -8.5,
 		UnhappyChange = -50,

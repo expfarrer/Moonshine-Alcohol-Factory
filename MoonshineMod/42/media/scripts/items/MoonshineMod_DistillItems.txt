@@ -225,7 +225,7 @@ imports
 
         ReplaceOnCooked = Moonshine.Alc_DistillPotSmall,
 
-		MinutesToCook = 950,
+		MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -267,7 +267,7 @@ imports
       
         ReplaceOnCooked = Moonshine.Alc_DistillPotMedium,	
 		
-		MinutesToCook = 750,
+		MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -310,7 +310,7 @@ imports
       
         ReplaceOnCooked = Moonshine.Alc_DistillPotLarge,	
 		
-		MinutesToCook = 550,
+		MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 30,
@@ -352,8 +352,8 @@ imports
 		
 		
 		CookingSound = BoilingFood,
-		FoodType = Liquor,
-		EatType = Kettle,
+		/* FoodType = Liquor, */
+		/* EatType = Kettle, */
 	    AlcoholPower = 4,
 		Alcoholic = TRUE,
 		CantBeFrozen = TRUE,
@@ -374,8 +374,8 @@ imports
 		
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-		CustomContextMenu = Drink,
-		CustomEatSound = DrinkingFromBottleGlasss,
+		/* CustomContextMenu = Drink, */
+		/* CustomEatSound = DrinkingFromBottleGlasss, */
 		StaticModel = distill_small_Ground,
 		WorldStaticModel = distill_small_Ground, 
        
@@ -409,8 +409,8 @@ item Alc_DistillPotMedium
 		
 		
 		CookingSound = BoilingFood,
-		FoodType = Liquor,
-		EatType = Kettle,
+		/* FoodType = Liquor, */
+		/* EatType = Kettle, */
 	    AlcoholPower = 4,
 		Alcoholic = TRUE,
 		CantBeFrozen = TRUE,
@@ -432,9 +432,9 @@ item Alc_DistillPotMedium
 		FillFromTapSound = GetWaterFromTapMetalBig,
 
 
-        CustomContextMenu = Drink,
+        /* CustomContextMenu = Drink, */
 
-		CustomEatSound = DrinkingFromBottleGlasss,
+		/* CustomEatSound = DrinkingFromBottleGlasss, */
 		StaticModel = distill_medium_Ground,
 
 		WorldStaticModel = distill_medium_Ground,
@@ -465,8 +465,8 @@ item Alc_DistillPotLarge
 		
 		
 		CookingSound = BoilingFood,
-		FoodType = Liquor,
-		EatType = Kettle,
+		/* FoodType = Liquor, */
+		/* EatType = Kettle, */
 	    AlcoholPower = 4,
 		Alcoholic = TRUE,
 		CantBeFrozen = TRUE,
@@ -490,9 +490,9 @@ item Alc_DistillPotLarge
 		FillFromTapSound = GetWaterFromTapMetalBig,
    
 		
-        CustomContextMenu = Drink,
+        /* CustomContextMenu = Drink, */
 		
-		CustomEatSound = DrinkingFromBottleGlasss,
+		/* CustomEatSound = DrinkingFromBottleGlasss, */
 		StaticModel = distill_large_Ground,
         WorldStaticModel = distill_large_Ground, 
 		
@@ -539,8 +539,8 @@ item Alc_DistillPotMediumRefillSpirit
 		
 		
 		CookingSound = BoilingFood,
-		FoodType = Liquor,
-		EatType = Kettle,
+		/* FoodType = Liquor, */
+		/* EatType = Kettle, */
 	    AlcoholPower = 4,
 		Alcoholic = TRUE,
 		CantBeFrozen = TRUE,
@@ -564,14 +564,14 @@ item Alc_DistillPotMediumRefillSpirit
 		FillFromTapSound = GetWaterFromTapMetalBig,
    
 		
-        CustomContextMenu = Drink,
+        /* CustomContextMenu = Drink, */
 		
-		CustomEatSound = DrinkingFromBottleGlasss,
+		/* CustomEatSound = DrinkingFromBottleGlasss, */
 		StaticModel = distill_medium_Ground,
 		WorldStaticModel = distill_medium_Ground, 
 		/*Tags = Liquor,*/
 	
-		MinutesToCook = 750,
+		MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 300,
@@ -605,8 +605,8 @@ item Alc_DistillPotLargeRefillSpirit
 		
 		
 		CookingSound = BoilingFood,
-		FoodType = Liquor,
-		EatType = Kettle,
+		/* FoodType = Liquor, */
+		/* EatType = Kettle, */
 	    AlcoholPower = 4,
 		Alcoholic = TRUE,
 		CantBeFrozen = TRUE,
@@ -630,14 +630,14 @@ item Alc_DistillPotLargeRefillSpirit
 		FillFromTapSound = GetWaterFromTapMetalBig,
    
 		
-        CustomContextMenu = Drink,
+        /* CustomContextMenu = Drink, */
 		
-		CustomEatSound = DrinkingFromBottleGlasss,
+		/* CustomEatSound = DrinkingFromBottleGlasss, */
 		StaticModel = distill_large_Ground,
 		WorldStaticModel = distill_large_Ground,
 		/*Tags = Liquor,*/
 
-		MinutesToCook = 550,
+		MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
 		DaysFresh = 300,
@@ -693,7 +693,7 @@ item Alc_DistillPotLargeRefillSpirit
 		*/
 		
 		ThirstChange	=	-60,
-	    MinutesToCook = 950,
+	    MinutesToCook = 360,
 		MinutesToBurn = 5000,
         MetalValue = 120,
 		BadInMicrowave = true,
@@ -823,7 +823,7 @@ item DistillPotSmallWood
         ReplaceOnUse = DistillPotSmall,
 		StaticModel = distill_small_Ground,
 		WorldStaticModel = distill_small_Ground, 
-        MinutesToCook = 950,
+        MinutesToCook = 360,
 		MinutesToBurn = 3000,
         MetalValue = 40,
 		BadInMicrowave = true,
@@ -872,7 +872,7 @@ item DistillPotMediumWood
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		ReplaceOnCooked = Moonshine.DistillPotMediumCoal,
-        MinutesToCook = 750,
+        MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
 		EvolvedRecipeName = Coal,
@@ -933,7 +933,7 @@ item DistillPotLargeWood
 	
         Icon = DistillPotLargeWood,
         CookingSound = BoilingFood,
-		 MinutesToCook = 550,
+		 MinutesToCook = 360,
 		MinutesToBurn = 3000,
 		
         Packaged = TRUE,

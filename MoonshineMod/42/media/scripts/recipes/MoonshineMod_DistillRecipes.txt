@@ -183,11 +183,18 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
-        item 10 [Moonshine.CornMashFermented],
+        /* F11/U5: whole buckets.  `item 10` on a base:food HungerChange
+           -10 meant 10/10 = 1.0 BUCKETS (quirks rule 1), so this silently
+           did not offer with one bucket in the bag.  One bucket now charges
+           any tier -- the bigger still just yields more from it. */
+        item 1 [Moonshine.CornMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotSmall,
+            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
+               (rule 45), so it has to come back from an output line. */
+            item 1 Base.BucketEmpty,
         }
     }
 
@@ -200,11 +207,18 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
-        item 12 [Moonshine.CornMashFermented],
+        /* F11/U5: whole buckets.  `item 12` on a base:food HungerChange
+           -10 meant 12/10 = 1.2 BUCKETS (quirks rule 1), so this silently
+           did not offer with one bucket in the bag.  One bucket now charges
+           any tier -- the bigger still just yields more from it. */
+        item 1 [Moonshine.CornMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotMedium,
+            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
+               (rule 45), so it has to come back from an output line. */
+            item 1 Base.BucketEmpty,
         }
     }
 
@@ -217,11 +231,18 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
-        item 15 [Moonshine.CornMashFermented],
+        /* F11/U5: whole buckets.  `item 15` on a base:food HungerChange
+           -10 meant 15/10 = 1.5 BUCKETS (quirks rule 1), so this silently
+           did not offer with one bucket in the bag.  One bucket now charges
+           any tier -- the bigger still just yields more from it. */
+        item 1 [Moonshine.CornMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotLarge,
+            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
+               (rule 45), so it has to come back from an output line. */
+            item 1 Base.BucketEmpty,
         }
     }
 
@@ -234,11 +255,18 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
-        item 10 [Moonshine.PotatoMashFermented],
+        /* F11/U5: whole buckets.  `item 10` on a base:food HungerChange
+           -10 meant 10/10 = 1.0 BUCKETS (quirks rule 1), so this silently
+           did not offer with one bucket in the bag.  One bucket now charges
+           any tier -- the bigger still just yields more from it. */
+        item 1 [Moonshine.PotatoMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotSmall,
+            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
+               (rule 45), so it has to come back from an output line. */
+            item 1 Base.BucketEmpty,
         }
     }
 
@@ -251,11 +279,18 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
-        item 12 [Moonshine.PotatoMashFermented],
+        /* F11/U5: whole buckets.  `item 12` on a base:food HungerChange
+           -10 meant 12/10 = 1.2 BUCKETS (quirks rule 1), so this silently
+           did not offer with one bucket in the bag.  One bucket now charges
+           any tier -- the bigger still just yields more from it. */
+        item 1 [Moonshine.PotatoMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotMedium,
+            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
+               (rule 45), so it has to come back from an output line. */
+            item 1 Base.BucketEmpty,
         }
     }
 
@@ -268,11 +303,18 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
-        item 15 [Moonshine.PotatoMashFermented],
+        /* F11/U5: whole buckets.  `item 15` on a base:food HungerChange
+           -10 meant 15/10 = 1.5 BUCKETS (quirks rule 1), so this silently
+           did not offer with one bucket in the bag.  One bucket now charges
+           any tier -- the bigger still just yields more from it. */
+        item 1 [Moonshine.PotatoMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotLarge,
+            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
+               (rule 45), so it has to come back from an output line. */
+            item 1 Base.BucketEmpty,
         }
     }
 

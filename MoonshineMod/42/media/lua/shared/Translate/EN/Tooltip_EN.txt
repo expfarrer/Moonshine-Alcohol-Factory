@@ -19,8 +19,8 @@ Tooltip_EN = {
     Tooltip_item_DistillMediumAlc = "Refill into bottles and make bottled alcohol.",
     Tooltip_item_DistillLargeAlc = "Refill into bottles and make bottled alcohol.",
     
-    Tooltip_item_DistillMediumRefill = "Place in a heat source to distill into isopropyl.",
-    Tooltip_item_DistillLargeRefill = "Place in a heat source to distill into isopropyl.",
+    Tooltip_item_DistillMediumRefill = "Craft 'Second Distillation' with charcoal to distill into isopropyl. Needs a full pot.",
+    Tooltip_item_DistillLargeRefill = "Craft 'Second Distillation' with charcoal to distill into isopropyl. Needs a full pot.",
     
     Tooltip_item_DistillMediumIso = "Refill into bottles and make disinfectant isopropyl.",
     Tooltip_item_DistillLargeIso = "Refill into bottles and make disinfectant isopropyl.",

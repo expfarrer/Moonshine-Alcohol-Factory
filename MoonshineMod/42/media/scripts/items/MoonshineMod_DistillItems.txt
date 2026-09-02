@@ -359,8 +359,8 @@ imports
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
-		EvolvedRecipeName = Moonshine,
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		/*ReplaceOnUse = DistillPotSmall,*/	/* invalid on base:drainable */
 		ReplaceOnDeplete = DistillPotSmall,
 		HungerChange = -4.5,
@@ -416,8 +416,8 @@ item Alc_DistillPotMedium
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
-		EvolvedRecipeName = Moonshine,
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		/*ReplaceOnUse = DistillPotMedium,*/	/* invalid on base:drainable */
 		ReplaceOnDeplete = DistillPotMedium,
 		HungerChange = -6.5,
@@ -472,8 +472,8 @@ item Alc_DistillPotLarge
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
-		EvolvedRecipeName = Moonshine,
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		
         /*ReplaceOnUse = DistillPotLarge,*/	/* invalid on base:drainable */
 		ReplaceOnDeplete = DistillPotLarge,
@@ -525,20 +525,21 @@ item Alc_DistillPotMediumRefillSpirit
         DisplayName = Distill Pot(II)(Refilled with Spirit),
         DisplayCategory = Food,
 		/* base:food -> base:drainable: 6 servings (UseDelta 0.16) then
-		   ReplaceOnDeplete returns exactly ONE empty pot.  IsCookable /
-		   ReplaceOnCooked / MinutesToCook / MinutesToBurn are KEPT:
-		   zombie.inventory.types.DrainableComboItem carries the full cooking
-		   implementation (isCookable / isCooked / setCooked / minutesToCook /
-		   minutesToBurn / getReplaceOnCooked), so the second-distillation
-		   RefillSpirit -> Iso chain survives the conversion. */
+		   ReplaceOnDeplete returns exactly ONE empty pot.
+		   F6-A (2026-09-01): the cooking block below is COMMENTED OUT, not kept.
+		   DrainableComboItem does carry the cooking API, but a base:drainable in
+		   an oven makes ZERO progress in practice (live test 24), so the 2nd
+		   distillation is now the handcraft recipe SecondDistillationMedium in
+		   MoonshineMod_DisinfectantRecipes.txt.  These pots must stay drainable
+		   because ~16 RefillSpiritIn<Vessel> fills drain them per serving. */
 		ItemType	= base:drainable,
 		Weight = 12.0,
-		
+
         Icon = WaterDistillPotMedium,
-		IsCookable = true,
-		
-		
-		CookingSound = BoilingFood,
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*IsCookable = true,*/
+
+
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*CookingSound = BoilingFood,*/
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
 	    AlcoholPower = 4,
@@ -546,9 +547,9 @@ item Alc_DistillPotMediumRefillSpirit
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
-		EvolvedRecipeName = Moonshine,
-		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,*/
         /*ReplaceOnUse = DistillPotMedium,*/	/* invalid on base:drainable */
 		ReplaceOnDeplete = DistillPotMedium,	/* was wrongly DistillPotSmall while commented out */
 
@@ -571,12 +572,12 @@ item Alc_DistillPotMediumRefillSpirit
 		WorldStaticModel = distill_medium_Ground, 
 		/*Tags = Liquor,*/
 	
-		MinutesToCook = 360,
-		MinutesToBurn = 3000,
-		
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToCook = 360,*/
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToBurn = 3000,*/
+
 		DaysFresh = 300,
 		DaysTotallyRotten = 9000,
-		
+
 		MetalValue = 60,
 		BadInMicrowave = true,
 		UseDelta	=	0.16,
@@ -594,17 +595,17 @@ item Alc_DistillPotLargeRefillSpirit
         DisplayName = Distill Pot(III)(Refilled with Spirit),
 		DisplayCategory = Food,
 		/* base:food -> base:drainable: 8 servings (UseDelta 0.125) then
-		   ReplaceOnDeplete returns exactly ONE empty pot.  IsCookable /
-		   ReplaceOnCooked / MinutesToCook / MinutesToBurn KEPT -- see
-		   Alc_DistillPotMediumRefillSpirit. */
+		   ReplaceOnDeplete returns exactly ONE empty pot.  F6-A: the cooking
+		   block is COMMENTED OUT -- see Alc_DistillPotMediumRefillSpirit; the
+		   2nd distillation is the handcraft recipe SecondDistillationLarge. */
 		ItemType	= base:drainable,
 		Weight = 15.0,
-		
+
         Icon = WaterDistillPotLarge,
-		IsCookable = true,
-		
-		
-		CookingSound = BoilingFood,
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*IsCookable = true,*/
+
+
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*CookingSound = BoilingFood,*/
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
 	    AlcoholPower = 4,
@@ -612,9 +613,9 @@ item Alc_DistillPotLargeRefillSpirit
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
 		
-		EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,
-		EvolvedRecipeName = Moonshine,
-		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
+		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,*/
         /*ReplaceOnUse = DistillPotLarge,*/	/* invalid on base:drainable */
 		ReplaceOnDeplete = DistillPotLarge,	/* was wrongly DistillPotSmall while commented out */
 
@@ -637,12 +638,12 @@ item Alc_DistillPotLargeRefillSpirit
 		WorldStaticModel = distill_large_Ground,
 		/*Tags = Liquor,*/
 
-		MinutesToCook = 360,
-		MinutesToBurn = 3000,
-		
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToCook = 360,*/
+		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToBurn = 3000,*/
+
 		DaysFresh = 300,
 		DaysTotallyRotten = 9000,
-		
+
 		MetalValue = 120,
 		BadInMicrowave = true,
 		UseDelta	=	0.125,

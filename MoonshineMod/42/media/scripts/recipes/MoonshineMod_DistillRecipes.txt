@@ -21,12 +21,12 @@ module Moonshine
         item 1 [Base.BucketEmpty] flags[ItemCount],
         item 2 [Base.MetalPipe],
         item 1 [Base.ScrapMetal],
-        item 1 [Base.Wire],
-        item 1 [Base.Pot],
+        item 1 [Base.Wire] flags[ItemCount],
+        item 1 [Base.Pot] flags[ItemCount],
         item 1 [Base.SmallSheetMetal],
         item 1 [Base.DuctTape],
         item 1 [Base.PropaneTank],
-        item 1 [Base.BeerCanEmpty],
+        item 1 [Base.BeerCanEmpty] flags[ItemCount],
         }
         outputs
         {
@@ -58,7 +58,6 @@ module Moonshine
             item 1 Base.Wire,
             item 1 Base.Pot,
             item 1 Base.SmallSheetMetal,
-            item 1 Base.PropaneTank,
             item 1 Base.BeerCanEmpty,
         }
     }
@@ -87,7 +86,6 @@ module Moonshine
             item 1 Base.Wire,
             item 1 Base.Pot,
             item 1 Base.SmallSheetMetal,
-            item 1 Base.PropaneTank,
             item 1 Base.BeerCanEmpty,
             item 1 Moonshine.DistillPotFilter,
         }
@@ -117,7 +115,6 @@ module Moonshine
             item 1 Base.Wire,
             item 1 Base.Pot,
             item 1 Base.SmallSheetMetal,
-            item 1 Base.PropaneTank,
             item 1 Base.BeerCanEmpty,
             item 1 Moonshine.DistillPotFilter,
             item 1 Moonshine.DistillPotColumn,
@@ -170,10 +167,8 @@ module Moonshine
         }
         outputs
         {
-            item 1 Base.ScrapMetal,
             item 1 Base.Extinguisher,
             item 1 Base.AlarmClock2,
-            item 1 Base.CarBattery1,
             item 1 Base.Wire,
             item 5 Base.ElectronicsScrap,
         }
@@ -345,11 +340,11 @@ module Moonshine
         item 3 [Base.MetalPipe],
         item 1 [Base.ScrapMetal] flags[Prop2],
         item 1 [Base.Bleach] flags[ItemCount],
-        item 1 [Base.OatsRaw],
+        item 1 [Base.OatsRaw] flags[ItemCount],
         item 8 [Moonshine.Coal],
-        item 1 [Base.Wire],
+        item 1 [Base.Wire] flags[ItemCount],
         item 1 [Base.DuctTape],
-        item 1 [Base.BeerCanEmpty],
+        item 1 [Base.BeerCanEmpty] flags[ItemCount],
         }
         outputs
         {
@@ -373,11 +368,11 @@ module Moonshine
         item 3 [Base.MetalPipe],
         item 1 [Base.ScrapMetal] flags[Prop2],
         item 1 [Base.Bleach] flags[ItemCount],
-        item 1 [Base.OatsRaw],
+        item 1 [Base.OatsRaw] flags[ItemCount],
         item 8 [Base.Charcoal],
-        item 1 [Base.Wire],
+        item 1 [Base.Wire] flags[ItemCount],
         item 1 [Base.DuctTape],
-        item 1 [Base.BeerCanEmpty],
+        item 1 [Base.BeerCanEmpty] flags[ItemCount],
         }
         outputs
         {
@@ -399,10 +394,19 @@ module Moonshine
         {
         item 1 tags[base:hammer] mode:keep,
         item 1 tags[base:saw] mode:keep,
-        item 1 [Base.Extinguisher],
+        item 1 [Base.Extinguisher] flags[ItemCount],
         item 1 [Base.AlarmClock2],
-        item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3],
-        item 1 [Base.Wire],
+        /* A car battery is KeepOnDeplete: flags[ItemCount] drains its whole
+           100000 charge but LEAVES the (now flat) battery in the inventory --
+           measured "CarBattery1 uses-100000.00" with no count change.  So the
+           player already keeps the battery here, and DismantleControllableColumn
+           must NOT hand back a second, full one (that was +1 battery per
+           build/dismantle cycle).  Deliberately no `mode:destroy`: this recipe
+           would then have two destroyed input types, which is the rule-18/33
+           crafting-UI hazard, and that is exactly what a headless test cannot
+           see. */
+        item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3] flags[ItemCount],
+        item 1 [Base.Wire] flags[ItemCount],
         item 5 [Base.ElectronicsScrap],
         item 1 [Base.DuctTape],
         }
@@ -478,11 +482,11 @@ module Moonshine
         }
         outputs
         {
+            /* F11/U7: the returns must be exactly what UpgradeDistillIToII
+               spent (DuctTape + DistillPotFilter + DistillPotSmall).  The old
+               list also printed a MetalPipe, 3 Coal, a SmallSheetMetal and a
+               BeerCanEmpty, so upgrade->downgrade cycling minted them forever. */
             item 1 Moonshine.DistillPotSmall,
-            item 1 Base.MetalPipe,
-            item 3 Moonshine.Coal,
-            item 1 Base.SmallSheetMetal,
-            item 1 Base.BeerCanEmpty,
             item 1 Moonshine.DistillPotFilter,
         }
     }
@@ -505,13 +509,12 @@ module Moonshine
         }
         outputs
         {
+            /* F11/U7: same as DowngradeDistillIIToI -- UpgradeDistillIIToIII
+               spends DuctTape + DistillPotColumn + DistillPotMedium, so those
+               two items are all that may come back.  The old list also printed
+               2 MetalPipe, a full Wire spool, a Pot, a FULL CarBattery1, 3
+               SmallSheetMetal and a BeerCanEmpty per cycle. */
             item 1 Moonshine.DistillPotMedium,
-            item 2 Base.MetalPipe,
-            item 1 Base.Wire,
-            item 1 Base.Pot,
-            item 1 Base.CarBattery1,
-            item 3 Base.SmallSheetMetal,
-            item 1 Base.BeerCanEmpty,
             item 1 Moonshine.DistillPotColumn,
         }
     }

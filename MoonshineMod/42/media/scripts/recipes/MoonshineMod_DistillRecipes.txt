@@ -325,8 +325,19 @@ module Moonshine
         time = 400,
         inputs
         {
+        /* F11/U4, quirks rule 30.  The old shape was a bare
+           `-fluid 40.0 [Water]` with NO kept companion container, so it
+           could never source the water and never offered -- measured
+           UNAVAILABLE with 10 full 10 L buckets AND 10 full water bottles
+           in the bag.  40/60/80 L was also four full buckets.
+           Now: a dedicated mode:keep water container, a DIFFERENT item
+           type from the DistillPot being consumed, and 4.0 L -- one litre
+           per serving the filled pot yields.  A `-fluid` line SUMS across
+           every kept container matching its input line (F11/U6b), so this
+           takes one bucket, or 4 water bottles, or any mix. */
+        item 1 [Base.BucketEmpty;Base.WaterBottle] mode:keep,
+        -fluid 4.0 [Water],
         item 1 [Moonshine.DistillPotSmall],
-        -fluid 40.0 [Water],
         }
         outputs
         {
@@ -341,8 +352,19 @@ module Moonshine
         time = 400,
         inputs
         {
+        /* F11/U4, quirks rule 30.  The old shape was a bare
+           `-fluid 60.0 [Water]` with NO kept companion container, so it
+           could never source the water and never offered -- measured
+           UNAVAILABLE with 10 full 10 L buckets AND 10 full water bottles
+           in the bag.  40/60/80 L was also four full buckets.
+           Now: a dedicated mode:keep water container, a DIFFERENT item
+           type from the DistillPot being consumed, and 6.0 L -- one litre
+           per serving the filled pot yields.  A `-fluid` line SUMS across
+           every kept container matching its input line (F11/U6b), so this
+           takes one bucket, or 6 water bottles, or any mix. */
+        item 1 [Base.BucketEmpty;Base.WaterBottle] mode:keep,
+        -fluid 6.0 [Water],
         item 1 [Moonshine.DistillPotMedium],
-        -fluid 60.0 [Water],
         }
         outputs
         {
@@ -357,8 +379,19 @@ module Moonshine
         time = 400,
         inputs
         {
+        /* F11/U4, quirks rule 30.  The old shape was a bare
+           `-fluid 80.0 [Water]` with NO kept companion container, so it
+           could never source the water and never offered -- measured
+           UNAVAILABLE with 10 full 10 L buckets AND 10 full water bottles
+           in the bag.  40/60/80 L was also four full buckets.
+           Now: a dedicated mode:keep water container, a DIFFERENT item
+           type from the DistillPot being consumed, and 8.0 L -- one litre
+           per serving the filled pot yields.  A `-fluid` line SUMS across
+           every kept container matching its input line (F11/U6b), so this
+           takes one bucket, or 8 water bottles, or any mix. */
+        item 1 [Base.BucketEmpty;Base.WaterBottle] mode:keep,
+        -fluid 8.0 [Water],
         item 1 [Moonshine.DistillPotLarge],
-        -fluid 80.0 [Water],
         }
         outputs
         {

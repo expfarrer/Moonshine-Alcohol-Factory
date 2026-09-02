@@ -47,11 +47,18 @@ module Moonshine
         }
     }
 
+    /* F8: Alc_DistillPot*RefillSpirit went base:drainable -> base:food again so the
+       2nd distillation can be an OVEN COOK.  `flags[ItemCount]` still consumes the
+       whole pot on a base:food, but ReplaceOnDeplete does NOT fire for a base:food
+       eaten by a craft, so the empty pot has to come back from an OnCreate.  That
+       is honest here (not the rule-37 dupe) precisely BECAUSE flags[ItemCount]
+       really consumes the input -- headless-verified. */
     craftRecipe DumpSpiritDistillPotMediumRefill
     {
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
         item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit] flags[ItemCount],
@@ -66,6 +73,7 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
         item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit] flags[ItemCount],
@@ -75,39 +83,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInBeerBottle
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.BeerRefill,
-        }
-    }
-
-    craftRecipe RefillSpiritInBeerBottle2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.BeerRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInBeerBottle3
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
@@ -160,37 +136,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInWineBottle
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WineRefill,
-        }
-    }
 
-    craftRecipe RefillSpiritInWineBottle2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WineRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInWineBottle3
     {
@@ -240,37 +186,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInWhiskeyBottle
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.Whiskey] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WhiskeyRefill,
-        }
-    }
 
-    craftRecipe RefillSpiritInWhiskeyBottle2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.Whiskey] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WhiskeyRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInWhiskeyBottle3
     {
@@ -320,37 +236,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInSodaBottle
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.SodaBottleRefill,
-        }
-    }
 
-    craftRecipe RefillSpiritInSodaBottle2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.SodaBottleRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInSodaBottle3
     {
@@ -400,37 +286,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInWaterBottle
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.WaterBottle] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WaterBottleRefill,
-        }
-    }
 
-    craftRecipe RefillSpiritInWaterBottle2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.WaterBottle] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WaterBottleRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInWaterBottle3
     {
@@ -480,37 +336,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInBleachBottle
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.Bleach] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.BleachBottleRefill,
-        }
-    }
 
-    craftRecipe RefillSpiritInBleachBottle2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.Bleach] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.BleachBottleRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInBleachBottle3
     {
@@ -560,37 +386,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInSportsBottle
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.SportsBottleRefill,
-        }
-    }
 
-    craftRecipe RefillSpiritInSportsBottle2
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.SportsBottleRefill,
-        }
-    }
 
     craftRecipe RefillSpiritInSportsBottle3
     {
@@ -640,39 +436,7 @@ module Moonshine
         }
     }
 
-    craftRecipe RefillSpiritInEmptyJar
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.EmptyJar;Base.JarCrafted;Base.ClayJar;Base.ClayJarGlazed] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WhiteLightning,
-        }
-    }
-
-    craftRecipe RefillSpiritInEmptyJar2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 50,
-        inputs
-        {
-        item 1 [Base.EmptyJar;Base.JarCrafted;Base.ClayJar;Base.ClayJarGlazed] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.WhiteLightning,
-        }
-    }
 
     craftRecipe RefillSpiritInEmptyJar3
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */

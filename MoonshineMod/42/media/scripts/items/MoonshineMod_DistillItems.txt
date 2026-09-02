@@ -524,22 +524,25 @@ item Alc_DistillPotMediumRefillSpirit
         
         DisplayName = Distill Pot(II)(Refilled with Spirit),
         DisplayCategory = Food,
-		/* base:food -> base:drainable: 6 servings (UseDelta 0.16) then
-		   ReplaceOnDeplete returns exactly ONE empty pot.
-		   F6-A (2026-09-01): the cooking block below is COMMENTED OUT, not kept.
-		   DrainableComboItem does carry the cooking API, but a base:drainable in
-		   an oven makes ZERO progress in practice (live test 24), so the 2nd
-		   distillation is now the handcraft recipe SecondDistillationMedium in
-		   MoonshineMod_DisinfectantRecipes.txt.  These pots must stay drainable
-		   because ~16 RefillSpiritIn<Vessel> fills drain them per serving. */
-		ItemType	= base:drainable,
+		/* F8 (2026-09-01) -- BACK TO base:food, reversing F6-A/FINDING 2 for this
+		   ONE item pair.  This pot is a LOADED STILL awaiting its 2nd run, the
+		   exact analogue of Mash_DistillPotMedium, and it must end the same way:
+		   IN AN OVEN.  A base:drainable makes ZERO oven progress (quirks rule 44,
+		   live test 24), so a drainable can never be the input to a cook.
+		   The ~16 RefillSpiritIn<Vessel> variant-1/2 per-serving bottle fills that
+		   forced the drainable conversion are DELETED (F8): they only undid the
+		   RefillDistillPot*With*Spirit craft that made this pot, they produced the
+		   same BeerRefill / WhiteLightning the plain Alc_DistillPot* already gives,
+		   and Mash_DistillPot* has no bottle fills either.  DumpSpiritDistillPot-
+		   MediumRefill stays as the escape hatch. */
+		ItemType	= base:food,
 		Weight = 12.0,
 
         Icon = WaterDistillPotMedium,
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*IsCookable = true,*/
+		IsCookable = true,
 
 
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*CookingSound = BoilingFood,*/
+		CookingSound = BoilingFood,
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
 	    AlcoholPower = 4,
@@ -549,9 +552,9 @@ item Alc_DistillPotMediumRefillSpirit
 		
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,*/
-        /*ReplaceOnUse = DistillPotMedium,*/	/* invalid on base:drainable */
-		ReplaceOnDeplete = DistillPotMedium,	/* was wrongly DistillPotSmall while commented out */
+		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
+		ReplaceOnUse = DistillPotMedium,	/* F8: base:food again -- fires on EAT, mirrors Mash_DistillPotMedium */
+		/*ReplaceOnDeplete = DistillPotMedium,*/	/* F8: drainable-only, dead on base:food */
 
 		ThirstChange = -6.5,
 		HungerChange = -6.5,
@@ -572,15 +575,15 @@ item Alc_DistillPotMediumRefillSpirit
 		WorldStaticModel = distill_medium_Ground, 
 		/*Tags = Liquor,*/
 	
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToCook = 360,*/
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToBurn = 3000,*/
+		MinutesToCook = 360,
+		MinutesToBurn = 3000,
 
 		DaysFresh = 300,
 		DaysTotallyRotten = 9000,
 
 		MetalValue = 60,
 		BadInMicrowave = true,
-		UseDelta	=	0.16,
+		UseDelta	=	0.16,	/* F8: inert on base:food, kept so a revert is one line */
         Tooltip = Tooltip_item_DistillMediumRefill,
 }
 
@@ -594,18 +597,18 @@ item Alc_DistillPotLargeRefillSpirit
         
         DisplayName = Distill Pot(III)(Refilled with Spirit),
 		DisplayCategory = Food,
-		/* base:food -> base:drainable: 8 servings (UseDelta 0.125) then
-		   ReplaceOnDeplete returns exactly ONE empty pot.  F6-A: the cooking
-		   block is COMMENTED OUT -- see Alc_DistillPotMediumRefillSpirit; the
-		   2nd distillation is the handcraft recipe SecondDistillationLarge. */
-		ItemType	= base:drainable,
+		/* F8 (2026-09-01): BACK TO base:food so this loaded still can be COOKED in
+		   an oven into Alc_DistillPotLargeIso -- see Alc_DistillPotMediumRefillSpirit
+		   for the full rationale.  The 16 RefillSpiritIn<Vessel> variant-1/2 fills
+		   that forced base:drainable are deleted. */
+		ItemType	= base:food,
 		Weight = 15.0,
 
         Icon = WaterDistillPotLarge,
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*IsCookable = true,*/
+		IsCookable = true,
 
 
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*CookingSound = BoilingFood,*/
+		CookingSound = BoilingFood,
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
 	    AlcoholPower = 4,
@@ -615,9 +618,9 @@ item Alc_DistillPotLargeRefillSpirit
 		
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,*/
-        /*ReplaceOnUse = DistillPotLarge,*/	/* invalid on base:drainable */
-		ReplaceOnDeplete = DistillPotLarge,	/* was wrongly DistillPotSmall while commented out */
+		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
+		ReplaceOnUse = DistillPotLarge,	/* F8: base:food again -- fires on EAT, mirrors Mash_DistillPotLarge */
+		/*ReplaceOnDeplete = DistillPotLarge,*/	/* F8: drainable-only, dead on base:food */
 
 		HungerChange = -8.5,
 		ThirstChange = -8.5,
@@ -638,15 +641,15 @@ item Alc_DistillPotLargeRefillSpirit
 		WorldStaticModel = distill_large_Ground,
 		/*Tags = Liquor,*/
 
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToCook = 360,*/
-		/* F6-A: 2nd distillation is now a handcraft recipe, not an oven cook - base:drainable can't cook */ /*MinutesToBurn = 3000,*/
+		MinutesToCook = 360,
+		MinutesToBurn = 3000,
 
 		DaysFresh = 300,
 		DaysTotallyRotten = 9000,
 
 		MetalValue = 120,
 		BadInMicrowave = true,
-		UseDelta	=	0.125,
+		UseDelta	=	0.125,	/* F8: inert on base:food, kept so a revert is one line */
          Tooltip = Tooltip_item_DistillLargeRefill,
 }
 

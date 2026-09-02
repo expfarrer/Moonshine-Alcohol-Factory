@@ -186,64 +186,20 @@ module Moonshine
         }
     }
 
-    /* F6-A -- THE SECOND DISTILLATION, 2026-09-01.
-       It used to be an oven cook (Alc_DistillPot*RefillSpirit had IsCookable +
-       ReplaceOnCooked = *Iso).  d0b136d turned those pots into base:drainable so
-       the ~16 RefillSpiritIn<Vessel> fills could drain them per serving, and a
-       base:drainable makes ZERO oven progress -- the 2nd cook went dead (live
-       test 24).  The pots must stay drainable, so the cook is replaced by these
-       two handcrafts and the cooking fields on both items are commented out.
+    /* F8 (2026-09-01) -- THE SECOND DISTILLATION IS AN OVEN COOK AGAIN.
+       There is deliberately NO craftRecipe here.  A full
+       Alc_DistillPot{Medium,Large}RefillSpirit is a LOADED STILL: put it in an
+       oven for 360 min and IsCookable + ReplaceOnCooked turn it into
+       Alc_DistillPot{Medium,Large}Iso, exactly the way Mash_DistillPot* becomes
+       Alc_DistillPot* in the FIRST distillation.
+       History: FINDING 2 (d0b136d) made those pots base:drainable for the 16
+       per-serving RefillSpiritIn<Vessel> variant-1/2 fills, which killed the cook
+       (a base:drainable makes zero oven progress, quirks rule 44); F6-A replaced
+       the cook with SecondDistillationMedium/Large handcrafts; the user rejected
+       standing there hand-crafting isopropyl, so F8 deleted both handcrafts AND
+       the 16 fills and put the pots back to base:food.  See the item defs in
+       MoonshineMod_DistillItems.txt. */
 
-       Shape notes:
-       * `item N [pot]` with NO flags drains the WHOLE charge in one craft and a
-         partial pot is correctly refused (quirks rule 37) -- exactly what a
-         "second distillation" wants: a full still, or nothing.
-       * ReplaceOnDeplete on the RefillSpirit pot hands back exactly ONE empty
-         DistillPot{Medium,Large}.  There is deliberately NO OnCreate -- an
-         AddItem here would be the infinite-pot dupe (rule 37).
-       * The Iso pot is a plain base:drainable (no component FluidContainer), so
-         rule 31 does not apply: it spawns from the output line, at FULL charge.
-       * Fuel: the oven cook cost 6 h of oven time; the handcraft costs charcoal
-         instead.  `Moonshine.Coal` is the mod's own charcoal (from the
-         DistillPot*Wood -> *Coal -> RemoveCoalFromDistill* chain) and
-         `Base.Charcoal` is vanilla's; both are accepted on one line, which is
-         safe since rule 34 was refuted.  flags[ItemCount] = N WHOLE pieces.
-       * No NeedToBeLearn: the oven cook had no learn gate at all, and the step
-         is already gated upstream by MagazineDistill3 / MagazineDistill4, which
-         teach RefillDistillPotIIWith6XSpirit / RefillDistillPotIIIWith8XSpirit.
-         Adding one here would both regress access and re-open the rule-12
-         learned-recipe desync. */
-    craftRecipe SecondDistillationMedium
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 600,
-        inputs
-        {
-        item 3 [Moonshine.Coal;Base.Charcoal] flags[ItemCount],
-        item 6 [Moonshine.Alc_DistillPotMediumRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.Alc_DistillPotMediumIso,
-        }
-    }
-
-    craftRecipe SecondDistillationLarge
-    {
-        timedAction = Making, category = Moonshine,
-        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
-        time = 600,
-        inputs
-        {
-        item 4 [Moonshine.Coal;Base.Charcoal] flags[ItemCount],
-        item 8 [Moonshine.Alc_DistillPotLargeRefillSpirit],
-        }
-        outputs
-        {
-            item 1 Moonshine.Alc_DistillPotLargeIso,
-        }
-    }
 
     /* P2 -- "fill all" for the ISOPROPYL pots, mirroring FillSpiritFromDistillPot*.
        Alc_DistillPotMediumIso = UseDelta 0.16 (6 servings),

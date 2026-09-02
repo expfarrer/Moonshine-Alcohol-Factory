@@ -77,6 +77,39 @@ function RecipeCodeOnCreate.FillPetrolCanWithGasohol(recipeData, character)
     print("[Moonshine] FillPetrolCanWithGasohol: no kept Base.PetrolCan found")
 end
 
+-- F11/U8 (2026-09-02).  The 33 RefillWaterIn* recipes used to consume the
+-- player's real vessel and hand back a Moonshine.*WaterRefill base:drainable
+-- CLONE -- an item that looks like water but is not a fluid container, so the
+-- mod's OWN mash recipes (`item 1 [Base.WaterBottle] mode:keep` + `-fluid 0.8
+-- [Water]`) could not read it.  "Distil water, use it for the next mash" did
+-- not close.  Now every one of them keeps the player's own EMPTY container
+-- (`mode:keep flags[IsEmpty;ItemCount]`) and this callback fills THAT SAME
+-- INSTANCE with real vanilla Water, exactly like FillPetrolCanWithGasohol.
+-- Generic on purpose: it fills the first kept input that has a FluidContainer,
+-- so one function serves every vessel (bottle, mug, jar, beer/wine/whiskey/
+-- bleach/soda/sports bottle).
+-- Same two prohibitions as above: never Remove/AddItem a mode:keep input
+-- (rule 27 rollback, rule 22 sync gap) -- only edit its fluid in place.
+function RecipeCodeOnCreate.FillKeptContainerWithWater(recipeData, character)
+    local kept = recipeData:getAllKeepInputItems()
+    if not kept then
+        print("[Moonshine] FillKeptContainerWithWater: no kept inputs")
+        return
+    end
+    for i = 0, kept:size() - 1 do
+        local it = kept:get(i)
+        local fc = it and it:getFluidContainer()
+        if fc then
+            fc:Empty()
+            fc:addFluid("Water", fc:getCapacity())        -- name FIRST, then litres
+            print("[Moonshine] " .. tostring(it:getFullType()) .. " filled with "
+                  .. tostring(fc:getAmount()) .. "L distilled water")
+            return
+        end
+    end
+    print("[Moonshine] FillKeptContainerWithWater: no kept fluid container found")
+end
+
 --
 
 function RecipeCodeOnCreate.GiveBackWhiskeyBottle(recipeData, character)

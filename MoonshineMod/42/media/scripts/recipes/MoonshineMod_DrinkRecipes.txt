@@ -496,14 +496,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Mugl] flags[ItemCount],
+        item 1 [Base.Mugl] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.MuglWaterRefill,
         }
     }
 
@@ -514,14 +517,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.MugWhite] flags[ItemCount],
+        item 1 [Base.MugWhite] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.MugWhiteWaterRefill,
         }
     }
 
@@ -532,14 +538,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.MugSpiffo] flags[ItemCount],
+        item 1 [Base.MugSpiffo] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.MugSpiffoWaterRefill,
         }
     }
 
@@ -550,14 +559,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.BeerWaterRefill,
         }
     }
 
@@ -568,14 +580,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Moonshine.EmptyJar],
+        item 1 [Base.EmptyJar] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.JarWaterRefill,
         }
     }
 
@@ -586,14 +601,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Mugl] flags[ItemCount],
+        item 1 [Base.Mugl] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.MuglWaterRefill,
         }
     }
 
@@ -604,14 +622,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.MugWhite] flags[ItemCount],
+        item 1 [Base.MugWhite] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.MugWhiteWaterRefill,
         }
     }
 
@@ -622,14 +643,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.MugSpiffo] flags[ItemCount],
+        item 1 [Base.MugSpiffo] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.MugSpiffoWaterRefill,
         }
     }
 
@@ -640,14 +664,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.BeerWaterRefill,
         }
     }
 
@@ -658,14 +685,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Moonshine.EmptyJar],
+        item 1 [Base.EmptyJar] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.JarWaterRefill,
         }
     }
 
@@ -676,14 +706,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Mugl] flags[ItemCount],
+        item 1 [Base.Mugl] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.MuglWaterRefill,
         }
     }
 
@@ -694,14 +727,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.MugWhite] flags[ItemCount],
+        item 1 [Base.MugWhite] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.MugWhiteWaterRefill,
         }
     }
 
@@ -712,14 +748,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.MugSpiffo] flags[ItemCount],
+        item 1 [Base.MugSpiffo] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.MugSpiffoWaterRefill,
         }
     }
 
@@ -730,14 +769,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.BeerWaterRefill,
         }
     }
 
@@ -746,14 +788,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.WhiskeyWaterRefill,
         }
     }
 
@@ -762,14 +807,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.WhiskeyWaterRefill,
         }
     }
 
@@ -778,14 +826,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.WhiskeyWaterRefill,
         }
     }
 
@@ -794,14 +845,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.WineWaterRefill,
         }
     }
 
@@ -810,14 +864,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.WineWaterRefill,
         }
     }
 
@@ -826,14 +883,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.WineWaterRefill,
         }
     }
 
@@ -842,14 +902,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.PopBottleWaterRefill,
         }
     }
 
@@ -858,14 +921,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.PopBottleWaterRefill,
         }
     }
 
@@ -874,14 +940,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.PopBottleWaterRefill,
         }
     }
 
@@ -890,14 +959,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.BottleWaterRefill,
         }
     }
 
@@ -906,14 +978,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.BottleWaterRefill,
         }
     }
 
@@ -922,14 +997,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.BottleWaterRefill,
         }
     }
 
@@ -938,14 +1016,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.BleachWaterRefill,
         }
     }
 
@@ -954,14 +1035,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.BleachWaterRefill,
         }
     }
 
@@ -970,14 +1054,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.BleachWaterRefill,
         }
     }
 
@@ -986,14 +1073,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.SportsBottleWaterRefill,
         }
     }
 
@@ -1002,14 +1092,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.SportsBottleWaterRefill,
         }
     }
 
@@ -1018,14 +1111,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.SportsBottleWaterRefill,
         }
     }
 
@@ -1036,14 +1132,17 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
+        /* F11/U8: hand back the player's OWN container full of REAL Water
+           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
+           that the mod's own mash recipes cannot read. */
+        OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
-        item 1 [Moonshine.EmptyJar],
+        item 1 [Base.EmptyJar] mode:keep flags[IsEmpty;ItemCount],
         item 1 [Moonshine.Water_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.JarWaterRefill,
         }
     }
 

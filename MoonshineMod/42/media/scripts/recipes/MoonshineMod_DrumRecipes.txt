@@ -13,7 +13,15 @@ module Moonshine
         time = 950,
         inputs
         {
-        item 20 [Base.PetrolCan] flags[ItemCount],
+        /* rule 30 + F11/U6b: KEEP the jerry cans and drain the petrol out of
+           them.  `flags[ItemCount]` destroyed twenty real Base.PetrolCans per
+           drum and rule 31 means they can never be handed back from an output
+           line.  A `-fluid` line SUMS across every kept container matching its
+           companion input (measured: 3 cans -> 30 L, 20 cans -> 200 L, all
+           kept; 1 can for 30 L correctly refuses), so the cost is now the
+           petrol, not the cans.  Same 200 L as before. */
+        item 1 [Base.PetrolCan] mode:keep,
+        -fluid 200.0 [Petrol],
         item 1 [Moonshine.EmptyGasoholDrum],
         }
         outputs
@@ -36,7 +44,6 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.GasoholDrum,
-            item 80 Moonshine.EmptyMotorOilCan1,
         }
     }
 
@@ -54,7 +61,6 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.GasoholDrum,
-            item 80 Base.Bleach,
         }
     }
 
@@ -72,7 +78,6 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.GasoholDrum,
-            item 80 Base.Whiskey,
         }
     }
 
@@ -90,7 +95,6 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.GasoholDrum,
-            item 80 Base.BeerEmpty,
         }
     }
 
@@ -108,7 +112,6 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.GasoholDrum,
-            item 80 Base.WineOpen,
         }
     }
 }

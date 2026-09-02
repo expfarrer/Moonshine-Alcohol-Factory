@@ -35,7 +35,6 @@ module Moonshine
         {
             item 1 Moonshine.Oil_DistillPotLarge,
             item 1 Base.RippedSheetsDirty,
-            item 32 Moonshine.EmptyMotorOilCan1,
         }
     }
 

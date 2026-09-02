@@ -113,11 +113,10 @@ module Moonshine
         xpAward = Woodwork:5,
         inputs
         {
-        item 1 [Moonshine.DistillPotSmallCoal],
+        item 4 [Moonshine.DistillPotSmallCoal],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotSmall,
             item 4 Moonshine.Coal,
         }
     }
@@ -131,11 +130,10 @@ module Moonshine
         xpAward = Woodwork:5,
         inputs
         {
-        item 1 [Moonshine.DistillPotMediumCoal],
+        item 6 [Moonshine.DistillPotMediumCoal],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotMedium,
             item 6 Moonshine.Coal,
         }
     }
@@ -149,11 +147,10 @@ module Moonshine
         xpAward = Woodwork:5,
         inputs
         {
-        item 1 [Moonshine.DistillPotLargeCoal],
+        item 8 [Moonshine.DistillPotLargeCoal],
         }
         outputs
         {
-            item 1 Moonshine.DistillPotLarge,
             item 8 Moonshine.Coal,
         }
     }

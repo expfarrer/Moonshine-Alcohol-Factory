@@ -1097,7 +1097,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        item 1 [Moonshine.Mash_DistillPotSmall],
+        item 1 [Moonshine.Mash_DistillPotSmall] flags[ItemCount],
         }
         outputs
         {
@@ -1112,7 +1112,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Moonshine.Mash_DistillPotMedium],
+        item 1 [Moonshine.Mash_DistillPotMedium] flags[ItemCount],
         }
         outputs
         {
@@ -1127,7 +1127,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Mash_DistillPotLarge],
+        item 1 [Moonshine.Mash_DistillPotLarge] flags[ItemCount],
         }
         outputs
         {

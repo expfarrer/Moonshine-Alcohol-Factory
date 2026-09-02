@@ -15,7 +15,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
         inputs
         {
-        item 6 [Moonshine.BeerRefill],
+        item 6 [Moonshine.BeerRefill] flags[ItemCount],
         item 1 [Moonshine.DistillPotMedium],
         }
         outputs
@@ -88,7 +88,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
         inputs
         {
-        item 6 [Moonshine.WhiteLightning],
+        item 6 [Moonshine.WhiteLightning] flags[ItemCount],
         item 1 [Moonshine.DistillPotMedium],
         }
         outputs
@@ -124,7 +124,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
         inputs
         {
-        item 8 [Moonshine.BeerRefill],
+        item 8 [Moonshine.BeerRefill] flags[ItemCount],
         item 1 [Moonshine.DistillPotLarge],
         }
         outputs
@@ -160,7 +160,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
         inputs
         {
-        item 8 [Moonshine.WhiteLightning],
+        item 8 [Moonshine.WhiteLightning] flags[ItemCount],
         item 1 [Moonshine.DistillPotLarge],
         }
         outputs
@@ -199,6 +199,62 @@ module Moonshine
        standing there hand-crafting isopropyl, so F8 deleted both handcrafts AND
        the 16 fills and put the pots back to base:food.  See the item defs in
        MoonshineMod_DistillItems.txt. */
+
+    /* F9 (2026-09-02) -- CHARGE THE STILL FOR ITS SECOND RUN, NO BOTTLES.
+       Until now the ONLY route from a full spirit pot to a loaded 2nd-run still
+       was: bottle all 6/8 servings (FillSpiritFromDistillPotII/III), then pour
+       the very same 6/8 bottles straight back in (RefillDistillPotIIWith6XSpirit),
+       which hands the 6/8 empties back again.  Pure round trip, ~3 crafts and a
+       pile of glassware for one logical step.  These two recipes do it directly.
+       Those RefillDistillPot*With*XSpirit recipes STAY as the alternative
+       "I already have loose bottles of spirit" path.
+
+       `mode:destroy` is load-bearing, not decoration.  Alc_DistillPot{Medium,
+       Large} is base:drainable with ReplaceOnDeplete = the empty pot, so a plain
+       `item 6 [pot]` drains the charge AND hands back a free empty
+       DistillPotMedium -- while the output line already produced a
+       RefillSpirit pot, which IS a pot.  One pot in, two pots out: an infinite
+       still printer (measured, see below).  mode:destroy suppresses
+       ReplaceOnDeplete (quirks rule 37) so the count stays 1 -> 1.
+       `item N` (not flags[ItemCount]) keeps the "must be a FULL pot" gate: a
+       pot at 5/6 correctly does not offer.
+       Headless A/B, tools/pzrepl/probes/probe_f9f10.lua:
+         item 6 [pot]                                -> 1 loaded + 1 empty = 2 pots  DUPE
+         item 6 [pot] mode:destroy                   -> 1 loaded          = 1 pot   OK
+         item 1 [pot] mode:destroy flags[IsFull;ItemCount] -> identical to the above
+         item 1 [pot] flags[IsFull]                  -> drains ONE serving only (rule 39)
+       NO OnCreate: the output line is the whole story (quirks rule 24). */
+    craftRecipe PrepareSecondDistillationMedium
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        NeedToBeLearn = true,
+        inputs
+        {
+        item 6 [Moonshine.Alc_DistillPotMedium] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.Alc_DistillPotMediumRefillSpirit,
+        }
+    }
+
+    craftRecipe PrepareSecondDistillationLarge
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 450,
+        NeedToBeLearn = true,
+        inputs
+        {
+        item 8 [Moonshine.Alc_DistillPotLarge] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Moonshine.Alc_DistillPotLargeRefillSpirit,
+        }
+    }
 
 
     /* P2 -- "fill all" for the ISOPROPYL pots, mirroring FillSpiritFromDistillPot*.

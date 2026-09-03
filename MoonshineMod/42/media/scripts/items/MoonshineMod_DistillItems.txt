@@ -29,7 +29,7 @@ imports
 		Weight	=	2,
 		CanStoreWater	=	TRUE,
 		ItemType	=	base:normal,
-		DisplayName = Distill Pot(I)(Empty),
+		DisplayName = Distill Pot I (Empty),
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotSmall,
 		Icon = DistillPotSmall,
 		MetalValue = 40,
@@ -52,7 +52,7 @@ imports
 	 item Water_DistillPotSmall
 	{
 	
-		DisplayName = Distill Pot(I)(Filled with Water),
+		DisplayName = Distill Pot I (Water),
 		DisplayCategory = Water,
 		ItemType	= base:drainable,
 		Weight = 10,
@@ -87,7 +87,7 @@ imports
 		Weight	=	2.5,
 		CanStoreWater	=	TRUE,
 		ItemType	= base:normal,
-		DisplayName = Distill Pot(II)(Empty),
+		DisplayName = Distill Pot II (Empty),
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotMedium,
 		Icon = DistillPotMedium,
 		MetalValue = 60,
@@ -108,7 +108,7 @@ imports
 	 
 	 item Water_DistillPotMedium
 	{
-		DisplayName = Distill Pot(II)(Filled with Water),
+		DisplayName = Distill Pot II (Water),
 		DisplayCategory = Water,
 		ItemType	= base:drainable,
 		Weight = 12,
@@ -143,7 +143,7 @@ imports
 		Weight	=	5,
 		CanStoreWater	=	TRUE,
 		ItemType	= base:normal,
-		DisplayName = Distill Pot(III)(Empty),
+		DisplayName = Distill Pot III (Empty),
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotLarge,
 		Icon = DistillPotLarge,
 		MetalValue = 120,
@@ -164,7 +164,7 @@ imports
 	 
 	 item Water_DistillPotLarge
 	{
-		DisplayName = Distill Pot(III)(Filled with Water),
+		DisplayName = Distill Pot III (Water),
 		DisplayCategory = Water,
 		ItemType	= base:drainable,
 		Weight = 15,
@@ -209,7 +209,7 @@ imports
 	
 	item Mash_DistillPotSmall
 	{
-		DisplayName = Distill Pot(I)(Filled with Mash),
+		DisplayName = Distill Pot I (Mash),
 		DisplayCategory = Food,
 		ItemType = base:food,
 		Weight = 10.0,
@@ -251,7 +251,7 @@ imports
 	
 	item Mash_DistillPotMedium
 	{
-		DisplayName = Distill Pot(II)(Filled with Mash),
+		DisplayName = Distill Pot II (Mash),
 		DisplayCategory = Food,
 		ItemType	= base:food,
 		Weight = 12.0,
@@ -294,7 +294,7 @@ imports
 		
 		item Mash_DistillPotLarge
 	{
-		DisplayName = Distill Pot(III)(Filled with Mash),
+		DisplayName = Distill Pot III (Mash),
 		DisplayCategory = Food,
 		ItemType	= base:food,
 		Weight = 15,
@@ -339,7 +339,7 @@ imports
 	item Alc_DistillPotSmall 
 {
         
-        DisplayName = Distill Pot(I)(Filled with Spirit),
+        DisplayName = Distill Pot I (Spirit),
 		DisplayCategory = Food,
 		/* base:food -> base:drainable so the pot holds 4 servings (UseDelta 0.25)
 		   and ReplaceOnDeplete hands back exactly ONE empty pot at 0.  As
@@ -398,7 +398,7 @@ imports
 item Alc_DistillPotMedium
 {
         
-        DisplayName = Distill Pot(II)(Filled with Spirit),
+        DisplayName = Distill Pot II (Spirit),
 		DisplayCategory = Food,
 		/* base:food -> base:drainable: 6 servings (UseDelta 0.16) then
 		   ReplaceOnDeplete returns exactly ONE empty pot.  See Alc_DistillPotSmall. */
@@ -454,7 +454,7 @@ item Alc_DistillPotMedium
 item Alc_DistillPotLarge
 {
         
-        DisplayName = Distill Pot(III)(Filled with Spirit),
+        DisplayName = Distill Pot III (Spirit),
 		DisplayCategory = Food,
 		/* base:food -> base:drainable: 8 servings (UseDelta 0.125) then
 		   ReplaceOnDeplete returns exactly ONE empty pot.  See Alc_DistillPotSmall. */
@@ -522,7 +522,7 @@ item Alc_DistillPotLarge
 item Alc_DistillPotMediumRefillSpirit
 {
         
-        DisplayName = Distill Pot(II)(Refilled with Spirit),
+        DisplayName = Distill Pot II (Charged for 2nd Run),
         DisplayCategory = Food,
 		/* F8 (2026-09-01) -- BACK TO base:food, reversing F6-A/FINDING 2 for this
 		   ONE item pair.  This pot is a LOADED STILL awaiting its 2nd run, the
@@ -595,7 +595,7 @@ item Alc_DistillPotMediumRefillSpirit
 item Alc_DistillPotLargeRefillSpirit
 {
         
-        DisplayName = Distill Pot(III)(Refilled with Spirit),
+        DisplayName = Distill Pot III (Charged for 2nd Run),
 		DisplayCategory = Food,
 		/* F8 (2026-09-01): BACK TO base:food so this loaded still can be COOKED in
 		   an oven into Alc_DistillPotLargeIso -- see Alc_DistillPotMediumRefillSpirit
@@ -668,7 +668,7 @@ item Alc_DistillPotLargeRefillSpirit
 	
 	item Oil_DistillPotLarge
 	{
-	    DisplayName = Distill Pot(III)(Filled with Motor Oil),
+	    DisplayName = Distill Pot III (Motor Oil),
 		
 		DisplayCategory = VehicleMaintenance,
 		ItemType	= base:food,
@@ -709,7 +709,7 @@ item Alc_DistillPotLargeRefillSpirit
 	
 	item Petrol_DistillPotLarge
 	{
-	    DisplayName = Distill Pot(III)(Filled with Gasohol),
+	    DisplayName = Distill Pot III (Gasohol),
 		DisplayCategory = VehicleMaintenance,
 		ItemType	= base:drainable,
 		Weight = 15.0,
@@ -735,7 +735,7 @@ item Alc_DistillPotLargeRefillSpirit
 	item Alc_DistillPotMediumIso
 {
 
-        DisplayName = Distill Pot(II)(Filled with Isopropyl),
+        DisplayName = Distill Pot II (Isopropyl),
 		DisplayCategory = FirstAid,
         ItemType	= base:drainable,
 		Weight = 12.0,
@@ -773,7 +773,7 @@ item Alc_DistillPotLargeIso
 {
 
        
-		DisplayName = Distill Pot(III)(Filled with Isopropyl),
+		DisplayName = Distill Pot III (Isopropyl),
 		DisplayCategory = FirstAid,
         ItemType	= base:drainable,
 		Weight = 15.0,
@@ -814,7 +814,7 @@ item Alc_DistillPotLargeIso
 item DistillPotSmallWood
 {
 
-        DisplayName = Distill Pot(I)(Filled with Wood),
+        DisplayName = Distill Pot I (Wood),
 		DisplayCategory = Material,
 		ItemType	= base:food,
 		IsCookable = true,
@@ -841,7 +841,7 @@ item DistillPotSmallWood
 item DistillPotSmallCoal
 {
 
-        DisplayName = Distill Pot(I)(Filled with Coal),
+        DisplayName = Distill Pot I (Coal),
 		DisplayCategory = Material,
 		ItemType	= base:drainable,
 		
@@ -866,7 +866,7 @@ item DistillPotSmallCoal
 item DistillPotMediumWood
 {
 
-        DisplayName = Distill Pot(II)(Filled with Wood),
+        DisplayName = Distill Pot II (Wood),
 		DisplayCategory = Material,
 		ItemType	= base:food,
 		IsCookable = true,
@@ -899,7 +899,7 @@ item DistillPotMediumWood
 item DistillPotMediumCoal
 {
 
-        DisplayName = Distill Pot(II)(Filled with Coal),
+        DisplayName = Distill Pot II (Coal),
 		DisplayCategory = Material,
 		ItemType	= base:drainable,
 		Weight = 12.0,
@@ -929,7 +929,7 @@ item DistillPotMediumCoal
 item DistillPotLargeWood
 {
 
-        DisplayName = Distill Pot(III)(Filled with Wood),
+        DisplayName = Distill Pot III (Wood),
 		DisplayCategory = Material,
 		ItemType	= base:food,
 		IsCookable = true,
@@ -958,7 +958,7 @@ item DistillPotLargeWood
 item DistillPotLargeCoal
 {
 
-        DisplayName = Distill Pot(III)(Filled with Coal),
+        DisplayName = Distill Pot III (Coal),
 		DisplayCategory = Material,
 		ItemType	= base:drainable,
 		Weight = 15.0,
@@ -993,7 +993,7 @@ item DistillPotLargeCoal
 
 	item DistillPotFilter
 	{
-	    DisplayName = Distill Addon(Charcoal Filter),
+	    DisplayName = Distill Addon (Charcoal Filter),
 	    DisplayCategory = WaterContainer,
 		Weight	=	1,
 	
@@ -1011,7 +1011,7 @@ item DistillPotLargeCoal
 	
 		item DistillPotColumn
 	{
-	    DisplayName = Distill Addon(Controllable Column),
+	    DisplayName = Distill Addon (Controllable Column),
 	    DisplayCategory = WaterContainer,
 		Weight	=	5,
 		CanStoreWater	=	TRUE,

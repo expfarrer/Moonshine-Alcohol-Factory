@@ -1,7 +1,7 @@
 Tooltip_EN = {
-    Tooltip_item_DistillSmall = "Distill Pot I. Cleans water, makes charcoal, distills spirit. Isopropyl needs a Distill Pot II; gasohol needs a III.",
-    Tooltip_item_DistillMedium = "Distill Pot II. Cleans water, makes charcoal, distills spirit and isopropyl (medical alcohol). Gasohol needs a Distill Pot III.",
-    Tooltip_item_DistillLarge = "Distill Pot III. Cleans water, makes charcoal, distills spirit, isopropyl and gasohol fuel. The full still.",
+    Tooltip_item_DistillSmall = "Cleans water, makes charcoal, distills spirit. Isopropyl needs a Distill Pot II; gasohol needs a Distill Pot III.",
+    Tooltip_item_DistillMedium = "Cleans water, makes charcoal, distills spirit and isopropyl (medical alcohol). Gasohol needs a Distill Pot III.",
+    Tooltip_item_DistillLarge = "Cleans water, makes charcoal, distills spirit, isopropyl and gasohol fuel. The full still.",
 
     Tooltip_item_MagazineDistill1 = "How to build and run a Distill Pot I. First step of the still.",
     Tooltip_item_MagazineDistill2 = "Turning grain and potatoes into fermented mash - the feedstock for every still.",
@@ -55,6 +55,9 @@ Tooltip_EN = {
 
 	Tooltip_item_RainFromGround = "Leave outside in the rain to collect water.",
 	Tooltip_item_OnlyPurifyMicrowave = "This container can only be purified using a microwave.",
+
+	Tooltip_Jar = "A sealable glass jar. Fill it with spirit from a still.",
+	Tooltip_Disinfectant = "Distilled isopropyl. Use it to disinfect wounds or a rag.",
 
 
 }

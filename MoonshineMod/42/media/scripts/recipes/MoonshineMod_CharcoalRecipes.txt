@@ -13,7 +13,7 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
-        item 6 [Base.TreeBranch2] flags[Prop1],
+        item 4 [Base.TreeBranch2] flags[Prop1],
         }
         outputs
         {
@@ -34,7 +34,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotSmall,
-            item 6 Base.TreeBranch2,
+            item 4 Base.TreeBranch2,
         }
     }
 
@@ -46,7 +46,7 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
-        item 4 [Base.TreeBranch2] flags[Prop1],
+        item 6 [Base.TreeBranch2] flags[Prop1],
         }
         outputs
         {
@@ -67,7 +67,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotMedium,
-            item 4 Base.TreeBranch2,
+            item 6 Base.TreeBranch2,
         }
     }
 
@@ -79,7 +79,7 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
-        item 2 [Base.TreeBranch2] flags[Prop1],
+        item 8 [Base.TreeBranch2] flags[Prop1],
         }
         outputs
         {
@@ -100,7 +100,7 @@ module Moonshine
         outputs
         {
             item 1 Moonshine.DistillPotLarge,
-            item 2 Base.TreeBranch2,
+            item 8 Base.TreeBranch2,
         }
     }
 

@@ -62,7 +62,7 @@ imports
 		EatType = Pot,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-		IsCookable = TRUE,
+		/* IsCookable = TRUE, */	/* U13: base:drainable cannot cook, no MinutesToCook/ReplaceOnCooked -- inert, was misleading in the tooltip */
 		IsWaterSource = TRUE,
 		RainFactor = 1,
 		ReplaceOnDeplete = DistillPotSmall,
@@ -118,7 +118,7 @@ imports
 		EatType = Pot,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-		IsCookable = TRUE,
+		/* IsCookable = TRUE, */	/* U13: base:drainable cannot cook, no MinutesToCook/ReplaceOnCooked -- inert, was misleading in the tooltip */
 		IsWaterSource = TRUE,
 		RainFactor = 1,
 		ReplaceOnDeplete = DistillPotMedium,
@@ -174,7 +174,7 @@ imports
 		EatType = Pot,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
-		IsCookable = TRUE,
+		/* IsCookable = TRUE, */	/* U13: base:drainable cannot cook, no MinutesToCook/ReplaceOnCooked -- inert, was misleading in the tooltip */
 		IsWaterSource = TRUE,
 		RainFactor = 1,
 		ReplaceOnDeplete = DistillPotLarge,
@@ -698,7 +698,7 @@ item Alc_DistillPotLargeRefillSpirit
 		
 		ThirstChange	=	-60,
 	    MinutesToCook = 360,
-		MinutesToBurn = 5000,
+		MinutesToBurn = 3000,
         MetalValue = 120,
 		BadInMicrowave = true,
 		UseDelta	=	0.125,

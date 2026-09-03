@@ -1,8 +1,13 @@
 Tooltip_EN = {
-    Tooltip_item_DistillSmall = "Can be used to clean water, make charcoal or distill spirits.",
-    Tooltip_item_DistillMedium = "Can be used to clean water, make charcoal, distill isopropyl or distill spirits.",
-    Tooltip_item_DistillLarge = "Can be used to clean water, make charcoal, distill isopropyl, gasohol or spirits.",
-    
+    Tooltip_item_DistillSmall = "Distill Pot I. Cleans water, makes charcoal, distills spirit. Isopropyl needs a Distill Pot II; gasohol needs a III.",
+    Tooltip_item_DistillMedium = "Distill Pot II. Cleans water, makes charcoal, distills spirit and isopropyl (medical alcohol). Gasohol needs a Distill Pot III.",
+    Tooltip_item_DistillLarge = "Distill Pot III. Cleans water, makes charcoal, distills spirit, isopropyl and gasohol fuel. The full still.",
+
+    Tooltip_item_MagazineDistill1 = "How to build and run a Distill Pot I. First step of the still.",
+    Tooltip_item_MagazineDistill2 = "Turning grain and potatoes into fermented mash - the feedstock for every still.",
+    Tooltip_item_MagazineDistill3 = "Isopropyl (medical alcohol) by second distillation. Needs a Distill Pot II, and unlocks the upgrade from a Pot I.",
+    Tooltip_item_MagazineDistill4 = "Gasohol vehicle fuel from spirit and motor oil. Needs a Distill Pot III, and unlocks the upgrade from a Pot II.",
+
     Tooltip_item_DistillSmallWood = "Place in a heat source to distill into charcoal.",
     Tooltip_item_DistillMediumWood = "Place in a heat source to distill into charcoal.",
     Tooltip_item_DistillLargeWood = "Place in a heat source to distill into charcoal.",

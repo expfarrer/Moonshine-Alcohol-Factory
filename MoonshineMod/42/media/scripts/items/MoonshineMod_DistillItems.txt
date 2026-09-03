@@ -219,7 +219,8 @@ imports
 
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
-		EatType = Pot,
+		/* R5-E: EatType/HungerChange/... removed -- see the block below. */
+		/*EatType = Pot,*/
 		IsCookable = true,
 		ReplaceOnUse = DistillPotSmall,
 
@@ -227,18 +228,27 @@ imports
 
 		MinutesToCook = 360,
 		MinutesToBurn = 3000,
-		
+
 		DaysFresh = 30,
 		DaysTotallyRotten = 90,
-		
-		HungerChange = -20,
-		ThirstChange = -20,
-		UnhappyChange = -10,
-		
-		Calories = 500,
-		Carbohydrates = 300,
-	    Lipids = 20,
-		Proteins = 20,
+
+		/* R5-E (2026-09-02): a loaded still is NOT food.  While it had a
+		   HungerChange the vanilla inventory menu offered "Eat" (the gate is
+		   `hungerNotZero > 0` in ISInventoryPaneContextMenu, i.e. any item with
+		   getHungChange() < 0), and eating it fired ReplaceOnUse -> the player
+		   got the empty pot back and the whole batch of mash was destroyed.
+		   Zeroing the nutrition removes the Eat option outright.  Everything the
+		   OVEN needs (ItemType base:food, IsCookable, ReplaceOnCooked,
+		   MinutesToCook/Burn, CookingSound) is untouched, and ReplaceOnUse stays
+		   because it is what makes vanilla's own "Pour on Ground" option work. */
+		/*HungerChange = -20,*/
+		/*ThirstChange = -20,*/
+		/*UnhappyChange = -10,*/
+
+		/*Calories = 500,*/
+		/*Carbohydrates = 300,*/
+	    /*Lipids = 20,*/
+		/*Proteins = 20,*/
         StaticModel = distill_small_Ground,
 		WorldStaticModel = distill_small_Ground,
 		
@@ -261,26 +271,29 @@ imports
 		
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
-		EatType = Pot,
+		/* R5-E: not edible -- see Mash_DistillPotSmall. */
+		/*EatType = Pot,*/
 		IsCookable = true,
 		ReplaceOnUse = DistillPotMedium,
-      
-        ReplaceOnCooked = Moonshine.Alc_DistillPotMedium,	
-		
+
+        ReplaceOnCooked = Moonshine.Alc_DistillPotMedium,
+
 		MinutesToCook = 360,
 		MinutesToBurn = 3000,
-		
+
 		DaysFresh = 30,
 		DaysTotallyRotten = 90,
-		
-		HungerChange = -20,
-		ThirstChange = -20,
-		UnhappyChange = -10,
-		
-		Calories = 500,
-		Carbohydrates = 300,
-	    Lipids = 20,
-		Proteins = 20,
+
+		/* R5-E (2026-09-02): nutrition zeroed so no Eat option is offered and
+		   ReplaceOnUse can no longer be fired by eating the mash. */
+		/*HungerChange = -20,*/
+		/*ThirstChange = -20,*/
+		/*UnhappyChange = -10,*/
+
+		/*Calories = 500,*/
+		/*Carbohydrates = 300,*/
+	    /*Lipids = 20,*/
+		/*Proteins = 20,*/
         StaticModel = distill_medium_Ground,
 		WorldStaticModel = distill_medium_Ground,
 		
@@ -304,26 +317,29 @@ imports
 		
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
-		EatType = Pot,
+		/* R5-E: not edible -- see Mash_DistillPotSmall. */
+		/*EatType = Pot,*/
 		IsCookable = true,
 		ReplaceOnUse = DistillPotLarge,
-      
-        ReplaceOnCooked = Moonshine.Alc_DistillPotLarge,	
-		
+
+        ReplaceOnCooked = Moonshine.Alc_DistillPotLarge,
+
 		MinutesToCook = 360,
 		MinutesToBurn = 3000,
-		
+
 		DaysFresh = 30,
 		DaysTotallyRotten = 90,
-		
-		HungerChange = -20,
-		ThirstChange = -20,
-		UnhappyChange = -10,
-		
-		Calories = 500,
-		Carbohydrates = 300,
-	    Lipids = 20,
-		Proteins = 20,
+
+		/* R5-E (2026-09-02): nutrition zeroed so no Eat option is offered and
+		   ReplaceOnUse can no longer be fired by eating the mash. */
+		/*HungerChange = -20,*/
+		/*ThirstChange = -20,*/
+		/*UnhappyChange = -10,*/
+
+		/*Calories = 500,*/
+		/*Carbohydrates = 300,*/
+	    /*Lipids = 20,*/
+		/*Proteins = 20,*/
         StaticModel = distill_large_Ground,
 		WorldStaticModel = distill_large_Ground,
 		
@@ -545,25 +561,31 @@ item Alc_DistillPotMediumRefillSpirit
 		CookingSound = BoilingFood,
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
-	    AlcoholPower = 4,
-		Alcoholic = TRUE,
+		/* R5-E: AlcoholPower/Alcoholic removed with the rest of the food block. */
+	    /*AlcoholPower = 4,*/
+		/*Alcoholic = TRUE,*/
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
-		
+
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
-		ReplaceOnUse = DistillPotMedium,	/* F8: base:food again -- fires on EAT, mirrors Mash_DistillPotMedium */
+		ReplaceOnUse = DistillPotMedium,	/* F8: base:food again.  R5-E: no longer reachable by EATING (no Eat option); still powers vanilla "Pour on Ground". */
 		/*ReplaceOnDeplete = DistillPotMedium,*/	/* F8: drainable-only, dead on base:food */
 
-		ThirstChange = -6.5,
-		HungerChange = -6.5,
-		UnhappyChange = -50,
-        Calories = 6500,
-		Carbohydrates = 1,
-		Lipids = 0,
-		Proteins = 0,
-		
+		/* R5-E (2026-09-02): a still charged for its 2nd run is NOT a drink.
+		   With a HungerChange the vanilla menu offered "Eat" (gate:
+		   `hungerNotZero > 0` in ISInventoryPaneContextMenu) and eating it fired
+		   ReplaceOnUse -> empty pot back, 6 servings of spirit destroyed.
+		   Everything the OVEN needs is untouched. */
+		/*ThirstChange = -6.5,*/
+		/*HungerChange = -6.5,*/
+		/*UnhappyChange = -50,*/
+        /*Calories = 6500,*/
+		/*Carbohydrates = 1,*/
+		/*Lipids = 0,*/
+		/*Proteins = 0,*/
+
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
    
@@ -611,25 +633,28 @@ item Alc_DistillPotLargeRefillSpirit
 		CookingSound = BoilingFood,
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
-	    AlcoholPower = 4,
-		Alcoholic = TRUE,
+		/* R5-E: AlcoholPower/Alcoholic removed with the rest of the food block. */
+	    /*AlcoholPower = 4,*/
+		/*Alcoholic = TRUE,*/
 		CantBeFrozen = TRUE,
 	    Packaged = TRUE,
-		
+
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
-		ReplaceOnUse = DistillPotLarge,	/* F8: base:food again -- fires on EAT, mirrors Mash_DistillPotLarge */
+		ReplaceOnUse = DistillPotLarge,	/* F8: base:food again.  R5-E: no longer reachable by EATING (no Eat option); still powers vanilla "Pour on Ground". */
 		/*ReplaceOnDeplete = DistillPotLarge,*/	/* F8: drainable-only, dead on base:food */
 
-		HungerChange = -8.5,
-		ThirstChange = -8.5,
-		UnhappyChange = -50,
-        Calories = 8500,
-		Carbohydrates = 1,
-		Lipids = 0,
-		Proteins = 0,
-		
+		/* R5-E (2026-09-02): not a drink -- see Alc_DistillPotMediumRefillSpirit.
+		   8 servings of spirit were destroyed by one "Eat". */
+		/*HungerChange = -8.5,*/
+		/*ThirstChange = -8.5,*/
+		/*UnhappyChange = -50,*/
+        /*Calories = 8500,*/
+		/*Carbohydrates = 1,*/
+		/*Lipids = 0,*/
+		/*Proteins = 0,*/
+
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
    

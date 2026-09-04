@@ -25,11 +25,60 @@ RecipeCodeOnCreate = RecipeCodeOnCreate or {}
 --
 -- No mod item declares a FluidContainer component, so the Empty() below only
 -- ever touches a vanilla vessel; for a mod pot/drum/can it is a no-op.
-function Moonshine.ReturnEmptyVessel(inv, fullType)
+--
+-- ===================================================================
+-- ROUND 8 (2026-09-04)  --  AddItemSynced: the MP client-sync half
+-- ===================================================================
+-- R7-A gave the right vessel back, but LIVE MP TEST showed it stayed INVISIBLE
+-- in the client's inventory/crafting menu until a full rejoin.  A server-side
+-- inv:AddItem() inside a recipe OnCreate is authoritative immediately but sends
+-- the connected client NO packet -- vanilla's own ISHandcraftAction:performRecipe()
+-- literally reads `-- todo handle syncing items and inventory stuff here` at
+-- exactly this spot.  (Quirks rule 22 / reference_mp_multiitem_oncreate_sync_gap:
+-- the gap is NOT specific to bursts of AddItem, a SINGLE one is enough when it
+-- comes from a craft OnCreate rather than from a native outputs{} line.)
+--
+-- Fix = the same three globals the vanilla admin /additem path and
+-- MoonshineMod_TestLoadoutsServer.provision() use.  Decompiled (CFR, 42.20.0):
+--   LuaManager$GlobalObject.sendAddItemsToContainer/sendItemStats each open with
+--   `if (GameServer.server)`, so they are already no-ops in single-player;
+--   GameServer.sendAddItemsToContainer -> INetworkPacket.send(IsoPlayer,..) which
+--   null-checks getConnectionFromPlayer(), so a character with no UdpConnection
+--   (the headless synthetic tester) is a safe no-op too, never a throw.
+--   The isServer() guard below is therefore belt-and-braces, kept only to mirror
+--   the established provision() pattern.
+-- ORDER MATTERS and is copied from provision(): AddItem -> mutate item state
+-- (fc:Empty()) -> sendAddItemsToContainer (the add packet, so the emptied state
+-- serialises WITH the item) -> sendItemStats (follow-up for anything the add
+-- packet does not carry).
+--
+-- Use this for EVERY item an OnCreate hands out.  A native outputs{} line still
+-- syncs by itself and needs nothing -- this is only for the Lua path, which R7-A
+-- forced back into existence (an output line spawns a FluidContainer item FULL).
+function Moonshine.AddItemSynced(inv, fullType, prepare)
+    if not inv then return nil end
     local it = inv:AddItem(fullType)
-    local fc = it and it:getFluidContainer()
-    if fc then fc:Empty() end
+    if not it then
+        print("[Moonshine] AddItemSynced: unknown item id " .. tostring(fullType))
+        return nil
+    end
+    if prepare then prepare(it) end
+    if isServer() then
+        local bulk = ArrayList.new()
+        bulk:add(it)
+        sendAddItemsToContainer(inv, bulk)
+        sendItemStats(it)
+    end
     return it
+end
+
+local function emptyVessel(it)
+    local fc = it:getFluidContainer()
+    if fc then fc:Empty() end
+end
+
+function Moonshine.ReturnEmptyVessel(inv, fullType)
+    return Moonshine.AddItemSynced(inv, fullType, emptyVessel)
 end
 
 -- The 20 refund callbacks the recipe scripts name.  Same one-line body, so they
@@ -179,31 +228,21 @@ end
 --
 
 
+-- ROUND 8 (2026-09-04): the two "pour 6 bottles back into the empty pot" refills.
+-- Still LIVE (4 recipes in MoonshineMod_DisinfectantRecipes.txt: RefillDistillPotII
+-- With6XSpirit/2 -> Med, RefillDistillPotIIIWith8XSpirit/2 -> Lg).  They are NOT
+-- routed through ReturnEmptyVessel on purpose -- Alc_DistillPot*RefillSpirit is a
+-- mod item with no FluidContainer, so there is nothing to Empty() -- but they had
+-- the SAME bare-AddItem MP sync gap, so they now go through AddItemSynced.
+-- (The `local bottleChance = ZombRand(1, 7)` each carried was dead: never read.)
 function RecipeCodeOnCreate.DoubbleFilledReturnMed(recipeData, character)
- local bottleChance = ZombRand(1, 7)
- print("A vessel back!")
+    Moonshine.AddItemSynced(character:getInventory(),
+                            "Moonshine.Alc_DistillPotMediumRefillSpirit")
+end
 
-
-
-    character:getInventory():AddItem("Moonshine.Alc_DistillPotMediumRefillSpirit")
-
-	 
-
- end
-
-
-
---
 function RecipeCodeOnCreate.DoubbleFilledReturnLg(recipeData, character)
- local bottleChance = ZombRand(1, 7)
- print("A vessel back!")
-
-
-
-    character:getInventory():AddItem("Moonshine.Alc_DistillPotLargeRefillSpirit")
-
-	 
-
- end
+    Moonshine.AddItemSynced(character:getInventory(),
+                            "Moonshine.Alc_DistillPotLargeRefillSpirit")
+end
 
 --

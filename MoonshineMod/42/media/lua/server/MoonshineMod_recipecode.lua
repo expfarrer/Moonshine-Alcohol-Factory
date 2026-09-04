@@ -239,35 +239,14 @@ print("An empty motor oil can back!")end
 -- FillDistillIIIWithMotorOil / RefillMotorOilCanWithMotorOil (sync-gap fix).
 
 
-function RecipeCodeOnCreate.BucketCover(recipeData, character)
-  local inventory = character:getInventory()
-  print("A Tarp back!")
-
-  --function BucketCover(items, result, character)
-    local tarpChance = ZombRand(1, 7)
-
-    if tarpChance == 1 then
-      character:getInventory():AddItem("Base.RubberBand")
-      character:getInventory():AddItem("Base.Tarp")
-    elseif tarpChance == 2 then
-      character:getInventory():AddItem("Base.Tarp")
-      character:getInventory():AddItem("Base.RubberBand")
-    elseif tarpChance == 3 then
-      character:getInventory():AddItem("Base.RubberBand")
-      character:getInventory():AddItem("Base.Tarp")
-      character:getInventory():AddItem("Base.RubberBand")
-    elseif tarpChance == 4 then
-      character:getInventory():AddItem("Base.RubberBand")
-      character:getInventory():AddItem("Base.Tarp")
-    elseif tarpChance == 5 then
-      character:getInventory():AddItem("Base.RubberBand")
-      character:getInventory():AddItem("Base.Tarp")
-    elseif tarpChance == 6 then
-      character:getInventory():AddItem("Base.RubberBand")
-      character:getInventory():AddItem("Base.Tarp")
-      character:getInventory():AddItem("Base.Button")
-    end
-end
+-- BucketCover removed (ROUND 7 / O2, 2026-09-04): converted to native outputs
+-- blocks on the 6 FillDistillWith{Corn,Potato}Mash{,2,3} recipes.
+-- It was a ZombRand(1, 7) ladder -- ZombRand's upper bound is EXCLUSIVE, so every
+-- one of the 6 reachable branches returned Base.Tarp + Base.RubberBand, and two of
+-- them (3 and 6) additionally handed out a free second RubberBand or a free
+-- Base.Button.  Measured headlessly: 1 free extra item per ~3 mash batches.
+-- Same reason as GiveCoal*/GiveWood* below: output lines are deterministic and
+-- survive the MP AddItem sync gap.
 
 --
 

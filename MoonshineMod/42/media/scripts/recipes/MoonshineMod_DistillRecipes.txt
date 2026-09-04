@@ -179,7 +179,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
@@ -195,6 +194,17 @@ module Moonshine
             /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
                (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
+            /* O2 (round 7): the tarp + tie the player paid at
+               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
+               comes off to load the still.  This used to be
+               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
+               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
+               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
+               Native output lines instead: deterministic, exactly the refund, and
+               they go through getCreatedOutputItems() so they survive the MP
+               AddItem sync gap. */
+            item 1 Base.Tarp,
+            item 1 Base.RubberBand,
         }
     }
 
@@ -203,7 +213,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
@@ -219,6 +228,17 @@ module Moonshine
             /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
                (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
+            /* O2 (round 7): the tarp + tie the player paid at
+               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
+               comes off to load the still.  This used to be
+               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
+               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
+               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
+               Native output lines instead: deterministic, exactly the refund, and
+               they go through getCreatedOutputItems() so they survive the MP
+               AddItem sync gap. */
+            item 1 Base.Tarp,
+            item 1 Base.RubberBand,
         }
     }
 
@@ -227,7 +247,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
@@ -243,6 +262,17 @@ module Moonshine
             /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
                (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
+            /* O2 (round 7): the tarp + tie the player paid at
+               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
+               comes off to load the still.  This used to be
+               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
+               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
+               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
+               Native output lines instead: deterministic, exactly the refund, and
+               they go through getCreatedOutputItems() so they survive the MP
+               AddItem sync gap. */
+            item 1 Base.Tarp,
+            item 1 Base.RubberBand,
         }
     }
 
@@ -251,7 +281,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
@@ -267,6 +296,17 @@ module Moonshine
             /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
                (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
+            /* O2 (round 7): the tarp + tie the player paid at
+               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
+               comes off to load the still.  This used to be
+               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
+               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
+               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
+               Native output lines instead: deterministic, exactly the refund, and
+               they go through getCreatedOutputItems() so they survive the MP
+               AddItem sync gap. */
+            item 1 Base.Tarp,
+            item 1 Base.RubberBand,
         }
     }
 
@@ -275,7 +315,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
@@ -291,6 +330,17 @@ module Moonshine
             /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
                (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
+            /* O2 (round 7): the tarp + tie the player paid at
+               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
+               comes off to load the still.  This used to be
+               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
+               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
+               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
+               Native output lines instead: deterministic, exactly the refund, and
+               they go through getCreatedOutputItems() so they survive the MP
+               AddItem sync gap. */
+            item 1 Base.Tarp,
+            item 1 Base.RubberBand,
         }
     }
 
@@ -299,7 +349,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
-        OnCreate = RecipeCodeOnCreate.BucketCover,
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
@@ -315,6 +364,17 @@ module Moonshine
             /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
                (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
+            /* O2 (round 7): the tarp + tie the player paid at
+               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
+               comes off to load the still.  This used to be
+               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
+               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
+               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
+               Native output lines instead: deterministic, exactly the refund, and
+               they go through getCreatedOutputItems() so they survive the MP
+               AddItem sync gap. */
+            item 1 Base.Tarp,
+            item 1 Base.RubberBand,
         }
     }
 

@@ -1196,7 +1196,16 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        item 1 [Moonshine.Mash_DistillPotSmall] flags[ItemCount],
+        /* R5-F (2026-09-03): AllowRottenItem is LOAD-BEARING.  Mash_DistillPot*
+           carries DaysFresh 30 / DaysTotallyRotten 90 and the engine rejects a
+           rotten food input outright, so without this flag the dump reported
+           UNAVAILABLE the moment the mash spoiled and the ~40-material still
+           was gone for good.  Measured: age 89d OK, age 90d UNAVAILABLE; with
+           the flag, OK at every age (tools/pzrepl/tests/rotdump.lua).  Vanilla
+           precedent: recipes_cooking.txt `item 1 [Base.Pumpkin]
+           flags[AllowRottenItem;InheritFood;ItemCount]`.  The rot itself is
+           deliberate -- this only guarantees the pot comes back. */
+        item 1 [Moonshine.Mash_DistillPotSmall] flags[AllowRottenItem;ItemCount],
         }
         outputs
         {
@@ -1211,7 +1220,8 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        item 1 [Moonshine.Mash_DistillPotMedium] flags[ItemCount],
+        /* R5-F: AllowRottenItem is load-bearing -- see DumpMashDistillPotSmall. */
+        item 1 [Moonshine.Mash_DistillPotMedium] flags[AllowRottenItem;ItemCount],
         }
         outputs
         {
@@ -1226,7 +1236,8 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        item 1 [Moonshine.Mash_DistillPotLarge] flags[ItemCount],
+        /* R5-F: AllowRottenItem is load-bearing -- see DumpMashDistillPotSmall. */
+        item 1 [Moonshine.Mash_DistillPotLarge] flags[AllowRottenItem;ItemCount],
         }
         outputs
         {

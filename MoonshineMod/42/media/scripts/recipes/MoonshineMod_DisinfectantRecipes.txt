@@ -557,7 +557,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackWhiskeyBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillWhiskey],
+        item 1 [Moonshine.DisinfectantRefillWhiskey] mode:destroy,
         }
         outputs
         {
@@ -572,7 +572,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackBeerBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillBeer],
+        item 1 [Moonshine.DisinfectantRefillBeer] mode:destroy,
         }
         outputs
         {
@@ -587,7 +587,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackWineBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillWine],
+        item 1 [Moonshine.DisinfectantRefillWine] mode:destroy,
         }
         outputs
         {
@@ -602,7 +602,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackSodaBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillSoda],
+        item 1 [Moonshine.DisinfectantRefillSoda] mode:destroy,
         }
         outputs
         {
@@ -617,7 +617,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackWaterBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillWaterBottle],
+        item 1 [Moonshine.DisinfectantRefillWaterBottle] mode:destroy,
         }
         outputs
         {
@@ -632,7 +632,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackSportsBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillSportsBottle],
+        item 1 [Moonshine.DisinfectantRefillSportsBottle] mode:destroy,
         }
         outputs
         {
@@ -647,7 +647,7 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveBackBleachBottle,
         inputs
         {
-        item 1 [Moonshine.DisinfectantRefillBleach],
+        item 1 [Moonshine.DisinfectantRefillBleach] mode:destroy,
         }
         outputs
         {

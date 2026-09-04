@@ -2,51 +2,74 @@ Moonshine = Moonshine or {}
 RecipeCodeOnCreate = RecipeCodeOnCreate or {}
 
 
+-- ===================================================================
+-- ROUND 7 / R7-A (2026-09-04)  --  ReturnEmptyVessel
+-- ===================================================================
+-- Every "pour it out and give the vessel back" recipe used to do a bare
+--     character:getInventory():AddItem("Base.Whiskey")
+-- and print "An empty whiskey bottle back!".  It is NOT empty.
+-- InventoryItemFactory initialises an item's FluidContainer component from the
+-- item script's Fluids{} block AT SPAWN TIME, so Base.Whiskey spawns holding
+-- 1.00 L of Whiskey, Base.PopBottle 2.00 L of Cola, Base.WaterBottle 1.00 L of
+-- Water, Base.Bleach 1.00 L of Bleach, Base.WineOpen / Base.Sportsbottle a
+-- randomised part-fill.  24 of the mod's 41 pour-out recipes were minting real
+-- vanilla booze/soda/clean water out of nothing, once per craft.
 --
+-- A native `outputs { item 1 Base.Whiskey }` line does NOT avoid this -- the
+-- fill happens inside InventoryItemFactory, below both the output-line path and
+-- the AddItem path (measured: results/round7-probe-2026-09-04.txt).  So the
+-- emptying has to be Lua, and it has to be here.
 --
-
-function RecipeCodeOnCreate.GiveDistillMed(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.Alc_DistillPotMedium")
-print("A medium distll back!")end
-
+-- (This corrects craftRecipe quirks rule 31: a FluidContainer item DOES spawn
+--  from an output line.  What rule 31 was really about is that it spawns FULL.)
 --
+-- No mod item declares a FluidContainer component, so the Empty() below only
+-- ever touches a vanilla vessel; for a mod pot/drum/can it is a no-op.
+function Moonshine.ReturnEmptyVessel(inv, fullType)
+    local it = inv:AddItem(fullType)
+    local fc = it and it:getFluidContainer()
+    if fc then fc:Empty() end
+    return it
+end
 
-function RecipeCodeOnCreate.GiveDistillMedEmpty(recipeData, character)
+-- The 20 refund callbacks the recipe scripts name.  Same one-line body, so they
+-- are generated rather than copy-pasted: near-identical hand-written refund
+-- functions are exactly what produced the O2 bug (a mash recipe reusing the
+-- cover-removal OnCreate and spraying free tarps).
+local RETURN_VESSEL = {
+    GiveBackWhiskeyBottle  = "Base.Whiskey",
+    GiveBackBeerBottle     = "Base.BeerEmpty",
+    GiveBackWineBottle     = "Base.WineOpen",
+    GiveBackEmptyJar       = "Base.EmptyJar",
+    GiveBackSodaBottle     = "Base.PopBottle",
+    GiveBackWaterBottle    = "Base.WaterBottle",
+    GiveBackSportsBottle   = "Base.Sportsbottle",
+    GiveBackBleachBottle   = "Base.Bleach",
+    GiveBackMug            = "Base.Mugl",
+    GiveBackMugWhite       = "Base.MugWhite",
+    GiveBackMugSpiffo      = "Base.MugSpiffo",
+    GiveBackKettle         = "Base.Kettle",
+    GiveBackSaucepan       = "Base.Saucepan",
+    GiveBackBucket         = "Base.BucketEmpty",
+    GiveBackWateringcan    = "Base.WateredCan",
+    GiveBackGasoholDrum    = "Moonshine.EmptyGasoholDrum",
+    GiveBackMotorOilCan    = "Moonshine.EmptyMotorOilCan1",
+    GiveDistillSmallEmpty  = "Moonshine.DistillPotSmall",
+    GiveDistillMedEmpty    = "Moonshine.DistillPotMedium",
+    GiveDistillLargeEmpty  = "Moonshine.DistillPotLarge",
+}
+for fn, fullType in pairs(RETURN_VESSEL) do
+    RecipeCodeOnCreate[fn] = function(recipeData, character)
+        Moonshine.ReturnEmptyVessel(character:getInventory(), fullType)
+    end
+end
 
-character:getInventory():AddItem("Moonshine.DistillPotMedium")
-print("A medium empty distll back!")end
-
---
-
-function RecipeCodeOnCreate.GiveDistillSmallEmpty(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.DistillPotSmall")
-print("A small empty distll back!")end
-
---
-
-
-function RecipeCodeOnCreate.GiveDistillLarge(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.Alc_DistillPotLarge")
-print("A large distll back!")end
-
---
-
-function RecipeCodeOnCreate.GiveDistillLargeEmpty(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.DistillPotLarge")
-print("A large empty distll back!")end
-
-
-
---
-
-function RecipeCodeOnCreate.GiveEmptyPetrol(recipeData, character)
-
-character:getInventory():AddItem("Base.EmptyPetrolCan")
-print("A empty petrol can back!")end
+-- Deleted in the same pass (ROUND 7 / R7-C), zero script references anywhere in
+-- the 42/ tree: GiveDistillMed, GiveDistillLarge, GiveEmptyPetrol (which handed
+-- back "Base.EmptyPetrolCan", not a B42 item id), DoubbleFilledReturn (a
+-- ZombRand ladder over four item ids that do not exist in B42 -- WhiskeyEmpty,
+-- WaterBottleEmpty, PopBottleEmpty, WineEmpty2), Moonshine.FullPetrol and
+-- Moonshine.CheckDrumXD (a bare print).  ~95 lines.
 
 --
 
@@ -112,122 +135,7 @@ end
 
 --
 
-function RecipeCodeOnCreate.GiveBackWhiskeyBottle(recipeData, character)
 
-character:getInventory():AddItem("Base.Whiskey")
-print("An empty whiskey bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackBeerBottle(recipeData, character)
-
-character:getInventory():AddItem("Base.BeerEmpty")
-print("An empty beer bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackWineBottle(recipeData, character)
-
-character:getInventory():AddItem("Base.WineOpen")
-print("An empty wine bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackEmptyJar(recipeData, character)
-
-character:getInventory():AddItem("Base.EmptyJar")
-print("An empty jar back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackSodaBottle(recipeData, character)
-
-character:getInventory():AddItem("Base.PopBottle")
-print("An empty soda bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackWaterBottle(recipeData, character)
-
-character:getInventory():AddItem("Base.WaterBottle")
-print("An empty water bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackSportsBottle(recipeData, character)
-
-character:getInventory():AddItem("Base.Sportsbottle")
-print("An empty sports bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackBleachBottle(recipeData, character)
-
-character:getInventory():AddItem("Base.Bleach")
-print("An empty bleach bottle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackMug(recipeData, character)
-
-character:getInventory():AddItem("Base.Mugl")
-print("An empty mug back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackMugWhite(recipeData, character)
-
-character:getInventory():AddItem("Base.MugWhite")
-print("An empty white mug back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackMugSpiffo(recipeData, character)
-
-character:getInventory():AddItem("Base.MugSpiffo")
-print("An empty spiffo mug back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackKettle(recipeData, character)
-
-character:getInventory():AddItem("Base.Kettle")
-print("An empty kettle back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackSaucepan(recipeData, character)
-
-character:getInventory():AddItem("Base.Saucepan")
-print("An empty saucepan back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackBucket(recipeData, character)
-
-character:getInventory():AddItem("Base.BucketEmpty")
-print("An empty bucket back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackWateringcan(recipeData, character)
-
-character:getInventory():AddItem("Base.WateredCan")
-print("An empty watering can back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackGasoholDrum(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.EmptyGasoholDrum")
-print("An empty gasohol drum back!")end
-
---
-
-function RecipeCodeOnCreate.GiveBackMotorOilCan(recipeData, character)
-
-character:getInventory():AddItem("Moonshine.EmptyMotorOilCan1")
-print("An empty motor oil can back!")end
 
 
 
@@ -271,69 +179,6 @@ print("An empty motor oil can back!")end
 --
 
 
-function RecipeCodeOnCreate.DoubbleFilledReturn(recipeData, character)
- local bottleChance = ZombRand(1, 7)
- print("A vessel back!")
-
-
-
-  if bottleChance == 1 then
-    character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	 character:getInventory():AddItem("Base.WaterBottleEmpty")
-	  character:getInventory():AddItem("Base.BeerEmpty")
-	 	character:getInventory():AddItem("Base.WaterBottleEmpty")
-	 	character:getInventory():AddItem("Base.WaterBottleEmpty")
-	 
-  elseif bottleChance == 2 then
-    character:getInventory():AddItem("Base.WaterBottleEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WaterBottleEmpty")
-		character:getInventory():AddItem("Base.WaterBottleEmpty")
-			character:getInventory():AddItem("Base.WaterBottleEmpty")
-	
-  elseif bottleChance == 3 then
-    character:getInventory():AddItem("Base.WaterBottleEmpty")
-	  character:getInventory():AddItem("Base.EmptyJar")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WaterBottleEmpty")
-		character:getInventory():AddItem("Base.WaterBottleEmpty")
-	
-  elseif bottleChance == 4 then
-    character:getInventory():AddItem("Base.PopBottleEmpty")
-	 character:getInventory():AddItem("Base.WaterBottleEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WaterBottleEmpty")
-		character:getInventory():AddItem("Base.WaterBottleEmpty")
-	
-  elseif bottleChance == 5 then
-    character:getInventory():AddItem("Base.BeerEmpty")
-	  character:getInventory():AddItem("Base.WaterBottleEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WaterBottleEmpty")
-		character:getInventory():AddItem("Base.WaterBottleEmpty")
-		
-  elseif bottleChance == 6 then
-    character:getInventory():AddItem("Base.WineEmpty2")
-	  character:getInventory():AddItem("Base.WaterBottleEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WhiskeyEmpty")
-	character:getInventory():AddItem("Base.WaterBottleEmpty")
-		character:getInventory():AddItem("Base.WaterBottleEmpty")
-	
-  end
- end
-
-
---
-
-
-
-
 function RecipeCodeOnCreate.DoubbleFilledReturnMed(recipeData, character)
  local bottleChance = ZombRand(1, 7)
  print("A vessel back!")
@@ -362,34 +207,3 @@ function RecipeCodeOnCreate.DoubbleFilledReturnLg(recipeData, character)
  end
 
 --
-
-
-
--- checks to make sure using Liquor ro make a Molotov Cocktail requires a full bottle; could be changed to a set amount so the game could have mini-bottles of liquor, for example.
-function Moonshine.FullPetrol(item)
-	if not item:hasTag("Petrol") then return true end
-    return item:getUsedDelta() == 1
-end
-
---
---
-
-
-function Moonshine.CheckDrumXD(item, result, player)
-    print("CheckDrum")
-    local drum = item:getType()
-    local condition = 12
-
-    -- print("Main item: " .. item:getName())
-
-    if drum == "EmptyGasoholDrum" then
-        print("Main item no name: " .. drum)
-
-    end
-end
-
-
-
-
-
-

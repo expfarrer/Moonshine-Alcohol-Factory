@@ -6,7 +6,22 @@ module Moonshine
     }
 
     craftRecipe MakePotatoMashInBucket
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -31,7 +46,22 @@ module Moonshine
     }
 
     craftRecipe MakeCornMashInBucket
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -56,7 +86,22 @@ module Moonshine
     }
 
     craftRecipe MakeCannedCornMashInBucket
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -83,7 +128,22 @@ module Moonshine
     }
 
     craftRecipe MakeCannedCornMashInBucket2
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -109,7 +169,22 @@ module Moonshine
     }
 
     craftRecipe MakeCannedPotatoMashInBucket
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -136,7 +211,22 @@ module Moonshine
     }
 
     craftRecipe MakeCannedPotatoMashInBucket2
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -162,7 +252,22 @@ module Moonshine
     }
 
     craftRecipe MakeCannedPotatoMashInBucket3
-    {        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        /* Tainted-water gate: ALREADY ENFORCED by the `-fluid 0.1 [Water]` line below. No OnTest needed.
+           Ground truth from CFR-decompiled 42.20 (2026-09-05, BACKLOG 6.2): `[Water]` makes InputScript
+           build a FluidFilter WHITELIST containing the single FluidType.Water(1). TaintedWater(4) is a
+           DISTINCT FluidType that merely shares the `Water` *category*, and FluidFilter.allows() needs
+           typeMatch && categoryMatch -- with an empty category list categoryMatch defaults true but
+           typeMatch stays false, so TaintedWater is refused. The default FluidMatchMode is Exact, which
+           also requires !container.isMixture(), so a part-clean/part-tainted bottle is refused too.
+           CraftRecipeManager.consumeInputFluidInternal() applies this on BOTH the testOnly=true
+           (availability) and testOnly=false (consume) paths, so the recipe simply does not offer --
+           it cannot silently succeed on dirty water.
+           DO NOT "improve" this to `-fluid N categories[Water]`: the Water *category* DOES contain
+           TaintedWater and that would reopen the hole.
+           The 2026-08-27 note that used to sit here was correct that OnTest is a closed native registry
+           (RecipeCodeOnTest is Java-only and has no notTaintedWater -- only the inverse, purifyWater),
+           but it predates the rule-30 water gate (d9fe353, 2026-08-29) which restored this check for
+           free. Evidence: tools/pzrepl/tests/taintedwater.lua. */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,

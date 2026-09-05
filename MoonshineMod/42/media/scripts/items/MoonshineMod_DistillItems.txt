@@ -67,7 +67,8 @@ imports
 		RainFactor = 1,
 		ReplaceOnDeplete = DistillPotSmall,
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotSmall,
-		
+		Tooltip = Tooltip_item_DistillSmallWater,
+
 		
 		UseWhileEquipped = FALSE,
 		StaticModel = distill_small_Ground, 
@@ -123,7 +124,8 @@ imports
 		RainFactor = 1,
 		ReplaceOnDeplete = DistillPotMedium,
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotMedium,
-		
+		Tooltip = Tooltip_item_DistillMediumWater,
+
 		
 		UseWhileEquipped = FALSE,
 		StaticModel = distill_medium_Ground, 
@@ -179,7 +181,8 @@ imports
 		RainFactor = 1,
 		ReplaceOnDeplete = DistillPotLarge,
 		ReplaceOnUseOn	=	WaterSource-Water_DistillPotLarge,
-		
+		Tooltip = Tooltip_item_DistillLargeWater,
+
 		
 		UseWhileEquipped = FALSE,
 		StaticModel = distill_large_Ground, 

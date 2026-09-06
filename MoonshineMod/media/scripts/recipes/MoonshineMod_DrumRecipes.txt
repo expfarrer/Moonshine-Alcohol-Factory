@@ -8,6 +8,7 @@
         Time:950.0,
         Category:Survivalist,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveEmptyPetrolCans20,
 		
 	
 		Prop2:Base.RippedSheetsDirty,
@@ -25,6 +26,7 @@
         Time:950.0,
         Category:Survivalist,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveEmptyMotorOilCans80,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -41,6 +43,7 @@
         Time:950.0,
         Category:Survivalist,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveBleachEmpty80,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -57,6 +60,7 @@
         Time:950.0,
         Category:Survivalist,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveWhiskeyEmpty80,
 		
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
@@ -73,6 +77,7 @@
         Time:950.0,
         Category:Survivalist,
 	    CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveBeerEmpty80,
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
         AnimNode:RipSheets,
@@ -89,6 +94,7 @@
         Time:950.0,
         Category:Survivalist,
         CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveWineEmpty80,
 		Prop2:Base.RippedSheetsDirty,
 		Prop1:Source=1,
         AnimNode:RipSheets,

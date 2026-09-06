@@ -1,21 +1,14 @@
 version=1
 title=Alcohol Factory - Moonshine
 
-description=This Mod will allow you to craft a small distill pot from items available in the vanilla World.
+description=NOW WORKING ON BUILD 42 (and still fully supported on Build 41). This is the first update to the mod in a long while - if you unsubscribed for compatibility, welcome back.
+description=Finally you have the possibility to gain more independence for your survival with the Moonshine Distill Pot series. Find the magazines first to learn unique skills to accelerate your lifestyle.
+description=Suggested procedure: 1. Collect Magazine 1+2 and craft a Distill Pot (I). 2. Craft Mash from potato and corn products. 3. Close the bucket with a tarp and rubber band, set to ferment inside your residence for up to 20 in-game days. 4. Fill the fermented Mash into the Distill Pot. 5. Add the Distill Pot to a heat source appropriate to its size. 6. Observe the cooking process and enjoy the fruits of your labor.
+description=Improve the Distill Pot (I) by adding a coal filter to unlock the Distill Pot (II), letting you redistill spirit into higher-proof White Lightning and produce Isopropyl alcohol for disinfection. The Distill Pot (II) can be extended with a temperature controller column into a Distill Pot (III), which turns Motor Oil into Gasohol fuel for vehicles and generators.
+description=Age your White Lightning into Whiskey, or steep it into five fruit-flavoured variants: apple, cherry, peach, lemon and mint. Decant spirits or water straight into a bucket to carry more at once.
+description=Create a Metal Drum and manage your gas cans in a better way with a bigger container you can fill from.
+description=Be a brewer and supply everyone with a wide range of spirits and alcoholic drinks. Be a pharmacist and provide disinfectants and stove fuels to your community. Be an oil tycoon and provide fuel for vehicles, generators, and weapons.
+description=Drink responsibly - do not drink and drive.
 
-description=Collect the items and craft the DistillPot to have a tool to purify water and distill spirits.
-description=Create a Bucket of Mash from Corn, Sugar Yeast and add this base ingredient to the Distill pot.
-description=This Distill pot  needs to be place in a heatsource to create the spirits.
-tags=
-visibility=private
-
-
-
-
-
-
-
-
-Distill Pot Small 
-Bucket of Mash (Can o Corn)
-Bucket of Mash (Corn)
+tags=Build 41;Build 42;Items;Multiplayer;Realistic
+visibility=public

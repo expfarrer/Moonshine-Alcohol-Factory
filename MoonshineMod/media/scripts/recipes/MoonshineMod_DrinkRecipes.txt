@@ -19,6 +19,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -38,6 +39,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -56,6 +58,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -72,6 +75,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -90,6 +94,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -108,6 +113,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -124,6 +130,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -143,6 +150,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -158,6 +166,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -173,6 +182,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -190,6 +200,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -206,6 +217,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -228,6 +240,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -243,6 +256,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -258,6 +272,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -278,6 +293,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -295,6 +311,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -312,6 +329,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -327,6 +345,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -342,6 +361,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -359,6 +379,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -376,6 +397,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -399,6 +421,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -414,6 +437,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -429,6 +453,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -446,6 +471,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -462,6 +488,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -479,6 +506,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -494,6 +522,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -509,6 +538,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -526,6 +556,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -543,6 +574,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -564,6 +596,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -579,6 +612,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -594,6 +628,7 @@ module Moonshine
         Category:Cooking,
         Sound:PourWaterIntoObject,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -613,6 +648,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -630,6 +666,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -646,6 +683,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -665,6 +703,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -685,6 +724,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -701,6 +741,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -717,6 +758,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -733,6 +775,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -749,6 +792,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -765,6 +809,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -781,6 +826,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillSmallEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -798,6 +844,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -815,6 +862,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -831,6 +879,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -850,6 +899,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -868,6 +918,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -884,6 +935,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -900,6 +952,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -916,6 +969,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -932,6 +986,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -948,6 +1003,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -964,6 +1020,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -984,6 +1041,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1001,6 +1059,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1017,6 +1076,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1036,6 +1096,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1054,6 +1115,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1070,6 +1132,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1086,6 +1149,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1102,6 +1166,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1118,6 +1183,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1134,6 +1200,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -1150,6 +1217,7 @@ recipe Refill Water in Mug
         Sound:PourWaterIntoObject,
         OnTest:Recipe.OnTest.NotTaintedWater,
 		CanBeDoneFromFloor:true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,

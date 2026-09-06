@@ -661,6 +661,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		 CanBeDoneFromFloor: true,
+		 OnCreate:Moonshine.GiveDistillMedEmpty,
 		 
 		 Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -675,6 +676,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		 CanBeDoneFromFloor: true,
+		 OnCreate:Moonshine.GiveDistillMedEmpty,
 		 
 		 Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -689,6 +691,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -703,6 +706,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -717,6 +721,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillMedEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -734,6 +739,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -748,6 +754,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -762,6 +769,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -776,6 +784,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,
@@ -790,6 +799,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
         Time: 200.0,
         Sound: PourWaterIntoObject,
 		CanBeDoneFromFloor: true,
+		OnCreate:Moonshine.GiveDistillLargeEmpty,
 		
 		Prop2:Base.RippedSheets,
 		Prop1:Source=1,

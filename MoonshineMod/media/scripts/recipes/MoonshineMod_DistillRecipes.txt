@@ -15,8 +15,7 @@ module Moonshine
         destroy BucketEmpty,
         MetalPipe=2,
 		ScrapMetal,
-       
-	    Water=2,
+
         Wire,
         Bleach,
 		
@@ -383,7 +382,6 @@ module Moonshine
         keep [Recipe.GetItemTypes.Saw],
 
         MetalPipe=3,
-        Water=1,
         ScrapMetal,
         Bleach,
         destroy OatsRaw,
@@ -415,11 +413,10 @@ module Moonshine
         keep [Recipe.GetItemTypes.Saw],
 
         MetalPipe=3,
-        Water=1,
         ScrapMetal,
         Bleach,
         destroy OatsRaw,
-        Charcoal=1,
+        Charcoal=8,
         Wire,
         destroy DuctTape,
         destroy BeerCanEmpty,
@@ -509,11 +506,12 @@ module Moonshine
         Result:DistillPotLarge,
         Time:900.0,
         Sound:BreakMetalItem,
-        
+
 		Prop2:Base.ScrapMetal,
         Prop1:Screwdriver,
         AnimNode:Disassemble,
-		
+		CanBeDoneFromFloor:true,
+
 		NeedToBeLearn:true,
 		OnGiveXP:Recipe.OnGiveXP.MetalWelding25,
 		SkillRequired:MetalWelding=4;Electricity=2,
@@ -541,8 +539,7 @@ module Moonshine
         AnimNode:Disassemble,
         
 		CanBeDoneFromFloor:true,
-		/*OnCreate:Moonshine.GiveFilter,*/
-		OnCreate:Moonshine.DistillPartsFilter,
+		OnCreate:Moonshine.DowngradeGiveFilter,
 		NeedToBeLearn:true,
 		SkillRequired:MetalWelding=2,
 		
@@ -569,8 +566,7 @@ module Moonshine
         AnimNode:Disassemble,
 	   
         CanBeDoneFromFloor:true,
-		/*OnCreate:Moonshine.GiveColumn,*/
-		OnCreate:Moonshine.GiveDistillPartsColumn,
+		OnCreate:Moonshine.DowngradeGiveColumn,
 		NeedToBeLearn:true,
 		SkillRequired:MetalWelding=4;Electricity=2,
 		

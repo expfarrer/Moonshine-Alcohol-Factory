@@ -168,7 +168,7 @@ imports
 	
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
-	StaticModel = EmptyJar,
+	StaticModel = JarGlass_Ground,
 	WorldStaticModel = JarGlass_Ground,
 	EatType = Bourbon,
 	Tags = Liquor,

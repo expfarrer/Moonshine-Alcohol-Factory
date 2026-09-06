@@ -36,5 +36,8 @@
     "Tooltip_item_MotorOilCan": "Motoröl zur Schmierung von Maschinen, destillieren Sie es in Gasohol.",
     "Tooltip_item_EmptyMotorOilCan": "Leere Motorölbehälter können zu Benzindosen recycelt werden.",
     "Tooltip_item_EmptyGasoholDrum": "Handgefertigter Stahlfass, entworfen zum Lagern und Abgeben von Gasohol.",
-    "Tooltip_item_GasoholDrum": "Gefülltes Stahlfass für effiziente Nutzung, ersetzt mehrere Benzinflaschen.<br>Schwer - ist dein Inventar beim Herstellen fast voll, kann es zu Boden fallen."
+    "Tooltip_item_GasoholDrum": "Gefülltes Stahlfass für effiziente Nutzung, ersetzt mehrere Benzinflaschen.<br>Schwer - ist dein Inventar beim Herstellen fast voll, kann es zu Boden fallen.",
+    "Tooltip_item_WhiteLightningCharred": "Stufe 1 von 3. Verkohlte Eiche zieht im Glas. Lagere es rund 30 Tage an einem ruhigen Ort, dann wird Green Whiskey daraus.<br>Die Reifung folgt der Sandbox-Einstellung Food Rot Speed, aus 30 Tagen können also 18 bis 75 werden. Ein laufender Kühlschrank bremst sie fast auf null - lagere es im Schrank, nicht in der Kühlung.",
+    "Tooltip_item_WhiskeyGreen": "Stufe 2 von 3. Der Schnaps hat Farbe von der Kohle genommen. Noch etwa 60 Tage - insgesamt 90 seit dem Verkohlen - und es wird Scarlet Oak Whiskey.<br>Die Reifung folgt der Sandbox-Einstellung Food Rot Speed, aus 90 Tagen können also 53 bis 225 werden. Ein laufender Kühlschrank bremst sie fast auf null - lagere es im Schrank, nicht in der Kühlung.",
+    "Tooltip_item_WhiskeyScarletOak": "Voll ausgereift. Weich, dunkel und stark - das Beste, was diese Destille je hervorbringt. Verdirbt nie und verändert sich nicht weiter."
 }

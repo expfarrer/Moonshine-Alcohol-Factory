@@ -36,5 +36,8 @@
     "Tooltip_item_MotorOilCan": "Aceite de motor para lubricar máquinas, destíllelo en gasohol.",
     "Tooltip_item_EmptyMotorOilCan": "Los envases vacíos de aceite para motor se pueden reciclar en bidones de gasolina.",
     "Tooltip_item_EmptyGasoholDrum": "Bidón de acero artesanal, diseñado para almacenar y dispensar gasohol.",
-    "Tooltip_item_GasoholDrum": "Bidón de acero lleno para un uso eficiente, reemplazando múltiples bidones de gasolina.<br>Pesado - si tu inventario está casi lleno al fabricarlo, puede caer al suelo."
+    "Tooltip_item_GasoholDrum": "Bidón de acero lleno para un uso eficiente, reemplazando múltiples bidones de gasolina.<br>Pesado - si tu inventario está casi lleno al fabricarlo, puede caer al suelo.",
+    "Tooltip_item_WhiteLightningCharred": "Etapa 1 de 3. El roble carbonizado está macerando en el tarro. Déjalo apartado unos 30 días y se convertirá en Green Whiskey.<br>El envejecimiento sigue la opción de sandbox Food Rot Speed, así que 30 días pueden ser de 18 a 75. Una nevera encendida lo ralentiza muchísimo: guárdalo en un armario, no en el frigorífico.",
+    "Tooltip_item_WhiskeyGreen": "Etapa 2 de 3. El destilado ha tomado color de la madera quemada. Unos 60 días más - 90 en total desde el carbonizado - y se convertirá en Scarlet Oak Whiskey.<br>El envejecimiento sigue la opción de sandbox Food Rot Speed, así que 90 días pueden ser de 53 a 225. Una nevera encendida lo ralentiza muchísimo: guárdalo en un armario, no en el frigorífico.",
+    "Tooltip_item_WhiskeyScarletOak": "Completamente envejecido. Suave, oscuro y fuerte: lo mejor que dará jamás este alambique. No se estropea y ya no cambiará más."
 }

@@ -1868,4 +1868,44 @@ module Moonshine
         }
     }
 
+    /* ----------------------------------------------------------------------
+       BACKLOG 1.4 -- whiskey by aging.  This is the ONLY recipe in the ladder;
+       the other two steps are unattended, driven by `ReplaceOnRotten` on the
+       items themselves (quirks rule 69).  See MoonshineMod_DrinkItems.txt.
+
+           Moonshine.WhiteLightning  + 2 charcoal
+             --craft-->  Charred Oak Shine (1/3)     30 days
+             --wait -->  Green Whiskey     (2/3)     90 days total
+             --wait -->  Scarlet Oak Whiskey         final, never spoils
+
+       Input flags, per quirks rule 57 (choose the flag from the real ItemType,
+       never from the family name):
+         Moonshine.WhiteLightning  is base:food   -> flags[ItemCount].  Without
+             it, one jar charges 1/6 of a nutrition unit and survives the craft
+             -- headless A/B measured FIVE crafts off one jar (rule 56).
+         Base.CharcoalCrafted / Moonshine.Coal are base:normal -> a plain
+             `item 2 [A;B]` line, which measured exactly 2 pieces consumed from
+             either pile or a mix of both, and UNAVAILABLE when only 1 is held.
+       `Moonshine.Coal` is what this mod's OWN stills yield
+       (RemoveCoalFromDistillI/II/III), so the loop closes inside the mod; the
+       vanilla `Base.CharcoalCrafted` is accepted as well.  A 2-candidate
+       bracket at a reachable count is explicitly safe per rule 34 (revised).
+       ---------------------------------------------------------------------- */
+
+    craftRecipe CharAndAgeWhiteLightning
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 120,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning] flags[ItemCount],
+        item 2 [Base.CharcoalCrafted;Moonshine.Coal],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiteLightningCharred,
+        }
+    }
+
 }

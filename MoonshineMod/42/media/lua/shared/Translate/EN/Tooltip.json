@@ -40,5 +40,8 @@
     "Tooltip_item_MotorOilCan": "Engine oil for lubricating machines, distill into gasohol.",
     "Tooltip_item_EmptyMotorOilCan": "Empty motor oil containers can be recycled into gascans.",
     "Tooltip_item_EmptyGasoholDrum": "Handcrafted steel drum, designed to store and dispense gasohol.",
-    "Tooltip_item_GasoholDrum": "Filled steel drum for efficient use, replacing multiple gas canisters.<br>Heavy - if your inventory is near full when this is made, it may drop to the ground."
+    "Tooltip_item_GasoholDrum": "Filled steel drum for efficient use, replacing multiple gas canisters.<br>Heavy - if your inventory is near full when this is made, it may drop to the ground.",
+    "Tooltip_item_WhiteLightningCharred": "Stage 1 of 3. Charred oak is steeping in the jar. Leave it somewhere out of the way for about 30 days and it becomes Green Whiskey.<br>Aging follows the sandbox Food Rot Speed setting, so 30 days can be 18 to 75. A powered fridge slows it to a crawl - keep it in a cupboard, not the cooler.",
+    "Tooltip_item_WhiskeyGreen": "Stage 2 of 3. The spirit has taken colour from the char. About 60 more days - 90 in all since charring - and it becomes Scarlet Oak Whiskey.<br>Aging follows the sandbox Food Rot Speed setting, so 90 days can be 53 to 225. A powered fridge slows it to a crawl - keep it in a cupboard, not the cooler.",
+    "Tooltip_item_WhiskeyScarletOak": "Fully aged. Smooth, dark and strong - the finest thing this still will ever make. It never spoils and it will not change any further."
 }

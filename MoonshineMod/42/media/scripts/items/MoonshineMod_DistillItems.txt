@@ -792,7 +792,43 @@ item Alc_DistillPotLargeRefillSpirit
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
-        ThirstChange	=	-60,
+		/* R5-E follow-up (2026-09-05): a pot of isopropyl is NOT a beverage.  The
+		   last two items in the mod still carrying `ThirstChange = -60` after the
+		   2026-09-02 R5-E pass and the 2026-09-05 Oil_DistillPotLarge fix (5369c87).
+
+		   HONEST SCOPE -- unlike the mash / RefillSpirit / motor-oil pots, this one
+		   was NEVER a live bug.  Those are `base:food` -> zombie.inventory.types.Food,
+		   and Food is where every consumer of the nutrition block lives.  This item
+		   is `base:drainable` -> DrainableComboItem, whose getCategory() is "Item",
+		   and the ONE gate on the whole eat/drink branch of the vanilla context menu
+		   (B42.20 ISInventoryPaneContextMenu.lua L172) is
+
+		       if testItem:getCategory() ~= "Food" then tests.isAllFood = false end
+
+		   so `ThirstChange`, `EatType`, `CustomEatSound` and even a
+		   `CustomContextMenu = Drink` are all unreachable here -- vanilla's own
+		   Base.Disinfectant (base:normal) carries the same dead
+		   `CustomContextMenu = Drink`.  The rollover shows no thirst line either:
+		   only Food overrides DoTooltip(tooltipUI, layout) to print
+		   Tooltip_food_Thirst; InventoryItem's is an empty method and
+		   DrainableComboItem does not override it.  Verified headlessly, see
+		   tools/pzrepl/tests/isopot.lua (18/18) and its mod-wide sweep: of 96
+		   Moonshine items exactly 20 offer an Eat/Drink option and no DistillPot of
+		   any tier is among them.
+
+		   Commented out anyway because it is dead text that reads like live design
+		   and because it is a loaded trap: if this pot is ever flipped to base:food
+		   (as the mash and RefillSpirit pots are, so an oven can cook them) the -60
+		   instantly becomes BOTH a live Drink option AND -- for the Large pot below,
+		   Weight = 15.0 exactly -- the float32 ULP oven-capacity bug that blocked
+		   the whole gasohol chain in 5369c87.
+
+		   The Poison* fields deliberately STAY (comment-don't-delete).  They are
+		   equally unreachable today -- IsoGameCharacter.isKnownPoison L10796 is
+		   `if (item instanceof Food)` -- but removing ThirstChange does not and
+		   cannot make isopropyl any safer to drink: it is already not drinkable at
+		   all, and the Poison block is what would fire if the ItemType ever changed. */
+		/*ThirstChange	=	-60,*/
         Poison = true,
         PoisonDetectionLevel = 7,
 	    PoisonPower = 120,
@@ -829,7 +865,12 @@ item Alc_DistillPotLargeIso
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
-        ThirstChange	=	-60,
+		/* R5-E follow-up (2026-09-05): not a beverage -- see the full note on
+		   Alc_DistillPotMediumIso above.  Dead text on a base:drainable, but this
+		   is the pot whose Weight is 15.0 exactly, so it is the one that would land
+		   on the vanilla oven's ContainerCapacity = 15 boundary if it were ever
+		   flipped to base:food with a live -60.  Poison* stays. */
+		/*ThirstChange	=	-60,*/
         Poison = true,
         PoisonDetectionLevel = 7,
 	    PoisonPower = 120,

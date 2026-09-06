@@ -724,7 +724,25 @@ item Alc_DistillPotLargeRefillSpirit
 		Calories = 8500,
 		*/
 		
-		ThirstChange	=	-60,
+		/* R5-E (2026-09-05): a pot of motor oil is NOT a drink -- this item was
+		   MISSED by the 2026-09-02 R5-E pass.  One field, two bugs:
+		   (1) with a ThirstChange the vanilla menu offered a drink, and drinking
+		   it fired ReplaceOnUse -> empty pot back, the whole batch of motor oil
+		   destroyed (same class as Alc_DistillPotLargeRefillSpirit above);
+		   (2) a live nutrition field is the ONLY thing that puts this item on the
+		   computed-usedDelta branch of Food.getActualWeight().  In float32
+		   (-60/100f)*100f/-60f = 1.0000001192f, so the runtime weight resolved to
+		   15.000000953674316 -- exactly 1 ULP over the vanilla Oven's
+		   ContainerCapacity = 15, and ItemContainer.hasRoomFor rounds only the
+		   container contents, never the item weight.  The pot could therefore
+		   NEVER be put in an oven, which killed the entire gasohol chain --
+		   ReplaceOnCooked here is the only producer of Petrol_DistillPotLarge.
+		   Zeroed, usedDelta stays the literal 1.0f and the pot is exactly 15.0f,
+		   like the mash/wood/spirit pots.  See BACKLOG 3.15.
+		   Consumption is unaffected: Food.getMaxUses/getCurrentUses branch on
+		   getBaseHunger() only and never read thirst.  Everything the OVEN needs
+		   is untouched.  The Poison* fields above are now vestigial but harmless. */
+		/*ThirstChange	=	-60,*/
 	    MinutesToCook = 360,
 		MinutesToBurn = 3000,
         MetalValue = 120,

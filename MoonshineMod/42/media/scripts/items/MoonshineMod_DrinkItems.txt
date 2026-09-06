@@ -917,7 +917,23 @@ item SaucepanWaterRefill
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 
-		Weight	=	4,
+		/* Weight 2.0 = container + contents (quirks rule 68), not an arbitrary
+		   "heavier than a bottle" anti-exploit number. RefillSpiritInBucket3/4/5
+		   (this file's recipes) each drain exactly ONE serving from the source
+		   still pot (bare `item 1 [pot]`, rule 37) regardless of tier -- NOT the
+		   whole 4/6/8-serving pot, so this is intentionally a single flat value,
+		   not a 3-tier scale. "One serving" is independently pinned at 1 litre
+		   by two sources: vanilla Base.EmptyJar's own component FluidContainer
+		   declares Capacity = 1.0, and reference_b42_craftrecipe_quirks rule 67
+		   / project_bucket_decant_done already measured "every vessel in the
+		   family is about one serving big" = 1 L. Using the same water density
+		   the report itself measured live (a sink-filled Base.BucketEmpty reads
+		   11 = 1.0 container + 10 L water, i.e. 1.0 weight/L): 1.0 (bucket,
+		   matching vanilla Base.BucketEmpty's own declared Weight) + 1.0 (one
+		   1 L serving) = 2.0. Previous value (4.0) was carried over unchanged
+		   from the older flat BucketWaterRefill/WateringcanWaterRefill items in
+		   this same file and was never actually container+contents math. */
+		Weight	=	2.0,
 
 		ItemType	= base:food,
 		FoodType = Liquor,

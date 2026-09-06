@@ -168,7 +168,13 @@ imports
 	Tags = Liquor,
 	UseDelta = 0.25,
     }
-	
+
+	/* LEGACY / MIGRATION ONLY -- do NOT use Moonshine.EmptyJar in any new recipe.
+	   It shadowed vanilla Base.EmptyJar (no FluidContainer, no base:jar/base:glass
+	   tags -> could not be canned, boxed, or water-filled).  As of 2026-09-06 nothing
+	   PRODUCES it any more; it survives here only so existing saves still load the
+	   jars they already hold, and it stays listed in the Fill-Spirit input brackets so
+	   that legacy stock drains away naturally on the next distillation. */
  item EmptyJar
 	{
 	    DisplayCategory = Cooking,
@@ -761,7 +767,7 @@ item SaucepanWaterRefill
 	UseWhileEquipped	= FALSE,
 	UseDelta		= 0.16,
 	DisplayName		= Jar with Water (Full),
-	ReplaceOnDeplete	= EmptyJar,
+	ReplaceOnDeplete	= Base.EmptyJar,
 	ReplaceOnUseOn		= WaterSource-JarWaterFull,
 	Icon			=     ApaJar,
 

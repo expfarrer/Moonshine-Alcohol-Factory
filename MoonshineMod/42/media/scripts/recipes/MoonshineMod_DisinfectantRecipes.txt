@@ -52,7 +52,7 @@ module Moonshine
         time = 350,
         inputs
         {
-        item 4 [Moonshine.EmptyJar],
+        item 4 [Base.EmptyJar;Base.JarCrafted;Base.ClayJar;Base.ClayJarGlazed;Moonshine.EmptyJar] flags[ItemCount],
         item 4 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
@@ -93,7 +93,7 @@ module Moonshine
         }
         outputs
         {
-            item 6 Moonshine.EmptyJar,
+            item 6 Base.EmptyJar,
         }
     }
 
@@ -105,7 +105,7 @@ module Moonshine
         time = 350,
         inputs
         {
-        item 6 [Moonshine.EmptyJar],
+        item 6 [Base.EmptyJar;Base.JarCrafted;Base.ClayJar;Base.ClayJarGlazed;Moonshine.EmptyJar] flags[ItemCount],
         item 6 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
@@ -165,7 +165,7 @@ module Moonshine
         }
         outputs
         {
-            item 8 Moonshine.EmptyJar,
+            item 8 Base.EmptyJar,
         }
     }
 
@@ -177,7 +177,7 @@ module Moonshine
         time = 350,
         inputs
         {
-        item 8 [Moonshine.EmptyJar],
+        item 8 [Base.EmptyJar;Base.JarCrafted;Base.ClayJar;Base.ClayJarGlazed;Moonshine.EmptyJar] flags[ItemCount],
         item 8 [Moonshine.Alc_DistillPotLarge],
         }
         outputs

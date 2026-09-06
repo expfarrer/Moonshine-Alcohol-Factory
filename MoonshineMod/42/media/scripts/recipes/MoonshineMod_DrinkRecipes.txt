@@ -489,6 +489,86 @@ module Moonshine
         }
     }
 
+
+
+    /* ----------------------------------------------------------------------
+       BACKLOG 2.8 (2026-09-06) -- bucket decanting, revived.
+
+       Identical in shape to RefillSpiritIn{Whiskey,Beer,Wine,...}Bottle3/4/5:
+       ONE serving of the pot (bare `item 1` on a base:drainable = one use,
+       UseDelta 0.25/0.16/0.125 -> 4/6/8 per pot) for one filled vessel, and
+       NO OnCreate -- the pot's own ReplaceOnDeplete hands the empty
+       Moonshine.DistillPot* back when the last serving is drawn.
+
+       `flags[ItemCount]` on the bucket is LOAD-BEARING and is the whole reason
+       the 2026-08-26 attempt (acef84b) was reverted.  Base.BucketEmpty is a
+       real `component FluidContainer`, and quirks rule 65 says such an input
+       is COUNTED but NEVER CONSUMED without the flag.  Measured A/B
+       (tools/pzrepl/tests/bucketdecant.lua, probes on):
+           item 1 [Base.BucketEmpty]                    bucket 1->1  spirit +1
+           item 1 [Base.BucketEmpty] flags[ItemCount]   bucket 1->0  spirit +1
+       Without the flag this is an infinite spirit mint.
+
+       The reverted version ALSO carried `OnCreate = GiveDistillSmallEmpty` on
+       each of these (the bottle family does not).  Measured: that hands out a
+       free empty still pot on EVERY craft -- 4 free Distill Pot I per pot.
+       Deliberately absent here.
+
+       Input is Base.BucketEmpty ONLY, not a wide bucket bracket: the output
+       is a single fixed item whose ReplaceOnUse gives a Base.BucketEmpty back,
+       so accepting Base.BucketWood / Base.BucketForged / Base.BucketCarved
+       would launder a wooden or carved bucket into a metal one.  (Widening
+       Base.BucketEmpty -> +Base.Bucket is a separate, mod-wide question: the
+       mash chain and FillDistillWithWater name BucketEmpty only too.)
+       ---------------------------------------------------------------------- */
+    craftRecipe RefillSpiritInBucket3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Base.BucketEmpty] flags[ItemCount],
+        item 1 [Moonshine.Alc_DistillPotSmall],
+        }
+        outputs
+        {
+            item 1 Moonshine.BucketRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBucket4
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Base.BucketEmpty] flags[ItemCount],
+        item 1 [Moonshine.Alc_DistillPotMedium],
+        }
+        outputs
+        {
+            item 1 Moonshine.BucketRefill,
+        }
+    }
+
+    craftRecipe RefillSpiritInBucket5
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Base.BucketEmpty] flags[ItemCount],
+        item 1 [Moonshine.Alc_DistillPotLarge],
+        }
+        outputs
+        {
+            item 1 Moonshine.BucketRefill,
+        }
+    }
+
     craftRecipe RefillWaterInMug
     {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
         /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
@@ -1146,6 +1226,90 @@ module Moonshine
         }
     }
 
+
+
+    /* ----------------------------------------------------------------------
+       BACKLOG 2.8 (2026-09-06) -- the water half of bucket decanting.
+
+       Same F11/U8 idea as the 11 RefillWaterIn* recipes above -- keep the
+       player's OWN vessel (`mode:keep`) and fill it in place with REAL vanilla
+       Water, never hand back a Moonshine.*WaterRefill drainable clone -- but
+       with ONE deliberate difference: these take the WHOLE water pot, not one
+       serving, and add exactly the litres that pot is worth (4 / 6 / 8).
+
+       WHY, measured (tools/pzrepl/tests/bucketdecant.lua):
+       the shared FillKeptContainerWithWater fills the kept container to its
+       CAPACITY.  For a 1 L bottle or a jar that happens to equal the one
+       serving it charges.  A bucket is 10 L, so the naive port measured
+       **10.00 L out of a single 1 L serving of a 4 L pot**, and the round trip
+       closes -- FillDistillWithWater buys a fresh 4 L pot back for 4 of those
+       litres.  That is a free-water machine, so it is not what ships.
+
+       The shape below is exploit-free and self-gating:
+         flags[IsFull] on the pot  -> refuses a part-drained pot, so you cannot
+                                      draw 4 L out of a pot with 1 serving left
+                                      (measured UNAVAILABLE at usedDelta 0.5).
+         flags[IsEmpty] on bucket  -> refuses a part-full bucket, so the litres
+                                      can never overflow or stack up.
+         flags[ItemCount] (NOT mode:destroy) on the pot -> consumes it whole and
+                                      still lets its own ReplaceOnDeplete hand
+                                      the empty Moonshine.DistillPot* back
+                                      natively.  Measured: with mode:destroy the
+                                      empty pot is NOT returned (quirks rule 56),
+                                      and a native return beats an OnCreate
+                                      AddItem because it has no MP sync gap
+                                      (rule 59).
+       Net: 4 L in the bucket for a 4 L pot; FillDistillWithWater then costs
+       exactly those 4 L.  Break-even, verified end to end.
+       ---------------------------------------------------------------------- */
+    craftRecipe RefillWaterInBucket
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.DecantWaterPotSmallIntoBucket,
+        inputs
+        {
+        item 1 [Base.BucketEmpty] mode:keep flags[IsEmpty;ItemCount],
+        item 1 [Moonshine.Water_DistillPotSmall] flags[IsFull;ItemCount],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe RefillWaterInBucket2
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.DecantWaterPotMediumIntoBucket,
+        inputs
+        {
+        item 1 [Base.BucketEmpty] mode:keep flags[IsEmpty;ItemCount],
+        item 1 [Moonshine.Water_DistillPotMedium] flags[IsFull;ItemCount],
+        }
+        outputs
+        {
+        }
+    }
+
+    craftRecipe RefillWaterInBucket3
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.DecantWaterPotLargeIntoBucket,
+        inputs
+        {
+        item 1 [Base.BucketEmpty] mode:keep flags[IsEmpty;ItemCount],
+        item 1 [Moonshine.Water_DistillPotLarge] flags[IsFull;ItemCount],
+        }
+        outputs
+        {
+        }
+    }
+
     craftRecipe DumpWaterDistillPotSmall
     {
         timedAction = Making, category = Moonshine,
@@ -1358,6 +1522,32 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.BleachBottleRefill] flags[ItemCount],
+        }
+        outputs
+        {
+        }
+    }
+
+    /* BACKLOG 2.8 -- the spirit-bucket pour-out, mirroring DumpSpiritJar.
+       `flags[ItemCount]` is required (rules 56/57: BucketRefill is base:food
+       with HungerChange -10, so a bare `item 1` charges ONE of its ten
+       nutrition units).  Measured, tests/bucketdecant.lua:
+           bare              10 dumps, 10 free buckets
+           flags[ItemCount]   1 dump,   1 bucket, 0.00 L
+       The 0.00 L matters: GiveBackBucket routes through
+       Moonshine.ReturnEmptyVessel, which Empty()s the spawned vanilla bucket
+       (R7-A -- a Base.BucketEmpty spawns holding fluid otherwise).
+       Rule 60 does not apply: Moonshine.BucketRefill is a mod base:food with
+       no FluidContainer, so there is no native Empty action to prefer. */
+    craftRecipe DumpSpiritBucket
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        OnCreate = RecipeCodeOnCreate.GiveBackBucket,
+        inputs
+        {
+        item 1 [Moonshine.BucketRefill] flags[ItemCount],
         }
         outputs
         {

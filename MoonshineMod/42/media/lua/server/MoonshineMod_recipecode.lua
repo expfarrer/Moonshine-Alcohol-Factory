@@ -162,25 +162,60 @@ end
 -- bleach/soda/sports bottle).
 -- Same two prohibitions as above: never Remove/AddItem a mode:keep input
 -- (rule 27 rollback, rule 22 sync gap) -- only edit its fluid in place.
-function RecipeCodeOnCreate.FillKeptContainerWithWater(recipeData, character)
-    local kept = recipeData:getAllKeepInputItems()
+--- Fill the first kept input that has a FluidContainer.
+--- `litres` nil  -> fill to the container's CAPACITY (the F11/U8 behaviour).
+--- `litres` set  -> put exactly that many litres in, clamped to capacity.
+--- Returns the item filled, or nil.
+function Moonshine.FillKeptContainerWith(recipeData, fluid, litres, label)
+    local kept = recipeData and recipeData:getAllKeepInputItems()
     if not kept then
-        print("[Moonshine] FillKeptContainerWithWater: no kept inputs")
-        return
+        print("[Moonshine] " .. tostring(label) .. ": no kept inputs")
+        return nil
     end
     for i = 0, kept:size() - 1 do
         local it = kept:get(i)
         local fc = it and it:getFluidContainer()
         if fc then
             fc:Empty()
-            fc:addFluid("Water", fc:getCapacity())        -- name FIRST, then litres
+            local amount = litres or fc:getCapacity()
+            if amount > fc:getCapacity() then amount = fc:getCapacity() end
+            fc:addFluid(fluid, amount)                    -- name FIRST, then litres
             print("[Moonshine] " .. tostring(it:getFullType()) .. " filled with "
-                  .. tostring(fc:getAmount()) .. "L distilled water")
-            return
+                  .. tostring(fc:getAmount()) .. "L " .. tostring(fluid))
+            return it
         end
     end
-    print("[Moonshine] FillKeptContainerWithWater: no kept fluid container found")
+    print("[Moonshine] " .. tostring(label) .. ": no kept fluid container found")
+    return nil
 end
+
+function RecipeCodeOnCreate.FillKeptContainerWithWater(recipeData, character)
+    Moonshine.FillKeptContainerWith(recipeData, "Water", nil,
+                                    "FillKeptContainerWithWater")
+end
+
+-- BACKLOG 2.8 (2026-09-06) -- RefillWaterInBucket / 2 / 3.
+-- The bucket cannot use FillKeptContainerWithWater: that fills to CAPACITY, and
+-- a 10 L bucket filled from one 1 L serving of a 4 L still pot is a free-water
+-- machine (measured 10.00 L, and FillDistillWithWater buys a fresh 4 L pot back
+-- for 4 of them -- tools/pzrepl/tests/bucketdecant.lua).  These three take the
+-- WHOLE pot (`flags[IsFull;ItemCount]` in the recipe) and put in exactly the
+-- litres that pot is worth, which is also exactly what FillDistillWithWater
+-- charges to refill it.  Break-even by construction.
+-- Table-generated rather than three copy-pasted bodies, per rule 58.
+local DECANT_WATER_INTO_BUCKET = {
+    DecantWaterPotSmallIntoBucket  = 4.0,   -- Water_DistillPotSmall,  4 servings
+    DecantWaterPotMediumIntoBucket = 6.0,   -- Water_DistillPotMedium, 6 servings
+    DecantWaterPotLargeIntoBucket  = 8.0,   -- Water_DistillPotLarge,  8 servings
+}
+for fn, litres in pairs(DECANT_WATER_INTO_BUCKET) do
+    RecipeCodeOnCreate[fn] = function(recipeData, character)
+        Moonshine.FillKeptContainerWith(recipeData, "Water", litres, fn)
+    end
+end
+-- NOTE: no empty-pot handout here on purpose.  `flags[ItemCount]` (as opposed
+-- to `mode:destroy`) leaves the pot's own ReplaceOnDeplete free to return the
+-- empty Moonshine.DistillPot* natively, which has no MP sync gap (rule 59).
 
 --
 

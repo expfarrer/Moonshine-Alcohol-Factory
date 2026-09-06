@@ -671,7 +671,12 @@ item Alc_DistillPotLargeRefillSpirit
 		Calories = 8500,
 		*/
 		
-		ThirstChange	=	-60,
+		/* 2026-09-05: a pot of motor oil is NOT a drink. This live ThirstChange
+		   flips Food.getActualWeight() onto the float32 computed branch -> runtime
+		   weight 20.00000191 (2 ULP over 20), so the pot fails BOTH capacity-15
+		   and capacity-20 ovens and can never be oven-cooked. B41 side of
+		   b42-fast-port 5369c87 / BACKLOG 3.15. */
+		/*ThirstChange	=	-60,*/
 	    MinutesToCook = 950,
 		MinutesToBurn = 5000,
         MetalValue = 120,

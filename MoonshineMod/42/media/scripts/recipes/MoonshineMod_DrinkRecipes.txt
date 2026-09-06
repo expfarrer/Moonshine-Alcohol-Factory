@@ -1779,4 +1779,93 @@ module Moonshine
         }
     }
 
+    /* ----------------------------------------------------------------------
+       Flavored White Lightning (v1: the WhiteLightning jar only).
+       BOTH inputs are `ItemType = base:food`, so both need flags[ItemCount]
+       (quirks rules 1 / 45 / 56 / 57): a bare `item 1 [X]` would charge only
+       1 nutrition unit -- 1/6 of a jar, 1/16 of an apple -- and leave the
+       "consumed" items in the bag.  No OnCreate: the jar is the vessel and
+       travels into the output, nothing to hand back.
+       ---------------------------------------------------------------------- */
+
+    craftRecipe FlavorWhiteLightningApple
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning] flags[ItemCount],
+        item 1 [Base.Apple] flags[ItemCount],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiteLightningApple,
+        }
+    }
+
+    craftRecipe FlavorWhiteLightningCherry
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning] flags[ItemCount],
+        item 1 [Base.Cherry] flags[ItemCount],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiteLightningCherry,
+        }
+    }
+
+    craftRecipe FlavorWhiteLightningPeach
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning] flags[ItemCount],
+        item 1 [Base.Peach] flags[ItemCount],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiteLightningPeach,
+        }
+    }
+
+    craftRecipe FlavorWhiteLightningLemon
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning] flags[ItemCount],
+        item 1 [Base.Lemon] flags[ItemCount],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiteLightningLemon,
+        }
+    }
+
+    craftRecipe FlavorWhiteLightningMint
+    {
+        timedAction = Making, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 50,
+        inputs
+        {
+        item 1 [Moonshine.WhiteLightning] flags[ItemCount],
+        item 1 [Base.MintHerb] flags[ItemCount],
+        }
+        outputs
+        {
+            item 1 Moonshine.WhiteLightningMint,
+        }
+    }
+
 }

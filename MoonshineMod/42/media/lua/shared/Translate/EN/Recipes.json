@@ -228,5 +228,10 @@
     "RefillWaterInBucket": "Fill Water in Bucket (all of Distill Pot I)",
     "RefillWaterInBucket2": "Fill Water in Bucket (all of Distill Pot II)",
     "RefillWaterInBucket3": "Fill Water in Bucket (all of Distill Pot III)",
-    "DumpSpiritBucket": "Pour Spirit on Ground (Bucket)"
+    "DumpSpiritBucket": "Pour Spirit on Ground (Bucket)",
+    "FlavorWhiteLightningApple": "Flavor White Lightning (Apple)",
+    "FlavorWhiteLightningCherry": "Flavor White Lightning (Cherry)",
+    "FlavorWhiteLightningPeach": "Flavor White Lightning (Peach)",
+    "FlavorWhiteLightningLemon": "Flavor White Lightning (Lemon)",
+    "FlavorWhiteLightningMint": "Flavor White Lightning (Mint)"
 }

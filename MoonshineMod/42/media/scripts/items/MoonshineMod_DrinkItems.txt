@@ -169,6 +169,198 @@ imports
 	UseDelta = 0.25,
     }
 
+	/* ------------------------------------------------------------------
+	   Flavored White Lightning (v1: WhiteLightning jar only).
+	   Same booze (AlcoholPower/ThirstChange held at the WhiteLightning
+	   baseline), softened StressChange/UnhappyChange -99 -> -85: that IS
+	   the flavor mechanic.  Deliberately NON-perishable like the parent
+	   (Packaged = TRUE, no DaysFresh/DaysTotallyRotten) even though the
+	   fruit input is perishable.
+
+	   SPOILAGE INHERITANCE -- verified headlessly 2026-09-05
+	   (tools/pzrepl/tests/flavor.lua): a craft output does NOT inherit its
+	   inputs' age or rot.  Both behaviours are opt-in per-input flags that
+	   these recipes deliberately do not set:
+	     flags[InheritFoodAge]   -- would copy the fruit's age onto the jar
+	     flags[AllowRottenItem]  -- would let a rotten fruit be used at all
+	   Measured: fresh apple and a 7.5-day apple both yield age=0,
+	   OffAge/OffAgeMax = 1000000000 (the "never spoils" sentinel, straight
+	   off this script, identical to the parent WhiteLightning), and
+	   setAge(100000) on the result still reads isRotten() == false.
+	   A fully rotten fruit simply makes the recipe UNAVAILABLE.
+	   ------------------------------------------------------------------ */
+
+	item WhiteLightningApple
+    {
+	StressChange	=	-85,
+	HungerChange	=	-7,
+	Weight	=	0.4,
+	ItemType	= base:food,
+	FoodType = Liquor,
+	 DisplayCategory = Food,
+	DisplayName	=	Appalachian White Lightning (Apple),
+	ThirstChange	=	-6,
+
+	Alcoholic	=	TRUE,
+	AlcoholPower = 1.1,
+	UnhappyChange	=	-85,
+
+	ReplaceOnUse = 	Base.EmptyJar,
+	Icon	=	JarEmpty2,
+	CustomContextMenu = Drink,
+	CustomEatSound = DrinkingFromBottle,
+
+    Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 740,
+
+	Packaged = TRUE,
+	CantBeFrozen = TRUE,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
+	EatType = Bourbon,
+	Tags = Liquor,
+	UseDelta = 0.25,
+    }
+
+	item WhiteLightningCherry
+    {
+	StressChange	=	-85,
+	HungerChange	=	-7,
+	Weight	=	0.4,
+	ItemType	= base:food,
+	FoodType = Liquor,
+	 DisplayCategory = Food,
+	DisplayName	=	Appalachian White Lightning (Cherry),
+	ThirstChange	=	-6,
+
+	Alcoholic	=	TRUE,
+	AlcoholPower = 1.1,
+	UnhappyChange	=	-85,
+
+	ReplaceOnUse = 	Base.EmptyJar,
+	Icon	=	JarEmpty2,
+	CustomContextMenu = Drink,
+	CustomEatSound = DrinkingFromBottle,
+
+    Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 700,
+
+	Packaged = TRUE,
+	CantBeFrozen = TRUE,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
+	EatType = Bourbon,
+	Tags = Liquor,
+	UseDelta = 0.25,
+    }
+
+	item WhiteLightningPeach
+    {
+	StressChange	=	-85,
+	HungerChange	=	-7,
+	Weight	=	0.4,
+	ItemType	= base:food,
+	FoodType = Liquor,
+	 DisplayCategory = Food,
+	DisplayName	=	Appalachian White Lightning (Peach),
+	ThirstChange	=	-6,
+
+	Alcoholic	=	TRUE,
+	AlcoholPower = 1.1,
+	UnhappyChange	=	-85,
+
+	ReplaceOnUse = 	Base.EmptyJar,
+	Icon	=	JarEmpty2,
+	CustomContextMenu = Drink,
+	CustomEatSound = DrinkingFromBottle,
+
+    Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 730,
+
+	Packaged = TRUE,
+	CantBeFrozen = TRUE,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
+	EatType = Bourbon,
+	Tags = Liquor,
+	UseDelta = 0.25,
+    }
+
+	item WhiteLightningLemon
+    {
+	StressChange	=	-85,
+	HungerChange	=	-7,
+	Weight	=	0.4,
+	ItemType	= base:food,
+	FoodType = Liquor,
+	 DisplayCategory = Food,
+	DisplayName	=	Appalachian White Lightning (Lemon),
+	ThirstChange	=	-6,
+
+	Alcoholic	=	TRUE,
+	AlcoholPower = 1.1,
+	UnhappyChange	=	-85,
+
+	ReplaceOnUse = 	Base.EmptyJar,
+	Icon	=	JarEmpty2,
+	CustomContextMenu = Drink,
+	CustomEatSound = DrinkingFromBottle,
+
+    Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 700,
+
+	Packaged = TRUE,
+	CantBeFrozen = TRUE,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
+	EatType = Bourbon,
+	Tags = Liquor,
+	UseDelta = 0.25,
+    }
+
+	item WhiteLightningMint
+    {
+	StressChange	=	-85,
+	HungerChange	=	-6,
+	Weight	=	0.4,
+	ItemType	= base:food,
+	FoodType = Liquor,
+	 DisplayCategory = Food,
+	DisplayName	=	Appalachian White Lightning (Mint),
+	ThirstChange	=	-6,
+
+	Alcoholic	=	TRUE,
+	AlcoholPower = 1.1,
+	UnhappyChange	=	-85,
+
+	ReplaceOnUse = 	Base.EmptyJar,
+	Icon	=	JarEmpty2,
+	CustomContextMenu = Drink,
+	CustomEatSound = DrinkingFromBottle,
+
+    Carbohydrates = 1,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 690,
+
+	Packaged = TRUE,
+	CantBeFrozen = TRUE,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
+	EatType = Bourbon,
+	Tags = Liquor,
+	UseDelta = 0.25,
+    }
+
+
 	/* LEGACY / MIGRATION ONLY -- do NOT use Moonshine.EmptyJar in any new recipe.
 	   It shadowed vanilla Base.EmptyJar (no FluidContainer, no base:jar/base:glass
 	   tags -> could not be canned, boxed, or water-filled).  As of 2026-09-06 nothing

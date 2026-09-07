@@ -168,8 +168,8 @@ imports
 	
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
-	StaticModel = JarGlass_Ground,
-	WorldStaticModel = JarGlass_Ground,
+	StaticModel = EmptyJar,
+	WorldStaticModel = EmptyJar,
 	EatType = Bourbon,
 	Tags = Liquor,
 	UseDelta = 0.25,
@@ -184,7 +184,7 @@ imports
 		Weight				=		0.2,
 		Tooltip = Tooltip_Jar,
 		SurvivalGear = TRUE,
-		WorldStaticModel = JarGlass_Ground,
+		WorldStaticModel = EmptyJar,
 	}
 	
 		
@@ -635,7 +635,7 @@ item SaucepanWaterRefill
 		UseDelta = 0.05,
 		UseWhileEquipped = FALSE,
 		StaticModel = SaucePan,
-		WorldStaticModel = SaucePan_World_Fluid,
+		WorldStaticModel = WaterSaucepan,
 		Tags = HasMetal,
 }
 	
@@ -660,7 +660,7 @@ item SaucepanWaterRefill
 		Tooltip = Tooltip_item_RainFromGround,
 		StaticModel = Bucket,
 		EatType = Bucket,
-		WorldStaticModel = Bucket_Ground_Fluid,
+		WorldStaticModel = BucketFullWater_Ground,
 		IsCookable = TRUE,
 		Tags = HasMetal,
 	}

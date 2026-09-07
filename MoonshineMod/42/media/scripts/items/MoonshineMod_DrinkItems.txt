@@ -550,6 +550,12 @@ imports
 		Weight				=		0.2,
 		Tooltip = Tooltip_Jar,
 		SurvivalGear = TRUE,
+		/* StaticModel added 2026-09-06 (BACKLOG 3.9): this was the ONLY field
+		   missing, so the jar had a ground model but nothing in hand.  It is
+		   also what flags[Prop1] reads -- CraftRecipeData.getModel() returns
+		   input.getMostRecentItem().getStaticModel(), so an item with no
+		   StaticModel makes a Prop1 flag a silent no-op. */
+		StaticModel = JarGlass_Ground,
 		WorldStaticModel = JarGlass_Ground,
 	}
 	
@@ -1208,6 +1214,13 @@ item SaucepanWaterRefill
 	ReplaceOnDeplete	= Base.EmptyJar,
 	ReplaceOnUseOn		= WaterSource-JarWaterFull,
 	Icon			=     ApaJar,
+	/* Models added 2026-09-06 (BACKLOG 3.9).  This item had NEITHER
+	   StaticModel nor WorldStaticModel -- the only vessel in the whole
+	   pour-out family with no in-hand model at all (headless sweep:
+	   56 of 57 resolved, this one returned nil).  Same pair that every
+	   other jar-shaped item in this file already uses. */
+	StaticModel 		= JarGlass_Ground,
+	WorldStaticModel 	= JarGlass_Ground,
 
 	CustomEatSound 		= DrinkingFromBottleGlass,
     }

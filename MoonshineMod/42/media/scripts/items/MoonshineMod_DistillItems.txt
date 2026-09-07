@@ -712,7 +712,7 @@ item Alc_DistillPotLargeRefillSpirit
 		Icon = WaterDistillPotMedium,
 		CookingSound = BoilingFood,
 		/*FoodType = Liquor,*/
-		AlcoholPower = 8,
+		AlcoholPower = 4,
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
@@ -754,7 +754,7 @@ item Alc_DistillPotLargeIso
 		Weight = 15.0,
 		Icon = WaterDistillPotLarge,
 		CookingSound = BoilingFood,
-		AlcoholPower = 8,
+		AlcoholPower = 4,
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,

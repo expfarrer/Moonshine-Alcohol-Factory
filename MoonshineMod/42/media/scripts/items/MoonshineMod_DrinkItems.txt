@@ -371,7 +371,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-99,
+	UnhappyChange	=	-55,
 
 	/* TEMP TEST VALUE - REVERT TO 30 BEFORE RELEASE (stage 1 of 2). Must be an int. REVERT: this line -> 30, and WhiskeyGreen's -> 90. */
 	DaysTotallyRotten = 30,
@@ -410,7 +410,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.25,
-	UnhappyChange	=	-99,
+	UnhappyChange	=	-55,
 
 	/* TEMP TEST VALUE - REVERT TO 90 BEFORE RELEASE (stage 2 of 2). Must be an int and strictly greater than stage 1. REVERT: this line -> 90, and WhiteLightningCharred's -> 30. */
 	DaysTotallyRotten = 90,
@@ -449,7 +449,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.5,
-	UnhappyChange	=	-99,
+	UnhappyChange	=	-55,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,

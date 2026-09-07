@@ -19,57 +19,14 @@ imports
 
 
 
-    /* =====================================================================
-       FILLED-VESSEL WEIGHTS -- container + contents   (BACKLOG 3.19 sweep,
-       2026-09-06).  Companion to the bucket-family pass in 8ad8f08; this is
-       the "once and for all" mod-wide alignment to vanilla.
 
-       THE ENGINE RULE (CFR 42.20 + measured live on mvfast, not estimated):
-         InventoryItem.getUnequippedWeight() = getActualWeight()
-                                             + getContentsWeight()
-         and getContentsWeight() for a component FluidContainer returns
-         fluidContainer.getAmount() VERBATIM -- the engine's liquid density is
-         exactly 1.0 kg per litre, for water, spirit, bleach and petrol alike
-         (Base.PetrolCan: 1.6 + 10 L = 11.6, so vanilla itself uses 1.0 for
-         petrol).
 
-       Every item in this file is a LEGACY base:food / base:drainable with NO
-       FluidContainer component, so the engine adds nothing for contents and
-       the script Weight must ITSELF be the full container+contents figure.
-       It then tapers for free as the vessel empties:
-         Food.getActualWeight()            -> (full-empty)*usedDelta + empty
-         DrainableComboItem.updateWeight() -> (full-empty)*uses      + empty
-       with `empty` read from ReplaceOnUse / ReplaceOnDeplete.  One authored
-       number sets both ends.
 
-       EVERY target below is the vanilla vessel's own filled reading, MEASURED
-       by filling it to its declared FluidContainer capacity on the live
-       server -- see tools/pzrepl/results/vesselweight-anchors-2026-09-06.txt:
 
-         Base.Whiskey      0.7 + 1.0 L = 1.70     Base.EmptyJar  0.2 + 1.0 = 1.20
-         Base.BeerEmpty    0.1 + 0.3 L = 0.40     Base.Bleach    0.2 + 1.0 = 1.20
-         Base.WineOpen     0.3 + 1.0 L = 1.30     Base.Kettle    1.0 + 1.5 = 2.50
-         Base.PopBottle    0.1 + 2.0 L = 2.10     Base.Saucepan  0.7 + 0.6 = 1.30
-         Base.WaterBottle  0.1 + 1.0 L = 1.10     Base.Mugl      0.2 + 0.2 = 0.40
-         Base.Sportsbottle 0.1 + 1.0 L = 1.10     Base.BucketEmpty 1.0+10  = 11.0
-                                                  Base.WateredCan  2.0+ 8  = 10.0
 
-       NOT everything went up: a beer bottle is 330 ml, so every *Beer* vessel
-       DROPS 0.7 -> 0.4, and SaucepanWaterRefill drops 2.0 -> 1.3 (the pan only
-       holds 600 ml).  The 2-litre pop bottle is the biggest single rise,
-       0.2 -> 2.1.
 
-       A cross-check that deliberately did NOT win: vanilla's own sealed
-       Base.CannedCarrots ("Jar of Carrots") is 0.8, not 1.2.  That is a
-       solid-pack jar and vanilla's food weights are loose; the FluidContainer
-       route is the one the player actually sees, because a vanilla jar filled
-       with water at a sink reads exactly 1.20.  Jars of liquid follow the jar
-       of liquid.
 
-       Guard: tools/pzrepl/tests/vesselweight.lua asserts every number here.
-       ===================================================================== */
 
-/* refills */
 	
 	
 		item WhiskeyRefill
@@ -77,8 +34,6 @@ imports
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 		
-		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.7.
-		   Base.Whiskey 0.7 + 1.0 L; a filled vanilla whiskey bottle reads 1.70 */
 		Weight	=	1.7,
 		
 		ItemType	= base:food,
@@ -113,16 +68,9 @@ imports
 
 	item BeerRefill
 	{
-	/* BACKLOG 3.21: a beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so it gets
-	   0.3x the litre rate. It was carrying a FULL litre's worth (-9 / 1200) at 0.4 kg,
-	   which made it the strictly dominant vessel mod-wide -- 30.0 hunger per litre
-	   against the 2 L pop bottle's 1.5. Its fill recipes now yield THREE bottles per
-	   still-pot use so the pot economy is unchanged. */
 	    StressChange	=	-15,
 	    DisplayCategory = Food,
 		HungerChange	=	-3,
-		/* container+contents (BACKLOG 3.19): was 0.7 -> 0.4.
-		   Base.BeerEmpty 0.1 + 0.3 L; a filled vanilla beer bottle reads 0.40 -- a beer bottle is 330 ml, so this DROPS */
 		Weight	=	0.4,
 		
 		ItemType	= base:food,
@@ -157,14 +105,9 @@ imports
 
 	item WineRefill
 	{
-	/* BACKLOG 3.21: 1.0 L (Base.WineOpen). Rate -10 hunger / -10 thirst / -50 unhappy
-	   / -50 stress / 1200 cal per litre. Was -9 / -13 / -30 -- a leftover of the
-	   2026-08-27 pass that derived nutrition from the then-wrong vessel weights. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 		HungerChange	=	-10,
-		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.3.
-		   Base.WineOpen 0.3 + 1.0 L; a filled vanilla wine bottle reads 1.30 */
 		Weight	=	1.3,
 
 		ItemType	= base:food,
@@ -200,30 +143,9 @@ imports
 
 	item WhiteLightning
     {
-	/* BACKLOG 3.21: 1.0 L jar. 686 was exactly 1200*0.4/0.7 and -6 was -10*0.4/0.7 --
-	   both artifacts of the 2026-08-27 weight-derived pass, not flavour. Restored to
-	   the 1-litre rate. AlcoholPower 1.1 is DELIBERATELY left: it is the base of the
-	   aging ladder.
 
-	   2026-09-07 user-directed rebalance: UnhappyChange/StressChange -99 -> -65.
-	   Every bottled-spirit vessel in this file is -50/L (WhiskeyRefill etc, see the
-	   RATE table in tests/nutritionperlitre.lua) and the jar was carrying -99, i.e.
-	   ~2x a bottle for the same still-pot litre -- the flagship product should beat
-	   a bottle but not swallow the whole ladder above it whole. -65 keeps the
-	   3-stage aging ladder's ordering intact (verified live, all StressChange,
-	   more negative = better):
-	     bottles (any, per L)         -50
-	     Charred Oak Shine  (stage 1) -50   <- unchanged, still no better than a bottle
-	     White Lightning jar          -65   <- this edit
-	     Green Whiskey      (stage 2) -75   <- unchanged
-	     Scarlet Oak Whiskey (stage3) -99   <- unchanged, still the best drink in the mod
-	   UnhappyChange moves the same amount for the same reason; it does not
-	   participate in the ladder (rule 69 pins it at -99 on all 3 aged stages,
-	   inherited via ReplaceOnRotten, independent of this base item). */
 	StressChange	=	-65,
 	HungerChange	=	-10,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L; a vanilla jar filled at a sink reads 1.20 */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -255,44 +177,11 @@ imports
 	UseDelta = 0.25,
     }
 
-	/* ------------------------------------------------------------------
-	   Flavored White Lightning (v1: WhiteLightning jar only).
-	   Same booze (AlcoholPower/ThirstChange held at the WhiteLightning
-	   baseline), softened StressChange/UnhappyChange below the parent jar:
-	   that IS the flavor mechanic.  Deliberately NON-perishable like the
-	   parent (Packaged = TRUE, no DaysFresh/DaysTotallyRotten) even though
-	   the fruit input is perishable.
-
-	   2026-09-07: parent jar rebalanced -99 -> -65 (see the WhiteLightning
-	   block above). The flavors were -85 against the OLD -99 parent, i.e.
-	   85/99 = 86.7% of the parent's mood value -- deliberately still softer
-	   than plain moonshine, not stronger. Re-applying that same ratio to
-	   the new parent (65 * 85/99 = 55.8) keeps the flavors relatively
-	   where they always were: below the jar (-65) but clearly still ahead
-	   of a bottle (-50), not just a hair above it. -85 -> -56. */
-
-	   SPOILAGE INHERITANCE -- verified headlessly 2026-09-05
-	   (tools/pzrepl/tests/flavor.lua): a craft output does NOT inherit its
-	   inputs' age or rot.  Both behaviours are opt-in per-input flags that
-	   these recipes deliberately do not set:
-	     flags[InheritFoodAge]   -- would copy the fruit's age onto the jar
-	     flags[AllowRottenItem]  -- would let a rotten fruit be used at all
-	   Measured: fresh apple and a 7.5-day apple both yield age=0,
-	   OffAge/OffAgeMax = 1000000000 (the "never spoils" sentinel, straight
-	   off this script, identical to the parent WhiteLightning), and
-	   setAge(100000) on the result still reads isRotten() == false.
-	   A fully rotten fruit simply makes the recipe UNAVAILABLE.
-	   ------------------------------------------------------------------ */
 
 	item WhiteLightningApple
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate, plus the fruit premium kept as the
-	   ABSOLUTE addition it always was (+1 hunger, +54 cal over plain; a vanilla apple
-	   is 95 cal). Was -7 / 740 on the artifact base of -6 / 686. */
 	StressChange	=	-56,
 	HungerChange	=	-11,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -325,11 +214,8 @@ imports
 
 	item WhiteLightningCherry
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +14). */
 	StressChange	=	-56,
 	HungerChange	=	-11,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -362,11 +248,8 @@ imports
 
 	item WhiteLightningPeach
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +44). */
 	StressChange	=	-56,
 	HungerChange	=	-11,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -399,11 +282,8 @@ imports
 
 	item WhiteLightningLemon
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +14). */
 	StressChange	=	-56,
 	HungerChange	=	-11,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -436,11 +316,8 @@ imports
 
 	item WhiteLightningMint
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate; mint premium kept absolute (+0, +4). */
 	StressChange	=	-56,
 	HungerChange	=	-10,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -471,80 +348,20 @@ imports
 	UseDelta = 0.25,
     }
 
-	/* ------------------------------------------------------------------
-	   BACKLOG 1.4 -- WHISKEY BY AGING, a 3-STAGE LADDER.
 
-	     craftRecipe CharAndAgeWhiteLightning
-	       Moonshine.WhiteLightning + 2 charcoal
-	         -> WhiteLightningCharred  "Charred Oak Shine (1/3)"
-	         -> (30 days, unattended)  WhiskeyGreen "Green Whiskey (2/3)"
-	         -> (90 days total)        WhiskeyScarletOak "Scarlet Oak Whiskey"
 
-	   Only the FIRST step is a craft.  The other two are `ReplaceOnRotten`
-	   swaps driven by the item's own age -- quirks rule 69, which proves the
-	   engine is completely indifferent to the DIRECTION of the swap (vanilla's
-	   own SugarBeetSyrupPot -> SugarBeetSugarPot is the same positive shape).
-	   `Moonshine.WhiteLightning` itself is deliberately UNCHANGED and stays
-	   non-perishable; nothing here alters the flagship jar.
 
-	   THREE HARD CONSTRAINTS, all measured live 2026-09-06
-	   (tools/pzrepl/probes/probe_aging_ladder.lua, 63 assertions, 0 failures):
 
-	   (a) EVERY `ReplaceOnRotten` TARGET MUST BE `ItemType = base:food`.
-	       Anything else makes InventoryItemFactory.CreateItem() return null and
-	       the SOURCE IS DESTROYED WITH NOTHING CREATED -- a silent vanish with
-	       only a server-log WARN.  Verified here as a deliberate control.  All
-	       three items below are base:food; verify any future link the same way.
 
-	   (b) THE TARGET INHERITS THE SOURCE'S `age`, so each stage needs a
-	       strictly LARGER `DaysTotallyRotten` than the age it inherits, or the
-	       whole ladder would cascade in a single tick.  30 -> 90 -> none.
-	       Measured: stage 2 inherits age 30.5 against its own 90, not rotten.
 
-	   (c) THE TARGET'S NUTRITION IS OVERWRITTEN BY THE SOURCE'S:
-	       HungerChange, UnhappyChange, BoredomChange, Calories, Carbohydrates,
-	       Lipids, Proteins all arrive from the previous stage.  So all three
-	       declare IDENTICAL nutrition (the WhiteLightning baseline) and the
-	       ladder is differentiated ONLY through StressChange, AlcoholPower and
-	       DisplayName -- fields the target demonstrably KEEPS.  Measured: a
-	       source with Calories forced to 9999 produced a stage 2 reading 9999
-	       calories but stage 2's own StressChange -0.75 and AlcoholPower 1.25.
-	       NEVER try to make an aged stage "better" via Calories/UnhappyChange.
 
-	   NO `DaysFresh` ON ANY STAGE.  That keeps offAge at the 1e9 sentinel,
-	   which suppresses the "(Fresh)" / "(Stale)" name prefix completely (and
-	   with it every stale hunger/thirst/texture penalty).  Measured: the
-	   stage-1 name is identical at ages 0 / 1 / 10 / 20 / 29.99.  The price is
-	   that B42 has no freshness bar at all, which is exactly why this is a
-	   3-stage ladder: the DisplayName is the ONLY progress feedback a player
-	   ever gets, so the stage number lives in the name.
 
-	   TUNING.  Aging is `age += (worldAgeHours - lastAged) * FoodRotSpeed / 24`,
-	   a catch-up model, so it also runs in unloaded chunks and survives
-	   save/reload.  The sandbox Food Rot Speed option scales it 0.4x-1.7x, so
-	   the nominal 30 / 90 days is really 18-75 / 53-225 days, and a POWERED
-	   FRIDGE applies a further 0.2x.  Both are documented in the tooltips.
 
-	   KNOWN, ACCEPTED: a jar drunk down to half and THEN aged carries its
-	   half-empty HungerChange across the swap (inherited, per (c)) but its
-	   ThirstChange resets to the new stage's script value (kept, per (c)).  So
-	   part-drinking an aging jar hands back the thirst half of one jar after 30
-	   in-game days.  That is engine behaviour common to every ReplaceOnRotten
-	   chain including vanilla's, the reward is far smaller than the wait, and a
-	   workaround would cost more than it saves.
-	   ------------------------------------------------------------------ */
 
 	item WhiteLightningCharred
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate. Quirks rule 69: a ReplaceOnRotten
-	   TARGET has its nutrition overwritten by the source's, so all three ladder
-	   stages must declare IDENTICAL Hunger/Thirst/Unhappy/Calories -- they do
-	   (-10 / -10 / -99 / 1200). The ladder stays differentiated ONLY by
-	   StressChange and AlcoholPower, which the target keeps. Do not undo that. */
 	StressChange	=	-50,
 	HungerChange	=	-10,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -556,15 +373,7 @@ imports
 	AlcoholPower = 1.1,
 	UnhappyChange	=	-99,
 
-	/* TEMP TEST VALUE - REVERT TO 30 BEFORE RELEASE  (stage 1 of 2)
-	   Shortened so the aging ladder can be watched in one sitting instead of
-	   30 in-game days.  1 is the FLOOR, not a choice: Item.Load parses this
-	   field with `this.daysTotallyRotten = Integer.parseInt(val)` (CFR 42.20,
-	   zombie/scripting/objects/Item.java:2158) and both getter and setter are
-	   `int`, so a fractional value like 0.05 throws NumberFormatException
-	   during script load rather than truncating.  1 in-game day is about one
-	   real hour at the default day length.
-	   REVERT: this line -> 30, and WhiskeyGreen's -> 90. */
+	/* TEMP TEST VALUE - REVERT TO 30 BEFORE RELEASE (stage 1 of 2). Must be an int. REVERT: this line -> 30, and WhiskeyGreen's -> 90. */
 	DaysTotallyRotten = 1,
 	ReplaceOnRotten = WhiskeyGreen,
 
@@ -590,13 +399,8 @@ imports
 
 	item WhiskeyGreen
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate. Identical nutrition to the other two
-	   ladder stages by necessity (rule 69); StressChange -75 / AlcoholPower 1.25 are
-	   what make stage 2 stage 2. */
 	StressChange	=	-75,
 	HungerChange	=	-10,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -608,12 +412,7 @@ imports
 	AlcoholPower = 1.25,
 	UnhappyChange	=	-99,
 
-	/* TEMP TEST VALUE - REVERT TO 90 BEFORE RELEASE  (stage 2 of 2)
-	   Must stay STRICTLY LARGER than stage 1's value, because the target
-	   inherits the source's `age` (constraint (b) above) -- if this were also
-	   1 the whole ladder would cascade in a single tick.  2 is the smallest
-	   integer that does that, and int is forced: see the note on stage 1.
-	   REVERT: this line -> 90, and WhiteLightningCharred's -> 30. */
+	/* TEMP TEST VALUE - REVERT TO 90 BEFORE RELEASE (stage 2 of 2). Must be an int and strictly greater than stage 1. REVERT: this line -> 90, and WhiteLightningCharred's -> 30. */
 	DaysTotallyRotten = 2,
 	ReplaceOnRotten = WhiskeyScarletOak,
 
@@ -639,13 +438,8 @@ imports
 
 	item WhiskeyScarletOak
     {
-	/* BACKLOG 3.21: 1.0 L jar at the litre rate. Identical nutrition to the other two
-	   ladder stages by necessity (rule 69); StressChange -99 / AlcoholPower 1.5 are
-	   what make it the terminal stage. */
 	StressChange	=	-99,
 	HungerChange	=	-10,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
 	ItemType	= base:food,
 	FoodType = Liquor,
@@ -678,12 +472,7 @@ imports
     }
 
 
-	/* LEGACY / MIGRATION ONLY -- do NOT use Moonshine.EmptyJar in any new recipe.
-	   It shadowed vanilla Base.EmptyJar (no FluidContainer, no base:jar/base:glass
-	   tags -> could not be canned, boxed, or water-filled).  As of 2026-09-06 nothing
-	   PRODUCES it any more; it survives here only so existing saves still load the
-	   jars they already hold, and it stays listed in the Fill-Spirit input brackets so
-	   that legacy stock drains away naturally on the next distillation. */
+	/* LEGACY / MIGRATION ONLY -- do NOT use Moonshine.EmptyJar in any new recipe. Nothing produces it; it is kept only so existing saves still load, and stays in the Fill-Spirit input brackets so legacy stock drains away. */
  item EmptyJar
 	{
 	    DisplayCategory = Cooking,
@@ -693,11 +482,6 @@ imports
 		Weight				=		0.2,
 		Tooltip = Tooltip_Jar,
 		SurvivalGear = TRUE,
-		/* StaticModel added 2026-09-06 (BACKLOG 3.9): this was the ONLY field
-		   missing, so the jar had a ground model but nothing in hand.  It is
-		   also what flags[Prop1] reads -- CraftRecipeData.getModel() returns
-		   input.getMostRecentItem().getStaticModel(), so an item with no
-		   StaticModel makes a Prop1 flag a silent no-op. */
 		StaticModel = JarGlass_Ground,
 		WorldStaticModel = JarGlass_Ground,
 	}
@@ -705,17 +489,9 @@ imports
 		
 	item SodaBottleRefill
 	{
-	/* BACKLOG 3.21: a pop bottle is 2.0 L (Base.PopBottle Capacity 2.00) -- the biggest
-	   vessel in the mod, and it was the WORST deal (1.5 hunger per litre). Now 2x the
-	   litre rate, and its fill recipes cost TWO still-pot uses to match.
-	   2400 cal is deliverable: Nutrition.setCalories clamps to [-2200, 3700] and a
-	   default character sits at 800, so 2400 lands in full (measured). Vanilla's own
-	   2500 cal/L spirit rate would declare 5000 here and lose 2100 of it. */
 	    StressChange	=	-100,
 	    DisplayCategory = Food,
 		HungerChange	=	-20,
-		/* container+contents (BACKLOG 3.19): was 0.2 -> 2.1.
-		   Base.PopBottle 0.1 + 2.0 L; a filled vanilla pop bottle reads 2.10 -- it is a 2-LITRE bottle */
 		Weight	=	2.1,
 
 		ItemType	= base:food,
@@ -749,14 +525,9 @@ imports
 	
 	item WaterBottleRefill
 	{
-	/* BACKLOG 3.21: 1.0 L (Base.WaterBottle). Every old value here was the 2026-08-27
-	   weight artifact: 343 = 1200*0.2/0.7, 0.6 = 2*0.2/0.7, -3 = -10*0.2/0.7.
-	   Restored to the 1-litre rate. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 		HungerChange	=	-10,
-		/* container+contents (BACKLOG 3.19): was 0.2 -> 1.1.
-		   Base.WaterBottle 0.1 + 1.0 L; a filled vanilla water bottle reads 1.10 */
 		Weight	=	1.1,
 
 		ItemType	= base:food,
@@ -787,13 +558,9 @@ imports
 
 	item SportsBottleRefill
 	{
-	/* BACKLOG 3.21: 1.0 L (Base.Sportsbottle). Same 0.2/0.7 weight artifact as
-	   WaterBottleRefill; restored to the 1-litre rate. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 		HungerChange	=	-10,
-		/* container+contents (BACKLOG 3.19): was 0.2 -> 1.1.
-		   Base.Sportsbottle 0.1 + 1.0 L; a filled vanilla sports bottle reads 1.10 */
 		Weight	=	1.1,
 
 		ItemType	= base:food,
@@ -829,13 +596,9 @@ imports
 	
 	item BleachBottleRefill
 	{
-	/* BACKLOG 3.21: 1.0 L (Base.Bleach). Was -5 / -13 / -26 at the same litre as
-	   WhiskeyRefill's -10 / -10 / -50. Same liquid, same pot use -- same numbers. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 		HungerChange	=	-10,
-		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.2.
-		   Base.Bleach 0.2 + 1.0 L; a filled vanilla bleach bottle reads 1.20 */
 		Weight	=	1.2,
 		
 		ItemType	= base:food,
@@ -871,12 +634,6 @@ imports
 	}
 	
 	
-	/*---------water items----------*/
-	/*--Mugl,MugWhite,MugSpiffo,WhiskeyEmpty/BeerEmpty/WineEmpty2/WineEmpty/EmptyJar/PopBottleEmpty/WaterBottleEmpty/BleachEmpty,--*/
-	/*  "MugRed" was removed from the list above on 2026-09-07 (BACKLOG 3.20):
-	    it is not a real id in this build and this very comment is how the dead
-	    MugRedWaterRefill item got written in the first place.  Verify ids with
-	    `python3 tools/pzrepl/items.py verify <id>` before trusting a list. */
 	
 	
 item MuglWaterRefill
@@ -902,23 +659,6 @@ item MuglWaterRefill
 	DisplayCategory 	= Water,
 }
 
-	/* BACKLOG 3.20 (2026-09-07): `item MugRedWaterRefill` DELETED here.
-	   It declared `ReplaceOnDeplete = MugRed`, `Icon = MugRed`,
-	   `StaticModel = MugRed` and `WorldStaticModel = MugRed` -- and there is no
-	   `MugRed` in this build, in the mod or in vanilla B42 (`items.py find mug`
-	   -> ClayMug, ClayMugUnfired, MugSpiffo, MugWhite, Mugl, TestMug,
-	   TestWaterMug only; `items.py verify Base.MugRed` exits 1).  Caught by lint
-	   rule V1 during the BACKLOG 3.19 weight sweep.
-	   In the B42 tree it was a pure orphan: nothing produced it, nothing
-	   consumed it, no translation key, no tooltip, no loadout, no Lua reference
-	   -- a `grep -rn MugRed MoonshineMod/42/` hit only its own block.  So it was
-	   unreachable in play and only ever showed up as a permanent linter warning.
-	   The three real mugs (MuglWaterRefill / MugWhiteWaterRefill /
-	   MugSpiffoWaterRefill) are unaffected and keep full coverage.
-	   NOTE: the LEGACY B41 tree (MoonshineMod/media/) still defines this item AND
-	   has three live recipes producing it (MoonshineMod_DrinkRecipes.txt lines
-	   ~661/857/1054).  It is deliberately NOT touched here -- per the
-	   dual-version rule the B41 tree is only changed as an explicit backport. */
 
 item MugWhiteWaterRefill
 {
@@ -968,7 +708,6 @@ item MugSpiffoWaterRefill
 	
 	
 	
-	/*------------------------------------------------------------*/
 	
 	
 		
@@ -982,8 +721,6 @@ item MugSpiffoWaterRefill
 	
 	DisplayCategory 	= Water,
 	IsWaterSource		= TRUE,
-	/* container+contents (BACKLOG 3.19): was 0.7 -> 0.4.
-	   Base.BeerEmpty 0.1 + 0.3 L -- DROPS, a beer bottle is 330 ml */
 	Weight			= 0.4,
 	CanStoreWater		= TRUE,
 	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
@@ -1018,8 +755,6 @@ item MugSpiffoWaterRefill
 	
 	DisplayCategory 	= Water,
 	IsWaterSource		= TRUE,
-	/* container+contents (BACKLOG 3.19): was 0.7 -> 1.3.
-	   Base.WineOpen 0.3 + 1.0 L */
 	Weight			= 1.3,
 	CanStoreWater		= TRUE,
 	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
@@ -1048,8 +783,6 @@ item MugSpiffoWaterRefill
 		DisplayName		= Whiskey Bottle filled with Water,
 		DisplayCategory		= Water,
 		ItemType	= base:drainable,
-		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.7.
-		   Base.Whiskey 0.7 + 1.0 L */
 		Weight			= 1.7,
 		Icon			= Whiskey,
 		CanStoreWater		= TRUE,
@@ -1084,8 +817,6 @@ item MugSpiffoWaterRefill
                 DisplayName = Bottle filled with Water,
                 DisplayCategory = Water,
                 ItemType	= base:drainable,
-                /* container+contents (BACKLOG 3.19): was 0.2 -> 1.1.
-                   Base.WaterBottle 0.1 + 1.0 L */
                 Weight = 1.1,
                 Icon	=	WaterBottle,
 
@@ -1114,8 +845,6 @@ item MugSpiffoWaterRefill
                 DisplayName = Sports Bottle filled with Water,
                 DisplayCategory = Water,
                 ItemType	= base:drainable,
-                /* container+contents (BACKLOG 3.19): was 0.2 -> 1.1.
-                   Base.Sportsbottle 0.1 + 1.0 L */
                 Weight = 1.1,
                 Icon	=	Sportsbottle,
 
@@ -1143,8 +872,6 @@ item MugSpiffoWaterRefill
 	
 		DisplayCategory 	= Water,
 		IsWaterSource		= TRUE,
-		/* container+contents (BACKLOG 3.19): was 0.2 -> 2.1.
-		   Base.PopBottle 0.1 + 2.0 L -- a 2-LITRE bottle */
 		Weight			= 2.1,
 		CanStoreWater		= TRUE,
 		FillFromDispenserSound 	= GetWaterFromDispenserPlasticMedium,
@@ -1178,8 +905,6 @@ item MugSpiffoWaterRefill
 	    DisplayCategory = Water,
 		IsWaterSource	=	TRUE,
 		Icon	=	Bleach,
-		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.2.
-		   Base.Bleach 0.2 + 1.0 L */
 		Weight	=	1.2,
 		CanStoreWater	=	TRUE,
 		ItemType	= base:drainable,
@@ -1203,8 +928,6 @@ item MugSpiffoWaterRefill
 
 	    DisplayCategory = Water,
 		IsWaterSource	=	TRUE,
-		/* container+contents (BACKLOG 3.19): was 2 -> 2.5.
-		   Base.Kettle 1.0 + 1.5 L */
 		Weight	=	2.5,
 		CanStoreWater	=	TRUE,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
@@ -1231,8 +954,6 @@ item SaucepanWaterRefill
 		DisplayName = Saucepan filled with Water,
 		DisplayCategory = Water,
 		ItemType	= base:drainable,
-		/* container+contents (BACKLOG 3.19): was 2 -> 1.3.
-		   Base.Saucepan 0.7 + 0.6 L -- DROPS, the pan only holds 600 ml */
 		Weight = 1.3,
 		Icon = SaucepanEmpty,
 		CanStoreWater = TRUE,
@@ -1254,48 +975,13 @@ item SaucepanWaterRefill
 }
 
 
-	/* BACKLOG 2.8 (2026-09-06) -- the spirit half of bucket decanting, revived.
-	   Originally shipped in acef84b and reverted in 3b7121c because the recipe
-	   never consumed the bucket; quirks rule 65 explains that (a real
-	   `component FluidContainer` input needs flags[ItemCount]) and the recipes
-	   below now carry the flag.
 
-	   NUTRITIONALLY THIS IS WhiskeyRefill, byte for byte (HungerChange -10,
-	   Calories 1200, AlcoholPower 2, UseDelta 0.25 -> 4 sips).  That is
-	   deliberate: no balance number is being invented here.  A bucket of
-	   spirit is worth exactly one whiskey bottle and weighs 4.0 instead of
-	   0.7, i.e. it is a strictly heavier container for the same drink, so
-	   adding it cannot inflate the spirit economy.
 
-	   Two fields differ from the 2026-08-26 original, both measured:
-	     ReplaceOnUse      Base.BucketEmpty, not the bare `BucketEmpty`
-	                       (rule 66: a bare token in this field is
-	                       MODULE-scoped).  WhiteLightning already does this.
-	     WorldStaticModel  Bucket_Ground_Fluid, not BucketFullWater_Ground --
-	                       the latter resolves to nothing ("???." in
-	                       ModelScript.check, see the sibling BucketWaterRefill
-	                       which still has the dead reference). */
 	item BucketRefill
 	{
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 
-		/* Weight 2.0 = container + contents (quirks rule 68), not an arbitrary
-		   "heavier than a bottle" anti-exploit number. RefillSpiritInBucket3/4/5
-		   (this file's recipes) each drain exactly ONE serving from the source
-		   still pot (bare `item 1 [pot]`, rule 37) regardless of tier -- NOT the
-		   whole 4/6/8-serving pot, so this is intentionally a single flat value,
-		   not a 3-tier scale. "One serving" is independently pinned at 1 litre
-		   by two sources: vanilla Base.EmptyJar's own component FluidContainer
-		   declares Capacity = 1.0, and reference_b42_craftrecipe_quirks rule 67
-		   / project_bucket_decant_done already measured "every vessel in the
-		   family is about one serving big" = 1 L. Using the same water density
-		   the report itself measured live (a sink-filled Base.BucketEmpty reads
-		   11 = 1.0 container + 10 L water, i.e. 1.0 weight/L): 1.0 (bucket,
-		   matching vanilla Base.BucketEmpty's own declared Weight) + 1.0 (one
-		   1 L serving) = 2.0. Previous value (4.0) was carried over unchanged
-		   from the older flat BucketWaterRefill/WateringcanWaterRefill items in
-		   this same file and was never actually container+contents math. */
 		Weight	=	2.0,
 
 		ItemType	= base:food,
@@ -1331,20 +1017,6 @@ item SaucepanWaterRefill
 	{
 	    DisplayCategory = Water,
 		IsWaterSource	=	TRUE,
-		/* Weight 11.0 = container + contents (2026-09-06 bucket sweep).
-		   This is THE reference case the whole sweep is calibrated on: a
-		   sink-filled vanilla Base.BucketEmpty reads exactly 11 in-game, and
-		   the engine says why -- BucketEmpty declares Weight 1.0 and a
-		   component FluidContainer with Capacity 10.0, and
-		   InventoryItem.getContentsWeight() for a FluidContainer returns
-		   fluidContainer.getAmount() verbatim, i.e. 1.0 kg per litre.
-		   This item is a legacy base:drainable with no FluidContainer, so it
-		   gets no automatic contents weight and the script Weight must be the
-		   FULL figure.  DrainableComboItem.updateWeight() then interpolates
-		   (11.0 - 1.0) * uses + 1.0 down to the empty bucket's own 1.0 as it
-		   drains -- verified live (at Weight 4 it read 4.00 full / 2.56 half).
-		   Was 4, which is neither the container, the contents, nor the sum:
-		   it made a full 10 L bucket of water lighter than 4 litres of it. */
 		Weight	=	11.0,
 		CanStoreWater	=	TRUE,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
@@ -1373,14 +1045,6 @@ item SaucepanWaterRefill
 	ItemType	= base:drainable,
 	DisplayName		= Watering Can filled with Water,
 	Icon			= WateringCan,
-	/* Weight 10.0 = container + contents (2026-09-06 bucket sweep).
-	   Measured live: Base.WateredCan declares Weight 2.0 and a component
-	   FluidContainer with Capacity 8.0, so a full watering can is
-	   2.0 + 8 L = 10.0.  Was 4.0, copied from the old flat BucketWaterRefill
-	   value and never actually container+contents (the BucketRefill comment
-	   further up this file already flagged 4.0 as that stray inheritance).
-	   ReplaceOnDeplete = WateredCan means DrainableComboItem.updateWeight()
-	   tapers this to 2.0 as it empties, so only the full figure is set here. */
 	Weight			= 10.0,
     	UseDelta		= 0.025,
 	UseWhileEquipped	= false,
@@ -1408,8 +1072,6 @@ item SaucepanWaterRefill
 	DisplayCategory 	= Water,
 	
 	IsWaterSource		= TRUE,
-	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
-	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight			= 1.2,
 	CanStoreWater		= TRUE,
 	FillFromDispenserSound 	= GetWaterFromDispenserGlass,
@@ -1421,11 +1083,6 @@ item SaucepanWaterRefill
 	ReplaceOnDeplete	= Base.EmptyJar,
 	ReplaceOnUseOn		= WaterSource-JarWaterFull,
 	Icon			=     ApaJar,
-	/* Models added 2026-09-06 (BACKLOG 3.9).  This item had NEITHER
-	   StaticModel nor WorldStaticModel -- the only vessel in the whole
-	   pour-out family with no in-hand model at all (headless sweep:
-	   56 of 57 resolved, this one returned nil).  Same pair that every
-	   other jar-shaped item in this file already uses. */
 	StaticModel 		= JarGlass_Ground,
 	WorldStaticModel 	= JarGlass_Ground,
 
@@ -1435,5 +1092,4 @@ item SaucepanWaterRefill
 	
 	
 	
-	/*-----ENDs----*/
 }

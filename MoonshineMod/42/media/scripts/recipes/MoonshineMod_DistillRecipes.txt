@@ -6,7 +6,7 @@ module Moonshine
     }
 
     craftRecipe MakeDistillPotI
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -35,8 +35,7 @@ module Moonshine
     }
 
     craftRecipe DismantleDistillI
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -63,8 +62,7 @@ module Moonshine
     }
 
     craftRecipe DismantleDistillII
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -92,8 +90,7 @@ module Moonshine
     }
 
     craftRecipe DismantleDistillIII
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -122,8 +119,7 @@ module Moonshine
     }
 
     craftRecipe DismantleCharcoalFilter
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -150,8 +146,7 @@ module Moonshine
     }
 
     craftRecipe DismantleControllableColumn
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -182,27 +177,12 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
-        /* F11/U5: whole buckets.  `item 10` on a base:food HungerChange
-           -10 meant 10/10 = 1.0 BUCKETS (quirks rule 1), so this silently
-           did not offer with one bucket in the bag.  One bucket now charges
-           any tier -- the bigger still just yields more from it. */
         item 1 [Moonshine.CornMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotSmall,
-            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
-               (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
-            /* O2 (round 7): the tarp + tie the player paid at
-               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
-               comes off to load the still.  This used to be
-               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
-               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
-               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
-               Native output lines instead: deterministic, exactly the refund, and
-               they go through getCreatedOutputItems() so they survive the MP
-               AddItem sync gap. */
             item 1 Base.Tarp,
             item 1 Base.RubberBand,
         }
@@ -216,27 +196,12 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
-        /* F11/U5: whole buckets.  `item 12` on a base:food HungerChange
-           -10 meant 12/10 = 1.2 BUCKETS (quirks rule 1), so this silently
-           did not offer with one bucket in the bag.  One bucket now charges
-           any tier -- the bigger still just yields more from it. */
         item 1 [Moonshine.CornMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotMedium,
-            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
-               (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
-            /* O2 (round 7): the tarp + tie the player paid at
-               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
-               comes off to load the still.  This used to be
-               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
-               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
-               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
-               Native output lines instead: deterministic, exactly the refund, and
-               they go through getCreatedOutputItems() so they survive the MP
-               AddItem sync gap. */
             item 1 Base.Tarp,
             item 1 Base.RubberBand,
         }
@@ -250,27 +215,12 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
-        /* F11/U5: whole buckets.  `item 15` on a base:food HungerChange
-           -10 meant 15/10 = 1.5 BUCKETS (quirks rule 1), so this silently
-           did not offer with one bucket in the bag.  One bucket now charges
-           any tier -- the bigger still just yields more from it. */
         item 1 [Moonshine.CornMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotLarge,
-            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
-               (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
-            /* O2 (round 7): the tarp + tie the player paid at
-               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
-               comes off to load the still.  This used to be
-               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
-               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
-               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
-               Native output lines instead: deterministic, exactly the refund, and
-               they go through getCreatedOutputItems() so they survive the MP
-               AddItem sync gap. */
             item 1 Base.Tarp,
             item 1 Base.RubberBand,
         }
@@ -284,27 +234,12 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotSmall],
-        /* F11/U5: whole buckets.  `item 10` on a base:food HungerChange
-           -10 meant 10/10 = 1.0 BUCKETS (quirks rule 1), so this silently
-           did not offer with one bucket in the bag.  One bucket now charges
-           any tier -- the bigger still just yields more from it. */
         item 1 [Moonshine.PotatoMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotSmall,
-            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
-               (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
-            /* O2 (round 7): the tarp + tie the player paid at
-               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
-               comes off to load the still.  This used to be
-               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
-               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
-               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
-               Native output lines instead: deterministic, exactly the refund, and
-               they go through getCreatedOutputItems() so they survive the MP
-               AddItem sync gap. */
             item 1 Base.Tarp,
             item 1 Base.RubberBand,
         }
@@ -318,27 +253,12 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotMedium],
-        /* F11/U5: whole buckets.  `item 12` on a base:food HungerChange
-           -10 meant 12/10 = 1.2 BUCKETS (quirks rule 1), so this silently
-           did not offer with one bucket in the bag.  One bucket now charges
-           any tier -- the bigger still just yields more from it. */
         item 1 [Moonshine.PotatoMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotMedium,
-            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
-               (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
-            /* O2 (round 7): the tarp + tie the player paid at
-               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
-               comes off to load the still.  This used to be
-               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
-               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
-               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
-               Native output lines instead: deterministic, exactly the refund, and
-               they go through getCreatedOutputItems() so they survive the MP
-               AddItem sync gap. */
             item 1 Base.Tarp,
             item 1 Base.RubberBand,
         }
@@ -352,27 +272,12 @@ module Moonshine
         inputs
         {
         item 1 [Moonshine.DistillPotLarge],
-        /* F11/U5: whole buckets.  `item 15` on a base:food HungerChange
-           -10 meant 15/10 = 1.5 BUCKETS (quirks rule 1), so this silently
-           did not offer with one bucket in the bag.  One bucket now charges
-           any tier -- the bigger still just yields more from it. */
         item 1 [Moonshine.PotatoMashFermented] flags[ItemCount],
         }
         outputs
         {
             item 1 Moonshine.Mash_DistillPotLarge,
-            /* the bucket: ReplaceOnUse does NOT fire on a craft-consume
-               (rule 45), so it has to come back from an output line. */
             item 1 Base.BucketEmpty,
-            /* O2 (round 7): the tarp + tie the player paid at
-               Cover{Corn,Potato}MashBucketWithTarp come back here, when the cover
-               comes off to load the still.  This used to be
-               `OnCreate = RecipeCodeOnCreate.BucketCover`, whose ZombRand(1,7)
-               ladder ALWAYS returned Tarp+RubberBand and additionally handed out a
-               free extra RubberBand (1-in-6) or a free Base.Button (1-in-6).
-               Native output lines instead: deterministic, exactly the refund, and
-               they go through getCreatedOutputItems() so they survive the MP
-               AddItem sync gap. */
             item 1 Base.Tarp,
             item 1 Base.RubberBand,
         }
@@ -385,16 +290,6 @@ module Moonshine
         time = 400,
         inputs
         {
-        /* F11/U4, quirks rule 30.  The old shape was a bare
-           `-fluid 40.0 [Water]` with NO kept companion container, so it
-           could never source the water and never offered -- measured
-           UNAVAILABLE with 10 full 10 L buckets AND 10 full water bottles
-           in the bag.  40/60/80 L was also four full buckets.
-           Now: a dedicated mode:keep water container, a DIFFERENT item
-           type from the DistillPot being consumed, and 4.0 L -- one litre
-           per serving the filled pot yields.  A `-fluid` line SUMS across
-           every kept container matching its input line (F11/U6b), so this
-           takes one bucket, or 4 water bottles, or any mix. */
         item 1 [Base.BucketEmpty;Base.WaterBottle] mode:keep,
         -fluid 4.0 [Water],
         item 1 [Moonshine.DistillPotSmall],
@@ -412,16 +307,6 @@ module Moonshine
         time = 400,
         inputs
         {
-        /* F11/U4, quirks rule 30.  The old shape was a bare
-           `-fluid 60.0 [Water]` with NO kept companion container, so it
-           could never source the water and never offered -- measured
-           UNAVAILABLE with 10 full 10 L buckets AND 10 full water bottles
-           in the bag.  40/60/80 L was also four full buckets.
-           Now: a dedicated mode:keep water container, a DIFFERENT item
-           type from the DistillPot being consumed, and 6.0 L -- one litre
-           per serving the filled pot yields.  A `-fluid` line SUMS across
-           every kept container matching its input line (F11/U6b), so this
-           takes one bucket, or 6 water bottles, or any mix. */
         item 1 [Base.BucketEmpty;Base.WaterBottle] mode:keep,
         -fluid 6.0 [Water],
         item 1 [Moonshine.DistillPotMedium],
@@ -439,16 +324,6 @@ module Moonshine
         time = 400,
         inputs
         {
-        /* F11/U4, quirks rule 30.  The old shape was a bare
-           `-fluid 80.0 [Water]` with NO kept companion container, so it
-           could never source the water and never offered -- measured
-           UNAVAILABLE with 10 full 10 L buckets AND 10 full water bottles
-           in the bag.  40/60/80 L was also four full buckets.
-           Now: a dedicated mode:keep water container, a DIFFERENT item
-           type from the DistillPot being consumed, and 8.0 L -- one litre
-           per serving the filled pot yields.  A `-fluid` line SUMS across
-           every kept container matching its input line (F11/U6b), so this
-           takes one bucket, or 8 water bottles, or any mix. */
         item 1 [Base.BucketEmpty;Base.WaterBottle] mode:keep,
         -fluid 8.0 [Water],
         item 1 [Moonshine.DistillPotLarge],
@@ -460,7 +335,7 @@ module Moonshine
     }
 
     craftRecipe MakeDistillCoalFilter
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -488,7 +363,7 @@ module Moonshine
     }
 
     craftRecipe MakeDistillCoalFilter2
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -516,8 +391,7 @@ module Moonshine
     }
 
     craftRecipe MakeControllableDistillColumn
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -531,15 +405,6 @@ module Moonshine
         item 1 tags[base:saw] mode:keep,
         item 1 [Base.Extinguisher] flags[ItemCount],
         item 1 [Base.AlarmClock2],
-        /* A car battery is KeepOnDeplete: flags[ItemCount] drains its whole
-           100000 charge but LEAVES the (now flat) battery in the inventory --
-           measured "CarBattery1 uses-100000.00" with no count change.  So the
-           player already keeps the battery here, and DismantleControllableColumn
-           must NOT hand back a second, full one (that was +1 battery per
-           build/dismantle cycle).  Deliberately no `mode:destroy`: this recipe
-           would then have two destroyed input types, which is the rule-18/33
-           crafting-UI hazard, and that is exactly what a headless test cannot
-           see. */
         item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3] flags[ItemCount],
         item 1 [Base.Wire] flags[ItemCount],
         item 5 [Base.ElectronicsScrap],
@@ -552,8 +417,7 @@ module Moonshine
     }
 
     craftRecipe UpgradeDistillIToII
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -576,8 +440,7 @@ module Moonshine
     }
 
     craftRecipe UpgradeDistillIIToIII
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -600,8 +463,7 @@ module Moonshine
     }
 
     craftRecipe DowngradeDistillIIToI
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -617,18 +479,13 @@ module Moonshine
         }
         outputs
         {
-            /* F11/U7: the returns must be exactly what UpgradeDistillIToII
-               spent (DuctTape + DistillPotFilter + DistillPotSmall).  The old
-               list also printed a MetalPipe, 3 Coal, a SmallSheetMetal and a
-               BeerCanEmpty, so upgrade->downgrade cycling minted them forever. */
             item 1 Moonshine.DistillPotSmall,
             item 1 Moonshine.DistillPotFilter,
         }
     }
 
     craftRecipe DowngradeDistillIIIToII
-    {        /* Prop1: Screwdriver -- item not in current inputs, could not map to flags[Prop1], verify before deleting */
-        /* Prop2: Base.ScrapMetal -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -644,11 +501,6 @@ module Moonshine
         }
         outputs
         {
-            /* F11/U7: same as DowngradeDistillIIToI -- UpgradeDistillIIToIII
-               spends DuctTape + DistillPotColumn + DistillPotMedium, so those
-               two items are all that may come back.  The old list also printed
-               2 MetalPipe, a full Wire spool, a Pot, a FULL CarBattery1, 3
-               SmallSheetMetal and a BeerCanEmpty per cycle. */
             item 1 Moonshine.DistillPotMedium,
             item 1 Moonshine.DistillPotColumn,
         }

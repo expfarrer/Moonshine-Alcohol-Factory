@@ -541,7 +541,7 @@ imports
 	   during script load rather than truncating.  1 in-game day is about one
 	   real hour at the default day length.
 	   REVERT: this line -> 30, and WhiskeyGreen's -> 90. */
-	DaysTotallyRotten = 30,
+	DaysTotallyRotten = 1,
 	ReplaceOnRotten = WhiskeyGreen,
 
 	ReplaceOnUse = 	Base.EmptyJar,
@@ -590,7 +590,7 @@ imports
 	   1 the whole ladder would cascade in a single tick.  2 is the smallest
 	   integer that does that, and int is forced: see the note on stage 1.
 	   REVERT: this line -> 90, and WhiteLightningCharred's -> 30. */
-	DaysTotallyRotten = 90,
+	DaysTotallyRotten = 2,
 	ReplaceOnRotten = WhiskeyScarletOak,
 
 	ReplaceOnUse = 	Base.EmptyJar,

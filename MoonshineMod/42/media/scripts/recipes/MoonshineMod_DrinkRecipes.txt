@@ -86,53 +86,74 @@ module Moonshine
 
 
     craftRecipe RefillSpiritInBeerBottle3
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
+           A beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so one pot use
+           now fills THREE of them (3 x 0.3 = 0.9 L, a ~10% bottling loss) instead
+           of one. Without this, the per-litre nutrition fix would turn the mod's
+           most common looted vessel into a trap: 30% of a pot use for a full one.
+           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_BeerThree --
+           3 empties in, 3 out, exactly 1 use off the pot, pot not consumed. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 3 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
         {
-            item 1 Moonshine.BeerRefill,
+            item 3 Moonshine.BeerRefill,
         }
     }
 
     craftRecipe RefillSpiritInBeerBottle4
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
+           A beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so one pot use
+           now fills THREE of them (3 x 0.3 = 0.9 L, a ~10% bottling loss) instead
+           of one. Without this, the per-litre nutrition fix would turn the mod's
+           most common looted vessel into a trap: 30% of a pot use for a full one.
+           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_BeerThree --
+           3 empties in, 3 out, exactly 1 use off the pot, pot not consumed. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 3 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
         {
-            item 1 Moonshine.BeerRefill,
+            item 3 Moonshine.BeerRefill,
         }
     }
 
     craftRecipe RefillSpiritInBeerBottle5
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
+           A beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so one pot use
+           now fills THREE of them (3 x 0.3 = 0.9 L, a ~10% bottling loss) instead
+           of one. Without this, the per-litre nutrition fix would turn the mod's
+           most common looted vessel into a trap: 30% of a pot use for a full one.
+           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_BeerThree --
+           3 empties in, 3 out, exactly 1 use off the pot, pot not consumed. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
         inputs
         {
-        item 1 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 3 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLarge],
         }
         outputs
         {
-            item 1 Moonshine.BeerRefill,
+            item 3 Moonshine.BeerRefill,
         }
     }
 
@@ -240,13 +261,19 @@ module Moonshine
 
     craftRecipe RefillSpiritInSodaBottle3
     {
+        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
+           A pop bottle is 2.0 L (Base.PopBottle Capacity 2.00), so it costs TWO
+           pot uses. Without this it would be strictly dominant: double the
+           nutrition of a 1 L bottle for the same single use, at +0.4 kg.
+           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_SodaTwo --
+           exactly 2 uses off the pot, 2 crafts off a 4-use Small pot, not 4. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
         inputs
         {
         item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotSmall],
+        item 2 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
         {
@@ -256,13 +283,19 @@ module Moonshine
 
     craftRecipe RefillSpiritInSodaBottle4
     {
+        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
+           A pop bottle is 2.0 L (Base.PopBottle Capacity 2.00), so it costs TWO
+           pot uses. Without this it would be strictly dominant: double the
+           nutrition of a 1 L bottle for the same single use, at +0.4 kg.
+           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_SodaTwo --
+           exactly 2 uses off the pot, 2 crafts off a 4-use Small pot, not 4. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
         inputs
         {
         item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotMedium],
+        item 2 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
         {
@@ -272,13 +305,19 @@ module Moonshine
 
     craftRecipe RefillSpiritInSodaBottle5
     {
+        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
+           A pop bottle is 2.0 L (Base.PopBottle Capacity 2.00), so it costs TWO
+           pot uses. Without this it would be strictly dominant: double the
+           nutrition of a 1 L bottle for the same single use, at +0.4 kg.
+           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_SodaTwo --
+           exactly 2 uses off the pot, 2 crafts off a 4-use Small pot, not 4. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
         inputs
         {
         item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
-        item 1 [Moonshine.Alc_DistillPotLarge],
+        item 2 [Moonshine.Alc_DistillPotLarge],
         }
         outputs
         {

@@ -6,7 +6,11 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIWith6XSpirit
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21: a beer bottle is 0.3 L, so charging the still from beer bottles
+           now takes 3x as many. The jar variant (...2) is unchanged -- a jar is 1.0 L.
+           Round trip is neutral: the fill side loses ~10% (3 x 0.3 = 0.9 L per use),
+           this side gains it back. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -15,12 +19,12 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
         inputs
         {
-        item 6 [Moonshine.BeerRefill] flags[ItemCount],
+        item 18 [Moonshine.BeerRefill] flags[ItemCount],
         item 1 [Moonshine.DistillPotMedium],
         }
         outputs
         {
-            item 6 Base.BeerEmpty,
+            item 18 Base.BeerEmpty,
         }
     }
 
@@ -31,17 +35,19 @@ module Moonshine
        Mirrors FillSpiritFromDistillPotII / III. */
     craftRecipe FillSpiritFromDistillPotI
     {
+        /* BACKLOG 3.21: 3 beer bottles per pot use (a beer bottle is 0.3 L). The pot
+           input is unchanged -- this still drains the whole charge in one craft. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
         {
-        item 4 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 12 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 4 [Moonshine.Alc_DistillPotSmall],
         }
         outputs
         {
-            item 4 Moonshine.BeerRefill,
+            item 12 Moonshine.BeerRefill,
         }
     }
 
@@ -62,19 +68,21 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotII
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21: 3 beer bottles per pot use (a beer bottle is 0.3 L). The pot
+           input is unchanged -- this still drains the whole charge in one craft. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
         {
-        item 6 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 18 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 6 [Moonshine.Alc_DistillPotMedium],
         }
         outputs
         {
-            item 6 Moonshine.BeerRefill,
+            item 18 Moonshine.BeerRefill,
         }
     }
 
@@ -115,7 +123,11 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIIWith8XSpirit
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21: a beer bottle is 0.3 L, so charging the still from beer bottles
+           now takes 3x as many. The jar variant (...2) is unchanged -- a jar is 1.0 L.
+           Round trip is neutral: the fill side loses ~10% (3 x 0.3 = 0.9 L per use),
+           this side gains it back. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -124,29 +136,31 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
         inputs
         {
-        item 8 [Moonshine.BeerRefill] flags[ItemCount],
+        item 24 [Moonshine.BeerRefill] flags[ItemCount],
         item 1 [Moonshine.DistillPotLarge],
         }
         outputs
         {
-            item 8 Base.BeerEmpty,
+            item 24 Base.BeerEmpty,
         }
     }
 
     craftRecipe FillSpiritFromDistillPotIII
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {
+        /* BACKLOG 3.21: 3 beer bottles per pot use (a beer bottle is 0.3 L). The pot
+           input is unchanged -- this still drains the whole charge in one craft. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
         {
-        item 8 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
+        item 24 [Base.BeerEmpty;Base.BeerBottle;Base.BeerImported] flags[ItemCount],
         item 8 [Moonshine.Alc_DistillPotLarge],
         }
         outputs
         {
-            item 8 Moonshine.BeerRefill,
+            item 24 Moonshine.BeerRefill,
         }
     }
 

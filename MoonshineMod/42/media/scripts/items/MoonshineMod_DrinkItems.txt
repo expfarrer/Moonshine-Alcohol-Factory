@@ -790,7 +790,11 @@ imports
 	
 	
 	/*---------water items----------*/
-	/*--Mugl,MugRed,MugWhite,MugSpiffo,WhiskeyEmpty/BeerEmpty/WineEmpty2/WineEmpty/EmptyJar/PopBottleEmpty/WaterBottleEmpty/BleachEmpty,--*/
+	/*--Mugl,MugWhite,MugSpiffo,WhiskeyEmpty/BeerEmpty/WineEmpty2/WineEmpty/EmptyJar/PopBottleEmpty/WaterBottleEmpty/BleachEmpty,--*/
+	/*  "MugRed" was removed from the list above on 2026-09-07 (BACKLOG 3.20):
+	    it is not a real id in this build and this very comment is how the dead
+	    MugRedWaterRefill item got written in the first place.  Verify ids with
+	    `python3 tools/pzrepl/items.py verify <id>` before trusting a list. */
 	
 	
 item MuglWaterRefill
@@ -816,26 +820,23 @@ item MuglWaterRefill
 	DisplayCategory 	= Water,
 }
 
-item MugRedWaterRefill
-{
-    IsWaterSource = TRUE,
-    Weight = 0.4,
-    CanStoreWater = TRUE,
-    ItemType	= base:drainable,
-    UseWhileEquipped = FALSE,
-    UseDelta = 1,
-    DisplayName = Red Mug filled with Water,
-    ReplaceOnDeplete	= MugRed,
-    ReplaceOnUseOn = WaterSource-WaterMugRed,
-    Icon = MugRed,
-    IsCookable = TRUE,
-    RainFactor = 0.2,
-    Tooltip = Tooltip_item_RainFromGround,
-    StaticModel = MugRed,
-    EatType = Mug,
-    WorldStaticModel = MugRed,
-	DisplayCategory 	= Water,
-}
+	/* BACKLOG 3.20 (2026-09-07): `item MugRedWaterRefill` DELETED here.
+	   It declared `ReplaceOnDeplete = MugRed`, `Icon = MugRed`,
+	   `StaticModel = MugRed` and `WorldStaticModel = MugRed` -- and there is no
+	   `MugRed` in this build, in the mod or in vanilla B42 (`items.py find mug`
+	   -> ClayMug, ClayMugUnfired, MugSpiffo, MugWhite, Mugl, TestMug,
+	   TestWaterMug only; `items.py verify Base.MugRed` exits 1).  Caught by lint
+	   rule V1 during the BACKLOG 3.19 weight sweep.
+	   In the B42 tree it was a pure orphan: nothing produced it, nothing
+	   consumed it, no translation key, no tooltip, no loadout, no Lua reference
+	   -- a `grep -rn MugRed MoonshineMod/42/` hit only its own block.  So it was
+	   unreachable in play and only ever showed up as a permanent linter warning.
+	   The three real mugs (MuglWaterRefill / MugWhiteWaterRefill /
+	   MugSpiffoWaterRefill) are unaffected and keep full coverage.
+	   NOTE: the LEGACY B41 tree (MoonshineMod/media/) still defines this item AND
+	   has three live recipes producing it (MoonshineMod_DrinkRecipes.txt lines
+	   ~661/857/1054).  It is deliberately NOT touched here -- per the
+	   dual-version rule the B41 tree is only changed as an explicit backport. */
 
 item MugWhiteWaterRefill
 {

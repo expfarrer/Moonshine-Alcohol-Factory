@@ -202,9 +202,25 @@ imports
     {
 	/* BACKLOG 3.21: 1.0 L jar. 686 was exactly 1200*0.4/0.7 and -6 was -10*0.4/0.7 --
 	   both artifacts of the 2026-08-27 weight-derived pass, not flavour. Restored to
-	   the 1-litre rate. UnhappyChange -99 and AlcoholPower 1.1 are DELIBERATELY left:
-	   -99 is user-blessed flavour, and 1.1 is the base of the aging ladder. */
-	StressChange	=	-99,
+	   the 1-litre rate. AlcoholPower 1.1 is DELIBERATELY left: it is the base of the
+	   aging ladder.
+
+	   2026-09-07 user-directed rebalance: UnhappyChange/StressChange -99 -> -65.
+	   Every bottled-spirit vessel in this file is -50/L (WhiskeyRefill etc, see the
+	   RATE table in tests/nutritionperlitre.lua) and the jar was carrying -99, i.e.
+	   ~2x a bottle for the same still-pot litre -- the flagship product should beat
+	   a bottle but not swallow the whole ladder above it whole. -65 keeps the
+	   3-stage aging ladder's ordering intact (verified live, all StressChange,
+	   more negative = better):
+	     bottles (any, per L)         -50
+	     Charred Oak Shine  (stage 1) -50   <- unchanged, still no better than a bottle
+	     White Lightning jar          -65   <- this edit
+	     Green Whiskey      (stage 2) -75   <- unchanged
+	     Scarlet Oak Whiskey (stage3) -99   <- unchanged, still the best drink in the mod
+	   UnhappyChange moves the same amount for the same reason; it does not
+	   participate in the ladder (rule 69 pins it at -99 on all 3 aged stages,
+	   inherited via ReplaceOnRotten, independent of this base item). */
+	StressChange	=	-65,
 	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L; a vanilla jar filled at a sink reads 1.20 */
@@ -217,7 +233,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-99,
+	UnhappyChange	=	-65,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,
@@ -242,10 +258,18 @@ imports
 	/* ------------------------------------------------------------------
 	   Flavored White Lightning (v1: WhiteLightning jar only).
 	   Same booze (AlcoholPower/ThirstChange held at the WhiteLightning
-	   baseline), softened StressChange/UnhappyChange -99 -> -85: that IS
-	   the flavor mechanic.  Deliberately NON-perishable like the parent
-	   (Packaged = TRUE, no DaysFresh/DaysTotallyRotten) even though the
-	   fruit input is perishable.
+	   baseline), softened StressChange/UnhappyChange below the parent jar:
+	   that IS the flavor mechanic.  Deliberately NON-perishable like the
+	   parent (Packaged = TRUE, no DaysFresh/DaysTotallyRotten) even though
+	   the fruit input is perishable.
+
+	   2026-09-07: parent jar rebalanced -99 -> -65 (see the WhiteLightning
+	   block above). The flavors were -85 against the OLD -99 parent, i.e.
+	   85/99 = 86.7% of the parent's mood value -- deliberately still softer
+	   than plain moonshine, not stronger. Re-applying that same ratio to
+	   the new parent (65 * 85/99 = 55.8) keeps the flavors relatively
+	   where they always were: below the jar (-65) but clearly still ahead
+	   of a bottle (-50), not just a hair above it. -85 -> -56. */
 
 	   SPOILAGE INHERITANCE -- verified headlessly 2026-09-05
 	   (tools/pzrepl/tests/flavor.lua): a craft output does NOT inherit its
@@ -265,7 +289,7 @@ imports
 	/* BACKLOG 3.21: 1.0 L jar at the litre rate, plus the fruit premium kept as the
 	   ABSOLUTE addition it always was (+1 hunger, +54 cal over plain; a vanilla apple
 	   is 95 cal). Was -7 / 740 on the artifact base of -6 / 686. */
-	StressChange	=	-85,
+	StressChange	=	-56,
 	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
@@ -278,7 +302,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-85,
+	UnhappyChange	=	-56,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,
@@ -302,7 +326,7 @@ imports
 	item WhiteLightningCherry
     {
 	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +14). */
-	StressChange	=	-85,
+	StressChange	=	-56,
 	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
@@ -315,7 +339,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-85,
+	UnhappyChange	=	-56,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,
@@ -339,7 +363,7 @@ imports
 	item WhiteLightningPeach
     {
 	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +44). */
-	StressChange	=	-85,
+	StressChange	=	-56,
 	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
@@ -352,7 +376,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-85,
+	UnhappyChange	=	-56,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,
@@ -376,7 +400,7 @@ imports
 	item WhiteLightningLemon
     {
 	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +14). */
-	StressChange	=	-85,
+	StressChange	=	-56,
 	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
@@ -389,7 +413,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-85,
+	UnhappyChange	=	-56,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,
@@ -413,7 +437,7 @@ imports
 	item WhiteLightningMint
     {
 	/* BACKLOG 3.21: 1.0 L jar at the litre rate; mint premium kept absolute (+0, +4). */
-	StressChange	=	-85,
+	StressChange	=	-56,
 	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
@@ -426,7 +450,7 @@ imports
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
-	UnhappyChange	=	-85,
+	UnhappyChange	=	-56,
 
 	ReplaceOnUse = 	Base.EmptyJar,
 	Icon	=	JarEmpty2,

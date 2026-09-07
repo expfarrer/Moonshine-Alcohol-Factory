@@ -7,12 +7,51 @@ module Moonshine
 
     /* ALCO ITEMS */
 
+    /* =====================================================================
+       BUCKET WEIGHTS -- container + contents          (2026-09-06 sweep)
+
+       Engine ground truth, measured live on mvfast (not estimated):
+         * Base.BucketEmpty declares Weight 1.0 and a component FluidContainer
+           with Capacity 10.0, so a sink-filled vanilla bucket reads 11.
+         * InventoryItem.getUnequippedWeight() = getActualWeight() +
+           getContentsWeight(), and getContentsWeight() for a FluidContainer is
+           literally fluidContainer.getAmount() -- the engine's own liquid
+           density is exactly 1.0 kg per litre.
+         * Every mash item below is a legacy base:food with NO FluidContainer,
+           so the engine adds nothing for contents.  The script Weight has to BE
+           the whole full weight.  Food.getActualWeight() then tapers it linearly
+           down to the ReplaceOnUse item's weight (BucketEmpty = 1.0) as the
+           bucket is emptied -- verified live: CornMash at Weight 10 read 10.00
+           full and 5.50 half.  So this one number gives both ends for free.
+
+       CONTENTS of a mash bucket: a full 10 L bucket of grain-and-water slurry.
+       Density taken as 1.0 kg/L.  Real corn/potato mash is about 1.0-1.1; the
+       rounding is deliberate so a bucket of mash reads exactly like the vanilla
+       bucket of water rather than carrying an invented number.  (Conservation
+       of the recipe's inputs would give only ~4.9 kg -- 15 Corn at 0.2, Sugar
+       0.6, Yeast 0.2 -- but the `-fluid 0.1 [Water]` line is a documented
+       water-QUALITY gate, not the real fill, and the item's icon/model are a
+       full bucket.  Fill volume wins over input mass here.)
+
+       COVERED variants add the 2.0 kg Base.Tarp that CoverCornMashBucketWith-
+       Tarp really consumes:  1.0 + 10.0 + 2.0 = 13.0.  The tie is deliberately
+       NOT modelled -- the recipe accepts RubberBand 0.1 / RubberHose 0.3 /
+       Rope 0.8 / Wire 1.0 but produces one fixed output item, so there is no
+       single honest number for it.
+
+       Summary:   uncovered bucket of mash  11.0
+                  covered   bucket of mash  13.0
+       ===================================================================== */
+
     item RottenMash {
         DisplayName = Rotten Mash,
         EvolvedRecipeName = Rotten Mash,
         DisplayCategory = Food,
         ItemType	= base:food,
-        Weight = 3.0,
+        /* 1.0 bucket + 10.0 mash.  Was 3.0 -- not container+contents at all.
+           RottenMash is what the UNCOVERED CornMash / PotatoMash rot into,
+           the same bucket of the same slurry; spoiling costs no mass. */
+        Weight = 11.0,
         Icon = MashBucket_Rotten,
         ReplaceOnUse = BucketEmpty,
         Poison = true,
@@ -33,7 +72,10 @@ module Moonshine
         EvolvedRecipeName = Rotten Fermented Mash,
         DisplayCategory = Food,
         ItemType	= base:food,
-        Weight = 3.0,
+        /* 1.0 bucket + 10.0 mash + 2.0 tarp.  Was 3.0.  COVERED: only
+           reachable from CornMashFermented / PotatoMashFermented, which are
+           the tarped buckets, so the tarp is still on. */
+        Weight = 13.0,
         Icon = MashBucketCoveredRotten,
         ReplaceOnUse = BucketEmpty,
         Poison = true,
@@ -53,7 +95,8 @@ module Moonshine
         EvolvedRecipeName = Corn Mash,
         DisplayCategory = Food,
         ItemType	= base:food,
-        Weight = 10,
+        /* 1.0 bucket + 10.0 mash.  Was 10 = the contents alone, bucket forgotten. */
+        Weight = 11.0,
         Icon = MashBucketCorn,
         EatType = Can,
         EvolvedRecipe = Soup:16;Stew:16;Stir fry Griddle Pan:16;Stir fry:16;Burger:8;Salad:16;Roasted Vegetables:16,
@@ -84,7 +127,8 @@ module Moonshine
         Packaged = TRUE,
         ReplaceOnUse = BucketEmpty,
         ReplaceOnRotten = CornMashFermented,
-        Weight = 10,
+        /* 1.0 bucket + 10.0 mash + 2.0 tarp. */
+        Weight = 13.0,
         Icon = MashBucketFermented,
         EatType = Can,
         EvolvedRecipe = Soup:16;Stew:16;Stir fry Griddle Pan:16;Stir fry:16;Burger:8;Salad:16;Roasted Vegetables:16,
@@ -108,7 +152,8 @@ module Moonshine
         DisplayCategory = Food,
         ItemType	= base:food,
         UseDelta = 1,
-        Weight = 10,
+        /* 1.0 bucket + 10.0 mash + 2.0 tarp -- CornMashCovered after ferment. */
+        Weight = 13.0,
         Icon = MashBucketFermented,
         EatType = Can,
         EvolvedRecipe = Soup:16;Stew:16;Stir fry Griddle Pan:16;Stir fry:16;Burger:8;Salad:16;Roasted Vegetables:16,
@@ -139,7 +184,8 @@ module Moonshine
         EvolvedRecipeName = Potato Mash,
         DisplayCategory = Food,
         ItemType	= base:food,
-        Weight = 10,
+        /* 1.0 bucket + 10.0 mash. */
+        Weight = 11.0,
         Icon = MashBucketPotato,
         EatType = Can,
         EvolvedRecipe = Soup:16;Stew:16;Stir fry Griddle Pan:16;Stir fry:16;Burger:8;Salad:16;Roasted Vegetables:16,
@@ -166,7 +212,8 @@ module Moonshine
         EvolvedRecipeName = Potato Mash Covered,
         DisplayCategory = Food,
         ItemType	= base:food,
-        Weight = 10,
+        /* 1.0 bucket + 10.0 mash + 2.0 tarp. */
+        Weight = 13.0,
         Icon = MashBucketFermented,
         EatType = Can,
         EvolvedRecipe = Soup:16;Stew:16;Stir fry Griddle Pan:16;Stir fry:16;Burger:8;Salad:16;Roasted Vegetables:16,
@@ -196,7 +243,8 @@ module Moonshine
         UseDelta = 1,
         AlcoholPower = 1,
         Alcoholic = TRUE,
-        Weight = 10,
+        /* 1.0 bucket + 10.0 mash + 2.0 tarp -- PotatoMashCovered after ferment. */
+        Weight = 13.0,
         Icon = MashBucketFermented,
         EatType = Can,
         EvolvedRecipe = Soup:16;Stew:16;Stir fry Griddle Pan:16;Stir fry:16;Burger:8;Salad:16;Roasted Vegetables:16,

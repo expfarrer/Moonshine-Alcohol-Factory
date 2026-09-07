@@ -1148,7 +1148,21 @@ item SaucepanWaterRefill
 	{
 	    DisplayCategory = Water,
 		IsWaterSource	=	TRUE,
-		Weight	=	4,
+		/* Weight 11.0 = container + contents (2026-09-06 bucket sweep).
+		   This is THE reference case the whole sweep is calibrated on: a
+		   sink-filled vanilla Base.BucketEmpty reads exactly 11 in-game, and
+		   the engine says why -- BucketEmpty declares Weight 1.0 and a
+		   component FluidContainer with Capacity 10.0, and
+		   InventoryItem.getContentsWeight() for a FluidContainer returns
+		   fluidContainer.getAmount() verbatim, i.e. 1.0 kg per litre.
+		   This item is a legacy base:drainable with no FluidContainer, so it
+		   gets no automatic contents weight and the script Weight must be the
+		   FULL figure.  DrainableComboItem.updateWeight() then interpolates
+		   (11.0 - 1.0) * uses + 1.0 down to the empty bucket's own 1.0 as it
+		   drains -- verified live (at Weight 4 it read 4.00 full / 2.56 half).
+		   Was 4, which is neither the container, the contents, nor the sum:
+		   it made a full 10 L bucket of water lighter than 4 litres of it. */
+		Weight	=	11.0,
 		CanStoreWater	=	TRUE,
 		FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
@@ -1176,7 +1190,15 @@ item SaucepanWaterRefill
 	ItemType	= base:drainable,
 	DisplayName		= Watering Can filled with Water,
 	Icon			= WateringCan,
-	Weight			= 4.0,
+	/* Weight 10.0 = container + contents (2026-09-06 bucket sweep).
+	   Measured live: Base.WateredCan declares Weight 2.0 and a component
+	   FluidContainer with Capacity 8.0, so a full watering can is
+	   2.0 + 8 L = 10.0.  Was 4.0, copied from the old flat BucketWaterRefill
+	   value and never actually container+contents (the BucketRefill comment
+	   further up this file already flagged 4.0 as that stray inheritance).
+	   ReplaceOnDeplete = WateredCan means DrainableComboItem.updateWeight()
+	   tapers this to 2.0 as it empties, so only the full figure is set here. */
+	Weight			= 10.0,
     	UseDelta		= 0.025,
 	UseWhileEquipped	= false,
     	ReplaceOnUseOn 		= WaterSource-WateredCanFull,

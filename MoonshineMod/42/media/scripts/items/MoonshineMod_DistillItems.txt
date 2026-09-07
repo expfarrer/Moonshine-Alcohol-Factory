@@ -10,7 +10,6 @@ imports
     Base
   }
  
- /* ---------- base distills EMPTY--------------*/
 	
 
 
@@ -18,7 +17,6 @@ imports
 
 	
 		
-	/* ----------- distill water NEW----------------  */
 	
 	
 	item DistillPotSmall
@@ -77,7 +75,6 @@ imports
 		UseDelta = 0.25,
 	}
 	 
-	 /*----------------------------------*/
 	 
 	 
 	 item DistillPotMedium
@@ -135,7 +132,6 @@ imports
 	}
 	
 	
-	 /*------------------------------------*/
 	
 	 item DistillPotLarge
 	{
@@ -195,7 +191,6 @@ imports
 	 
 	
 	
-	/*------------------------------------------------------*/
 	
 	
 
@@ -203,7 +198,6 @@ imports
 		
 		
 		
-		/* ----------- distill Mash ----------------  */
 	
 	
 	
@@ -222,7 +216,6 @@ imports
 
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
-		/* R5-E: EatType/HungerChange/... removed -- see the block below. */
 		/*EatType = Pot,*/
 		IsCookable = true,
 		ReplaceOnUse = DistillPotSmall,
@@ -235,15 +228,6 @@ imports
 		DaysFresh = 30,
 		DaysTotallyRotten = 90,
 
-		/* R5-E (2026-09-02): a loaded still is NOT food.  While it had a
-		   HungerChange the vanilla inventory menu offered "Eat" (the gate is
-		   `hungerNotZero > 0` in ISInventoryPaneContextMenu, i.e. any item with
-		   getHungChange() < 0), and eating it fired ReplaceOnUse -> the player
-		   got the empty pot back and the whole batch of mash was destroyed.
-		   Zeroing the nutrition removes the Eat option outright.  Everything the
-		   OVEN needs (ItemType base:food, IsCookable, ReplaceOnCooked,
-		   MinutesToCook/Burn, CookingSound) is untouched, and ReplaceOnUse stays
-		   because it is what makes vanilla's own "Pour on Ground" option work. */
 		/*HungerChange = -20,*/
 		/*ThirstChange = -20,*/
 		/*UnhappyChange = -10,*/
@@ -274,7 +258,6 @@ imports
 		
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
-		/* R5-E: not edible -- see Mash_DistillPotSmall. */
 		/*EatType = Pot,*/
 		IsCookable = true,
 		ReplaceOnUse = DistillPotMedium,
@@ -287,8 +270,6 @@ imports
 		DaysFresh = 30,
 		DaysTotallyRotten = 90,
 
-		/* R5-E (2026-09-02): nutrition zeroed so no Eat option is offered and
-		   ReplaceOnUse can no longer be fired by eating the mash. */
 		/*HungerChange = -20,*/
 		/*ThirstChange = -20,*/
 		/*UnhappyChange = -10,*/
@@ -320,7 +301,6 @@ imports
 		
 		Tags = HasMetal,
 		CookingSound = BoilingFood,
-		/* R5-E: not edible -- see Mash_DistillPotSmall. */
 		/*EatType = Pot,*/
 		IsCookable = true,
 		ReplaceOnUse = DistillPotLarge,
@@ -333,8 +313,6 @@ imports
 		DaysFresh = 30,
 		DaysTotallyRotten = 90,
 
-		/* R5-E (2026-09-02): nutrition zeroed so no Eat option is offered and
-		   ReplaceOnUse can no longer be fired by eating the mash. */
 		/*HungerChange = -20,*/
 		/*ThirstChange = -20,*/
 		/*UnhappyChange = -10,*/
@@ -353,17 +331,12 @@ imports
 	
 		}
 	
-		/* ----------- distill Spirit ----------------  */
 	
 	item Alc_DistillPotSmall 
 {
         
         DisplayName = Distill Pot I (Spirit),
 		DisplayCategory = Food,
-		/* base:food -> base:drainable so the pot holds 4 servings (UseDelta 0.25)
-		   and ReplaceOnDeplete hands back exactly ONE empty pot at 0.  As
-		   base:food the craft ate 1/100 nutrition unit, never consumed the pot,
-		   and ReplaceOnUse/ReplaceOnDeplete never fired on a craft-consume. */
 		ItemType = base:drainable,
 		Weight = 10.0,
 		
@@ -419,8 +392,6 @@ item Alc_DistillPotMedium
         
         DisplayName = Distill Pot II (Spirit),
 		DisplayCategory = Food,
-		/* base:food -> base:drainable: 6 servings (UseDelta 0.16) then
-		   ReplaceOnDeplete returns exactly ONE empty pot.  See Alc_DistillPotSmall. */
 		ItemType	= base:drainable,
 		Weight = 12.0,
 		
@@ -475,8 +446,6 @@ item Alc_DistillPotLarge
         
         DisplayName = Distill Pot III (Spirit),
 		DisplayCategory = Food,
-		/* base:food -> base:drainable: 8 servings (UseDelta 0.125) then
-		   ReplaceOnDeplete returns exactly ONE empty pot.  See Alc_DistillPotSmall. */
 		ItemType	= base:drainable,
 		Weight = 15.0,
 		
@@ -531,7 +500,6 @@ item Alc_DistillPotLarge
 
 
 
-/*--------------------------refill-----------------------*/
 
 
 
@@ -543,17 +511,6 @@ item Alc_DistillPotMediumRefillSpirit
         
         DisplayName = Distill Pot II (Charged for 2nd Run),
         DisplayCategory = Food,
-		/* F8 (2026-09-01) -- BACK TO base:food, reversing F6-A/FINDING 2 for this
-		   ONE item pair.  This pot is a LOADED STILL awaiting its 2nd run, the
-		   exact analogue of Mash_DistillPotMedium, and it must end the same way:
-		   IN AN OVEN.  A base:drainable makes ZERO oven progress (quirks rule 44,
-		   live test 24), so a drainable can never be the input to a cook.
-		   The ~16 RefillSpiritIn<Vessel> variant-1/2 per-serving bottle fills that
-		   forced the drainable conversion are DELETED (F8): they only undid the
-		   RefillDistillPot*With*Spirit craft that made this pot, they produced the
-		   same BeerRefill / WhiteLightning the plain Alc_DistillPot* already gives,
-		   and Mash_DistillPot* has no bottle fills either.  DumpSpiritDistillPot-
-		   MediumRefill stays as the escape hatch. */
 		ItemType	= base:food,
 		Weight = 12.0,
 
@@ -564,7 +521,6 @@ item Alc_DistillPotMediumRefillSpirit
 		CookingSound = BoilingFood,
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
-		/* R5-E: AlcoholPower/Alcoholic removed with the rest of the food block. */
 	    /*AlcoholPower = 4,*/
 		/*Alcoholic = TRUE,*/
 		CantBeFrozen = TRUE,
@@ -573,14 +529,9 @@ item Alc_DistillPotMediumRefillSpirit
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		ReplaceOnCooked = Moonshine.Alc_DistillPotMediumIso,
-		ReplaceOnUse = DistillPotMedium,	/* F8: base:food again.  R5-E: no longer reachable by EATING (no Eat option); still powers vanilla "Pour on Ground". */
+		ReplaceOnUse = DistillPotMedium,	
 		/*ReplaceOnDeplete = DistillPotMedium,*/	/* F8: drainable-only, dead on base:food */
 
-		/* R5-E (2026-09-02): a still charged for its 2nd run is NOT a drink.
-		   With a HungerChange the vanilla menu offered "Eat" (gate:
-		   `hungerNotZero > 0` in ISInventoryPaneContextMenu) and eating it fired
-		   ReplaceOnUse -> empty pot back, 6 servings of spirit destroyed.
-		   Everything the OVEN needs is untouched. */
 		/*ThirstChange = -6.5,*/
 		/*HungerChange = -6.5,*/
 		/*UnhappyChange = -50,*/
@@ -608,7 +559,7 @@ item Alc_DistillPotMediumRefillSpirit
 
 		MetalValue = 60,
 		BadInMicrowave = true,
-		UseDelta	=	0.16,	/* F8: inert on base:food, kept so a revert is one line */
+		UseDelta	=	0.16,	
         Tooltip = Tooltip_item_DistillMediumRefill,
 }
 
@@ -622,10 +573,6 @@ item Alc_DistillPotLargeRefillSpirit
         
         DisplayName = Distill Pot III (Charged for 2nd Run),
 		DisplayCategory = Food,
-		/* F8 (2026-09-01): BACK TO base:food so this loaded still can be COOKED in
-		   an oven into Alc_DistillPotLargeIso -- see Alc_DistillPotMediumRefillSpirit
-		   for the full rationale.  The 16 RefillSpiritIn<Vessel> variant-1/2 fills
-		   that forced base:drainable are deleted. */
 		ItemType	= base:food,
 		Weight = 15.0,
 
@@ -636,7 +583,6 @@ item Alc_DistillPotLargeRefillSpirit
 		CookingSound = BoilingFood,
 		/* FoodType = Liquor, */
 		/* EatType = Kettle, */
-		/* R5-E: AlcoholPower/Alcoholic removed with the rest of the food block. */
 	    /*AlcoholPower = 4,*/
 		/*Alcoholic = TRUE,*/
 		CantBeFrozen = TRUE,
@@ -645,11 +591,9 @@ item Alc_DistillPotLargeRefillSpirit
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipe = HotDrink:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4,*/
 		/* F7: hot-drink feature deferred to Phase 2 - project_hot_toddy_winter_feature */ /*EvolvedRecipeName = Moonshine,*/
 		ReplaceOnCooked = Moonshine.Alc_DistillPotLargeIso,
-		ReplaceOnUse = DistillPotLarge,	/* F8: base:food again.  R5-E: no longer reachable by EATING (no Eat option); still powers vanilla "Pour on Ground". */
+		ReplaceOnUse = DistillPotLarge,	
 		/*ReplaceOnDeplete = DistillPotLarge,*/	/* F8: drainable-only, dead on base:food */
 
-		/* R5-E (2026-09-02): not a drink -- see Alc_DistillPotMediumRefillSpirit.
-		   8 servings of spirit were destroyed by one "Eat". */
 		/*HungerChange = -8.5,*/
 		/*ThirstChange = -8.5,*/
 		/*UnhappyChange = -50,*/
@@ -677,7 +621,7 @@ item Alc_DistillPotLargeRefillSpirit
 
 		MetalValue = 120,
 		BadInMicrowave = true,
-		UseDelta	=	0.125,	/* F8: inert on base:food, kept so a revert is one line */
+		UseDelta	=	0.125,	
          Tooltip = Tooltip_item_DistillLargeRefill,
 }
 
@@ -692,7 +636,6 @@ item Alc_DistillPotLargeRefillSpirit
 
 
 	
-	/*-----------------OIL--------------*/
 	
 	item Oil_DistillPotLarge
 	{
@@ -724,24 +667,6 @@ item Alc_DistillPotLargeRefillSpirit
 		Calories = 8500,
 		*/
 		
-		/* R5-E (2026-09-05): a pot of motor oil is NOT a drink -- this item was
-		   MISSED by the 2026-09-02 R5-E pass.  One field, two bugs:
-		   (1) with a ThirstChange the vanilla menu offered a drink, and drinking
-		   it fired ReplaceOnUse -> empty pot back, the whole batch of motor oil
-		   destroyed (same class as Alc_DistillPotLargeRefillSpirit above);
-		   (2) a live nutrition field is the ONLY thing that puts this item on the
-		   computed-usedDelta branch of Food.getActualWeight().  In float32
-		   (-60/100f)*100f/-60f = 1.0000001192f, so the runtime weight resolved to
-		   15.000000953674316 -- exactly 1 ULP over the vanilla Oven's
-		   ContainerCapacity = 15, and ItemContainer.hasRoomFor rounds only the
-		   container contents, never the item weight.  The pot could therefore
-		   NEVER be put in an oven, which killed the entire gasohol chain --
-		   ReplaceOnCooked here is the only producer of Petrol_DistillPotLarge.
-		   Zeroed, usedDelta stays the literal 1.0f and the pot is exactly 15.0f,
-		   like the mash/wood/spirit pots.  See BACKLOG 3.15.
-		   Consumption is unaffected: Food.getMaxUses/getCurrentUses branch on
-		   getBaseHunger() only and never read thirst.  Everything the OVEN needs
-		   is untouched.  The Poison* fields above are now vestigial but harmless. */
 		/*ThirstChange	=	-60,*/
 	    MinutesToCook = 360,
 		MinutesToBurn = 3000,
@@ -775,7 +700,6 @@ item Alc_DistillPotLargeRefillSpirit
 	
 	
 
-/*-----------------------------------*/
 	
 	
 	item Alc_DistillPotMediumIso
@@ -792,42 +716,11 @@ item Alc_DistillPotLargeRefillSpirit
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
-		/* R5-E follow-up (2026-09-05): a pot of isopropyl is NOT a beverage.  The
-		   last two items in the mod still carrying `ThirstChange = -60` after the
-		   2026-09-02 R5-E pass and the 2026-09-05 Oil_DistillPotLarge fix (5369c87).
 
-		   HONEST SCOPE -- unlike the mash / RefillSpirit / motor-oil pots, this one
-		   was NEVER a live bug.  Those are `base:food` -> zombie.inventory.types.Food,
-		   and Food is where every consumer of the nutrition block lives.  This item
-		   is `base:drainable` -> DrainableComboItem, whose getCategory() is "Item",
-		   and the ONE gate on the whole eat/drink branch of the vanilla context menu
-		   (B42.20 ISInventoryPaneContextMenu.lua L172) is
 
-		       if testItem:getCategory() ~= "Food" then tests.isAllFood = false end
 
-		   so `ThirstChange`, `EatType`, `CustomEatSound` and even a
-		   `CustomContextMenu = Drink` are all unreachable here -- vanilla's own
-		   Base.Disinfectant (base:normal) carries the same dead
-		   `CustomContextMenu = Drink`.  The rollover shows no thirst line either:
-		   only Food overrides DoTooltip(tooltipUI, layout) to print
-		   Tooltip_food_Thirst; InventoryItem's is an empty method and
-		   DrainableComboItem does not override it.  Verified headlessly, see
-		   tools/pzrepl/tests/isopot.lua (18/18) and its mod-wide sweep: of 96
-		   Moonshine items exactly 20 offer an Eat/Drink option and no DistillPot of
-		   any tier is among them.
 
-		   Commented out anyway because it is dead text that reads like live design
-		   and because it is a loaded trap: if this pot is ever flipped to base:food
-		   (as the mash and RefillSpirit pots are, so an oven can cook them) the -60
-		   instantly becomes BOTH a live Drink option AND -- for the Large pot below,
-		   Weight = 15.0 exactly -- the float32 ULP oven-capacity bug that blocked
-		   the whole gasohol chain in 5369c87.
 
-		   The Poison* fields deliberately STAY (comment-don't-delete).  They are
-		   equally unreachable today -- IsoGameCharacter.isKnownPoison L10796 is
-		   `if (item instanceof Food)` -- but removing ThirstChange does not and
-		   cannot make isopropyl any safer to drink: it is already not drinkable at
-		   all, and the Poison block is what would fire if the ItemType ever changed. */
 		/*ThirstChange	=	-60,*/
         Poison = true,
         PoisonDetectionLevel = 7,
@@ -865,11 +758,6 @@ item Alc_DistillPotLargeIso
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
-		/* R5-E follow-up (2026-09-05): not a beverage -- see the full note on
-		   Alc_DistillPotMediumIso above.  Dead text on a base:drainable, but this
-		   is the pot whose Weight is 15.0 exactly, so it is the one that would land
-		   on the vanilla oven's ContainerCapacity = 15 boundary if it were ever
-		   flipped to base:food with a live -60.  Poison* stays. */
 		/*ThirstChange	=	-60,*/
         Poison = true,
         PoisonDetectionLevel = 7,
@@ -894,7 +782,6 @@ item Alc_DistillPotLargeIso
 }
 
 
-/*-----wood items----------*/
 
 
 
@@ -948,7 +835,6 @@ item DistillPotSmallCoal
 		Tooltip = Tooltip_item_DistillSmallCoal,
 
 }
-/*----------------------------------------------*/
 
 item DistillPotMediumWood
 {
@@ -1011,7 +897,6 @@ item DistillPotMediumCoal
 
 }
 
-/*--------*/
 
 item DistillPotLargeWood
 {
@@ -1069,11 +954,9 @@ item DistillPotLargeCoal
 	
 	
 		
-	/*-------------------end distill-------------------------*/
 
 
  
- /*--------------DISTIL EXTRA MODS-------------------------*/
 
 
 
@@ -1122,5 +1005,4 @@ item DistillPotLargeCoal
 	
 	
 	
-	/*--end---*/
 	}

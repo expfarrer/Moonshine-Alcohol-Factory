@@ -47,12 +47,6 @@ module Moonshine
         }
     }
 
-    /* F8: Alc_DistillPot*RefillSpirit went base:drainable -> base:food again so the
-       2nd distillation can be an OVEN COOK.  `flags[ItemCount]` still consumes the
-       whole pot on a base:food, but ReplaceOnDeplete does NOT fire for a base:food
-       eaten by a craft, so the empty pot has to come back from an OnCreate.  That
-       is honest here (not the rule-37 dupe) precisely BECAUSE flags[ItemCount]
-       really consumes the input -- headless-verified. */
     craftRecipe DumpSpiritDistillPotMediumRefill
     {
         timedAction = MoonshinePourPot, category = Moonshine,
@@ -87,13 +81,6 @@ module Moonshine
 
     craftRecipe RefillSpiritInBeerBottle3
     {
-        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
-           A beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so one pot use
-           now fills THREE of them (3 x 0.3 = 0.9 L, a ~10% bottling loss) instead
-           of one. Without this, the per-litre nutrition fix would turn the mod's
-           most common looted vessel into a trap: 30% of a pot use for a full one.
-           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_BeerThree --
-           3 empties in, 3 out, exactly 1 use off the pot, pot not consumed. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -111,13 +98,6 @@ module Moonshine
 
     craftRecipe RefillSpiritInBeerBottle4
     {
-        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
-           A beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so one pot use
-           now fills THREE of them (3 x 0.3 = 0.9 L, a ~10% bottling loss) instead
-           of one. Without this, the per-litre nutrition fix would turn the mod's
-           most common looted vessel into a trap: 30% of a pot use for a full one.
-           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_BeerThree --
-           3 empties in, 3 out, exactly 1 use off the pot, pot not consumed. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -135,13 +115,6 @@ module Moonshine
 
     craftRecipe RefillSpiritInBeerBottle5
     {
-        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
-           A beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so one pot use
-           now fills THREE of them (3 x 0.3 = 0.9 L, a ~10% bottling loss) instead
-           of one. Without this, the per-litre nutrition fix would turn the mod's
-           most common looted vessel into a trap: 30% of a pot use for a full one.
-           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_BeerThree --
-           3 empties in, 3 out, exactly 1 use off the pot, pot not consumed. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -261,12 +234,6 @@ module Moonshine
 
     craftRecipe RefillSpiritInSodaBottle3
     {
-        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
-           A pop bottle is 2.0 L (Base.PopBottle Capacity 2.00), so it costs TWO
-           pot uses. Without this it would be strictly dominant: double the
-           nutrition of a 1 L bottle for the same single use, at +0.4 kg.
-           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_SodaTwo --
-           exactly 2 uses off the pot, 2 crafts off a 4-use Small pot, not 4. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -283,12 +250,6 @@ module Moonshine
 
     craftRecipe RefillSpiritInSodaBottle4
     {
-        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
-           A pop bottle is 2.0 L (Base.PopBottle Capacity 2.00), so it costs TWO
-           pot uses. Without this it would be strictly dominant: double the
-           nutrition of a 1 L bottle for the same single use, at +0.4 kg.
-           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_SodaTwo --
-           exactly 2 uses off the pot, 2 crafts off a 4-use Small pot, not 4. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -305,12 +266,6 @@ module Moonshine
 
     craftRecipe RefillSpiritInSodaBottle5
     {
-        /* BACKLOG 3.21 -- ONE STILL-POT USE = ONE LITRE OF SPIRIT.
-           A pop bottle is 2.0 L (Base.PopBottle Capacity 2.00), so it costs TWO
-           pot uses. Without this it would be strictly dominant: double the
-           nutrition of a 1 L bottle for the same single use, at +0.4 kg.
-           Headless-proven: probes/probe_nutrition_perlitre.lua PROBE_SodaTwo --
-           exactly 2 uses off the pot, 2 crafts off a 4-use Small pot, not 4. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
@@ -478,7 +433,7 @@ module Moonshine
 
 
     craftRecipe RefillSpiritInEmptyJar3
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -495,7 +450,7 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar4
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -512,7 +467,7 @@ module Moonshine
     }
 
     craftRecipe RefillSpiritInEmptyJar5
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -530,36 +485,10 @@ module Moonshine
 
 
 
-    /* ----------------------------------------------------------------------
-       BACKLOG 2.8 (2026-09-06) -- bucket decanting, revived.
 
-       Identical in shape to RefillSpiritIn{Whiskey,Beer,Wine,...}Bottle3/4/5:
-       ONE serving of the pot (bare `item 1` on a base:drainable = one use,
-       UseDelta 0.25/0.16/0.125 -> 4/6/8 per pot) for one filled vessel, and
-       NO OnCreate -- the pot's own ReplaceOnDeplete hands the empty
-       Moonshine.DistillPot* back when the last serving is drawn.
 
-       `flags[ItemCount]` on the bucket is LOAD-BEARING and is the whole reason
-       the 2026-08-26 attempt (acef84b) was reverted.  Base.BucketEmpty is a
-       real `component FluidContainer`, and quirks rule 65 says such an input
-       is COUNTED but NEVER CONSUMED without the flag.  Measured A/B
-       (tools/pzrepl/tests/bucketdecant.lua, probes on):
-           item 1 [Base.BucketEmpty]                    bucket 1->1  spirit +1
-           item 1 [Base.BucketEmpty] flags[ItemCount]   bucket 1->0  spirit +1
-       Without the flag this is an infinite spirit mint.
 
-       The reverted version ALSO carried `OnCreate = GiveDistillSmallEmpty` on
-       each of these (the bottle family does not).  Measured: that hands out a
-       free empty still pot on EVERY craft -- 4 free Distill Pot I per pot.
-       Deliberately absent here.
 
-       Input is Base.BucketEmpty ONLY, not a wide bucket bracket: the output
-       is a single fixed item whose ReplaceOnUse gives a Base.BucketEmpty back,
-       so accepting Base.BucketWood / Base.BucketForged / Base.BucketCarved
-       would launder a wooden or carved bucket into a metal one.  (Widening
-       Base.BucketEmpty -> +Base.Bucket is a separate, mod-wide question: the
-       mash chain and FillDistillWithWater name BucketEmpty only too.)
-       ---------------------------------------------------------------------- */
     craftRecipe RefillSpiritInBucket3
     {
         timedAction = Making, category = Moonshine,
@@ -609,15 +538,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -630,15 +555,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -651,15 +572,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug3
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -672,15 +589,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInBeerBottle
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -693,15 +606,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInJar
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -714,15 +623,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug4
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -735,15 +640,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug5
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -756,15 +657,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug6
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -777,15 +674,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInBeerBottle2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -798,15 +691,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInJar2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -819,15 +708,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug7
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -840,15 +725,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug8
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -861,15 +742,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInMug9
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -882,15 +759,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInBeerBottle3
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -907,9 +780,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -926,9 +796,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -945,9 +812,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -964,9 +828,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -983,9 +844,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1002,9 +860,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1021,9 +876,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1040,9 +892,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1059,9 +908,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1078,9 +924,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1097,9 +940,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1116,9 +956,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1135,9 +972,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1154,9 +988,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1173,9 +1004,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1192,9 +1020,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1211,9 +1036,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1230,9 +1052,6 @@ module Moonshine
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1245,15 +1064,11 @@ module Moonshine
     }
 
     craftRecipe RefillWaterInJar3
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
-        /* OnTest: Recipe.OnTest.NotTaintedWater -- CONFIRMED UNFIXABLE, researched 2026-08-27: B42's OnTest field is a closed native registry (RecipeCodeOnTest.cutFish/haveFilter/etc, all Java-backed, zero Lua-extensible definitions found anywhere), unlike the moddable OnCreate table. The -fluid input mechanism only validates fluid pulled from a live environmental source (tap/river) via a wildcard [*] container, never the pre-existing content of an already-filled discrete item like these recipes consume. Real vanilla B42 has zero recipes anywhere that validate tainted-vs-clean water on a consumed item for this reason. Accepted permanent scope cut, not a TODO. */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 50,
-        /* F11/U8: hand back the player's OWN container full of REAL Water
-           (quirks rule 40) instead of a Moonshine.*WaterRefill drainable clone
-           that the mod's own mash recipes cannot read. */
         OnCreate = RecipeCodeOnCreate.FillKeptContainerWithWater,
         inputs
         {
@@ -1267,40 +1082,9 @@ module Moonshine
 
 
 
-    /* ----------------------------------------------------------------------
-       BACKLOG 2.8 (2026-09-06) -- the water half of bucket decanting.
 
-       Same F11/U8 idea as the 11 RefillWaterIn* recipes above -- keep the
-       player's OWN vessel (`mode:keep`) and fill it in place with REAL vanilla
-       Water, never hand back a Moonshine.*WaterRefill drainable clone -- but
-       with ONE deliberate difference: these take the WHOLE water pot, not one
-       serving, and add exactly the litres that pot is worth (4 / 6 / 8).
 
-       WHY, measured (tools/pzrepl/tests/bucketdecant.lua):
-       the shared FillKeptContainerWithWater fills the kept container to its
-       CAPACITY.  For a 1 L bottle or a jar that happens to equal the one
-       serving it charges.  A bucket is 10 L, so the naive port measured
-       **10.00 L out of a single 1 L serving of a 4 L pot**, and the round trip
-       closes -- FillDistillWithWater buys a fresh 4 L pot back for 4 of those
-       litres.  That is a free-water machine, so it is not what ships.
 
-       The shape below is exploit-free and self-gating:
-         flags[IsFull] on the pot  -> refuses a part-drained pot, so you cannot
-                                      draw 4 L out of a pot with 1 serving left
-                                      (measured UNAVAILABLE at usedDelta 0.5).
-         flags[IsEmpty] on bucket  -> refuses a part-full bucket, so the litres
-                                      can never overflow or stack up.
-         flags[ItemCount] (NOT mode:destroy) on the pot -> consumes it whole and
-                                      still lets its own ReplaceOnDeplete hand
-                                      the empty Moonshine.DistillPot* back
-                                      natively.  Measured: with mode:destroy the
-                                      empty pot is NOT returned (quirks rule 56),
-                                      and a native return beats an OnCreate
-                                      AddItem because it has no MP sync gap
-                                      (rule 59).
-       Net: 4 L in the bucket for a 4 L pot; FillDistillWithWater then costs
-       exactly those 4 L.  Break-even, verified end to end.
-       ---------------------------------------------------------------------- */
     craftRecipe RefillWaterInBucket
     {
         timedAction = Making, category = Moonshine,
@@ -1399,15 +1183,6 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillSmallEmpty,
         inputs
         {
-        /* R5-F (2026-09-03): AllowRottenItem is LOAD-BEARING.  Mash_DistillPot*
-           carries DaysFresh 30 / DaysTotallyRotten 90 and the engine rejects a
-           rotten food input outright, so without this flag the dump reported
-           UNAVAILABLE the moment the mash spoiled and the ~40-material still
-           was gone for good.  Measured: age 89d OK, age 90d UNAVAILABLE; with
-           the flag, OK at every age (tools/pzrepl/tests/rotdump.lua).  Vanilla
-           precedent: recipes_cooking.txt `item 1 [Base.Pumpkin]
-           flags[AllowRottenItem;InheritFood;ItemCount]`.  The rot itself is
-           deliberate -- this only guarantees the pot comes back. */
         item 1 [Moonshine.Mash_DistillPotSmall] flags[AllowRottenItem;ItemCount;Prop1],
         }
         outputs
@@ -1423,7 +1198,6 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillMedEmpty,
         inputs
         {
-        /* R5-F: AllowRottenItem is load-bearing -- see DumpMashDistillPotSmall. */
         item 1 [Moonshine.Mash_DistillPotMedium] flags[AllowRottenItem;ItemCount;Prop1],
         }
         outputs
@@ -1439,7 +1213,6 @@ module Moonshine
         OnCreate = RecipeCodeOnCreate.GiveDistillLargeEmpty,
         inputs
         {
-        /* R5-F: AllowRottenItem is load-bearing -- see DumpMashDistillPotSmall. */
         item 1 [Moonshine.Mash_DistillPotLarge] flags[AllowRottenItem;ItemCount;Prop1],
         }
         outputs
@@ -1567,17 +1340,6 @@ module Moonshine
         }
     }
 
-    /* BACKLOG 2.8 -- the spirit-bucket pour-out, mirroring DumpSpiritJar.
-       `flags[ItemCount]` is required (rules 56/57: BucketRefill is base:food
-       with HungerChange -10, so a bare `item 1` charges ONE of its ten
-       nutrition units).  Measured, tests/bucketdecant.lua:
-           bare              10 dumps, 10 free buckets
-           flags[ItemCount]   1 dump,   1 bucket, 0.00 L
-       The 0.00 L matters: GiveBackBucket routes through
-       Moonshine.ReturnEmptyVessel, which Empty()s the spawned vanilla bucket
-       (R7-A -- a Base.BucketEmpty spawns holding fluid otherwise).
-       Rule 60 does not apply: Moonshine.BucketRefill is a mod base:food with
-       no FluidContainer, so there is no native Empty action to prefer. */
     craftRecipe DumpSpiritBucket
     {
         timedAction = MoonshinePourBucket, category = Moonshine,
@@ -1818,14 +1580,6 @@ module Moonshine
         }
     }
 
-    /* ----------------------------------------------------------------------
-       Flavored White Lightning (v1: the WhiteLightning jar only).
-       BOTH inputs are `ItemType = base:food`, so both need flags[ItemCount]
-       (quirks rules 1 / 45 / 56 / 57): a bare `item 1 [X]` would charge only
-       1 nutrition unit -- 1/6 of a jar, 1/16 of an apple -- and leave the
-       "consumed" items in the bag.  No OnCreate: the jar is the vessel and
-       travels into the output, nothing to hand back.
-       ---------------------------------------------------------------------- */
 
     craftRecipe FlavorWhiteLightningApple
     {
@@ -1907,29 +1661,8 @@ module Moonshine
         }
     }
 
-    /* ----------------------------------------------------------------------
-       BACKLOG 1.4 -- whiskey by aging.  This is the ONLY recipe in the ladder;
-       the other two steps are unattended, driven by `ReplaceOnRotten` on the
-       items themselves (quirks rule 69).  See MoonshineMod_DrinkItems.txt.
 
-           Moonshine.WhiteLightning  + 2 charcoal
-             --craft-->  Charred Oak Shine (1/3)     30 days
-             --wait -->  Green Whiskey     (2/3)     90 days total
-             --wait -->  Scarlet Oak Whiskey         final, never spoils
 
-       Input flags, per quirks rule 57 (choose the flag from the real ItemType,
-       never from the family name):
-         Moonshine.WhiteLightning  is base:food   -> flags[ItemCount].  Without
-             it, one jar charges 1/6 of a nutrition unit and survives the craft
-             -- headless A/B measured FIVE crafts off one jar (rule 56).
-         Base.CharcoalCrafted / Moonshine.Coal are base:normal -> a plain
-             `item 2 [A;B]` line, which measured exactly 2 pieces consumed from
-             either pile or a mix of both, and UNAVAILABLE when only 1 is held.
-       `Moonshine.Coal` is what this mod's OWN stills yield
-       (RemoveCoalFromDistillI/II/III), so the loop closes inside the mod; the
-       vanilla `Base.CharcoalCrafted` is accepted as well.  A 2-candidate
-       bracket at a reachable count is explicitly safe per rule 34 (revised).
-       ---------------------------------------------------------------------- */
 
     craftRecipe CharAndAgeWhiteLightning
     {

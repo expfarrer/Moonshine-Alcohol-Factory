@@ -7,10 +7,6 @@ module Moonshine
 
     craftRecipe RefillDistillPotIIWith6XSpirit
     {
-        /* BACKLOG 3.21: a beer bottle is 0.3 L, so charging the still from beer bottles
-           now takes 3x as many. The jar variant (...2) is unchanged -- a jar is 1.0 L.
-           Round trip is neutral: the fill side loses ~10% (3 x 0.3 = 0.9 L per use),
-           this side gains it back. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -28,15 +24,8 @@ module Moonshine
         }
     }
 
-    /* P1 -- "fill all" for the SMALL tier.  Alc_DistillPotSmall is base:drainable
-       with UseDelta 0.25 = 4 servings, so `item 4 [pot]` drains the whole charge in
-       one craft and ReplaceOnDeplete hands back exactly ONE DistillPotSmall.
-       NO OnCreate: an AddItem here would be the infinite-pot dupe (quirks rule 37).
-       Mirrors FillSpiritFromDistillPotII / III. */
     craftRecipe FillSpiritFromDistillPotI
     {
-        /* BACKLOG 3.21: 3 beer bottles per pot use (a beer bottle is 0.3 L). The pot
-           input is unchanged -- this still drains the whole charge in one craft. */
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
@@ -69,8 +58,6 @@ module Moonshine
 
     craftRecipe FillSpiritFromDistillPotII
     {
-        /* BACKLOG 3.21: 3 beer bottles per pot use (a beer bottle is 0.3 L). The pot
-           input is unchanged -- this still drains the whole charge in one craft. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -87,7 +74,7 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIWith6XSpirit2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -106,7 +93,7 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotII2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -124,10 +111,6 @@ module Moonshine
 
     craftRecipe RefillDistillPotIIIWith8XSpirit
     {
-        /* BACKLOG 3.21: a beer bottle is 0.3 L, so charging the still from beer bottles
-           now takes 3x as many. The jar variant (...2) is unchanged -- a jar is 1.0 L.
-           Round trip is neutral: the fill side loses ~10% (3 x 0.3 = 0.9 L per use),
-           this side gains it back. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -147,8 +130,6 @@ module Moonshine
 
     craftRecipe FillSpiritFromDistillPotIII
     {
-        /* BACKLOG 3.21: 3 beer bottles per pot use (a beer bottle is 0.3 L). The pot
-           input is unchanged -- this still drains the whole charge in one craft. */        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -165,7 +146,7 @@ module Moonshine
     }
 
     craftRecipe RefillDistillPotIIIWith8XSpirit2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -184,7 +165,7 @@ module Moonshine
     }
 
     craftRecipe FillSpiritFromDistillPotIII2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -200,44 +181,8 @@ module Moonshine
         }
     }
 
-    /* F8 (2026-09-01) -- THE SECOND DISTILLATION IS AN OVEN COOK AGAIN.
-       There is deliberately NO craftRecipe here.  A full
-       Alc_DistillPot{Medium,Large}RefillSpirit is a LOADED STILL: put it in an
-       oven for 360 min and IsCookable + ReplaceOnCooked turn it into
-       Alc_DistillPot{Medium,Large}Iso, exactly the way Mash_DistillPot* becomes
-       Alc_DistillPot* in the FIRST distillation.
-       History: FINDING 2 (d0b136d) made those pots base:drainable for the 16
-       per-serving RefillSpiritIn<Vessel> variant-1/2 fills, which killed the cook
-       (a base:drainable makes zero oven progress, quirks rule 44); F6-A replaced
-       the cook with SecondDistillationMedium/Large handcrafts; the user rejected
-       standing there hand-crafting isopropyl, so F8 deleted both handcrafts AND
-       the 16 fills and put the pots back to base:food.  See the item defs in
-       MoonshineMod_DistillItems.txt. */
 
-    /* F9 (2026-09-02) -- CHARGE THE STILL FOR ITS SECOND RUN, NO BOTTLES.
-       Until now the ONLY route from a full spirit pot to a loaded 2nd-run still
-       was: bottle all 6/8 servings (FillSpiritFromDistillPotII/III), then pour
-       the very same 6/8 bottles straight back in (RefillDistillPotIIWith6XSpirit),
-       which hands the 6/8 empties back again.  Pure round trip, ~3 crafts and a
-       pile of glassware for one logical step.  These two recipes do it directly.
-       Those RefillDistillPot*With*XSpirit recipes STAY as the alternative
-       "I already have loose bottles of spirit" path.
 
-       `mode:destroy` is load-bearing, not decoration.  Alc_DistillPot{Medium,
-       Large} is base:drainable with ReplaceOnDeplete = the empty pot, so a plain
-       `item 6 [pot]` drains the charge AND hands back a free empty
-       DistillPotMedium -- while the output line already produced a
-       RefillSpirit pot, which IS a pot.  One pot in, two pots out: an infinite
-       still printer (measured, see below).  mode:destroy suppresses
-       ReplaceOnDeplete (quirks rule 37) so the count stays 1 -> 1.
-       `item N` (not flags[ItemCount]) keeps the "must be a FULL pot" gate: a
-       pot at 5/6 correctly does not offer.
-       Headless A/B, tools/pzrepl/probes/probe_f9f10.lua:
-         item 6 [pot]                                -> 1 loaded + 1 empty = 2 pots  DUPE
-         item 6 [pot] mode:destroy                   -> 1 loaded          = 1 pot   OK
-         item 1 [pot] mode:destroy flags[IsFull;ItemCount] -> identical to the above
-         item 1 [pot] flags[IsFull]                  -> drains ONE serving only (rule 39)
-       NO OnCreate: the output line is the whole story (quirks rule 24). */
     craftRecipe PrepareSecondDistillationMedium
     {
         timedAction = Making, category = Moonshine,
@@ -271,12 +216,6 @@ module Moonshine
     }
 
 
-    /* P2 -- "fill all" for the ISOPROPYL pots, mirroring FillSpiritFromDistillPot*.
-       Alc_DistillPotMediumIso = UseDelta 0.16 (6 servings),
-       Alc_DistillPotLargeIso  = UseDelta 0.125 (8 servings).
-       `item N [pot]` drains the whole charge in ONE craft; ReplaceOnDeplete returns
-       exactly one empty pot, so there is deliberately NO OnCreate (quirks rule 37).
-       Output matches the per-serving RefillDisinfectantBeerBottle/2 recipes. */
     craftRecipe FillDisinfectantFromDistillPotII
     {
         timedAction = Making, category = Moonshine,
@@ -310,7 +249,7 @@ module Moonshine
     }
 
     craftRecipe RefillDisinfectantBeerBottle
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
@@ -327,7 +266,7 @@ module Moonshine
     }
 
     craftRecipe RefillDisinfectantBeerBottle2
-    {        /* Prop2: Base.RippedSheets -- item not in current inputs, could not map to flags[Prop2], verify before deleting */
+    {        
 
         timedAction = Making, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,

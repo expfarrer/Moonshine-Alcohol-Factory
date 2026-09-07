@@ -1,82 +1,12 @@
-/* =========================================================================
-   MoonshineMod_TimedActions.txt   --  BACKLOG 3.9 + 2.6, 2026-09-06
 
-   WHY THIS FILE EXISTS
-   --------------------
-   Every Dump / pour-out craftRecipe in this mod used `timedAction = Making`.
-   (Note to future editors: never write a glob like "Dump" followed by a star
-   and a slash inside one of these comments -- that sequence CLOSES the block
-   comment and everything after it gets parsed as script.  It happened while
-   writing this very file, caught by a live parse check.)
-   `Making` (vanilla scripts/generated/timedactions.txt) is:
 
-       timedAction Making { metabolics = SedentaryActivity,
-                            actionAnim  = Making,
-                            prop2       = Base.CraftingMetalPart, }
 
-   i.e. the generic "fiddle with something" pose, a scrap of metal in the OFF
-   hand, and NO sound at all.  `craftRecipe` itself has no sound field (0
-   occurrences in all of vanilla), so the timedAction is the only lever for
-   both the animation and the sound.
 
-   GROUND TRUTH (CFR-decompiled 42.20, 2026-09-06)
-   -----------------------------------------------
-   * `CraftRecipeData.getModel(isHandOne)`:  walk the inputs; the first Item
-     input carrying flags[Prop1] (hand one) / flags[Prop2] (hand two) returns
-     `input.getMostRecentItem().getStaticModel()`.  If no input carries the
-     flag, fall back to the timedAction script's own `prop1` / `prop2`.
-     `mostRecentItem` is filled by `CacheData.addAppliedItem()` during
-     `canPerformCurrentRecipe()`, which `ISHandcraftAction:start()` calls
-     BEFORE `setOverrideHandModels()` -- so the vessel is already resolved.
-   * `ModelManager`: hand one attaches at bone `Bip01_Prop1`, hand two at
-     `Bip01_Prop2`.
-   * The pose is picked by the anim graph, not by the action:
-     `AnimSets/player/actions/Pour.xml` matches on PerformingAction == "pour"
-     and plays Bob_IdlePour_Bottle.  Seven child nodes extend it and add a
-     second condition on the anim variable **PourType**:
-         bowl / Bucket / Kettle / Mug / Pot / saucepan / wateringcan
-     (exactly `zombie.scripting.objects.PourType`).  `TimedActionScript`
-     parses `animVarKey` / `animVarVal` and `ISHandcraftAction:start()` applies
-     them via `setAnimVariable()` -- so a mod timedAction can select the
-     per-vessel pour pose without any Lua.
-   * The vanilla native pour (`ISFluidEmptyAction:start()`), which is the one
-     the user confirmed "animates correctly", does exactly four things:
-         setActionAnim(CharacterActionAnims.Pour)
-         setAnimVariable("PourType", item:getPourType())
-         playSound(item:getPourLiquidOnGroundSound())
-         setOverrideHandModels(item, nil)      <-- vessel in hand ONE, hand two EMPTY
-     The blocks below reproduce all four.  Note hand two is deliberately empty:
-     that is why none of these declare a `prop2`, and why leaving them on
-     `Making` was wrong twice over (no vessel, plus a spurious metal part).
-   * `InventoryItem.getPourLiquidOnGroundSound()` returns
-     PourLiquidOnGroundMetal for a Bucket-with-HasMetal and for a Pot, and
-     PourLiquidOnGround for everything else.  The sounds below follow that
-     rule exactly rather than inventing one.
 
-   WHY `module Base` AND NOT `module Moonshine`
-   --------------------------------------------
-   `ScriptBucketCollection.getScript(name)` resolves an UNQUALIFIED script name
-   against module **Base** only ("if (!name.contains(".")) getModule("Base")").
-   `craftRecipe { timedAction = X }` stores the raw string and looks it up that
-   way, so a timedAction referenced as a bare name MUST live in module Base.
-   This is also the shape the MoonSpike spike used, which the user confirmed
-   in-client on 2026-09-05 (MoonSpikePourWithSound audibly played its pour
-   sound) -- that spike is the proof that a MOD may define a timedAction at
-   all.  Names are Moonshine-prefixed to avoid colliding in the shared module.
 
-   PourType = bottle
-   -----------------
-   There is no "bottle" node -- Pour.xml itself IS the bottle pour.  The value
-   is a deliberate non-matching sentinel: anim variables persist on the
-   character, so pouring a bucket and then a bottle would otherwise replay the
-   bucket pose.  Vanilla gets this for free because getPourType() returns null
-   for bottles and setAnimVariable clears the variable; a script animVarVal
-   cannot be null, so a harmless non-matching string does the same job.
-   ========================================================================= */
 
 module Base
 {
-    /* bottles, jars, sports/soda/bleach bottles, petrol cans, drums, oil cans */
     timedAction MoonshinePour
     {
         metabolics = SedentaryActivity,
@@ -95,7 +25,6 @@ module Base
         sound = PourLiquidOnGroundMetal,
     }
 
-    /* the still pots -- Bob_IdlePour_CookingPot */
     timedAction MoonshinePourPot
     {
         metabolics = SedentaryActivity,

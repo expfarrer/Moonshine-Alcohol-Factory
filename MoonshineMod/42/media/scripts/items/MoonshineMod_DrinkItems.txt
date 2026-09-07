@@ -113,9 +113,14 @@ imports
 
 	item BeerRefill
 	{
-	    StressChange	=	-50,
+	/* BACKLOG 3.21: a beer bottle is 0.3 L (Base.BeerEmpty Capacity 0.30), so it gets
+	   0.3x the litre rate. It was carrying a FULL litre's worth (-9 / 1200) at 0.4 kg,
+	   which made it the strictly dominant vessel mod-wide -- 30.0 hunger per litre
+	   against the 2 L pop bottle's 1.5. Its fill recipes now yield THREE bottles per
+	   still-pot use so the pot economy is unchanged. */
+	    StressChange	=	-15,
 	    DisplayCategory = Food,
-		HungerChange	=	-9,
+		HungerChange	=	-3,
 		/* container+contents (BACKLOG 3.19): was 0.7 -> 0.4.
 		   Base.BeerEmpty 0.1 + 0.3 L; a filled vanilla beer bottle reads 0.40 -- a beer bottle is 330 ml, so this DROPS */
 		Weight	=	0.4,
@@ -123,8 +128,8 @@ imports
 		ItemType	= base:food,
 		FoodType = Liquor,
 		
-		UnhappyChange	=	-30,
-		ThirstChange	=	-13,
+		UnhappyChange	=	-15,
+		ThirstChange	=	-3,
 		DisplayName	=	Beer Bottle filled with Spirit,
 		
 		ReplaceOnUse = BeerEmpty,
@@ -137,7 +142,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1200,
+        Calories = 360,
 		
 	
         Packaged = TRUE,
@@ -152,9 +157,12 @@ imports
 
 	item WineRefill
 	{
+	/* BACKLOG 3.21: 1.0 L (Base.WineOpen). Rate -10 hunger / -10 thirst / -50 unhappy
+	   / -50 stress / 1200 cal per litre. Was -9 / -13 / -30 -- a leftover of the
+	   2026-08-27 pass that derived nutrition from the then-wrong vessel weights. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-9,
+		HungerChange	=	-10,
 		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.3.
 		   Base.WineOpen 0.3 + 1.0 L; a filled vanilla wine bottle reads 1.30 */
 		Weight	=	1.3,
@@ -162,8 +170,8 @@ imports
 		ItemType	= base:food,
 		FoodType = Liquor,
 
-		UnhappyChange	=	-30,
-		ThirstChange	=	-13,
+		UnhappyChange	=	-50,
+		ThirstChange	=	-10,
 		DisplayName	=	Wine Bottle filled with Spirit,
 
 		ReplaceOnUse = WineOpen,
@@ -192,8 +200,12 @@ imports
 
 	item WhiteLightning
     {
+	/* BACKLOG 3.21: 1.0 L jar. 686 was exactly 1200*0.4/0.7 and -6 was -10*0.4/0.7 --
+	   both artifacts of the 2026-08-27 weight-derived pass, not flavour. Restored to
+	   the 1-litre rate. UnhappyChange -99 and AlcoholPower 1.1 are DELIBERATELY left:
+	   -99 is user-blessed flavour, and 1.1 is the base of the aging ladder. */
 	StressChange	=	-99,
-	HungerChange	=	-6,
+	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L; a vanilla jar filled at a sink reads 1.20 */
 	Weight	=	1.2,
@@ -201,7 +213,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning,
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
@@ -216,7 +228,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 686,
+        Calories = 1200,
 	
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -250,8 +262,11 @@ imports
 
 	item WhiteLightningApple
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate, plus the fruit premium kept as the
+	   ABSOLUTE addition it always was (+1 hunger, +54 cal over plain; a vanilla apple
+	   is 95 cal). Was -7 / 740 on the artifact base of -6 / 686. */
 	StressChange	=	-85,
-	HungerChange	=	-7,
+	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -259,7 +274,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning (Apple),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
@@ -273,7 +288,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 740,
+        Calories = 1254,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -286,8 +301,9 @@ imports
 
 	item WhiteLightningCherry
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +14). */
 	StressChange	=	-85,
-	HungerChange	=	-7,
+	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -295,7 +311,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning (Cherry),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
@@ -309,7 +325,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 700,
+        Calories = 1214,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -322,8 +338,9 @@ imports
 
 	item WhiteLightningPeach
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +44). */
 	StressChange	=	-85,
-	HungerChange	=	-7,
+	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -331,7 +348,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning (Peach),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
@@ -345,7 +362,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 730,
+        Calories = 1244,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -358,8 +375,9 @@ imports
 
 	item WhiteLightningLemon
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate; fruit premium kept absolute (+1, +14). */
 	StressChange	=	-85,
-	HungerChange	=	-7,
+	HungerChange	=	-11,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -367,7 +385,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning (Lemon),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
@@ -381,7 +399,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 700,
+        Calories = 1214,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -394,8 +412,9 @@ imports
 
 	item WhiteLightningMint
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate; mint premium kept absolute (+0, +4). */
 	StressChange	=	-85,
-	HungerChange	=	-6,
+	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -403,7 +422,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Appalachian White Lightning (Mint),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
@@ -417,7 +436,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 690,
+        Calories = 1204,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -493,8 +512,13 @@ imports
 
 	item WhiteLightningCharred
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate. Quirks rule 69: a ReplaceOnRotten
+	   TARGET has its nutrition overwritten by the source's, so all three ladder
+	   stages must declare IDENTICAL Hunger/Thirst/Unhappy/Calories -- they do
+	   (-10 / -10 / -99 / 1200). The ladder stays differentiated ONLY by
+	   StressChange and AlcoholPower, which the target keeps. Do not undo that. */
 	StressChange	=	-50,
-	HungerChange	=	-6,
+	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -502,12 +526,21 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Charred Oak Shine (1/3),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.1,
 	UnhappyChange	=	-99,
 
+	/* TEMP TEST VALUE - REVERT TO 30 BEFORE RELEASE  (stage 1 of 2)
+	   Shortened so the aging ladder can be watched in one sitting instead of
+	   30 in-game days.  1 is the FLOOR, not a choice: Item.Load parses this
+	   field with `this.daysTotallyRotten = Integer.parseInt(val)` (CFR 42.20,
+	   zombie/scripting/objects/Item.java:2158) and both getter and setter are
+	   `int`, so a fractional value like 0.05 throws NumberFormatException
+	   during script load rather than truncating.  1 in-game day is about one
+	   real hour at the default day length.
+	   REVERT: this line -> 30, and WhiskeyGreen's -> 90. */
 	DaysTotallyRotten = 30,
 	ReplaceOnRotten = WhiskeyGreen,
 
@@ -520,7 +553,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 686,
+        Calories = 1200,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -533,8 +566,11 @@ imports
 
 	item WhiskeyGreen
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate. Identical nutrition to the other two
+	   ladder stages by necessity (rule 69); StressChange -75 / AlcoholPower 1.25 are
+	   what make stage 2 stage 2. */
 	StressChange	=	-75,
-	HungerChange	=	-6,
+	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -542,12 +578,18 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Green Whiskey (2/3),
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.25,
 	UnhappyChange	=	-99,
 
+	/* TEMP TEST VALUE - REVERT TO 90 BEFORE RELEASE  (stage 2 of 2)
+	   Must stay STRICTLY LARGER than stage 1's value, because the target
+	   inherits the source's `age` (constraint (b) above) -- if this were also
+	   1 the whole ladder would cascade in a single tick.  2 is the smallest
+	   integer that does that, and int is forced: see the note on stage 1.
+	   REVERT: this line -> 90, and WhiteLightningCharred's -> 30. */
 	DaysTotallyRotten = 90,
 	ReplaceOnRotten = WhiskeyScarletOak,
 
@@ -560,7 +602,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 686,
+        Calories = 1200,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -573,8 +615,11 @@ imports
 
 	item WhiskeyScarletOak
     {
+	/* BACKLOG 3.21: 1.0 L jar at the litre rate. Identical nutrition to the other two
+	   ladder stages by necessity (rule 69); StressChange -99 / AlcoholPower 1.5 are
+	   what make it the terminal stage. */
 	StressChange	=	-99,
-	HungerChange	=	-6,
+	HungerChange	=	-10,
 	/* container+contents (BACKLOG 3.19): was 0.4 -> 1.2.
 	   Base.EmptyJar 0.2 + 1.0 L */
 	Weight	=	1.2,
@@ -582,7 +627,7 @@ imports
 	FoodType = Liquor,
 	 DisplayCategory = Food,
 	DisplayName	=	Scarlet Oak Whiskey,
-	ThirstChange	=	-6,
+	ThirstChange	=	-10,
 
 	Alcoholic	=	TRUE,
 	AlcoholPower = 1.5,
@@ -597,7 +642,7 @@ imports
     Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 686,
+        Calories = 1200,
 
 	Packaged = TRUE,
 	CantBeFrozen = TRUE,
@@ -636,9 +681,15 @@ imports
 		
 	item SodaBottleRefill
 	{
-	    StressChange	=	-50,
+	/* BACKLOG 3.21: a pop bottle is 2.0 L (Base.PopBottle Capacity 2.00) -- the biggest
+	   vessel in the mod, and it was the WORST deal (1.5 hunger per litre). Now 2x the
+	   litre rate, and its fill recipes cost TWO still-pot uses to match.
+	   2400 cal is deliverable: Nutrition.setCalories clamps to [-2200, 3700] and a
+	   default character sits at 800, so 2400 lands in full (measured). Vanilla's own
+	   2500 cal/L spirit rate would declare 5000 here and lose 2100 of it. */
+	    StressChange	=	-100,
 	    DisplayCategory = Food,
-		HungerChange	=	-3,
+		HungerChange	=	-20,
 		/* container+contents (BACKLOG 3.19): was 0.2 -> 2.1.
 		   Base.PopBottle 0.1 + 2.0 L; a filled vanilla pop bottle reads 2.10 -- it is a 2-LITRE bottle */
 		Weight	=	2.1,
@@ -646,13 +697,13 @@ imports
 		ItemType	= base:food,
 		FoodType = Liquor,
 
-		UnhappyChange	=	-26,
-		ThirstChange	=	-3,
+		UnhappyChange	=	-100,
+		ThirstChange	=	-20,
 		DisplayName	= Soda Bottle filled with Spirit,
 		/* ReplaceOnUse	= PopBottleEmpty, */
 		ReplaceOnUse = PopBottle,
 		Alcoholic	=	TRUE,
-		AlcoholPower = 0.6,
+		AlcoholPower = 2,
 		Icon	=	PopBottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
@@ -660,7 +711,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 343,
+        Calories = 2400,
 
 
         Packaged = TRUE,
@@ -674,22 +725,25 @@ imports
 	
 	item WaterBottleRefill
 	{
+	/* BACKLOG 3.21: 1.0 L (Base.WaterBottle). Every old value here was the 2026-08-27
+	   weight artifact: 343 = 1200*0.2/0.7, 0.6 = 2*0.2/0.7, -3 = -10*0.2/0.7.
+	   Restored to the 1-litre rate. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-3,
+		HungerChange	=	-10,
 		/* container+contents (BACKLOG 3.19): was 0.2 -> 1.1.
 		   Base.WaterBottle 0.1 + 1.0 L; a filled vanilla water bottle reads 1.10 */
 		Weight	=	1.1,
 
 		ItemType	= base:food,
 		FoodType = Liquor,
-		UnhappyChange	=	-26,
-		ThirstChange	=	-3,
+		UnhappyChange	=	-50,
+		ThirstChange	=	-10,
 		DisplayName	=	Water Bottle filled with Spirit,
 		/*ReplaceOnUse	= WaterBottleEmpty,*/
 		ReplaceOnUse = WaterBottle,
 		Alcoholic	=	TRUE,
-		AlcoholPower = 0.6,
+		AlcoholPower = 2,
 		Icon	=	WaterBottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
@@ -697,7 +751,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 343,
+        Calories = 1200,
 
 		Packaged = TRUE,
         CantBeFrozen = TRUE,
@@ -709,21 +763,23 @@ imports
 
 	item SportsBottleRefill
 	{
+	/* BACKLOG 3.21: 1.0 L (Base.Sportsbottle). Same 0.2/0.7 weight artifact as
+	   WaterBottleRefill; restored to the 1-litre rate. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-3,
+		HungerChange	=	-10,
 		/* container+contents (BACKLOG 3.19): was 0.2 -> 1.1.
 		   Base.Sportsbottle 0.1 + 1.0 L; a filled vanilla sports bottle reads 1.10 */
 		Weight	=	1.1,
 
 		ItemType	= base:food,
 		FoodType = Liquor,
-		UnhappyChange	=	-26,
-		ThirstChange	=	-3,
+		UnhappyChange	=	-50,
+		ThirstChange	=	-10,
 		DisplayName	=	Sports Bottle filled with Spirit,
 		ReplaceOnUse = Sportsbottle,
 		Alcoholic	=	TRUE,
-		AlcoholPower = 0.6,
+		AlcoholPower = 2,
 		Icon	=	Sportsbottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
@@ -731,7 +787,7 @@ imports
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 343,
+        Calories = 1200,
 
 		Packaged = TRUE,
         CantBeFrozen = TRUE,
@@ -749,9 +805,11 @@ imports
 	
 	item BleachBottleRefill
 	{
+	/* BACKLOG 3.21: 1.0 L (Base.Bleach). Was -5 / -13 / -26 at the same litre as
+	   WhiskeyRefill's -10 / -10 / -50. Same liquid, same pot use -- same numbers. */
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
-		HungerChange	=	-5,
+		HungerChange	=	-10,
 		/* container+contents (BACKLOG 3.19): was 0.7 -> 1.2.
 		   Base.Bleach 0.2 + 1.0 L; a filled vanilla bleach bottle reads 1.20 */
 		Weight	=	1.2,
@@ -759,8 +817,8 @@ imports
 		ItemType	= base:food,
 		FoodType = Liquor,
 		
-		UnhappyChange	=	-26,
-		ThirstChange	=	-13,
+		UnhappyChange	=	-50,
+		ThirstChange	=	-10,
 		DisplayName	=	Bleach Bottle filled with Spirit,
 		/*ReplaceOnUse	=	BleachEmpty,*/
 		ReplaceOnUse = Bleach,

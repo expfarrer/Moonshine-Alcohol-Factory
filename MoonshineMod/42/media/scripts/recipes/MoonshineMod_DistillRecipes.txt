@@ -25,7 +25,7 @@ module Moonshine
         item 1 [Base.Pot] flags[ItemCount],
         item 1 [Base.SmallSheetMetal],
         item 1 [Base.DuctTape],
-        item 1 [Base.PropaneTank],
+        item 1 [Base.PropaneTank] mode:destroy flags[ItemCount],
         item 1 [Base.BeerCanEmpty] flags[ItemCount],
         }
         outputs

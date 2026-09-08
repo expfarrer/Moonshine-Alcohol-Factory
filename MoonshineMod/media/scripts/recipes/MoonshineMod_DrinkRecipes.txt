@@ -640,7 +640,7 @@ module Moonshine
 
 recipe Refill Water in Mug
     {
-        Mug1,
+        Mugl,
         Water_DistillPotSmall;1,
         Result:MuglWaterRefill,
         Time:50.0,
@@ -836,7 +836,7 @@ recipe Refill Water in Mug
 /*----------------------------------------------------*/
 recipe Refill Water in Mug
     {
-        Mug1,
+        Mugl,
          Water_DistillPotMedium;1,
         Result:MuglWaterRefill,
         Time:50.0,
@@ -1033,7 +1033,7 @@ recipe Refill Water in Mug
 
 recipe Refill Water in Mug
     {
-        Mug1,
+        Mugl,
         Water_DistillPotLarge;1,
         Result:MuglWaterRefill,
         Time:50.0,

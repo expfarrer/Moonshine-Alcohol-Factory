@@ -71,7 +71,7 @@ end
 
 function Moonshine.GiveEmptyMotorOilCans80(items, result, player)
 for i=1,80 do
-player:getInventory():AddItem("Base.EmptyMotorOilCan1")
+player:getInventory():AddItem("Moonshine.EmptyMotorOilCan1")
 end
 print("80 empty motor oil cans back!")
 end

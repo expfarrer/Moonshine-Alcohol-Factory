@@ -61,7 +61,7 @@ module Moonshine
 	
 	recipe Fill Spirit from Distill Pot(II)
     {
-	    BleachBottleEmpty =6,
+	    BleachEmpty =6,
         
 		destroy Alc_DistillPotMedium,
         Time: 350.0,
@@ -277,7 +277,7 @@ module Moonshine
 	
 		recipe Fill Spirit from Distill Pot(II)
     {
-	    SodaBottleEmpty=6,
+	    PopBottleEmpty=6,
         
 		destroy Alc_DistillPotMedium,
         Time: 350.0,
@@ -378,7 +378,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
 
 		recipe Fill Spirit from Distill Pot(III)
     {
-	    BleachBottleEmpty=8,
+	    BleachEmpty=8,
         destroy Alc_DistillPotLarge,
         Time: 350.0,
         Sound: PourWaterIntoObject,
@@ -580,7 +580,7 @@ recipe Refill Distill Pot(III) with 8 x Spirit
 
 	recipe Fill Spirit from Distill Pot(III)
     {
-	     SodaBottleEmpty=8,
+	     PopBottleEmpty=8,
         
 		destroy Alc_DistillPotLarge,
         Time: 350.0,

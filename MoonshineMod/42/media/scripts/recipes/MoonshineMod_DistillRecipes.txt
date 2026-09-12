@@ -42,8 +42,6 @@ module Moonshine
         time = 400,
         SkillRequired = MetalWelding:1,
         xpAward = MetalWelding:25,
-        /* refunds the drained PropaneTank; Lua because an output line spawns
-           a drainable FULL. docs/script-notes.md sec. 9. */
         OnCreate = RecipeCodeOnCreate.GiveBackEmptyPropaneTank,
         inputs
         {
@@ -72,8 +70,6 @@ module Moonshine
         time = 600,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
-        /* refunds the drained PropaneTank; Lua because an output line spawns
-           a drainable FULL. docs/script-notes.md sec. 9. */
         OnCreate = RecipeCodeOnCreate.GiveBackEmptyPropaneTank,
         inputs
         {
@@ -103,8 +99,6 @@ module Moonshine
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
-        /* refunds the drained PropaneTank; Lua because an output line spawns
-           a drainable FULL. docs/script-notes.md sec. 9. */
         OnCreate = RecipeCodeOnCreate.GiveBackEmptyPropaneTank,
         inputs
         {
@@ -162,8 +156,6 @@ module Moonshine
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
-        /* refunds the DEAD CarBattery1, never a charged one.
-           docs/script-notes.md sec. 9. */
         OnCreate = RecipeCodeOnCreate.GiveBackDeadCarBattery,
         inputs
         {

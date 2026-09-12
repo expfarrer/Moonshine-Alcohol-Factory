@@ -70,10 +70,6 @@ module Base
         sound = PourLiquidOnGround,
     }
 
-    /* FILL group. `fill_container_tap` is a REAL actionAnim (AnimSets
-       FillBottleFromTap + 8 PourType variants); its absence from vanilla's
-       timedactions.txt is not a defect. The `sound =` values below are
-       UNVERIFIED and parked. docs/script-notes.md sec. 10. */
 
     timedAction MoonshineFillGlass
     {
@@ -129,8 +125,6 @@ module Base
         sound = GetWaterFromDispenserPlasticBig,
     }
 
-    /* POUR / EMPTY group. Anim-variable matching is case-INSENSITIVE;
-       these use vanilla's capitalisation. docs/script-notes.md sec. 10. */
 
     timedAction MoonshinePourFromBucket
     {
@@ -159,12 +153,6 @@ module Base
         sound = EmptyPotFromWater,
     }
 
-    /* ------------------------------------------------------------------
-       Non-liquid actions. These exist to replace the generic `Making`
-       fiddle animation on recipes that are clearly NOT liquid transfers.
-       prop1/prop2 are MODEL names (verified against the 3863-entry model
-       registry), not item ids - the engine resolves them via addStatic().
-       ------------------------------------------------------------------ */
 
     timedAction MoonshineMixMash
     {

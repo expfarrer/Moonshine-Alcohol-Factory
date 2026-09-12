@@ -183,19 +183,6 @@ module Moonshine
 
 
 
-    /* BULK RECHARGE: 3 / 4 buckets = the same 6 / 8 L the bottle and jar routes
-       demand. flags[ItemCount] is REQUIRED, BucketRefill is base:food.
-       docs/script-notes.md sec. 8.
-
-       POT I HAS NO RECHARGE, ON PURPOSE (2026-09-09).  A Pot I recharge existed
-       briefly (b571646) and was dropped: Pot II/III recharge into
-       Alc_DistillPot{Medium,Large}RefillSpirit, which ReplaceOnCooked into
-       isopropyl -- the recharge is the ENTRANCE to the 2nd-distillation track.
-       Pot I has no Alc_DistillPotSmallRefillSpirit and no ...Iso (that track is
-       deliberately gated behind Pot II), so a Pot I recharge could only hand back
-       the ordinary charged pot: spirit in, the same spirit out, no product gained.
-       Decanting Pot I to buckets is a one-way trip by design -- upgrade to Pot II
-       (UpgradeDistillIToII) to get a recharge that is worth something. */
 
     craftRecipe RefillDistillPotIIWithSpiritBuckets
     {

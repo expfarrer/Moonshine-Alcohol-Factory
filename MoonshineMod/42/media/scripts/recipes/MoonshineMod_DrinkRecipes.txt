@@ -489,8 +489,6 @@ module Moonshine
 
 
 
-    /* BULK DECANT: 1 bucket = 2 servings = 2 L. `item N [pot]`, NOT ItemCount
-       (fill-blind). Rationale + measurements: docs/script-notes.md sec. 8. */
 
     craftRecipe RefillSpiritInBucket3
     {
@@ -540,17 +538,6 @@ module Moonshine
         }
     }
 
-    /* DRAW ONE BUCKET: the partial-decant counterpart to RefillSpiritInBucket3/4/5.
-       `item 2 [pot]` (bare, NO ItemCount) takes exactly 2 servings = 2 L = one
-       bucket and LEAVES THE REMAINDER in the still; it is self-gating, so a pot
-       with only 1 serving left is UNAVAILABLE rather than paying a full bucket
-       for half a bucket (quirks rule 95).  Repeat until the pot hits 0, at which
-       point ReplaceOnDeplete converts it to the empty Distill Pot.
-       Measured on the shipped N=1 sibling RefillSpiritInEmptyJar3, 2026-09-09:
-       4/4 -> 3/4 -> 2/4 -> 1/4 -> empty pot, 5th craft UNAVAILABLE, and
-       `item N [pot]` reports UNAVAILABLE at exactly N-1 uses.
-       The all-or-nothing RefillSpiritInBucket3/4/5 stay as the "drain it all in
-       one action" route; the half-pot refusal guard belongs to THEM, not here. */
 
     craftRecipe DrawSpiritBucketFromPotI
     {

@@ -980,7 +980,6 @@ item SaucepanWaterRefill
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 
-		/* 1.0 bucket + 2 L bulk charge. docs/script-notes.md sec. 8. */
 		Weight	=	3.0,
 
 		ItemType	= base:food,

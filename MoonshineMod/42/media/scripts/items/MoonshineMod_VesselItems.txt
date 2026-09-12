@@ -5,44 +5,6 @@ module Moonshine
         Base
     }
 
-    /*
-        Empty twins of the six vanilla vessels the mod hands back from an item
-        ReplaceOnUse / ReplaceOnDeplete.
-
-        WHY THESE EXIST
-        ---------------
-        ReplaceOnUse / ReplaceOnDeplete are resolved inside the engine with no
-        Lua hook:
-
-            InventoryItem.Use()        -> this.container.AddItem(replaceOnUse)
-            DrainableComboItem.Use()   -> this.container.AddItem(replaceOnDeplete)
-
-        ItemContainer.AddItem(String) runs the vanilla FluidContainer
-        initialiser, so any target that declares a Fluids block spawns FULL.
-        Pointing at Base.Whiskey therefore minted 1.00 L of free whiskey every
-        time a mod bottle was used up; Base.PopBottle minted 2.00 L of soda.
-
-        The craftRecipe side of this class was fixed in R7-A via
-        Moonshine.ReturnEmptyVessel(), which empties the vessel in OnCreate.
-        Replace* can never reach an OnCreate, so the only fix at the source is
-        to stop naming a full-spawning id.
-
-        The engine DOES have an "append Empty to the id" convention
-        (InventoryItemFactory.createItemInternal), but it is unreachable from
-        this path: ItemContainer.AddItem(String) gates on ScriptManager.FindItem
-        first, which is a plain map lookup with no such fallback, so
-        "Base.WhiskeyEmpty" just logs "can't find" and returns null.
-
-        Each block below is the vanilla block verbatim minus the Fluids
-        sub-block (and minus PickRandomFluid / InitialPercent* / OnCreate, which
-        only exist to seed that initial fill).  Weight is kept identical to
-        vanilla because DrainableComboItem.updateWeight() tapers the mod item's
-        weight towards the ReplaceOnDeplete target's actual weight.
-
-        NOTE: Moonshine.ReturnEmptyVessel() must keep pointing at the VANILLA
-        ids.  The craftRecipe path is already correct and empties the container
-        itself; these twins are only for the engine Replace* path.
-    */
 
     item WhiskeyVessel
     {

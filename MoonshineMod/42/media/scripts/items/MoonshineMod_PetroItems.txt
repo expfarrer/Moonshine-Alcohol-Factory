@@ -37,30 +37,6 @@ item OiledSheetsDirty
 
 
 
-    /* MotorOilCan2/3/4 + EmptyMotorOilCan2/3/4 DELETED 2026-09-09 (B42 tree only;
-       the B41 tree at MoonshineMod/media/ keeps all four and is untouched).
-
-       They were mechanically identical to variant 1 -- same Weight 2.5, same
-       UseDelta 0.25, same DisplayName ("Motor Oil Can" / "Empty Motor Oil Can"),
-       same Icon; even the ground models differed only in `texture =`, and
-       MotorOilCanister_Ground3/4 pointed at texture_MotorOilCan1 anyway.  They
-       were also completely UNREACHABLE, proved four ways against the live 42.20
-       registry and this repo's history, not by reading this file:
-         * loot tables (SuburbsDistributions / ProceduralDistributions /
-           VehicleDistributions / Distributions / ClutterTables /
-           BagsAndContainers): 0 entries for 2/3/4, versus 1437 for variant 1;
-         * all 1209 craftRecipes in the registry: 0 name them as an input OR an
-           output;
-         * all 5191 items: the ONLY Replace* pointers at them come from inside
-           the dead set itself (MotorOilCanN -> EmptyMotorOilCanN ->
-           MotorOilCanN), a closed cycle with no entry point;
-         * `git log -S MotorOilCan2 -- Moonshine_Distributions.lua` is empty, so
-           they were never spawnable in ANY past commit either -- no existing
-           save can be holding one.
-       Deleting them also removes a latent bug: EmptyMotorOilCan2/3/4 carried
-       `ReplaceTypes = PetrolSource MotorOilCanN`, i.e. a petrol pump handed back
-       a full can of MOTOR OIL (the scarce gasohol input).  Variant 1 correctly
-       returns MotorOilPetrolCan. */
 
     item MotorOilCan1
     {

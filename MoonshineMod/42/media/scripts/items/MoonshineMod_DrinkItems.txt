@@ -44,7 +44,7 @@ imports
 		HungerChange	=	-10,
 		
 		DisplayName	= Whiskey Bottle filled with Spirit,
-		ReplaceOnUse	= Whiskey,
+		ReplaceOnUse	= Moonshine.WhiskeyVessel,
 		/*ReplaceOnDeplete = */
 		Alcoholic	=	TRUE,
 		AlcoholPower = 2,
@@ -117,7 +117,7 @@ imports
 		ThirstChange	=	-10,
 		DisplayName	=	Wine Bottle filled with Spirit,
 
-		ReplaceOnUse = WineOpen,
+		ReplaceOnUse = Moonshine.WineOpenVessel,
 		Alcoholic	=	TRUE,
 		AlcoholPower = 2,
 		Icon	=	Wine,
@@ -373,7 +373,6 @@ imports
 	AlcoholPower = 1.1,
 	UnhappyChange	=	-55,
 
-	/* TEMP TEST VALUE - REVERT TO 30 BEFORE RELEASE (stage 1 of 2). Must be an int. REVERT: this line -> 30, and WhiskeyGreen's -> 90. */
 	DaysTotallyRotten = 30,
 	ReplaceOnRotten = WhiskeyGreen,
 
@@ -412,7 +411,6 @@ imports
 	AlcoholPower = 1.25,
 	UnhappyChange	=	-55,
 
-	/* TEMP TEST VALUE - REVERT TO 90 BEFORE RELEASE (stage 2 of 2). Must be an int and strictly greater than stage 1. REVERT: this line -> 90, and WhiteLightningCharred's -> 30. */
 	DaysTotallyRotten = 90,
 	ReplaceOnRotten = WhiskeyScarletOak,
 
@@ -489,7 +487,7 @@ imports
 		
 	item SodaBottleRefill
 	{
-	    StressChange	=	-100,
+	    StressChange	=	-50,
 	    DisplayCategory = Food,
 		HungerChange	=	-20,
 		Weight	=	2.1,
@@ -497,11 +495,11 @@ imports
 		ItemType	= base:food,
 		FoodType = Liquor,
 
-		UnhappyChange	=	-100,
+		UnhappyChange	=	-50,
 		ThirstChange	=	-20,
 		DisplayName	= Soda Bottle filled with Spirit,
 		/* ReplaceOnUse	= PopBottleEmpty, */
-		ReplaceOnUse = PopBottle,
+		ReplaceOnUse = Moonshine.PopBottleVessel,
 		Alcoholic	=	TRUE,
 		AlcoholPower = 2,
 		Icon	=	PopBottle,
@@ -536,7 +534,7 @@ imports
 		ThirstChange	=	-10,
 		DisplayName	=	Water Bottle filled with Spirit,
 		/*ReplaceOnUse	= WaterBottleEmpty,*/
-		ReplaceOnUse = WaterBottle,
+		ReplaceOnUse = Moonshine.WaterBottleVessel,
 		Alcoholic	=	TRUE,
 		AlcoholPower = 2,
 		Icon	=	WaterBottle,
@@ -568,7 +566,7 @@ imports
 		UnhappyChange	=	-50,
 		ThirstChange	=	-10,
 		DisplayName	=	Sports Bottle filled with Spirit,
-		ReplaceOnUse = Sportsbottle,
+		ReplaceOnUse = Moonshine.SportsbottleVessel,
 		Alcoholic	=	TRUE,
 		AlcoholPower = 2,
 		Icon	=	Sportsbottle,
@@ -608,7 +606,7 @@ imports
 		ThirstChange	=	-10,
 		DisplayName	=	Bleach Bottle filled with Spirit,
 		/*ReplaceOnUse	=	BleachEmpty,*/
-		ReplaceOnUse = Bleach,
+		ReplaceOnUse = Moonshine.BleachVessel,
 		
 		
 		Alcoholic	=	TRUE,
@@ -763,7 +761,7 @@ item MugSpiffoWaterRefill
 	UseWhileEquipped	= FALSE,
 	UseDelta		= 0.16,
 	DisplayName		= Wine Bottle filled with Water,
-	ReplaceOnDeplete	= WineOpen,
+	ReplaceOnDeplete	= Moonshine.WineOpenVessel,
 	ReplaceOnUseOn		= WaterSource-WineWaterFull,
 	Icon			= Wine,
 	StaticModel = WhiteWineBottle,
@@ -791,7 +789,7 @@ item MugSpiffoWaterRefill
 		FillFromTapSound	= GetWaterFromTapGlass,
 		IsCookable		= TRUE,
 		IsWaterSource		= TRUE,
-		ReplaceOnDeplete	= Whiskey,
+		ReplaceOnDeplete	= Moonshine.WhiskeyVessel,
 		ReplaceOnUseOn		= WaterSource-WhiskeyWaterFull,
 		UseDelta		= 0.08,
 		UseWhileEquipped	= FALSE,
@@ -824,7 +822,7 @@ item MugSpiffoWaterRefill
                 FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
                 FillFromTapSound = GetWaterFromTapPlasticMedium,
                 IsWaterSource = TRUE,
-                ReplaceOnDeplete = WaterBottle,
+                ReplaceOnDeplete = Moonshine.WaterBottleVessel,
                 ReplaceOnUseOn = WaterSource-WaterBottleFull,
                 UseDelta = 0.1,
                 UseWhileEquipped = FALSE,
@@ -852,7 +850,7 @@ item MugSpiffoWaterRefill
                 FillFromDispenserSound = GetWaterFromDispenser,
                 FillFromTapSound = GetWaterFromTap,
                 IsWaterSource = TRUE,
-                ReplaceOnDeplete = Sportsbottle,
+                ReplaceOnDeplete = Moonshine.SportsbottleVessel,
                 ReplaceOnUseOn = WaterSource-SportsBottleFull,
                 UseDelta = 0.1,
                 UseWhileEquipped = FALSE,
@@ -880,7 +878,7 @@ item MugSpiffoWaterRefill
 		UseWhileEquipped	= FALSE,
 		UseDelta		= 0.1,
 		DisplayName		= Pop Bottle filled with Water,
-		ReplaceOnDeplete	= PopBottle,
+		ReplaceOnDeplete	= Moonshine.PopBottleVessel,
 		ReplaceOnUseOn		= WaterSource-WaterPopBottle,
 		Icon			= PopBottle,
 		CustomContextMenu 	= Drink,
@@ -911,7 +909,7 @@ item MugSpiffoWaterRefill
 		UseWhileEquipped	=	FALSE,
 		UseDelta	=	0.1,
 		DisplayName	=	Bleach Bottle filled with Water,
-		ReplaceOnDeplete	=	Bleach,
+		ReplaceOnDeplete	=	Moonshine.BleachVessel,
 		ReplaceOnUseOn	=	WaterSource-WaterBleachBottle,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottle,
@@ -982,14 +980,15 @@ item SaucepanWaterRefill
 	    StressChange	=	-50,
 	    DisplayCategory = Food,
 
-		Weight	=	2.0,
+		/* 1.0 bucket + 2 L bulk charge. docs/script-notes.md sec. 8. */
+		Weight	=	3.0,
 
 		ItemType	= base:food,
 		FoodType = Liquor,
 
 		UnhappyChange	=	-50,
-		ThirstChange	=	-10,
-		HungerChange	=	-10,
+		ThirstChange	=	-20,
+		HungerChange	=	-20,
 
 		DisplayName	= Bucket filled with Spirit,
 		ReplaceOnUse	= Base.BucketEmpty,
@@ -1001,7 +1000,7 @@ item SaucepanWaterRefill
 		Carbohydrates = 1,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1200,
+        Calories = 2400,
 		Packaged = TRUE,
         CantBeFrozen = TRUE,
         StaticModel = Bucket,

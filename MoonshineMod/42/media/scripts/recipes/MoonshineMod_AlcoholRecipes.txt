@@ -8,7 +8,7 @@ module Moonshine
     craftRecipe MakePotatoMashInBucket
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -33,7 +33,7 @@ module Moonshine
     craftRecipe MakeCornMashInBucket
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -58,7 +58,7 @@ module Moonshine
     craftRecipe MakeCannedCornMashInBucket
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -85,7 +85,7 @@ module Moonshine
     craftRecipe MakeCannedCornMashInBucket2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -111,7 +111,7 @@ module Moonshine
     craftRecipe MakeCannedPotatoMashInBucket
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -138,7 +138,7 @@ module Moonshine
     craftRecipe MakeCannedPotatoMashInBucket2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -164,7 +164,7 @@ module Moonshine
     craftRecipe MakeCannedPotatoMashInBucket3
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineMixMash, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         NeedToBeLearn = true,
@@ -189,13 +189,13 @@ module Moonshine
 
     craftRecipe CoverCornMashBucketWithTarp
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineCoverBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 300,
         inputs
         {
         item 1 [Moonshine.CornMash] flags[ItemCount],
-        item 1 [Base.Tarp] flags[Prop1],
+        item 1 [Base.Tarp],
         item 1 [Base.RubberBand;Base.RubberHose;Base.Rope;Base.Wire],
         }
         outputs
@@ -206,13 +206,13 @@ module Moonshine
 
     craftRecipe CoverPotatoMashBucketWithTarp
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineCoverBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 300,
         inputs
         {
         item 1 [Moonshine.PotatoMash] flags[ItemCount],
-        item 1 [Base.Tarp] flags[Prop1],
+        item 1 [Base.Tarp],
         item 1 [Base.RubberBand;Base.RubberHose;Base.Rope;Base.Wire],
         }
         outputs

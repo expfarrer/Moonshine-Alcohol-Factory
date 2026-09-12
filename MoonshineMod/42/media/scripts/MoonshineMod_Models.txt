@@ -132,6 +132,14 @@ module Moonshine
     
     
     
+    /* MotorOilCanister_Ground2/3/4 removed 2026-09-09 with their items (see the
+       comment above `item MotorOilCan1` in MoonshineMod_PetroItems.txt).  3 and 4
+       pointed at texture_MotorOilCan1 anyway, so only Ground2's own skin,
+       textures/WorldItems/texture_MotorOilCan2.png, is now unreferenced -- kept
+       on disk deliberately as the seed art for any future second can skin.
+       model_MotorOilCanister_Ground.fbx and texture_MotorOilCan1.png are still
+       live, used by Ground1 below. */
+
     model MotorOilCanister_Ground1
     {
         mesh = model_MotorOilCanister_Ground,
@@ -139,26 +147,8 @@ module Moonshine
         scale = 0.02,
     }
     
-    model MotorOilCanister_Ground2
-    {
-        mesh = model_MotorOilCanister_Ground,
-        texture = WorldItems/texture_MotorOilCan2,
-        scale = 0.02,
-    }
     
-    model MotorOilCanister_Ground3
-    {
-        mesh = model_MotorOilCanister_Ground,
-        texture = WorldItems/texture_MotorOilCan1,
-        scale = 0.02,
-    }
 
-    model MotorOilCanister_Ground4
-    {
-        mesh = model_MotorOilCanister_Ground,
-        texture = WorldItems/texture_MotorOilCan1,
-        scale = 0.02,
-    }
     
     
 	

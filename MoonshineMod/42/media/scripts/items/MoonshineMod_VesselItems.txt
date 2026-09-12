@@ -1,0 +1,186 @@
+module Moonshine
+{
+    imports
+    {
+        Base
+    }
+
+    /*
+        Empty twins of the six vanilla vessels the mod hands back from an item
+        ReplaceOnUse / ReplaceOnDeplete.
+
+        WHY THESE EXIST
+        ---------------
+        ReplaceOnUse / ReplaceOnDeplete are resolved inside the engine with no
+        Lua hook:
+
+            InventoryItem.Use()        -> this.container.AddItem(replaceOnUse)
+            DrainableComboItem.Use()   -> this.container.AddItem(replaceOnDeplete)
+
+        ItemContainer.AddItem(String) runs the vanilla FluidContainer
+        initialiser, so any target that declares a Fluids block spawns FULL.
+        Pointing at Base.Whiskey therefore minted 1.00 L of free whiskey every
+        time a mod bottle was used up; Base.PopBottle minted 2.00 L of soda.
+
+        The craftRecipe side of this class was fixed in R7-A via
+        Moonshine.ReturnEmptyVessel(), which empties the vessel in OnCreate.
+        Replace* can never reach an OnCreate, so the only fix at the source is
+        to stop naming a full-spawning id.
+
+        The engine DOES have an "append Empty to the id" convention
+        (InventoryItemFactory.createItemInternal), but it is unreachable from
+        this path: ItemContainer.AddItem(String) gates on ScriptManager.FindItem
+        first, which is a plain map lookup with no such fallback, so
+        "Base.WhiskeyEmpty" just logs "can't find" and returns null.
+
+        Each block below is the vanilla block verbatim minus the Fluids
+        sub-block (and minus PickRandomFluid / InitialPercent* / OnCreate, which
+        only exist to seed that initial fill).  Weight is kept identical to
+        vanilla because DrainableComboItem.updateWeight() tapers the mod item's
+        weight towards the ReplaceOnDeplete target's actual weight.
+
+        NOTE: Moonshine.ReturnEmptyVessel() must keep pointing at the VANILLA
+        ids.  The craftRecipe path is already correct and empties the container
+        itself; these twins are only for the engine Replace* path.
+    */
+
+    item WhiskeyVessel
+    {
+        DisplayName = Empty Whiskey Bottle,
+        DisplayCategory = WaterContainer,
+        ItemType = base:normal,
+        Weight = 0.7,
+        Icon = Whiskey,
+        EatType = Bourbon,
+        IconFluidMask = Whiskey_Mask,
+        FillFromDispenserSound = GetWaterFromDispenserGlass,
+        FillFromLakeSound = GetWaterFromLakeBottle,
+        FillFromTapSound = GetWaterFromTapGlass,
+        FillFromToiletSound = GetWaterFromToilet,
+        StaticModel = WhiskeyBottle,
+        WorldStaticModel = WhiskeyBottleGround,
+        Tags = base:glass;base:glassbottle,
+        component FluidContainer
+        {
+            ContainerName = BottleGlass,
+            Capacity = 1.0,
+            CustomDrinkSound = DrinkingFromBottleGlass,
+        }
+    }
+
+    item PopBottleVessel
+    {
+        DisplayName = Empty Soda Bottle,
+        DisplayCategory = WaterContainer,
+        ItemType = base:normal,
+        Weight = 0.1,
+        Icon = PopBottle,
+        IconColorMask = WaterBottle_Mask2,
+        IconFluidMask = PopBottle_Mask,
+        Packaged = true,
+        FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
+        FillFromLakeSound = GetWaterFromLakeBottle,
+        FillFromTapSound = GetWaterFromTapPlasticBig,
+        FillFromToiletSound = GetWaterFromToilet,
+        StaticModel = PopBottleWorld,
+        WorldStaticModel = PopBottleWorld,
+        Tags = base:cookablemicrowave,
+        component FluidContainer
+        {
+            ContainerName = BottlePlastic,
+            Capacity = 2.0,
+            CustomDrinkSound = DrinkingFromBottlePlastic,
+        }
+    }
+
+    item WaterBottleVessel
+    {
+        DisplayName = Empty Water Bottle,
+        DisplayCategory = WaterContainer,
+        ItemType = base:normal,
+        Weight = 0.1,
+        Icon = WaterBottle,
+        IconColorMask = WaterBottle_Mask2,
+        IconFluidMask = WaterBottle_Mask,
+        CookingSound = BoilingFood,
+        CustomEatSound = DrinkingFromBottlePlastic,
+        FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
+        FillFromLakeSound = GetWaterFromLakeBottle,
+        FillFromTapSound = GetWaterFromTapPlasticMedium,
+        Tooltip = Tooltip_item_OnlyPurifyMicrowave,
+        StaticModel = WaterBottle,
+        WorldStaticModel = WaterBottleFull,
+        Tags = base:cookablemicrowave,
+        component FluidContainer
+        {
+            ContainerName = BottlePlastic,
+            Capacity = 1.0,
+        }
+    }
+
+    item BleachVessel
+    {
+        DisplayName = Empty Bleach Bottle,
+        DisplayCategory = WaterContainer,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = Bleach,
+        EatType = BleachBottle,
+        FillFromDispenserSound = GetWaterFromDispenserPlasticMedium,
+        FillFromLakeSound = GetWaterFromLakeBottle,
+        FillFromTapSound = GetWaterFromTapPlasticMedium,
+        StaticModel = BleachBottle,
+        WorldStaticModel = BleachBottle,
+        component FluidContainer
+        {
+            ContainerName = BottleBleach,
+            Capacity = 1.0,
+            CustomDrinkSound = DrinkingFromBottlePlastic,
+        }
+    }
+
+    item SportsbottleVessel
+    {
+        DisplayName = Empty Sports Bottle,
+        DisplayCategory = WaterContainer,
+        ItemType = base:normal,
+        Weight = 0.1,
+        Icon = Sportsbottle,
+        EatType = Bourbon,
+        FillFromDispenserSound = GetWaterFromDispenser,
+        FillFromLakeSound = GetWaterFromLakeSmall,
+        FillFromTapSound = GetWaterFromTap,
+        FillFromToiletSound = GetWaterFromToilet,
+        StaticModel = Sportsbottle,
+        WorldStaticModel = Sportsbottle,
+        component FluidContainer
+        {
+            ContainerName = SportsBottle,
+            Capacity = 1.0,
+            CustomDrinkSound = DrinkingFromBottlePlastic,
+        }
+    }
+
+    item WineOpenVessel
+    {
+        DisplayName = Empty Wine Bottle,
+        DisplayCategory = WaterContainer,
+        ItemType = base:normal,
+        Weight = 0.3,
+        Icon = Wine,
+        IconFluidMask = Wine_Mask,
+        FillFromDispenserSound = GetWaterFromDispenserGlass,
+        FillFromLakeSound = GetWaterFromLakeBottle,
+        FillFromTapSound = GetWaterFromTapGlass,
+        FillFromToiletSound = GetWaterFromToilet,
+        StaticModel = WhiteWineBottle,
+        WorldStaticModel = WineWhiteGround,
+        Tags = base:glass;base:glassbottle,
+        component FluidContainer
+        {
+            ContainerName = BottleGlass,
+            Capacity = 1.0,
+            CustomDrinkSound = DrinkingFromBottleGlass,
+        }
+    }
+}

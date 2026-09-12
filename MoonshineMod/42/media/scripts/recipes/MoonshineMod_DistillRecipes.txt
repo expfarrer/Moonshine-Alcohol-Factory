@@ -8,7 +8,7 @@ module Moonshine
     craftRecipe MakeDistillPotI
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         NeedToBeLearn = true,
@@ -25,7 +25,7 @@ module Moonshine
         item 1 [Base.Pot] flags[ItemCount],
         item 1 [Base.SmallSheetMetal],
         item 1 [Base.DuctTape],
-        item 1 [Base.PropaneTank],
+        item 1 [Base.PropaneTank] mode:destroy flags[ItemCount],
         item 1 [Base.BeerCanEmpty] flags[ItemCount],
         }
         outputs
@@ -37,11 +37,14 @@ module Moonshine
     craftRecipe DismantleDistillI
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         SkillRequired = MetalWelding:1,
         xpAward = MetalWelding:25,
+        /* refunds the drained PropaneTank; Lua because an output line spawns
+           a drainable FULL. docs/script-notes.md sec. 9. */
+        OnCreate = RecipeCodeOnCreate.GiveBackEmptyPropaneTank,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -64,11 +67,14 @@ module Moonshine
     craftRecipe DismantleDistillII
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 600,
         SkillRequired = MetalWelding:2,
         xpAward = MetalWelding:25,
+        /* refunds the drained PropaneTank; Lua because an output line spawns
+           a drainable FULL. docs/script-notes.md sec. 9. */
+        OnCreate = RecipeCodeOnCreate.GiveBackEmptyPropaneTank,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -92,11 +98,14 @@ module Moonshine
     craftRecipe DismantleDistillIII
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
+        /* refunds the drained PropaneTank; Lua because an output line spawns
+           a drainable FULL. docs/script-notes.md sec. 9. */
+        OnCreate = RecipeCodeOnCreate.GiveBackEmptyPropaneTank,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -121,7 +130,7 @@ module Moonshine
     craftRecipe DismantleCharcoalFilter
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         SkillRequired = MetalWelding:2,
@@ -148,11 +157,14 @@ module Moonshine
     craftRecipe DismantleControllableColumn
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         SkillRequired = MetalWelding:4;Electricity:2,
         xpAward = MetalWelding:25,
+        /* refunds the DEAD CarBattery1, never a charged one.
+           docs/script-notes.md sec. 9. */
+        OnCreate = RecipeCodeOnCreate.GiveBackDeadCarBattery,
         inputs
         {
         item 1 tags[base:hammer] mode:keep,
@@ -171,7 +183,7 @@ module Moonshine
 
     craftRecipe FillDistillWithCornMash
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -190,7 +202,7 @@ module Moonshine
 
     craftRecipe FillDistillWithCornMash2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -209,7 +221,7 @@ module Moonshine
 
     craftRecipe FillDistillWithCornMash3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -228,7 +240,7 @@ module Moonshine
 
     craftRecipe FillDistillWithPotatoMash
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -247,7 +259,7 @@ module Moonshine
 
     craftRecipe FillDistillWithPotatoMash2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -266,7 +278,7 @@ module Moonshine
 
     craftRecipe FillDistillWithPotatoMash3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -285,7 +297,7 @@ module Moonshine
 
     craftRecipe FillDistillWithWater
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -302,7 +314,7 @@ module Moonshine
 
     craftRecipe FillDistillWithWater2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -319,7 +331,7 @@ module Moonshine
 
     craftRecipe FillDistillWithWater3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 400,
         inputs
@@ -337,7 +349,7 @@ module Moonshine
     craftRecipe MakeDistillCoalFilter
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 600,
         NeedToBeLearn = true,
@@ -348,7 +360,7 @@ module Moonshine
         item 1 tags[base:hammer] mode:keep,
         item 1 tags[base:saw] mode:keep,
         item 3 [Base.MetalPipe],
-        item 1 [Base.ScrapMetal] flags[Prop2],
+        item 1 [Base.ScrapMetal],
         item 1 [Base.Bleach] flags[ItemCount],
         item 1 [Base.OatsRaw] flags[ItemCount],
         item 8 [Moonshine.Coal],
@@ -365,7 +377,7 @@ module Moonshine
     craftRecipe MakeDistillCoalFilter2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 600,
         NeedToBeLearn = true,
@@ -376,7 +388,7 @@ module Moonshine
         item 1 tags[base:hammer] mode:keep,
         item 1 tags[base:saw] mode:keep,
         item 3 [Base.MetalPipe],
-        item 1 [Base.ScrapMetal] flags[Prop2],
+        item 1 [Base.ScrapMetal],
         item 1 [Base.Bleach] flags[ItemCount],
         item 1 [Base.OatsRaw] flags[ItemCount],
         item 8 [Base.Charcoal],
@@ -393,7 +405,7 @@ module Moonshine
     craftRecipe MakeControllableDistillColumn
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         NeedToBeLearn = true,
@@ -405,7 +417,7 @@ module Moonshine
         item 1 tags[base:saw] mode:keep,
         item 1 [Base.Extinguisher] flags[ItemCount],
         item 1 [Base.AlarmClock2],
-        item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3] flags[ItemCount],
+        item 1 [Base.CarBattery1;Base.CarBattery2;Base.CarBattery3] mode:destroy flags[ItemCount],
         item 1 [Base.Wire] flags[ItemCount],
         item 5 [Base.ElectronicsScrap],
         item 1 [Base.DuctTape],
@@ -419,7 +431,7 @@ module Moonshine
     craftRecipe UpgradeDistillIToII
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         NeedToBeLearn = true,
@@ -442,7 +454,7 @@ module Moonshine
     craftRecipe UpgradeDistillIIToIII
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         NeedToBeLearn = true,
@@ -465,7 +477,7 @@ module Moonshine
     craftRecipe DowngradeDistillIIToI
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         NeedToBeLearn = true,
@@ -487,7 +499,7 @@ module Moonshine
     craftRecipe DowngradeDistillIIIToII
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineDismantleStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 900,
         NeedToBeLearn = true,

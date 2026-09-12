@@ -23,7 +23,7 @@ module Moonshine
     craftRecipe FillDistillIIIWithMotorOil
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBottle, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 550,
         inputs
@@ -41,7 +41,7 @@ module Moonshine
     craftRecipe RefillMotorOilCanWithMotorOil
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillCanMetal, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 650,
         inputs
@@ -59,7 +59,7 @@ module Moonshine
 
     craftRecipe FillMotorOilCanWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillCanMetal, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
@@ -76,7 +76,7 @@ module Moonshine
     craftRecipe FillMotorOilCanWithGasoholFuel2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillCanMetal, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
@@ -92,7 +92,7 @@ module Moonshine
 
     craftRecipe FillMotorOilCanWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillCanMetal, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
@@ -108,7 +108,7 @@ module Moonshine
 
     craftRecipe FillBeerBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
@@ -124,7 +124,7 @@ module Moonshine
 
     craftRecipe FillBeerBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
@@ -141,7 +141,7 @@ module Moonshine
     craftRecipe FillBeerBottleWithGasoholFuel3
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
@@ -157,7 +157,7 @@ module Moonshine
 
     craftRecipe FillGasoholFromDistillPotIII
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -173,7 +173,7 @@ module Moonshine
 
     craftRecipe FillPetrolCanFromDistillPotIII
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillCanPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         OnCreate = RecipeCodeOnCreate.FillPetrolCanWithGasohol,
@@ -189,12 +189,12 @@ module Moonshine
 
     craftRecipe FillWineBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted;Moonshine.WineOpenVessel] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -205,12 +205,12 @@ module Moonshine
 
     craftRecipe FillWineBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted;Moonshine.WineOpenVessel] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -221,12 +221,12 @@ module Moonshine
 
     craftRecipe FillWineBottleWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted;Moonshine.WineOpenVessel] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -237,12 +237,12 @@ module Moonshine
 
     craftRecipe FillWhiskeyBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey;Moonshine.WhiskeyVessel] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -253,12 +253,12 @@ module Moonshine
 
     craftRecipe FillWhiskeyBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey;Moonshine.WhiskeyVessel] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -269,12 +269,12 @@ module Moonshine
 
     craftRecipe FillWhiskeyBottleWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey;Moonshine.WhiskeyVessel] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -285,12 +285,12 @@ module Moonshine
 
     craftRecipe FillWaterBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle;Moonshine.WaterBottleVessel] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -301,12 +301,12 @@ module Moonshine
 
     craftRecipe FillWaterBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle;Moonshine.WaterBottleVessel] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -317,12 +317,12 @@ module Moonshine
 
     craftRecipe FillWaterBottleWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle;Moonshine.WaterBottleVessel] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -333,12 +333,12 @@ module Moonshine
 
     craftRecipe FillSodaBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare;Moonshine.PopBottleVessel] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -349,12 +349,12 @@ module Moonshine
 
     craftRecipe FillSodaBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare;Moonshine.PopBottleVessel] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -365,12 +365,12 @@ module Moonshine
 
     craftRecipe FillSodaBottleWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare;Moonshine.PopBottleVessel] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -381,12 +381,12 @@ module Moonshine
 
     craftRecipe FillBleachBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach;Moonshine.BleachVessel] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -397,12 +397,12 @@ module Moonshine
 
     craftRecipe FillBleachBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach;Moonshine.BleachVessel] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -413,12 +413,12 @@ module Moonshine
 
     craftRecipe FillBleachBottleWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach;Moonshine.BleachVessel] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -429,12 +429,12 @@ module Moonshine
 
     craftRecipe FillSportsBottleWithGasoholFuel
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle;Moonshine.SportsbottleVessel] flags[ItemCount],
         item 1 [Moonshine.GasoholDrum],
         }
         outputs
@@ -445,12 +445,12 @@ module Moonshine
 
     craftRecipe FillSportsBottleWithGasoholFuel2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle;Moonshine.SportsbottleVessel] flags[ItemCount],
         item 1 [Moonshine.HalfGasoholDrum],
         }
         outputs
@@ -461,12 +461,12 @@ module Moonshine
 
     craftRecipe FillSportsBottleWithGasoholFuel3
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 250,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle;Moonshine.SportsbottleVessel] flags[ItemCount],
         item 1 [Moonshine.Petrol_DistillPotLarge],
         }
         outputs
@@ -477,7 +477,7 @@ module Moonshine
 
     craftRecipe MakeGasoholDrum
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineBuildStill, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
         NeedToBeLearn = true,
@@ -488,7 +488,7 @@ module Moonshine
         item 1 tags[base:hammer] mode:keep,
         item 1 tags[base:weldingmask] mode:keep,
         item 1 [Base.SmallSheetMetal],
-        item 1 [Base.Wire] flags[Prop1],
+        item 1 [Base.Wire],
         item 2 [Base.BlowTorch],
         item 5 [Base.SheetMetal],
         }
@@ -501,7 +501,7 @@ module Moonshine
     craftRecipe FillGasoholDrumHalf
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineEmptyPot, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
         inputs
@@ -518,7 +518,7 @@ module Moonshine
     craftRecipe FillGasoholDrumFull
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineEmptyPot, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 950,
         inputs

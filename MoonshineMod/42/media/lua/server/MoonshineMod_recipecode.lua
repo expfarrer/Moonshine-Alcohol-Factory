@@ -270,6 +270,45 @@ end
 -- mod item with no FluidContainer, so there is nothing to Empty() -- but they had
 -- the SAME bare-AddItem MP sync gap, so they now go through AddItemSynced.
 -- (The `local bottleChance = ZombRand(1, 7)` each carried was dead: never read.)
+-- ===================================================================
+-- 2026-09-08  --  the INVERSE-SWEEP refunds (quirks rule 93)
+-- ===================================================================
+-- MakeDistillPotI consumes a whole Base.PropaneTank (`mode:destroy
+-- flags[ItemCount]`, e57c778) and MakeControllableDistillColumn a whole
+-- Base.CarBattery1/2/3.  Neither came back from the matching dismantle, so
+-- dismantling silently ate them -- the exact defect rule 93 exists for.
+--
+-- Why these two cannot just be an `outputs { item 1 Base.PropaneTank }` line:
+-- both are base:drainable, and an output line spawns a drainable FULL
+-- (rule 75).  MEASURED live 2026-09-08: a fresh Base.PropaneTank is
+-- 5000.00/5000 uses and weighs 10.00; a fresh Base.CarBattery1 is
+-- 100000/100000.  Vanilla's ONLY propane recipe, RefillBlowTorch, drains a
+-- tank into blowtorch charges, so a full tank is real currency -- refunding
+-- one would make "build a still, dismantle it" a propane mint costing a
+-- single use of duct tape.
+--
+-- So the refund is the EMPTY SHELL, which is exactly what the item scripts
+-- model: PropaneTank declares WeightEmpty = 5.0 and KeepOnDeplete = true, and
+-- CarBattery* is KeepOnDeplete too.  MEASURED after setUsedDelta(0) +
+-- updateWeight(): tank 0.00 uses / weight 5.00, battery 0.00 uses, and BOTH
+-- stay in the inventory.  The player gets the steel back (both are smeltable),
+-- never the gas or the charge.
+local function drainDry(it)
+    it:setUsedDelta(0)
+    if instanceof(it, "DrainableComboItem") then it:updateWeight() end
+end
+
+function RecipeCodeOnCreate.GiveBackEmptyPropaneTank(recipeData, character)
+    Moonshine.AddItemSynced(character:getInventory(), "Base.PropaneTank", drainDry)
+end
+
+-- MakeControllableDistillColumn accepts CarBattery1/2/3 (they differ only by
+-- VehicleType); the refund is deliberately always the type-1 shell, so the
+-- recipe can never hand back a better battery than went in.
+function RecipeCodeOnCreate.GiveBackDeadCarBattery(recipeData, character)
+    Moonshine.AddItemSynced(character:getInventory(), "Base.CarBattery1", drainDry)
+end
+
 function RecipeCodeOnCreate.DoubbleFilledReturnMed(recipeData, character)
     Moonshine.AddItemSynced(character:getInventory(),
                             "Moonshine.Alc_DistillPotMediumRefillSpirit")

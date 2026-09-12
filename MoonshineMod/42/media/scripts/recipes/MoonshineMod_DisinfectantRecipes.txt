@@ -8,7 +8,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIWith6XSpirit
     {
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBottle, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         NeedToBeLearn = true,
@@ -26,7 +26,7 @@ module Moonshine
 
     craftRecipe FillSpiritFromDistillPotI
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -42,7 +42,7 @@ module Moonshine
 
     craftRecipe FillSpiritFromDistillPotI2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -59,7 +59,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotII
     {
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -76,7 +76,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIWith6XSpirit2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBottle, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         NeedToBeLearn = true,
@@ -95,7 +95,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotII2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -112,7 +112,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIIWith8XSpirit
     {
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBottle, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
         NeedToBeLearn = true,
@@ -131,7 +131,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotIII
     {
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -148,7 +148,7 @@ module Moonshine
     craftRecipe RefillDistillPotIIIWith8XSpirit2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshinePourFromBottle, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
         NeedToBeLearn = true,
@@ -167,7 +167,7 @@ module Moonshine
     craftRecipe FillSpiritFromDistillPotIII2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -183,9 +183,59 @@ module Moonshine
 
 
 
+    /* BULK RECHARGE: 3 / 4 buckets = the same 6 / 8 L the bottle and jar routes
+       demand. flags[ItemCount] is REQUIRED, BucketRefill is base:food.
+       docs/script-notes.md sec. 8.
+
+       POT I HAS NO RECHARGE, ON PURPOSE (2026-09-09).  A Pot I recharge existed
+       briefly (b571646) and was dropped: Pot II/III recharge into
+       Alc_DistillPot{Medium,Large}RefillSpirit, which ReplaceOnCooked into
+       isopropyl -- the recharge is the ENTRANCE to the 2nd-distillation track.
+       Pot I has no Alc_DistillPotSmallRefillSpirit and no ...Iso (that track is
+       deliberately gated behind Pot II), so a Pot I recharge could only hand back
+       the ordinary charged pot: spirit in, the same spirit out, no product gained.
+       Decanting Pot I to buckets is a one-way trip by design -- upgrade to Pot II
+       (UpgradeDistillIToII) to get a recharge that is worth something. */
+
+    craftRecipe RefillDistillPotIIWithSpiritBuckets
+    {
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 350,
+        NeedToBeLearn = true,
+        OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnMed,
+        inputs
+        {
+        item 3 [Moonshine.BucketRefill] flags[ItemCount],
+        item 1 [Moonshine.DistillPotMedium],
+        }
+        outputs
+        {
+            item 3 Base.BucketEmpty,
+        }
+    }
+
+    craftRecipe RefillDistillPotIIIWithSpiritBuckets
+    {
+        timedAction = MoonshinePourFromBucket, category = Moonshine,
+        Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
+        time = 450,
+        NeedToBeLearn = true,
+        OnCreate = RecipeCodeOnCreate.DoubbleFilledReturnLg,
+        inputs
+        {
+        item 4 [Moonshine.BucketRefill] flags[ItemCount],
+        item 1 [Moonshine.DistillPotLarge],
+        }
+        outputs
+        {
+            item 4 Base.BucketEmpty,
+        }
+    }
+
     craftRecipe PrepareSecondDistillationMedium
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineEmptyPot, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         NeedToBeLearn = true,
@@ -201,7 +251,7 @@ module Moonshine
 
     craftRecipe PrepareSecondDistillationLarge
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineEmptyPot, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 450,
         NeedToBeLearn = true,
@@ -218,7 +268,7 @@ module Moonshine
 
     craftRecipe FillDisinfectantFromDistillPotII
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -234,7 +284,7 @@ module Moonshine
 
     craftRecipe FillDisinfectantFromDistillPotIII
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 350,
         inputs
@@ -251,7 +301,7 @@ module Moonshine
     craftRecipe RefillDisinfectantBeerBottle
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
@@ -268,7 +318,7 @@ module Moonshine
     craftRecipe RefillDisinfectantBeerBottle2
     {        
 
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
@@ -284,12 +334,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantWhiskeyBottle
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey;Moonshine.WhiskeyVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
@@ -300,12 +350,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantWhiskeyBottle2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.Whiskey] flags[ItemCount],
+        item 1 [Base.Whiskey;Moonshine.WhiskeyVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs
@@ -316,12 +366,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantWineBottle
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted;Moonshine.WineOpenVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
@@ -332,12 +382,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantWineBottle2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillGlass, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted] flags[ItemCount],
+        item 1 [Base.WineOpen;Base.Wine2Open;Base.WineScrewtop;Base.WineAged;Base.BottleCrafted;Moonshine.WineOpenVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs
@@ -348,12 +398,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantSodaBottle
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare;Moonshine.PopBottleVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
@@ -364,12 +414,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantSodaBottle2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.PopBottle;Base.PopBottleRare] flags[ItemCount],
+        item 1 [Base.PopBottle;Base.PopBottleRare;Moonshine.PopBottleVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs
@@ -380,12 +430,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantWaterBottle
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle;Moonshine.WaterBottleVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
@@ -396,12 +446,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantWaterBottle2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.WaterBottle] flags[ItemCount],
+        item 1 [Base.WaterBottle;Moonshine.WaterBottleVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs
@@ -412,12 +462,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantBleachBottle
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach;Moonshine.BleachVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
@@ -428,12 +478,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantBleachBottle2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.Bleach] flags[ItemCount],
+        item 1 [Base.Bleach;Moonshine.BleachVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs
@@ -444,12 +494,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantSportsBottle
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle;Moonshine.SportsbottleVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotMediumIso],
         }
         outputs
@@ -460,12 +510,12 @@ module Moonshine
 
     craftRecipe RefillDisinfectantSportsBottle2
     {
-        timedAction = Making, category = Moonshine,
+        timedAction = MoonshineFillPlastic, category = Moonshine,
         Tags = InHandCraft;Moonshine;CanBeDoneFromFloor,
         time = 200,
         inputs
         {
-        item 1 [Base.Sportsbottle] flags[ItemCount],
+        item 1 [Base.Sportsbottle;Moonshine.SportsbottleVessel] flags[ItemCount],
         item 1 [Moonshine.Alc_DistillPotLargeIso],
         }
         outputs

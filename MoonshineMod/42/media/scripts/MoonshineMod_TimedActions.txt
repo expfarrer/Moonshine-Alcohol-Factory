@@ -69,4 +69,135 @@ module Base
         animVarVal = wateringcan,
         sound = PourLiquidOnGround,
     }
+
+    /* FILL group. `fill_container_tap` is a REAL actionAnim (AnimSets
+       FillBottleFromTap + 8 PourType variants); its absence from vanilla's
+       timedactions.txt is not a defect. The `sound =` values below are
+       UNVERIFIED and parked. docs/script-notes.md sec. 10. */
+
+    timedAction MoonshineFillGlass
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = fill_container_tap,
+        animVarKey = PourType,
+        animVarVal = bottle,
+        sound = GetWaterFromDispenserGlass,
+    }
+
+    timedAction MoonshineFillPlastic
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = fill_container_tap,
+        animVarKey = PourType,
+        animVarVal = bottle,
+        sound = GetWaterFromDispenserPlasticMedium,
+    }
+
+    timedAction MoonshineFillMug
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = fill_container_tap,
+        animVarKey = PourType,
+        animVarVal = Mug,
+        sound = GetWaterFromDispenserCeramic,
+    }
+
+    timedAction MoonshineFillBucket
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = fill_container_tap,
+        animVarKey = PourType,
+        animVarVal = Bucket,
+        sound = GetWaterFromDispenserMetalBig,
+    }
+
+    timedAction MoonshineFillCanMetal
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = fill_container_tap,
+        animVarKey = PourType,
+        animVarVal = bottle,
+        sound = GetWaterFromDispenserMetalMedium,
+    }
+
+    timedAction MoonshineFillCanPlastic
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = fill_container_tap,
+        animVarKey = PourType,
+        animVarVal = Bucket,
+        sound = GetWaterFromDispenserPlasticBig,
+    }
+
+    /* POUR / EMPTY group. Anim-variable matching is case-INSENSITIVE;
+       these use vanilla's capitalisation. docs/script-notes.md sec. 10. */
+
+    timedAction MoonshinePourFromBucket
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = Pour,
+        animVarKey = PourType,
+        animVarVal = Bucket,
+        sound = PourWaterIntoObject,
+    }
+
+    timedAction MoonshinePourFromBottle
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = Pour,
+        animVarKey = PourType,
+        animVarVal = bottle,
+        sound = PourWaterIntoObject,
+    }
+
+    timedAction MoonshineEmptyPot
+    {
+        metabolics = SedentaryActivity,
+        actionAnim = Pour,
+        animVarKey = PourType,
+        animVarVal = Pot,
+        sound = EmptyPotFromWater,
+    }
+
+    /* ------------------------------------------------------------------
+       Non-liquid actions. These exist to replace the generic `Making`
+       fiddle animation on recipes that are clearly NOT liquid transfers.
+       prop1/prop2 are MODEL names (verified against the 3863-entry model
+       registry), not item ids - the engine resolves them via addStatic().
+       ------------------------------------------------------------------ */
+
+    timedAction MoonshineMixMash
+    {
+        metabolics = HeavyDomestic,
+        actionAnim = MixingBucket,
+        prop2 = Base.CraftingBucket,
+        sound = CraftPrepareCooking,
+    }
+
+    timedAction MoonshineCoverBucket
+    {
+        metabolics = LightDomestic,
+        actionAnim = Tying_Low,
+        prop1 = Base.Tarp,
+        sound = TentPutUp,
+    }
+
+    timedAction MoonshineBuildStill
+    {
+        metabolics = HeavyDomestic,
+        actionAnim = Making,
+        prop1 = Base.Hammer,
+        prop2 = Base.CraftingMetalPart,
+        sound = BuildingGeneric,
+        completionSound = BuildMetalStructureSmallScrap,
+    }
+
+    timedAction MoonshineDismantleStill
+    {
+        metabolics = HeavyDomestic,
+        actionAnim = Disassemble,
+        prop1 = Base.PipeWrench,
+        prop2 = Base.CraftingMetalPart,
+        sound = Dismantle,
+    }
 }

@@ -10,7 +10,7 @@ module Moonshine
     recipe Fill Distill(I) with Wood 
     {
         destroy DistillPotSmall,
-        TreeBranch=6,
+        TreeBranch=4,
         Result:DistillPotSmallWood,
         Time:400.0,
         CanBeDoneFromFloor: true,
@@ -48,7 +48,7 @@ module Moonshine
     recipe Fill Distill(II) with Wood
      {
         destroy DistillPotMedium,
-        TreeBranch=4,
+        TreeBranch=6,
         Result: DistillPotMediumWood,
         Time: 400.0,
         CanBeDoneFromFloor: true,
@@ -84,7 +84,7 @@ module Moonshine
 	
     {
         destroy DistillPotLarge,
-        TreeBranch=2,
+        TreeBranch=8,
         Result: DistillPotLargeWood,
         Time: 400.0,
         CanBeDoneFromFloor: true,
@@ -125,7 +125,7 @@ module Moonshine
         CanBeDoneFromFloor: true,
 		
 		/*Prop2:Source=1,*/
-		Prop1:Moonshine.Coal,
+		Prop1:Charcoal_Ground,
         AnimNode:RipSheets,
 		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
 	
@@ -140,7 +140,7 @@ module Moonshine
         CanBeDoneFromFloor: true,
 		
 		/*Prop2:Source=1,*/
-		Prop1:Moonshine.Coal,
+		Prop1:Charcoal_Ground,
         AnimNode:RipSheets,
 		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
 	
@@ -156,7 +156,7 @@ module Moonshine
         CanBeDoneFromFloor: true,
 		
 		/*Prop2:Source=1,*/
-		Prop1:Moonshine.Coal,
+		Prop1:Charcoal_Ground,
         AnimNode:RipSheets,
 		OnGiveXP:Recipe.OnGiveXP.WoodWork5,
 	

@@ -16,13 +16,13 @@ module Moonshine
         MetalPipe=2,
 		ScrapMetal,
 
-        Wire,
+        Wire=5,
         Bleach,
 		
         destroy Pot,
         destroy SmallSheetMetal,
-        destroy DuctTape,
-        destroy PropaneTank,
+        DuctTape=4,
+        PropaneTank=16,
         destroy BeerCanEmpty,
 
         Result:DistillPotSmall,
@@ -386,8 +386,8 @@ module Moonshine
         Bleach,
         destroy OatsRaw,
         Coal=8,
-        Wire,
-        destroy DuctTape,
+        Wire=5,
+        DuctTape=4,
         destroy BeerCanEmpty,
 
         Result:DistillPotFilter,
@@ -416,9 +416,9 @@ module Moonshine
         ScrapMetal,
         Bleach,
         destroy OatsRaw,
-        Charcoal=8,
-        Wire,
-        destroy DuctTape,
+        Charcoal=80,
+        Wire=5,
+        DuctTape=4,
         destroy BeerCanEmpty,
 
         Result:DistillPotFilter,
@@ -445,12 +445,13 @@ module Moonshine
     {
         keep [Recipe.GetItemTypes.Hammer],
         keep [Recipe.GetItemTypes.Saw],
-        Extinguisher,
+        Extinguisher=10,
         AlarmClock2,
+        ScrapMetal,
         destroy CarBattery1/CarBattery2/CarBattery3,
-        Wire,
+        Wire=5,
         ElectronicsScrap=5,
-        destroy DuctTape,
+        DuctTape=4,
 
         Result:DistillPotColumn,
         Time:900.0,
@@ -472,7 +473,7 @@ module Moonshine
     {
         keep [Recipe.GetItemTypes.Hammer],
         keep [Recipe.GetItemTypes.Saw],
-        destroy DuctTape,
+        DuctTape=4,
         destroy DistillPotFilter,
         destroy DistillPotSmall,
 
@@ -499,7 +500,7 @@ module Moonshine
     {
         keep [Recipe.GetItemTypes.Hammer],
         keep [Recipe.GetItemTypes.Saw],
-        destroy DuctTape,
+        DuctTape=4,
         destroy DistillPotColumn,
         destroy DistillPotMedium,
 

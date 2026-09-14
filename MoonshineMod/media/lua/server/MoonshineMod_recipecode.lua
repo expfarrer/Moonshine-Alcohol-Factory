@@ -1,5 +1,10 @@
 require "recipecode"
-require 'timedactionshelper'
+-- require 'timedactionshelper'   -- B42-ONLY file; does not exist in B41.
+-- LuaManager$GlobalObject.require warns and areturns null rather than throwing
+-- (offsets 80-93), so this never broke anything -- but it printed two
+-- `require("timedactionshelper") failed` WARNs into every single B41 boot log,
+-- which is exactly the noise that makes a real warning easy to miss.
+-- Nothing in either file references the helper (word-boundary grep, 2026-09-14).
 
 Moonshine = Moonshine or {}
 
@@ -221,23 +226,25 @@ end
 --
 
 function Moonshine.GiveWoodSmall(items, result, player)
-  
-  
+-- 4 branches: must match "Fill Distill(I) with Wood" exactly (TreeBranch=4).
+-- Was 6 in / 6 out, which was self-consistent -- but the TIER COSTS were
+-- inverted (6/4/2 for I/II/III) against coal yields of 4/6/8, so a Distill(III)
+-- turned 2 tree branches into 8 charcoal, forever.  B41 now matches the shipped
+-- B42 numbers (FillDistillIWithWood = item 4, RemoveWoodFromDistillI = item 4).
     print("A branch small back!")
     player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
-     player:getInventory():AddItem("Base.TreeBranch")
- player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
 
 end
 
 --
 function Moonshine.GiveWoodMedium(items, result, player)
-  
-  
-    print("A branch small back!")
+-- 6 branches: must match "Fill Distill(II) with Wood" (TreeBranch=6).
+    print("A branch medium back!")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
     player:getInventory():AddItem("Base.TreeBranch")
     player:getInventory():AddItem("Base.TreeBranch")
     player:getInventory():AddItem("Base.TreeBranch")
@@ -246,15 +253,16 @@ function Moonshine.GiveWoodMedium(items, result, player)
 end
 --
 function Moonshine.GiveWoodLarge(items, result, player)
-  
-  
+-- 8 branches: must match "Fill Distill(III) with Wood" (TreeBranch=8).
     print("A branch Lg back!")
     player:getInventory():AddItem("Base.TreeBranch")
     player:getInventory():AddItem("Base.TreeBranch")
-  
-
-	
-     
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
+    player:getInventory():AddItem("Base.TreeBranch")
 end
 --
 
@@ -354,33 +362,38 @@ function Moonshine.DistillPartsFilter(items, result, player)
 end
 
 function Moonshine.DowngradeGiveFilter(items, result, player)
--- Used by Downgrade Distill(II)to(I) - must return the filter (that's what makes it a downgrade, not a dismantle).
--- Fixes a long-standing live bug: this recipe used to call DistillPartsFilter (scrap-only),
--- so downgrading never actually returned the DistillPotFilter component.
+-- Used by Downgrade Distill(II)to(I) - returns ONLY the filter.
+-- A Distill(II) is a Distill(I) PLUS a DistillPotFilter, and "Upgrade
+-- Distill(I)to(II)" pays exactly DuctTape + DistillPotFilter + DistillPotSmall.
+-- The recipe's own Result: already hands back the DistillPotSmall, so the filter
+-- is the entire remaining delta.  This used to ALSO hand back MetalPipe, 3x Coal,
+-- SmallSheetMetal and a BeerCanEmpty -- parts the upgrade never consumed -- which
+-- made upgrade->downgrade an unlimited parts printer costing one roll of tape.
+-- Measured 2026-09-14: net gain per cycle was MetalPipe +1, Coal +3,
+-- SmallSheetMetal +1, BeerCanEmpty +1.  Now the round trip nets zero.
 
-    print("filter parts + filter back!")
-
-        player:getInventory():AddItem("Base.MetalPipe")
-	    player:getInventory():AddItem("Moonshine.Coal")
-	  	player:getInventory():AddItem("Moonshine.Coal")
-	  	player:getInventory():AddItem("Moonshine.Coal")
-
-	   player:getInventory():AddItem("Base.SmallSheetMetal")
-       player:getInventory():AddItem("Base.BeerCanEmpty")
-       player:getInventory():AddItem("Moonshine.DistillPotFilter")
+    print("filter back!")
+    player:getInventory():AddItem("Moonshine.DistillPotFilter")
 
 end
 
 function Moonshine.GiveDistillPartsColumn(items, result, player)
 -- Used by Dismantle Controllable Column (scraps the column) - must NOT return a column.
--- Returns the FULL build cost of Create Controllable Distill Column (ScrapMetal
--- excluded - the recipe's own declared Result already gives that back): Extinguisher,
--- AlarmClock2, CarBattery1, Wire, 5x ElectronicsScrap, DuctTape.
+-- Returns the build cost of Create Controllable Distill Column: Extinguisher,
+-- AlarmClock2, CarBattery1, Wire, 5x ElectronicsScrap, DuctTape.  The recipe's own
+-- Result: gives back the ScrapMetal (which the build recipe now actually charges
+-- for -- before 2026-09-14 it did not, so build+dismantle printed one per cycle).
+--
+-- The CarBattery is refunded DRAINED.  AddItem() always spawns a drainable at FULL
+-- charge, so a full refund made "build a column, dismantle it" an unlimited battery
+-- charger: the build destroys whatever charge you put in and the dismantle handed
+-- back 100%.  Same call the B42 tree makes (inverse sweep, 2026-09-08).
 
     print("Column parts back!")
     player:getInventory():AddItem("Base.Extinguisher")
     player:getInventory():AddItem("Base.AlarmClock2")
-    player:getInventory():AddItem("Base.CarBattery1")
+    local battery = player:getInventory():AddItem("Base.CarBattery1")
+    if battery then battery:setUsedDelta(0) end
     player:getInventory():AddItem("Base.Wire")
     for i=1,5 do
         player:getInventory():AddItem("Base.ElectronicsScrap")
@@ -392,23 +405,14 @@ function Moonshine.GiveDistillPartsColumn(items, result, player)
 end
 
 function Moonshine.DowngradeGiveColumn(items, result, player)
--- Used by Downgrade Distill(III)to(II) - must return the column (that's what makes it a downgrade, not a dismantle).
--- Fixes a long-standing live bug: this recipe used to call GiveDistillPartsColumn (scrap-only),
--- so downgrading never actually returned the DistillPotColumn component.
+-- Used by Downgrade Distill(III)to(II) - returns ONLY the column.
+-- Same shape as DowngradeGiveFilter above: "Upgrade Distill(II)to(III)" pays
+-- DuctTape + DistillPotColumn + DistillPotMedium, and the recipe Result: gives
+-- the DistillPotMedium back, so the column is the whole delta.  It used to also
+-- mint 2x MetalPipe, a Wire, a Pot, a FULLY CHARGED CarBattery1, 3x
+-- SmallSheetMetal and a BeerCanEmpty out of nothing, every cycle.
 
-    print("Column parts + column back!")
-	player:getInventory():AddItem("Base.MetalPipe")
-	player:getInventory():AddItem("Base.MetalPipe")
-
-    player:getInventory():AddItem("Base.Wire")
-    player:getInventory():AddItem("Base.Pot")
-
-	player:getInventory():AddItem("Base.CarBattery1")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-    player:getInventory():AddItem("Base.SmallSheetMetal")
-
-    player:getInventory():AddItem("Base.BeerCanEmpty")
+    print("Column back!")
     player:getInventory():AddItem("Moonshine.DistillPotColumn")
 
 end

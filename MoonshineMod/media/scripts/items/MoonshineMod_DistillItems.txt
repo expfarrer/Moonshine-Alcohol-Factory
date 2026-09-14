@@ -671,11 +671,6 @@ item Alc_DistillPotLargeRefillSpirit
 		Calories = 8500,
 		*/
 		
-		/* 2026-09-05: a pot of motor oil is NOT a drink. This live ThirstChange
-		   flips Food.getActualWeight() onto the float32 computed branch -> runtime
-		   weight 20.00000191 (2 ULP over 20), so the pot fails BOTH capacity-15
-		   and capacity-20 ovens and can never be oven-cooked. B41 side of
-		   b42-fast-port 5369c87 / BACKLOG 3.15. */
 		/*ThirstChange	=	-60,*/
 	    MinutesToCook = 950,
 		MinutesToBurn = 5000,
@@ -726,7 +721,7 @@ item Alc_DistillPotLargeRefillSpirit
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
-        ThirstChange	=	-60,
+        /*ThirstChange	=	-60,*/
         Poison = true,
         PoisonDetectionLevel = 7,
 	    PoisonPower = 120,
@@ -763,7 +758,7 @@ item Alc_DistillPotLargeIso
 		Alcoholic = TRUE,
 	    Packaged = TRUE,
 		UnhappyChange	=	99,
-        ThirstChange	=	-60,
+        /*ThirstChange	=	-60,*/
         Poison = true,
         PoisonDetectionLevel = 7,
 	    PoisonPower = 120,
@@ -831,7 +826,7 @@ item DistillPotSmallCoal
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		EvolvedRecipeName = Coal,
-        ReplaceOnUse = DistillPotSmall,
+        ReplaceOnDeplete = Moonshine.DistillPotSmall,
 			
 		StaticModel = distill_small_Ground,
 		WorldStaticModel = distill_small_Ground,
@@ -888,7 +883,7 @@ item DistillPotMediumCoal
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		EvolvedRecipeName = Coal,
-        ReplaceOnUse = DistillPotMedium,
+        ReplaceOnDeplete = Moonshine.DistillPotMedium,
 		
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
@@ -947,7 +942,7 @@ item DistillPotLargeCoal
         CookingSound = BoilingFood,
         Packaged = TRUE,
 		EvolvedRecipeName = Coal,
-        ReplaceOnUse = DistillPotLarge,
+        ReplaceOnDeplete = Moonshine.DistillPotLarge,
         FillFromDispenserSound = GetWaterFromDispenserMetalBig,
 		FillFromTapSound = GetWaterFromTapMetalBig,
         StaticModel = distill_large_Ground,

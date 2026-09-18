@@ -26,7 +26,7 @@ module Moonshine
         item 1 [Base.SmallSheetMetal],
         item 1 [Base.DuctTape],
         item 1 [Base.PropaneTank] mode:destroy flags[ItemCount],
-        item 1 [Base.BeerCanEmpty] flags[ItemCount],
+        item 1 [Base.BeerCanEmpty;Base.BeerCan] flags[IsEmpty;ItemCount],
         }
         outputs
         {
@@ -358,7 +358,7 @@ module Moonshine
         item 8 [Moonshine.Coal],
         item 1 [Base.Wire] flags[ItemCount],
         item 1 [Base.DuctTape],
-        item 1 [Base.BeerCanEmpty] flags[ItemCount],
+        item 1 [Base.BeerCanEmpty;Base.BeerCan] flags[IsEmpty;ItemCount],
         }
         outputs
         {
@@ -386,7 +386,7 @@ module Moonshine
         item 8 [Base.Charcoal],
         item 1 [Base.Wire] flags[ItemCount],
         item 1 [Base.DuctTape],
-        item 1 [Base.BeerCanEmpty] flags[ItemCount],
+        item 1 [Base.BeerCanEmpty;Base.BeerCan] flags[IsEmpty;ItemCount],
         }
         outputs
         {
